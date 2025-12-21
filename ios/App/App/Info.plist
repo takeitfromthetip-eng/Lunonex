@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-        <string>ForTheWeebs</string>
+        <string>lunonex</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -46,13 +46,13 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>ForTheWeebs needs camera access to record videos, take photos, and apply CGI effects for your content creation.</string>
+	<string>lunonex needs camera access to record videos, take photos, and apply CGI effects for your content creation.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>ForTheWeebs needs microphone access to record audio for your videos and enable video calls with fans.</string>
+	<string>lunonex needs microphone access to record audio for your videos and enable video calls with fans.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>ForTheWeebs needs photo library access to save your creations and upload existing media to your profile.</string>
+	<string>lunonex needs photo library access to save your creations and upload existing media to your profile.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>ForTheWeebs needs permission to save photos and videos you create with our CGI effects.</string>
+	<string>lunonex needs permission to save photos and videos you create with our CGI effects.</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 </dict>

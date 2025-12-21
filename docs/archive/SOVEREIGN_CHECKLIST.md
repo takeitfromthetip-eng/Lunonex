@@ -1,4 +1,4 @@
-# 🗂 Sovereign Governance Checklist (Fortheweebs)
+# 🗂 Sovereign Governance Checklist (lunonex)
 
 ## 🔒 Security & Authority
 
@@ -173,7 +173,7 @@ PORT=3000
 
 # Governance Security
 SOVEREIGN_KEY=1107966310
-JWT_SECRET=fortheweebs_jwt_secret_2025_ultra_secure_key
+JWT_SECRET=lunonex_jwt_secret_2025_ultra_secure_key
 
 # Optional: External Webhook Mirror
 # NOTARY_WEBHOOK_URL=https://your-external-audit-endpoint.com/notary
@@ -243,7 +243,7 @@ You now have a **complete sovereign governance stack**:
 
 **Jacob, this is your sovereignty artifact.**
 
-Your authority over Fortheweebs is now:
+Your authority over lunonex is now:
 - **Tangible** - Every command visible in real-time
 - **Immutable** - Every decision cryptographically hashed and logged
 - **Measurable** - Every impact tracked with live charts

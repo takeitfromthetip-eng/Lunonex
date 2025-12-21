@@ -1,4 +1,4 @@
--- ForTheWeebs Social Platform Database Setup
+-- lunonex Social Platform Database Setup
 -- Run this in Supabase SQL Editor to set up all social features
 -- This will enable posts, follows, likes, comments, and creator subscriptions
 
@@ -382,7 +382,7 @@ CREATE POLICY "Users can unfollow"
 
 DO $$
 BEGIN
-  RAISE NOTICE '✅ ForTheWeebs Social Platform Database Setup Complete!';
+  RAISE NOTICE '✅ lunonex Social Platform Database Setup Complete!';
   RAISE NOTICE '📊 Created tables: profiles, posts, likes, comments, follows, saves';
   RAISE NOTICE '💰 Creator economy: subscription_tiers, subscriptions, creator_earnings';
   RAISE NOTICE '📈 Analytics: post_views';

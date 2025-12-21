@@ -36,7 +36,7 @@ const WatermarkSystem = () => {
                 <div className="header-content">
                     <h1>🎨 Watermark System</h1>
                     <p className="header-subtitle">
-                        Free tier: "Made with ForTheWeebs" on exports · Pro tier: Remove watermark
+                        Free tier: "Made with lunonex" on exports · Pro tier: Remove watermark
                     </p>
                 </div>
 
@@ -97,7 +97,7 @@ const WatermarkSystem = () => {
                                     >
                                         <div className="watermark-logo">🎨</div>
                                         <div className="watermark-text">
-                                            <div className="watermark-brand">ForTheWeebs</div>
+                                            <div className="watermark-brand">lunonex</div>
                                             <div className="watermark-tagline">Made with</div>
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@ const WatermarkSystem = () => {
                             <ul>
                                 <li><strong>Free Advertising:</strong> Every export promotes your platform</li>
                                 <li><strong>Viral Loop:</strong> Viewer sees watermark → clicks → signs up → creates → shares with watermark → repeat</li>
-                                <li><strong>Social Proof:</strong> "Made with ForTheWeebs" builds brand authority</li>
+                                <li><strong>Social Proof:</strong> "Made with lunonex" builds brand authority</li>
                                 <li><strong>Pro Upsell:</strong> Creators upgrade to Pro ($29/mo) to remove watermark</li>
                                 <li><strong>Zero Cost:</strong> No ad spend, pure organic growth</li>
                             </ul>
@@ -277,7 +277,7 @@ const WatermarkSystem = () => {
                                     <div className="pro-icon">🎯</div>
                                     <div>
                                         <strong>White-Label Mode</strong>
-                                        <p>Remove all ForTheWeebs branding</p>
+                                        <p>Remove all lunonex branding</p>
                                     </div>
                                 </div>
                             </div>
@@ -397,7 +397,7 @@ const WatermarkSystem = () => {
                     <div className="upgrade-hero">
                         <div className="upgrade-icon">✨</div>
                         <h2>Remove Watermarks with Pro</h2>
-                        <p>Get clean, professional exports without "Made with ForTheWeebs" branding</p>
+                        <p>Get clean, professional exports without "Made with lunonex" branding</p>
                     </div>
 
                     <div className="pricing-comparison">
@@ -407,7 +407,7 @@ const WatermarkSystem = () => {
                             <div className="pricing-amount">$0<span>/month</span></div>
                             <ul className="pricing-features">
                                 <li className="feature-disabled">❌ Watermark on all exports</li>
-                                <li className="feature-disabled">❌ "Made with ForTheWeebs" branding</li>
+                                <li className="feature-disabled">❌ "Made with lunonex" branding</li>
                                 <li className="feature-disabled">❌ Limited customization</li>
                                 <li>✅ All core tools</li>
                                 <li>✅ 1GB storage</li>

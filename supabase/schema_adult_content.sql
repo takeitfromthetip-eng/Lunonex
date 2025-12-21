@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS creator_payment_routing (
   processor_account_id TEXT,
   processor_account_status TEXT DEFAULT 'pending', -- 'pending', 'active', 'suspended'
   processor_fee_percentage DECIMAL(5,2) DEFAULT 2.9, -- 2.9% for Stripe, 10-15% for CCBill
-  platform_fee_percentage DECIMAL(5,2) DEFAULT 10.0, -- ForTheWeebs 10% cut
+  platform_fee_percentage DECIMAL(5,2) DEFAULT 10.0, -- lunonex 10% cut
   payout_schedule TEXT DEFAULT 'monthly', -- 'weekly', 'biweekly', 'monthly'
   min_payout_threshold DECIMAL(10,2) DEFAULT 50.00,
   created_at TIMESTAMPTZ DEFAULT NOW(),

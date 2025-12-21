@@ -11,7 +11,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-          <h1>ForTheWeebs</h1>
+          <h1>lunonex</h1>
           <p className="tagline">A Sovereign Creator Platform Built Different</p>
           <div className="cta-buttons">
             <button className="btn-primary" onClick={() => navigate('/trial')}>
@@ -49,7 +49,7 @@ const LandingPage = () => {
 
             <h3>What We Believe</h3>
             <p>
-              <strong>ForTheWeebs isn't just another platform—it's a rebellion against the status quo.</strong> We believe creators
+              <strong>lunonex isn't just another platform—it's a rebellion against the status quo.</strong> We believe creators
               deserve to own their content, control their communities, and keep the lion's share of their earnings. We believe
               fans deserve fair pricing, uncensored access (within legal boundaries), and a say in what they consume.
             </p>
@@ -69,7 +69,7 @@ const LandingPage = () => {
             </ul>
 
             <p>
-              ForTheWeebs exists because the old guard failed us. The streaming services, the social media giants, the content
+              lunonex exists because the old guard failed us. The streaming services, the social media giants, the content
               gatekeepers—they had their chance to do right by creators and consumers. They chose profit over people, control
               over freedom, exploitation over partnership.
             </p>
@@ -120,14 +120,14 @@ const LandingPage = () => {
           <h2>Copyright & Our Stance on Piracy</h2>
           <div className="policy-content">
             <p>
-              Let's be clear: <strong>we are vehemently anti-piracy.</strong> ForTheWeebs was built to give creators a fair
+              Let's be clear: <strong>we are vehemently anti-piracy.</strong> lunonex was built to give creators a fair
               platform where they actually get paid for their work. Piracy undermines everything we stand for.
             </p>
 
             <h3>Why We Care About Copyright</h3>
             <p>
               This platform exists because creators deserve compensation. When content is pirated, creators lose revenue, and
-              the entire ecosystem suffers. We didn't build ForTheWeebs to enable theft—we built it to <em>end</em> the need
+              the entire ecosystem suffers. We didn't build lunonex to enable theft—we built it to <em>end</em> the need
               for it by offering fair pricing and direct creator support.
             </p>
 
@@ -169,7 +169,7 @@ const LandingPage = () => {
           <h2>For Parents: Your Child's Safety Matters</h2>
           <div className="parental-content">
             <p>
-              We get it—the internet can be a scary place for kids. ForTheWeebs hosts diverse content, including adult material,
+              We get it—the internet can be a scary place for kids. lunonex hosts diverse content, including adult material,
               but we've built comprehensive parental controls so you stay in control of what your child sees.
             </p>
 
@@ -247,7 +247,7 @@ const LandingPage = () => {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setShowApplyForm(false)}>×</button>
             <h2>Creator Application</h2>
-            <p>Fill out the form below to apply to join ForTheWeebs as a creator.</p>
+            <p>Fill out the form below to apply to join lunonex as a creator.</p>
             <button 
               className="btn-primary" 
               onClick={() => {
@@ -264,7 +264,7 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="landing-footer">
         <div className="container">
-          <p>&copy; 2025 ForTheWeebs. Built for creators, by creators.</p>
+          <p>&copy; 2025 lunonex. Built for creators, by creators.</p>
           <div className="footer-links">
             <a href="/terms">Terms</a>
             <a href="/privacy">Privacy</a>

@@ -10,7 +10,7 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
 
 // IndexedDB setup
-const DB_NAME = 'ForTheWeebsStorage';
+const DB_NAME = 'lunonexStorage';
 const DB_VERSION = 1;
 const STORES = {
   IMAGES: 'images',

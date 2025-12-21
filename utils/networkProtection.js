@@ -35,7 +35,7 @@ function securityHeaders(req, res, next) {
     "style-src 'self' 'unsafe-inline'", // Allow inline styles for React
     "img-src 'self' data: https:",
     "font-src 'self' data:",
-    "connect-src 'self' https://fortheweebs-production.up.railway.app https://iqipomerawkvtojbtvom.supabase.co wss://iqipomerawkvtojbtvom.supabase.co",
+    "connect-src 'self' https://lunonex-production.up.railway.app https://iqipomerawkvtojbtvom.supabase.co wss://iqipomerawkvtojbtvom.supabase.co",
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",

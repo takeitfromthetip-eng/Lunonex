@@ -205,7 +205,7 @@ VITE_SUPABASE_ANON_KEY=...
 
 - [ ] **Prepare Launch Post:**
   ```
-  🚀 ForTheWeebs Creator Tools - NOW LIVE!
+  🚀 lunonex Creator Tools - NOW LIVE!
 
   20+ AI-powered tools for content creators:
   - Analytics Dashboard 📊
@@ -226,11 +226,11 @@ VITE_SUPABASE_ANON_KEY=...
 
 - [ ] **Email VIP Users:**
   ```
-  Subject: 🚀 ForTheWeebs Creator Tools Are Live!
+  Subject: 🚀 lunonex Creator Tools Are Live!
 
   Hey [Name],
 
-  We're officially launching ForTheWeebs Creator Tools today!
+  We're officially launching lunonex Creator Tools today!
 
   You get:
   - FREE access to 20+ AI-powered tools
@@ -243,7 +243,7 @@ VITE_SUPABASE_ANON_KEY=...
 
   Questions? Reply to this email.
 
-  - ForTheWeebs Team
+  - lunonex Team
   ```
 
 ---
@@ -303,7 +303,7 @@ VITE_SUPABASE_ANON_KEY=...
    ```
    🎉 BIG UPDATE: Social Media Platform Now Live!
 
-   ForTheWeebs now has:
+   lunonex now has:
    - 📰 Social Feed
    - 💬 Direct Messages
    - 👥 Friends & Followers
@@ -392,7 +392,7 @@ npm run build
 railway up
 
 # Announce
-echo "🚀 ForTheWeebs Creator Tools - LIVE!"
+echo "🚀 lunonex Creator Tools - LIVE!"
 ```
 
 ---
@@ -400,7 +400,7 @@ echo "🚀 ForTheWeebs Creator Tools - LIVE!"
 ## 📞 Support Contact
 
 **For Users:**
-- Email: support@fortheweebs.com
+- Email: support@lunonex.com
 - Discord: [Your Discord Link]
 
 **For You:**

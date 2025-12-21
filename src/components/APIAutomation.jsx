@@ -155,7 +155,7 @@ const APIAutomation = () => {
                     jobId: 'job_xyz789',
                     status: 'completed',
                     progress: 100,
-                    downloadUrl: 'https://cdn.fortheweebs.com/renders/xyz789.mp4',
+                    downloadUrl: 'https://cdn.lunonex.com/renders/xyz789.mp4',
                     cost: 1.50,
                     completedAt: '2025-11-10T14:30:00Z'
                 }
@@ -178,7 +178,7 @@ const APIAutomation = () => {
                 response: {
                     projectId: 'proj_imported_456',
                     status: 'imported',
-                    openUrl: 'https://fortheweebs.com/photo/proj_imported_456'
+                    openUrl: 'https://lunonex.com/photo/proj_imported_456'
                 }
             }
         },
@@ -487,7 +487,7 @@ const APIAutomation = () => {
                             <input
                                 type="url"
                                 className="webhook-input"
-                                placeholder="https://yourapp.com/webhooks/fortheweebs"
+                                placeholder="https://yourapp.com/webhooks/lunonex"
                                 value={webhookUrl}
                                 onChange={(e) => setWebhookUrl(e.target.value)}
                             />
@@ -548,7 +548,7 @@ const APIAutomation = () => {
 
                     <div className="webhook-security">
                         <h3>🔒 Webhook Security</h3>
-                        <p>We sign all webhook requests with HMAC-SHA256. Verify the signature to ensure requests are from ForTheWeebs:</p>
+                        <p>We sign all webhook requests with HMAC-SHA256. Verify the signature to ensure requests are from lunonex:</p>
                         <pre className="code-block">
                             {`const crypto = require('crypto');
 
@@ -613,7 +613,7 @@ function verifyWebhook(payload, signature, secret) {
                 <div className="quickstart-view">
                     <div className="quickstart-hero">
                         <h2>⚡ Quick Start Guide</h2>
-                        <p>Get started with the ForTheWeebs API in minutes</p>
+                        <p>Get started with the lunonex API in minutes</p>
                     </div>
 
                     <div className="code-examples">
@@ -621,11 +621,11 @@ function verifyWebhook(payload, signature, secret) {
                             <h3>🟢 Node.js / JavaScript</h3>
                             <pre className="code-block">
                                 {`// Install the SDK
-npm install @fortheweebs/api
+npm install @lunonex/api
 
 // Import and configure
-const ForTheWeebs = require('@fortheweebs/api');
-const ftw = new ForTheWeebs('${apiKey}');
+const lunonex = require('@lunonex/api');
+const ftw = new lunonex('${apiKey}');
 
 // Render a video
 const job = await ftw.video.render({
@@ -646,11 +646,11 @@ console.log('Status:', job.status);`}
                             <h3>🐍 Python</h3>
                             <pre className="code-block">
                                 {`# Install the SDK
-pip install fortheweebs
+pip install lunonex
 
 # Import and configure
-from fortheweebs import ForTheWeebs
-ftw = ForTheWeebs('${apiKey}')
+from lunonex import lunonex
+ftw = lunonex('${apiKey}')
 
 # Render a video
 job = ftw.video.render(
@@ -670,7 +670,7 @@ print(f'Status: {job.status}')`}
                         <div className="code-example-card">
                             <h3>🌐 cURL / HTTP</h3>
                             <pre className="code-block">
-                                {`curl -X POST https://api.fortheweebs.com/v1/video/render \\
+                                {`curl -X POST https://api.lunonex.com/v1/video/render \\
   -H "Authorization: Bearer ${apiKey}" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -689,11 +689,11 @@ print(f'Status: {job.status}')`}
                             <pre className="code-block">
                                 {`<?php
 // Install the SDK
-// composer require fortheweebs/api
+// composer require lunonex/api
 
 require 'vendor/autoload.php';
 
-use ForTheWeebs\\Client;
+use lunonex\\Client;
 
 $ftw = new Client('${apiKey}');
 

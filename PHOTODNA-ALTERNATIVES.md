@@ -117,7 +117,7 @@ async function moderateImage(imageBuffer) {
 
 ### **Step 1: Get Google Vision API Key** (Fastest)
 1. Go to: https://console.cloud.google.com
-2. Click "Create Project" → Name it "ForTheWeebs"
+2. Click "Create Project" → Name it "lunonex"
 3. Enable "Cloud Vision API"
 4. Click "Credentials" → "Create Credentials" → "API Key"
 5. Copy key to `.env` file

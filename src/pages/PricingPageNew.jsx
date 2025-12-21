@@ -207,7 +207,7 @@ export default function PricingPage() {
   return (
     <div className="pricing-page">
       <div className="pricing-header">
-        <h1>💰 ForTheWeebs Pricing</h1>
+        <h1>💰 lunonex Pricing</h1>
         <p>Choose the perfect tier for your creative journey</p>
         <div className="pricing-note">
           <strong>Owner & VIPs:</strong> Get everything FREE with admin powers! 

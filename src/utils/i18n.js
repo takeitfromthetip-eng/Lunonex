@@ -1,5 +1,5 @@
 /**
- * Internationalization (i18n) System for ForTheWeebs
+ * Internationalization (i18n) System for lunonex
  * Supports 50+ languages with automatic detection
  * 
  * Supported Languages:
@@ -118,7 +118,7 @@ export const LANGUAGES = {
 export const TRANSLATIONS = {
     en: {
         // Navigation & Common
-        welcome: 'Welcome to ForTheWeebs',
+        welcome: 'Welcome to lunonex',
         loading: 'Loading...',
         error: 'Error',
         success: 'Success',
@@ -180,7 +180,7 @@ export const TRANSLATIONS = {
         selectLanguage: 'Select Your Language',
     },
     es: {
-        welcome: 'Bienvenido a ForTheWeebs',
+        welcome: 'Bienvenido a lunonex',
         loading: 'Cargando...',
         error: 'Error',
         success: 'Éxito',
@@ -235,7 +235,7 @@ export const TRANSLATIONS = {
         selectLanguage: 'Selecciona Tu Idioma',
     },
     fr: {
-        welcome: 'Bienvenue sur ForTheWeebs',
+        welcome: 'Bienvenue sur lunonex',
         loading: 'Chargement...',
         error: 'Erreur',
         success: 'Succès',
@@ -290,7 +290,7 @@ export const TRANSLATIONS = {
         selectLanguage: 'Sélectionnez Votre Langue',
     },
     de: {
-        welcome: 'Willkommen bei ForTheWeebs',
+        welcome: 'Willkommen bei lunonex',
         loading: 'Lädt...',
         error: 'Fehler',
         success: 'Erfolg',
@@ -345,7 +345,7 @@ export const TRANSLATIONS = {
         selectLanguage: 'Wählen Sie Ihre Sprache',
     },
     ja: {
-        welcome: 'ForTheWeebsへようこそ',
+        welcome: 'lunonexへようこそ',
         loading: '読み込み中...',
         error: 'エラー',
         success: '成功',
@@ -400,7 +400,7 @@ export const TRANSLATIONS = {
         selectLanguage: '言語を選択',
     },
     'zh-CN': {
-        welcome: '欢迎来到ForTheWeebs',
+        welcome: '欢迎来到lunonex',
         loading: '加载中...',
         error: '错误',
         success: '成功',
@@ -455,7 +455,7 @@ export const TRANSLATIONS = {
         selectLanguage: '选择您的语言',
     },
     ko: {
-        welcome: 'ForTheWeebs에 오신 것을 환영합니다',
+        welcome: 'lunonex에 오신 것을 환영합니다',
         loading: '로딩 중...',
         error: '오류',
         success: '성공',
@@ -510,7 +510,7 @@ export const TRANSLATIONS = {
         selectLanguage: '언어 선택',
     },
     ar: {
-        welcome: 'مرحبا بكم في ForTheWeebs',
+        welcome: 'مرحبا بكم في lunonex',
         loading: 'جار التحميل...',
         error: 'خطأ',
         success: 'نجاح',
@@ -565,7 +565,7 @@ export const TRANSLATIONS = {
         selectLanguage: 'اختر لغتك',
     },
     ru: {
-        welcome: 'Добро пожаловать в ForTheWeebs',
+        welcome: 'Добро пожаловать в lunonex',
         loading: 'Загрузка...',
         error: 'Ошибка',
         success: 'Успех',
@@ -620,7 +620,7 @@ export const TRANSLATIONS = {
         selectLanguage: 'Выберите ваш язык',
     },
     hi: {
-        welcome: 'ForTheWeebs में आपका स्वागत है',
+        welcome: 'lunonex में आपका स्वागत है',
         loading: 'लोड हो रहा है...',
         error: 'त्रुटि',
         success: 'सफलता',
@@ -675,7 +675,7 @@ export const TRANSLATIONS = {
         selectLanguage: 'अपनी भाषा चुनें',
     },
     pt: {
-        welcome: 'Bem-vindo ao ForTheWeebs',
+        welcome: 'Bem-vindo ao lunonex',
         loading: 'Carregando...',
         error: 'Erro',
         success: 'Sucesso',

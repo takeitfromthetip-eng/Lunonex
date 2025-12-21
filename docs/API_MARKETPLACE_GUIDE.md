@@ -1,4 +1,4 @@
-# 💰 ForTheWeebs API Marketplace
+# 💰 lunonex API Marketplace
 
 ## The Money Printer - Complete Documentation
 
@@ -131,7 +131,7 @@ These features are **NEVER** available via API (platform-only):
 
 ### 1. Run Database Migration
 ```bash
-cd C:\Users\polot\Desktop\FORTHEWEEBS
+cd C:\Users\polot\Desktop\lunonex
 # Run the SQL in Supabase SQL Editor:
 # database/api-marketplace-schema.sql
 ```
@@ -152,7 +152,7 @@ STRIPE_WEBHOOK_SECRET=whsec_xxx  ✅ Already configured
 ### 4. Stripe Webhook Setup
 Add this webhook endpoint in Stripe Dashboard:
 ```
-https://fortheweebs.com/api/developer/billing/webhook
+https://lunonex.com/api/developer/billing/webhook
 ```
 
 Events to listen for:
@@ -167,7 +167,7 @@ Events to listen for:
 ## 📖 Developer Flow
 
 ### Step 1: Sign Up
-1. Dev visits `https://fortheweebs.com/developers`
+1. Dev visits `https://lunonex.com/developers`
 2. Creates account (uses existing auth system)
 3. Selects plan (Free/Hobby/Pro/Enterprise)
 4. Pays via Stripe (if paid plan)
@@ -179,7 +179,7 @@ Events to listen for:
 
 ### Step 3: Make API Calls
 ```javascript
-const response = await fetch('https://api.fortheweebs.com/v1/background-remove', {
+const response = await fetch('https://api.lunonex.com/v1/background-remove', {
   headers: { 'Authorization': 'Bearer ftw_live_abc123xyz789def456ghi' },
   body: formData
 });
@@ -308,7 +308,7 @@ curl http://localhost:3001/api/developer/dashboard \
 ## 📁 File Structure
 
 ```
-FORTHEWEEBS/
+lunonex/
 ├── database/
 │   └── api-marketplace-schema.sql      ← Run this in Supabase
 ├── api/

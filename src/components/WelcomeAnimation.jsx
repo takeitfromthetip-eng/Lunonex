@@ -32,7 +32,7 @@ export const WelcomeAnimation = () => {
           textShadow: '0 10px 40px rgba(0,0,0,0.5)',
           marginBottom: '20px',
         }}>
-          🎌 ForTheWeebs
+          🎌 lunonex
         </h1>
         <p style={{
           fontSize: '1.5rem',

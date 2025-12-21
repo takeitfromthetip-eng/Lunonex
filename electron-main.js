@@ -11,7 +11,7 @@ let settingsWindow;
 let serverProcess;
 
 // Production Vercel URL (primary)
-const VERCEL_URL = 'https://fortheweebs-2cpc9wi0r-jacobs-projects-eac77986.vercel.app';
+const VERCEL_URL = 'https://lunonex-2cpc9wi0r-jacobs-projects-eac77986.vercel.app';
 const LOCAL_PORT = 3001;
 
 // Security: Hashed PIN storage (SHA-256)
@@ -222,7 +222,7 @@ async function createMainWindow() {
   });
 
   // Primary: Load from Vercel production
-  console.log('🌐 Loading ForTheWeebs from production...');
+  console.log('🌐 Loading lunonex from production...');
   mainWindow.loadURL(VERCEL_URL);
 
   mainWindow.on('closed', () => {

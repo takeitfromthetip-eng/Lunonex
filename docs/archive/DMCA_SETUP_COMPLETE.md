@@ -200,12 +200,12 @@ Your system meets ALL safe harbor requirements:
 2. **Create Account** (free)
 
 3. **Submit Designation:**
-   - Service Provider Name: ForTheWeebs, Inc.
-   - Agent Name: [Your Name] or "ForTheWeebs DMCA Agent"
+   - Service Provider Name: lunonex, Inc.
+   - Agent Name: [Your Name] or "lunonex DMCA Agent"
    - Address: [Your Business Address]
    - Phone: [Your Phone Number]
-   - Email: dmca@fortheweebs.com
-   - Website: https://fortheweebs.com/legal/dmca-policy.html
+   - Email: dmca@lunonex.com
+   - Website: https://lunonex.com/legal/dmca-policy.html
 
 4. **Pay Filing Fee:** $6 (one-time)
 
@@ -220,7 +220,7 @@ Edit `public/legal/dmca-policy.html` and fill in:
 ```html
 <!-- Line ~50 -->
 <strong>Mailing Address:</strong><br>
-ForTheWeebs DMCA Agent<br>
+lunonex DMCA Agent<br>
 [YOUR ACTUAL ADDRESS]<br>
 [CITY, STATE ZIP]<br>
 United States
@@ -270,7 +270,7 @@ SMTP_HOST=smtp.sendgrid.net
 SMTP_PORT=587
 SMTP_USER=apikey
 SMTP_PASS=your_sendgrid_api_key
-DMCA_EMAIL=dmca@fortheweebs.com
+DMCA_EMAIL=dmca@lunonex.com
 ```
 
 ---
@@ -286,7 +286,7 @@ curl -X POST http://localhost:3000/api/dmca/submit \
     "complainant_name": "Test Rights Holder",
     "complainant_email": "test@example.com",
     "copyright_holder": "Test Rights Holder",
-    "infringing_urls": ["https://fortheweebs.com/posts/123"],
+    "infringing_urls": ["https://lunonex.com/posts/123"],
     "original_work_description": "Test copyrighted work",
     "signature": "Test Rights Holder"
   }'

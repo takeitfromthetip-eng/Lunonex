@@ -224,7 +224,7 @@ export default function VRARCreatorStudio({ userId }) {
             <h3>💰 Why This Beats Unity For Creators</h3>
             <div className="comparison-grid">
               <div className="comparison-item">
-                <h4>ForTheWeebs</h4>
+                <h4>lunonex</h4>
                 <ul>
                   <li>✅ No coding required</li>
                   <li>✅ Works in browser</li>

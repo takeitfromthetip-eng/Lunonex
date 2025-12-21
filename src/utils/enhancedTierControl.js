@@ -281,7 +281,7 @@ export function applyWatermark(content, userId, userTier) {
   return {
     ...content,
     watermark: {
-      text: 'Made with ForTheWeebs.com',
+      text: 'Made with lunonex.com',
       position: 'bottom-right',
       opacity: 0.7,
       size: '14px',

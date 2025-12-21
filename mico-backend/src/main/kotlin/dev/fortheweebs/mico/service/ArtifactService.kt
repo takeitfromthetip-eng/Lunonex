@@ -1,8 +1,8 @@
-package dev.fortheweebs.mico.service
+package dev.lunonex.mico.service
 
-import dev.fortheweebs.mico.entity.Artifact
-import dev.fortheweebs.mico.model.SlabRequest
-import dev.fortheweebs.mico.repository.ArtifactRepository
+import dev.lunonex.mico.entity.Artifact
+import dev.lunonex.mico.model.SlabRequest
+import dev.lunonex.mico.repository.ArtifactRepository
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional

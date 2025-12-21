@@ -1,6 +1,6 @@
-package dev.fortheweebs.mico.agent.llm
+package dev.lunonex.mico.agent.llm
 
-import dev.fortheweebs.mico.agent.model.CodebaseContext
+import dev.lunonex.mico.agent.model.CodebaseContext
 import org.springframework.stereotype.Component
 
 @Component
@@ -87,7 +87,7 @@ class PromptBuilder {
     }
 
     private fun StringBuilder.appendProjectTree(
-        node: dev.fortheweebs.mico.agent.model.FileNode,
+        node: dev.lunonex.mico.agent.model.FileNode,
         indent: Int,
         maxDepth: Int = 3,
         maxFiles: Int = 100

@@ -325,7 +325,7 @@ async function reportPiracyAttempt(userId, filename, violations) {
  */
 export function generateUserWatermark(userId, contentId) {
   return {
-    text: `ForTheWeebs-${userId.slice(0, 8)}-${contentId}`,
+    text: `lunonex-${userId.slice(0, 8)}-${contentId}`,
     position: 'bottom-right',
     opacity: 0.3,
     timestamp: new Date().toISOString()

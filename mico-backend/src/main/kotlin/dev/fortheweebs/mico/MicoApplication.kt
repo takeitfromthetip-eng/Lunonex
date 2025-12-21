@@ -1,4 +1,4 @@
-package dev.fortheweebs.mico
+package dev.lunonex.mico
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

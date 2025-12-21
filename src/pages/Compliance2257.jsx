@@ -27,14 +27,14 @@ const Compliance2257 = () => {
         <div className="custodian-info">
           <h2>Custodian of Records</h2>
           <div className="info-box">
-            <p><strong>Name:</strong> ForTheWeebs LLC</p>
+            <p><strong>Name:</strong> lunonex LLC</p>
             <p><strong>Attention:</strong> Custodian of Records - 2257 Compliance</p>
             <p><strong>Address:</strong> {process.env.CUSTODIAN_ADDRESS_LINE1 || '[Add CUSTODIAN_ADDRESS_LINE1 to .env]'}</p>
             {process.env.CUSTODIAN_ADDRESS_LINE2 && <p><strong>Suite/Unit:</strong> {process.env.CUSTODIAN_ADDRESS_LINE2}</p>}
             <p><strong>City, State, ZIP:</strong> {process.env.CUSTODIAN_CITY || '[CITY]'}, {process.env.CUSTODIAN_STATE || '[STATE]'} {process.env.CUSTODIAN_ZIP || '[ZIP]'}</p>
             <p><strong>Country:</strong> United States</p>
             <p><strong>Phone:</strong> {process.env.CUSTODIAN_PHONE || '[Add CUSTODIAN_PHONE to .env]'}</p>
-            <p><strong>Email:</strong> {process.env.CUSTODIAN_EMAIL || 'custodian@fortheweebs.com'}</p>
+            <p><strong>Email:</strong> {process.env.CUSTODIAN_EMAIL || 'custodian@lunonex.com'}</p>
           </div>
           <p className="note">
             <strong>⚙️ Setup Required:</strong> Add custodian information to your .env file.
@@ -45,15 +45,15 @@ const Compliance2257 = () => {
         <div className="compliance-section">
           <h2>Platform Structure: Primary vs. Secondary Producers</h2>
           
-          <h3>ForTheWeebs as Primary Producer</h3>
+          <h3>lunonex as Primary Producer</h3>
           <p>
-            For content produced directly by ForTheWeebs (platform-created materials, promotional content, 
-            tutorials), ForTheWeebs maintains all required records in accordance with 18 U.S.C. § 2257.
+            For content produced directly by lunonex (platform-created materials, promotional content, 
+            tutorials), lunonex maintains all required records in accordance with 18 U.S.C. § 2257.
           </p>
 
           <h3>Content Creators as Secondary Producers</h3>
           <p>
-            ForTheWeebs operates as a hosting and distribution platform for user-generated content. 
+            lunonex operates as a hosting and distribution platform for user-generated content. 
             Individual content creators ("Secondary Producers") who upload sexually explicit content to 
             this platform are independently responsible for:
           </p>
@@ -69,7 +69,7 @@ const Compliance2257 = () => {
         <div className="compliance-section">
           <h2>Creator Requirements</h2>
           <p>
-            All creators who post adult content on ForTheWeebs must comply with the following:
+            All creators who post adult content on lunonex must comply with the following:
           </p>
           
           <div className="requirements-list">
@@ -126,7 +126,7 @@ const Compliance2257 = () => {
 
         <div className="compliance-section">
           <h2>Prohibited Content</h2>
-          <p>The following content is strictly prohibited on ForTheWeebs:</p>
+          <p>The following content is strictly prohibited on lunonex:</p>
           <ul>
             <li><strong>Child Sexual Abuse Material (CSAM):</strong> Any content depicting minors in sexual situations</li>
             <li><strong>Non-Consensual Content:</strong> Revenge porn, hidden camera footage, or any content uploaded without performer consent</li>
@@ -139,7 +139,7 @@ const Compliance2257 = () => {
 
         <div className="compliance-section">
           <h2>Platform Responsibilities</h2>
-          <p>ForTheWeebs takes the following measures to ensure compliance:</p>
+          <p>lunonex takes the following measures to ensure compliance:</p>
           <ul>
             <li>Age verification for all users accessing adult content</li>
             <li>Age verification for all creators posting adult content</li>
@@ -159,8 +159,8 @@ const Compliance2257 = () => {
             underage performers, report it immediately:
           </p>
           <div className="info-box">
-            <p><strong>Email:</strong> compliance@fortheweebs.com</p>
-            <p><strong>CSAM Reports:</strong> reports@fortheweebs.com</p>
+            <p><strong>Email:</strong> compliance@lunonex.com</p>
+            <p><strong>CSAM Reports:</strong> reports@lunonex.com</p>
             <p><strong>NCMEC CyberTipline:</strong> https://report.cybertip.org/</p>
             <p><strong>FBI:</strong> tips.fbi.gov</p>
           </div>
@@ -184,7 +184,7 @@ const Compliance2257 = () => {
           </p>
           <div className="info-box">
             <p><strong>Custodian of Records</strong></p>
-            <p>Email: custodian@fortheweebs.com</p>
+            <p>Email: custodian@lunonex.com</p>
             <p>Phone: [YOUR PHONE NUMBER]</p>
           </div>
         </div>

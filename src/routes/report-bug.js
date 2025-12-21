@@ -16,7 +16,7 @@ router.post('/report-bug', async (req, res) => {
 
     // Create GitHub issue via API
     const response = await fetch(
-      `https://api.github.com/repos/polotuspossumus-coder/Fortheweebs/issues`,
+      `https://api.github.com/repos/polotuspossumus-coder/lunonex/issues`,
       {
         method: 'POST',
         headers: {

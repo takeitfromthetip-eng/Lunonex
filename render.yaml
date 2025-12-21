@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: fortheweebs-api
+    name: lunonex-api
     env: node
     plan: free
     buildCommand: npm install

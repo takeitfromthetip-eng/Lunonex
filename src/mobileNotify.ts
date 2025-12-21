@@ -19,12 +19,12 @@ export function initiateRecoveryRitual(): {
   };
 }
 /**
- * Deploy Fortheweebs to a school instance with the given config.
+ * Deploy lunonex to a school instance with the given config.
  * @param schoolId - The school identifier
  * @param config - The deployment configuration
  * @returns Deployment metadata
  */
-export function deployFortheweebsToSchool(schoolId: string, config: Record<string, unknown>): {
+export function deploylunonexToSchool(schoolId: string, config: Record<string, unknown>): {
   schoolId: string;
   config: Record<string, unknown>;
   deployedAt: number;
@@ -63,7 +63,7 @@ export function pushSlabToGitHub(slabName: string, slabContent: string): {
   status: string;
   timestamp: number;
 } {
-  const repo = 'fortheweebs-legacy-artifacts';
+  const repo = 'lunonex-legacy-artifacts';
   const path = `slabs/${slabName}.js`;
 
   console.log(`Pushing ${slabName} to ${repo}/${path}...`);

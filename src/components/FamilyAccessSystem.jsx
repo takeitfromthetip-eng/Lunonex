@@ -392,7 +392,7 @@ export function FamilyAccessRedemption({ accessCode }) {
         </div>
         <h1 style={{ fontSize: '48px', marginBottom: '10px' }}>Welcome!</h1>
         <p style={{ fontSize: '18px', opacity: 0.9 }}>
-          You've been invited to ForTheWeebs
+          You've been invited to lunonex
         </p>
       </div>
 

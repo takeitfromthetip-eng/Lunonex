@@ -1,4 +1,4 @@
-package dev.fortheweebs.mico.model
+package dev.lunonex.mico.model
 
 data class SlabResponse(
     val status: String,

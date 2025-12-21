@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 /**
  * MYTHIC LAYER - Sovereignty & Ritual Features
- * Makes ForTheWeebs feel like a sacred creative space, not just a tool
+ * Makes lunonex feel like a sacred creative space, not just a tool
  * Philosophy: Every creative act becomes a legacy artifact
  */
 export default function MythicLayer({ userId, creatorName }) {

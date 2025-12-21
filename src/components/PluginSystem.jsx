@@ -120,7 +120,7 @@ const PluginSystem = ({ currentTool = 'video' }) => {
             <div className="plugin-header">
                 <div className="header-left">
                     <h2>🧩 Plugin Marketplace</h2>
-                    <p>Extend ForTheWeebs with community plugins • 70% revenue to developers</p>
+                    <p>Extend lunonex with community plugins • 70% revenue to developers</p>
                 </div>
                 <div className="header-stats">
                     <div className="stat">
@@ -199,7 +199,7 @@ const PluginSystem = ({ currentTool = 'video' }) => {
                         <div className="empty-state">
                             <div className="empty-icon">📦</div>
                             <h3>No plugins installed yet</h3>
-                            <p>Browse the marketplace to extend ForTheWeebs with powerful plugins</p>
+                            <p>Browse the marketplace to extend lunonex with powerful plugins</p>
                             <button
                                 className="btn-primary"
                                 onClick={() => setActiveTab('marketplace')}
@@ -306,14 +306,14 @@ const PluginSystem = ({ currentTool = 'video' }) => {
                             <div className="develop-icon">📚</div>
                             <h3>Plugin SDK</h3>
                             <p>Complete TypeScript SDK with hooks, UI components, and utilities</p>
-                            <code>npm install @fortheweebs/plugin-sdk</code>
+                            <code>npm install @lunonex/plugin-sdk</code>
                         </div>
 
                         <div className="develop-card">
                             <div className="develop-icon">🎨</div>
                             <h3>UI Components</h3>
-                            <p>Pre-built React components matching ForTheWeebs design system</p>
-                            <code>import {'{Button, Panel}'} from '@fortheweebs/ui'</code>
+                            <p>Pre-built React components matching lunonex design system</p>
+                            <code>import {'{Button, Panel}'} from '@lunonex/ui'</code>
                         </div>
 
                         <div className="develop-card">
@@ -334,7 +334,7 @@ const PluginSystem = ({ currentTool = 'video' }) => {
                             <div className="develop-icon">📊</div>
                             <h3>Analytics Dashboard</h3>
                             <p>Track downloads, reviews, revenue, and user engagement</p>
-                            <code>dashboard.fortheweebs.com/plugins</code>
+                            <code>dashboard.lunonex.com/plugins</code>
                         </div>
 
                         <div className="develop-card">
@@ -431,7 +431,7 @@ const PluginSystem = ({ currentTool = 'video' }) => {
 
                         <div className="details-revenue">
                             <h3>Developer Revenue</h3>
-                            <p className="revenue-info">{pluginDetails.revenue} - ForTheWeebs takes 30% for hosting, payments, and platform maintenance</p>
+                            <p className="revenue-info">{pluginDetails.revenue} - lunonex takes 30% for hosting, payments, and platform maintenance</p>
                         </div>
 
                         <div className="details-actions">

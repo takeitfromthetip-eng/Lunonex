@@ -79,7 +79,7 @@ export const LegalDocumentsList = () => {
           &nbsp;&nbsp;- Monitoring your child's experience with our platform<br/>
           &nbsp;&nbsp;- Restricting access to age-inappropriate content<br/>
           • We provide tools - YOU control what your child accesses<br/>
-          • ForTheWeebs is NOT liable for unsupervised minor access
+          • lunonex is NOT liable for unsupervised minor access
         </div>
         <div style={{ fontSize: "0.9rem", marginTop: 15, color: "#ffeb3b", fontWeight: 600 }}>
           USE THE 🔒 PARENTAL CONTROLS BUTTON AT ALL TIMES

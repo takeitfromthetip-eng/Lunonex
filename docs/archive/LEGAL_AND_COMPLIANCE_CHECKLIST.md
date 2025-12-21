@@ -1,4 +1,4 @@
-# ⚖️ ForTheWeebs Legal & Compliance Status
+# ⚖️ lunonex Legal & Compliance Status
 
 ## 📋 WHAT YOU CURRENTLY HAVE
 
@@ -130,7 +130,7 @@ Required in many jurisdictions:
 ## 💼 BUSINESS/OPERATIONAL LEGAL NEEDS
 
 ### 11. **Business Entity**
-- [ ] Is ForTheWeebs an LLC, Corp, or sole proprietorship?
+- [ ] Is lunonex an LLC, Corp, or sole proprietorship?
 - [ ] Do you have an EIN (Employer ID Number)?
 - [ ] Business bank account separate from personal?
 
@@ -150,7 +150,7 @@ Consider getting:
 - [ ] Professional liability (E&O)
 
 ### 14. **Trademark**
-- [ ] File for "ForTheWeebs" trademark
+- [ ] File for "lunonex" trademark
 - [ ] Prevents others from using your name
 - [ ] Costs ~$350 per class
 
@@ -162,13 +162,13 @@ Consider getting:
 
 ### 15. **Required Contact Information**
 Make sure you have public pages for:
-- [ ] Contact email (support@fortheweebs.com)
+- [ ] Contact email (support@lunonex.com)
 - [ ] DMCA agent email
 - [ ] Privacy concerns contact
 - [ ] Physical mailing address (required in many jurisdictions)
 
 ### 16. **About/Company Page**
-- [ ] Who runs ForTheWeebs (you can use business name)
+- [ ] Who runs lunonex (you can use business name)
 - [ ] Company location
 - [ ] Mission/values (you have this on landing!)
 

@@ -1,8 +1,8 @@
 @echo off
-REM Install ForTheWeebs as Windows Service (runs permanently)
+REM Install lunonex as Windows Service (runs permanently)
 
 echo ===================================
-echo ForTheWeebs Service Installer
+echo lunonex Service Installer
 echo ===================================
 echo.
 

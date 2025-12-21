@@ -1,6 +1,6 @@
 # 💰 Stripe Payout to Chime - Setup Guide
 
-**Goal:** Get money from ForTheWeebs subscriptions into your Chime account automatically.
+**Goal:** Get money from lunonex subscriptions into your Chime account automatically.
 
 ---
 
@@ -158,10 +158,10 @@ Before large payouts, Stripe requires:
    - Phone number
 
 2. **Business Info (if applicable):**
-   - Business name: "ForTheWeebs" or your legal name
+   - Business name: "lunonex" or your legal name
    - Business type: Sole Proprietor / LLC / Corporation
    - Business address
-   - Business website: https://fortheweebs.com
+   - Business website: https://lunonex.com
    - Product description: "Creator tools platform"
 
 3. **Bank Verification:**
@@ -476,7 +476,7 @@ Once Chime is connected:
 **Steps:**
 1. Add Chime to Stripe (10 min)
 2. Verify micro-deposits (2-3 days)
-3. Launch ForTheWeebs
+3. Launch lunonex
 4. Start getting subscribers
 5. Watch money roll in! 💰
 

@@ -260,7 +260,7 @@ export const NFTMinter = ({ userId }) => {
 
             {/* Educational Banner */}
             <div className="nft-education-banner">
-                <h3>💡 Why ForTheWeebs NFTs Are Better</h3>
+                <h3>💡 Why lunonex NFTs Are Better</h3>
                 <p>
                     <strong>No gas fees:</strong> Free to mint (OpenSea charges $50-200 in gas fees)<br />
                     <strong>Fair split:</strong> Creators keep 65%, platform takes 35%<br />
@@ -271,7 +271,7 @@ export const NFTMinter = ({ userId }) => {
                 </p>
                 <p className="fee-comparison">
                     <strong>OpenSea:</strong> ~2.5% platform fee + $50-200 gas fees per mint = ~$50-200 upfront cost<br />
-                    <strong>ForTheWeebs:</strong> FREE to mint, creators get 65% of sales + 10% resale royalties (platform gets 35%)
+                    <strong>lunonex:</strong> FREE to mint, creators get 65% of sales + 10% resale royalties (platform gets 35%)
                 </p>
             </div>
         </div>

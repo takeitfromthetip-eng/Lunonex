@@ -1,4 +1,4 @@
-# 🚀 Deployment Checklist - ForTheWeebs Self-Healing System
+# 🚀 Deployment Checklist - lunonex Self-Healing System
 
 ## ✅ Phase 1: Local Setup (COMPLETE)
 - [x] Created 30+ self-healing infrastructure files
@@ -46,7 +46,7 @@ WITH CHECK (bucket_id = 'ftw-artifacts');
 ## ⏳ Phase 3: Install Dependencies (2 minutes)
 
 ```powershell
-cd C:\Users\polot\Desktop\FORTHEWEEBS
+cd C:\Users\polot\Desktop\lunonex
 npm install @google-cloud/vision socket.io
 ```
 
@@ -182,7 +182,7 @@ ANTHROPIC_API_KEY=sk-ant-your-anthropic-key
 
 # URLs
 RAILWAY_BACKEND_URL=https://your-app.up.railway.app
-VITE_FRONTEND_URL=https://fortheweebs.vercel.app
+VITE_FRONTEND_URL=https://lunonex.vercel.app
 VITE_API_URL=https://your-app.up.railway.app
 ```
 
@@ -225,7 +225,7 @@ VITE_API_URL=https://your-app.up.railway.app
 VITE_SUPABASE_URL=https://iqipomerawkvtojbtvom.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
 VITE_STRIPE_PUBLISHABLE_KEY=pk_live_your-key
-VITE_FRONTEND_URL=https://fortheweebs.vercel.app
+VITE_FRONTEND_URL=https://lunonex.vercel.app
 ```
 
 ### Deploy Frontend

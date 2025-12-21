@@ -1,4 +1,4 @@
-# 🚀 Quick Start - ForTheWeebs
+# 🚀 Quick Start - lunonex
 
 ## For Polotus (You)
 
@@ -12,7 +12,7 @@ Password: Scorpio#96
 
 ```bash
 # Open terminal in project folder
-cd C:\Users\polot\OneDrive\Desktop\fortheweebs
+cd C:\Users\polot\OneDrive\Desktop\lunonex
 
 # Start both frontend and backend
 npm run dev:all

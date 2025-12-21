@@ -1,9 +1,9 @@
-# 🚀 FORTHEWEEBS - Safe Server Startup Script
+# 🚀 lunonex - Safe Server Startup Script
 # This script starts the Vite dev server in a dedicated window
 # to prevent terminal interference that was causing crashes.
 
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Cyan
-Write-Host "       🎌 ForTheWeebs - Server Startup" -ForegroundColor Cyan  
+Write-Host "       🎌 lunonex - Server Startup" -ForegroundColor Cyan  
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Cyan
 Write-Host ""
 
@@ -20,7 +20,7 @@ Write-Host ""
 Start-Process powershell -ArgumentList @(
     "-NoExit",
     "-Command", 
-    "cd '$PWD'; Clear-Host; Write-Host '🎌 ForTheWeebs Development Server' -ForegroundColor Cyan; Write-Host '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━' -ForegroundColor DarkGray; Write-Host ''; npm run dev"
+    "cd '$PWD'; Clear-Host; Write-Host '🎌 lunonex Development Server' -ForegroundColor Cyan; Write-Host '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━' -ForegroundColor DarkGray; Write-Host ''; npm run dev"
 ) -WindowStyle Normal
 
 # Wait for server to start

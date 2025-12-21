@@ -1,16 +1,16 @@
 <service>
-	<id>fortheweebsserver.exe</id>
-	<name>ForTheWeebsServer</name>
-	<description>ForTheWeebs API Server - Runs permanently in background</description>
+	<id>lunonexserver.exe</id>
+	<name>lunonexServer</name>
+	<description>lunonex API Server - Runs permanently in background</description>
 	<executable>C:\Program Files\nodejs\node.exe</executable>
 	<argument>--harmony</argument>
 	<argument>--max_old_space_size=4096</argument>
-	<argument>C:\Users\polot\Desktop\FORTHEWEEBS\node_modules\node-windows\lib\wrapper.js</argument>
+	<argument>C:\Users\polot\Desktop\lunonex\node_modules\node-windows\lib\wrapper.js</argument>
 	<argument>--file</argument>
-	<argument>C:\Users\polot\Desktop\FORTHEWEEBS\server.js</argument>
+	<argument>C:\Users\polot\Desktop\lunonex\server.js</argument>
 	<argument>--scriptoptions=</argument>
 	<argument>--log</argument>
-	<argument>ForTheWeebsServer wrapper</argument>
+	<argument>lunonexServer wrapper</argument>
 	<argument>--grow</argument>
 	<argument>0.25</argument>
 	<argument>--wait</argument>
@@ -30,5 +30,5 @@
 		<user>LocalSystem</user>
 		<password></password>
 	</serviceaccount>
-	<workingdirectory>C:\Users\polot\Desktop\FORTHEWEEBS</workingdirectory>
+	<workingdirectory>C:\Users\polot\Desktop\lunonex</workingdirectory>
 </service>

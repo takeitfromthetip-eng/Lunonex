@@ -3,7 +3,7 @@
  * Allows photo tools, filters, and other features to work without internet
  */
 
-const CACHE_NAME = 'fortheweebs-v2';
+const CACHE_NAME = 'lunonex-v2';
 const OFFLINE_ASSETS = [
   '/',
   '/index.html',

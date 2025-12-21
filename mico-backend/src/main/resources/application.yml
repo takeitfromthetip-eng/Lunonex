@@ -40,5 +40,5 @@ mico:
 
 logging:
   level:
-    dev.fortheweebs.mico: DEBUG
+    dev.lunonex.mico: DEBUG
     org.hibernate.SQL: DEBUG

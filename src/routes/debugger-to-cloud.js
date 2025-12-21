@@ -22,7 +22,7 @@ const router = express.Router();
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const REPO_OWNER = process.env.GITHUB_REPO_OWNER || 'your-username';
-const REPO_NAME = process.env.GITHUB_REPO_NAME || 'fortheweebs';
+const REPO_NAME = process.env.GITHUB_REPO_NAME || 'lunonex';
 
 router.post('/', async (req, res) => {
   try {
@@ -126,7 +126,7 @@ async function sendToClaudeCloud(bugReport) {
     // Ask Claude to analyze bug and generate fix
     const prompt = `You are an autonomous bug-fixing AI assistant.
 
-A user reported this bug on ForTheWeebs platform:
+A user reported this bug on lunonex platform:
 
 **Description:** ${bugReport.description}
 **URL:** ${bugReport.url}

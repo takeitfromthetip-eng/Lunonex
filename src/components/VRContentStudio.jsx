@@ -9,7 +9,7 @@ import React, { useState, useRef, useEffect } from 'react';
  * - Unity Pro: $200/month + complex setup
  * - Unreal Engine: Free but steep learning curve
  * - Meta Quest dev kit: $500 hardware lock-in
- * - ForTheWeebs: FREE browser-based creation, instant WebXR export
+ * - lunonex: FREE browser-based creation, instant WebXR export
  */
 export function VRContentStudio({ userId }) {
   const [scene, setScene] = useState({
@@ -490,7 +490,7 @@ export function VRContentStudio({ userId }) {
         </ul>
         <p style={{ marginTop: '15px', fontSize: '14px', opacity: 0.7 }}>
           <strong>Competitive Advantage:</strong> Unity Pro costs $200/month + requires installation + complex learning curve.
-          ForTheWeebs VR Studio is FREE, browser-based, instant WebXR deploy, no hardware lock-in.
+          lunonex VR Studio is FREE, browser-based, instant WebXR deploy, no hardware lock-in.
         </p>
       </div>
     </div>

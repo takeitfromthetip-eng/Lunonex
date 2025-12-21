@@ -1,7 +1,7 @@
-# ForTheWeebs - One-Command Dev Runner
+# lunonex - One-Command Dev Runner
 # Windows PowerShell Script
 
-Write-Host "🚀 Starting ForTheWeebs Development Environment" -ForegroundColor Cyan
+Write-Host "🚀 Starting lunonex Development Environment" -ForegroundColor Cyan
 Write-Host ""
 
 # Set environment

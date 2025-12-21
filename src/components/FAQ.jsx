@@ -140,7 +140,7 @@ export default function FAQ() {
         ❓ Frequently Asked Questions
       </h1>
       <p style={{ textAlign: 'center', opacity: 0.8, marginBottom: '3rem' }}>
-        Everything you need to know about ForTheWeebs
+        Everything you need to know about lunonex
       </p>
 
       {/* FAQ Sections */}
@@ -194,7 +194,7 @@ export default function FAQ() {
           <div style={{ marginTop: '2rem' }}>
             <h3>Terms of Service</h3>
             <p style={{ opacity: 0.8, lineHeight: 1.8 }}>
-              You accepted the ForTheWeebs Terms of Service, which govern your use of the platform,
+              You accepted the lunonex Terms of Service, which govern your use of the platform,
               including content creation, monetization, and community guidelines.
             </p>
           </div>

@@ -34,7 +34,7 @@
 
 ### Test Results
 ```
-🚀 ForTheWeebs - Social Database Integration Test
+🚀 lunonex - Social Database Integration Test
 ============================================================
 ✅ Supabase connected successfully
 ✅ Table 'profiles' exists

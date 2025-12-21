@@ -24,7 +24,7 @@ async function test(name, fn) {
 }
 
 async function main() {
-    console.log('🚀 COMPLETE PLATFORM TEST - ForTheWeebs\n');
+    console.log('🚀 COMPLETE PLATFORM TEST - lunonex\n');
     console.log('Testing ALL critical endpoints...\n');
 
     // Test 1: Server Health

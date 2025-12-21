@@ -179,7 +179,7 @@ class LegalComplianceChecker {
 
     // Check designated agent info
     const custodianEmail = process.env.CUSTODIAN_EMAIL;
-    if (!custodianEmail || custodianEmail === 'custodian@fortheweebs.com') {
+    if (!custodianEmail || custodianEmail === 'custodian@lunonex.com') {
       this.warnings.push({
         severity: 'MEDIUM',
         law: 'DMCA',
@@ -218,7 +218,7 @@ class LegalComplianceChecker {
 
     // Check custodian info
     const custodianName = process.env.CUSTODIAN_NAME;
-    if (!custodianName || custodianName === 'ForTheWeebs LLC') {
+    if (!custodianName || custodianName === 'lunonex LLC') {
       this.warnings.push({
         severity: 'HIGH',
         law: '18 U.S.C. § 2257',

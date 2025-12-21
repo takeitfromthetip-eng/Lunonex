@@ -265,7 +265,7 @@ export default function PaymentModule({ onPaymentComplete }) {
           marginBottom: '30px',
           opacity: 0.9
         }}>
-          Unlock your creative potential with ForTheWeebs
+          Unlock your creative potential with lunonex
         </p>
 
         {/* Language and Currency Selectors */}

@@ -152,7 +152,7 @@ export default function Login({ onLogin }) {
       <div className="login-box">
         <div className="login-header">
           <div className="login-icon">🚀</div>
-          <h2>ForTheWeebs Login</h2>
+          <h2>lunonex Login</h2>
           <p>{show2FA ? 'Enter your verification code' : 'Welcome back! Sign in to your account'}</p>
         </div>
 

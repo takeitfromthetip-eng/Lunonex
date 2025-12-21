@@ -107,7 +107,7 @@ node test-frontend-backend.js
 
 **Expected Output:**
 ```
-🧪 ForTheWeebs Frontend-Backend Integration Test
+🧪 lunonex Frontend-Backend Integration Test
 
 1️⃣  Testing Health Check...
    ✅ Health check passed

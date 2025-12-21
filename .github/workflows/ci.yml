@@ -88,4 +88,4 @@ jobs:
       run: |
         npm install -g @lhci/cli
         echo "Lighthouse check would run here"
-        echo "URL: https://fortheweebs.netlify.app"
+        echo "URL: https://lunonex.netlify.app"

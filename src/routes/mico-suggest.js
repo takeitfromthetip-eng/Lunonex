@@ -75,7 +75,7 @@ async function evaluateSuggestion(suggestion, tier) {
       };
     }
 
-    const prompt = `You are Mico, the AI assistant for ForTheWeebs platform.
+    const prompt = `You are Mico, the AI assistant for lunonex platform.
 A user (Tier: ${tier}) submitted this feature suggestion:
 
 "${suggestion}"

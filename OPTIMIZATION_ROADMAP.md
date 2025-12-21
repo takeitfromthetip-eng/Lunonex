@@ -1,4 +1,4 @@
-# ForTheWeebs Optimization & Enhancement Roadmap
+# lunonex Optimization & Enhancement Roadmap
 
 ## 🎯 **Executive Summary**
 
@@ -431,7 +431,7 @@ const specs = swaggerJsdoc({
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'ForTheWeebs API',
+      title: 'lunonex API',
       version: '2.1.0',
     },
   },
@@ -673,7 +673,7 @@ You've built a **comprehensive creator platform** with:
 
 ### **Industry Comparison:**
 
-| Feature | ForTheWeebs | Patreon | Ko-fi | Gumroad |
+| Feature | lunonex | Patreon | Ko-fi | Gumroad |
 |---------|-------------|---------|-------|---------|
 | Marketplace | ✅ | ❌ | ❌ | ✅ |
 | Education Platform | ✅ | ❌ | ❌ | ✅ |

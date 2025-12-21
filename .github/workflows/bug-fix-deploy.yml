@@ -40,8 +40,8 @@ jobs:
           url=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})
           echo "url=$url" >> $GITHUB_OUTPUT
 
-      - name: Alias to fortheweebs.vercel.app
-        run: vercel alias ${{ steps.deploy.outputs.url }} fortheweebs.vercel.app --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Alias to lunonex.vercel.app
+        run: vercel alias ${{ steps.deploy.outputs.url }} lunonex.vercel.app --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Comment on Issue
         if: github.event_name == 'issues'
@@ -52,7 +52,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `✅ **Bug fix deployed!**\n\n🚀 Live at: https://fortheweebs.vercel.app\n🔍 Deployment: ${{ steps.deploy.outputs.url }}\n\nPlease verify the fix and reopen if needed.`
+              body: `✅ **Bug fix deployed!**\n\n🚀 Live at: https://lunonex.vercel.app\n🔍 Deployment: ${{ steps.deploy.outputs.url }}\n\nPlease verify the fix and reopen if needed.`
             })
 
   # Deploy backend to Railway on bug fix
@@ -67,7 +67,7 @@ jobs:
         uses: bervProject/railway-deploy@main
         with:
           railway_token: ${{ secrets.RAILWAY_TOKEN }}
-          service: fortheweebs-production
+          service: lunonex-production
 
       - name: Comment on Issue
         if: github.event_name == 'issues'
@@ -78,7 +78,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `✅ **Backend bug fix deployed to Railway!**\n\n🚀 API: https://fortheweebs-production.up.railway.app\n\nBackend changes are live.`
+              body: `✅ **Backend bug fix deployed to Railway!**\n\n🚀 API: https://lunonex-production.up.railway.app\n\nBackend changes are live.`
             })
 
   # Verify deployment health
@@ -88,7 +88,7 @@ jobs:
     steps:
       - name: Health Check
         run: |
-          response=$(curl -s -o /dev/null -w "%{http_code}" https://fortheweebs.vercel.app)
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://lunonex.vercel.app)
           if [ $response -eq 200 ]; then
             echo "✅ Deployment healthy (HTTP $response)"
           else

@@ -1,4 +1,4 @@
-# ForTheWeebs - Sovereign Creator Platform
+# lunonex - Sovereign Creator Platform
 
 A creator-first platform built with React, Vite, Supabase, and Stripe.
 

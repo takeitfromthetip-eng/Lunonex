@@ -1,4 +1,4 @@
-# ForTheWeebs Quality Standards
+# lunonex Quality Standards
 *Every feature must be state-of-the-art and destroy the competition*
 
 ## Mission
@@ -157,7 +157,7 @@
 ✅ **Unlockable Content** - Hidden perks for buyers
 
 ### Quality Comparison
-| Feature | OpenSea | ForTheWeebs |
+| Feature | OpenSea | lunonex |
 |---------|---------|-------------|
 | Minting Cost | Gas fees (~$50-200) | FREE |
 | Platform Fee (to seller) | 2.5% | 35% (to you/platform) |
@@ -217,7 +217,7 @@
 ## Competitor Comparison
 
 ### Photo Editing
-| Feature | Photoshop | Canva | ForTheWeebs |
+| Feature | Photoshop | Canva | lunonex |
 |---------|-----------|-------|-------------|
 | Price | $20.99/mo | $12.99/mo | FREE (paid tiers optional) |
 | Layers | ✅ | ❌ | ✅ |
@@ -228,7 +228,7 @@
 | NFT Minting | ❌ | ❌ | ✅ |
 
 ### Video Editing
-| Feature | Premiere Pro | Clipchamp | ForTheWeebs |
+| Feature | Premiere Pro | Clipchamp | lunonex |
 |---------|-------------|-----------|-------------|
 | Price | $20.99/mo | $11.99/mo | FREE |
 | 4K Export | ✅ | ✅ | ✅ |
@@ -239,7 +239,7 @@
 | AI Auto-Edit | ❌ | Limited | ⏳ (coming) |
 
 ### NFT Marketplace
-| Feature | OpenSea | Rarible | ForTheWeebs |
+| Feature | OpenSea | Rarible | lunonex |
 |---------|---------|---------|-------------|
 | Minting Cost | $50-200 (gas) | $10-50 | FREE |
 | Platform Fee (to platform owner) | 2.5% | 2.5% | **35% (to you)** |

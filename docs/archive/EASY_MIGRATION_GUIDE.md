@@ -79,7 +79,7 @@ Look for the **green glowing box** in the bottom-right corner - that's Mico's co
 
 Migration files are here:
 ```
-C:\Users\polot\OneDrive\Desktop\fortheweebs\supabase\migrations\
+C:\Users\polot\OneDrive\Desktop\lunonex\supabase\migrations\
   ├─ 006_governance_notary.sql      ← Copy this first
   └─ 007_policy_overrides.sql       ← Copy this second
 ```

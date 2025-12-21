@@ -15,7 +15,7 @@ import { supabase } from '../lib/supabase.js';
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const REPO_OWNER = process.env.GITHUB_REPO_OWNER || 'your-username';
-const REPO_NAME = process.env.GITHUB_REPO_NAME || 'fortheweebs';
+const REPO_NAME = process.env.GITHUB_REPO_NAME || 'lunonex';
 
 export async function POST(request) {
   try {
@@ -135,7 +135,7 @@ async function analyzeAndFix(bugReport) {
  * Mico analyzes the bug and determines if it can auto-fix
  */
 async function analyzeBugWithMico(bugReport) {
-  const prompt = `You are Mico, the autonomous self-healing AI for ForTheWeebs platform.
+  const prompt = `You are Mico, the autonomous self-healing AI for lunonex platform.
 
 A user reported this bug:
 - Description: ${bugReport.description}

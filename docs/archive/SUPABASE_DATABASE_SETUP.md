@@ -45,7 +45,7 @@ Copy and paste this entire script:
 
 ```sql
 -- ============================================================================
--- FORTHEWEEBS SOCIAL MEDIA DATABASE SCHEMA
+-- lunonex SOCIAL MEDIA DATABASE SCHEMA
 -- ============================================================================
 
 -- Enable UUID extension

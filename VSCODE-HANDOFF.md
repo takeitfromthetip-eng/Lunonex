@@ -1,4 +1,4 @@
-# 🤝 VSCode Handoff Document - ForTheWeebs Platform
+# 🤝 VSCode Handoff Document - lunonex Platform
 
 **Date**: December 8, 2025 (Updated after completion session)
 **Status**: 97% Production Ready
@@ -30,7 +30,7 @@
 
 ### Core Structure
 ```
-FORTHEWEEBS/
+lunonex/
 ├── src/                          # Frontend React app
 │   ├── components/               # 239 React components
 │   ├── utils/                    # Auth, tier access, security
@@ -280,7 +280,7 @@ if (twoFAEnabled) {
 ## 🚀 Deployment
 
 ### Railway Backend
-**URL**: https://fortheweebs-production.up.railway.app
+**URL**: https://lunonex-production.up.railway.app
 
 **Deployment Process**:
 ```bash
@@ -302,7 +302,7 @@ railway status
 - Add `NPM_VERSION=9.6.7`
 
 ### Electron Desktop App
-**Location**: `electron-dist/ForTheWeebs-Setup-2.1.0.exe`
+**Location**: `electron-dist/lunonex-Setup-2.1.0.exe`
 
 **Current Build**: 206MB, version 2.1.0, built Dec 8 2025
 
@@ -314,14 +314,14 @@ npm run build
 # 2. Package Electron app
 npm run electron-build
 
-# Output: electron-dist/ForTheWeebs-Setup-2.1.0.exe
+# Output: electron-dist/lunonex-Setup-2.1.0.exe
 ```
 
 **Electron Config**: `electron-builder.json`
 ```json
 {
-  "appId": "com.fortheweebs.app",
-  "productName": "ForTheWeebs",
+  "appId": "com.lunonex.app",
+  "productName": "lunonex",
   "win": {
     "target": ["nsis"],
     "icon": "build/icon.ico"
@@ -846,7 +846,7 @@ polotuspossumus
 4. **Test API endpoints**:
    ```bash
    # Test backend is running
-   curl https://fortheweebs-production.up.railway.app/api/tier-check
+   curl https://lunonex-production.up.railway.app/api/tier-check
    ```
 
 ### Documentation Files

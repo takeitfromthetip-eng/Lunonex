@@ -134,7 +134,7 @@ PORT=3000
 
 # Security Keys
 SOVEREIGN_KEY=mico_sovereign_authority_2025_absolute
-JWT_SECRET=fortheweebs_jwt_secret_2025_ultra_secure_key
+JWT_SECRET=lunonex_jwt_secret_2025_ultra_secure_key
 
 # Supabase (for database)
 SUPABASE_URL=https://iqipomerawkvtojbtvom.supabase.co

@@ -10,14 +10,14 @@ const ParentalControls = () => {
       <div className="controls-container">
         <div className="page-header">
           <h1>Parental Controls & Safety</h1>
-          <p>Your child's safety is our priority. ForTheWeebs provides comprehensive tools to help you manage and monitor your child's experience.</p>
+          <p>Your child's safety is our priority. lunonex provides comprehensive tools to help you manage and monitor your child's experience.</p>
         </div>
 
         {/* Overview */}
         <section className="controls-section">
           <h2>Overview</h2>
           <p>
-            ForTheWeebs is built with families in mind. While our platform hosts a diverse range of content including adult material, 
+            lunonex is built with families in mind. While our platform hosts a diverse range of content including adult material, 
             we provide robust parental controls to ensure your child only accesses age-appropriate content. You maintain complete 
             control over what your child can see and do on our platform.
           </p>
@@ -144,7 +144,7 @@ const ParentalControls = () => {
         <section className="controls-section">
           <h2>Educational Content</h2>
           <p>
-            ForTheWeebs hosts extensive educational content across various subjects. Use parental controls to curate a learning environment 
+            lunonex hosts extensive educational content across various subjects. Use parental controls to curate a learning environment 
             tailored to your child's interests and educational needs. Filter by educational categories like:
           </p>
           <ul className="category-list">
@@ -179,7 +179,7 @@ const ParentalControls = () => {
             reports within 24 hours. For urgent safety concerns, contact our dedicated parent support line.
           </p>
           <div className="support-info">
-            <p><strong>Parent Support:</strong> parents@fortheweebs.com</p>
+            <p><strong>Parent Support:</strong> parents@lunonex.com</p>
             <p><strong>Report Content:</strong> Available on every video and in every chat</p>
             <p><strong>Emergency Contact:</strong> Contact local authorities for immediate threats</p>
           </div>

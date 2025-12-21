@@ -1,4 +1,4 @@
-# GitHub Copilot Instructions for ForTheWeebs
+# GitHub Copilot Instructions for lunonex
 
 **Last Updated**: November 25, 2025
 **Platform Status**: Production-ready, awaiting PhotoDNA approval for full launch

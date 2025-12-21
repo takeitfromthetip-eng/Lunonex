@@ -1,4 +1,4 @@
--- ForTheWeebs New Features Database Schema (Standalone Version)
+-- lunonex New Features Database Schema (Standalone Version)
 -- Run this in Supabase SQL editor
 -- This version creates tables WITHOUT foreign key dependencies on profiles table
 

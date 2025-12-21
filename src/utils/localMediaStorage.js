@@ -10,7 +10,7 @@
  * - Export/import capabilities
  */
 
-const DB_NAME = 'ForTheWeebsMedia';
+const DB_NAME = 'lunonexMedia';
 const DB_VERSION = 1;
 const STORE_NAME = 'mediaFiles';
 const METADATA_STORE = 'mediaMetadata';

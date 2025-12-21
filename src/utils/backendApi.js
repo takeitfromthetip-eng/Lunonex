@@ -1,4 +1,4 @@
-// Backend API Client for ForTheWeebs
+// Backend API Client for lunonex
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 // Helper to get auth token

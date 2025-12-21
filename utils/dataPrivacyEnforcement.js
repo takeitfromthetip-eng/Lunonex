@@ -81,7 +81,7 @@ function isAllowedDestination(destination) {
     'supabase.co',          // Our database (we own it)
     'anthropic.com',        // AI processing (anonymous queries only)
     'localhost',            // Local development
-    'fortheweebs.com',      // Our own domain
+    'lunonex.com',      // Our own domain
     'vercel.app'            // Our hosting
   ];
 
@@ -122,7 +122,7 @@ function dataPrivacyMiddleware(req, res, next) {
     return res.status(403).json({
       success: false,
       error: 'Data privacy violation blocked',
-      message: 'ForTheWeebs does not sell user data. This operation is not allowed.'
+      message: 'lunonex does not sell user data. This operation is not allowed.'
     });
   }
 

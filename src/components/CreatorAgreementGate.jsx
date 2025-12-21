@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-const CREATOR_AGREEMENT_TEXT = `# Fortheweebs Creator Agreement
+const CREATOR_AGREEMENT_TEXT = `# lunonex Creator Agreement
 
 _Last updated: October 2025_
 
 ## 1. Introduction
-This Creator Agreement (“Agreement”) governs your relationship with Fortheweebs (“the Platform”) as a creator. By publishing content or engaging with users on Fortheweebs, you agree to the terms outlined below.
+This Creator Agreement (“Agreement”) governs your relationship with lunonex (“the Platform”) as a creator. By publishing content or engaging with users on lunonex, you agree to the terms outlined below.
 ---
 ## 2. Independent Entity Status
-Creators operate as fully independent entities. Fortheweebs does not employ, contract, supervise, or endorse creators. You acknowledge that:
-- You are not an agent, employee, or representative of Fortheweebs
+Creators operate as fully independent entities. lunonex does not employ, contract, supervise, or endorse creators. You acknowledge that:
+- You are not an agent, employee, or representative of lunonex
 - You are solely responsible for your content, conduct, and interactions
-- Fortheweebs provides infrastructure only and does not direct your creative output
+- lunonex provides infrastructure only and does not direct your creative output
 ---
 ## 3. Content Responsibility
 You are entirely and exclusively responsible for the content you publish. This includes but is not limited to:
@@ -19,42 +19,42 @@ You are entirely and exclusively responsible for the content you publish. This i
 - Copyright and intellectual property rights
 - Ethical standards and community impact
 - Accuracy, appropriateness, and consequences of your content
-Fortheweebs does not monitor, edit, or moderate creator content. You agree that Fortheweebs holds no obligation to review or remove any material.
+lunonex does not monitor, edit, or moderate creator content. You agree that lunonex holds no obligation to review or remove any material.
 ---
 ## 4. Liability Waiver
-Fortheweebs shall not be liable for:
+lunonex shall not be liable for:
 - Any creator content or conduct
 - Any disputes, claims, or damages arising from your activity
 - Any legal action, takedown requests, or third-party complaints
 - Any data breaches, technical failures, or future incidents related to your use of the Platform
-You agree that Fortheweebs is not responsible for resolving any issues related to your content, conduct, or consequences thereof.
+You agree that lunonex is not responsible for resolving any issues related to your content, conduct, or consequences thereof.
 ---
 ## 5. Indemnification
-You agree to indemnify, defend, and hold harmless Fortheweebs, its founders, affiliates, and agents from any and all claims, liabilities, damages, losses, or expenses (including legal fees) arising from:
+You agree to indemnify, defend, and hold harmless lunonex, its founders, affiliates, and agents from any and all claims, liabilities, damages, losses, or expenses (including legal fees) arising from:
 - Your content
 - Your conduct on the Platform
 - Any breach of this Agreement
 ---
 ## 6. No Complaints Policy
-Fortheweebs does not accept complaints, reports, or snitching of any kind. You agree that:
+lunonex does not accept complaints, reports, or snitching of any kind. You agree that:
 - Users are responsible for managing their own experience
 - Blocking is the recommended method of conflict resolution
-- Fortheweebs will not intervene in interpersonal disputes or content disagreements
+- lunonex will not intervene in interpersonal disputes or content disagreements
 ---
 ## 7. No Obligations
-Fortheweebs holds no obligations to creators, users, or third parties. Use of the Platform is entirely at your own risk and discretion.
+lunonex holds no obligations to creators, users, or third parties. Use of the Platform is entirely at your own risk and discretion.
 ---
 ## 8. Suggestions Welcome
-While complaints are not accepted, Fortheweebs welcomes constructive suggestions for platform improvement. Feedback may be submitted via designated channels and will be reviewed at Fortheweebs’ discretion.
+While complaints are not accepted, lunonex welcomes constructive suggestions for platform improvement. Feedback may be submitted via designated channels and will be reviewed at lunonex’ discretion.
 ---
 ## 9. Acceptance
-By publishing content or using creator tools on Fortheweebs, you acknowledge that you have read, understood, and agreed to this Creator Agreement in full.
+By publishing content or using creator tools on lunonex, you acknowledge that you have read, understood, and agreed to this Creator Agreement in full.
 ---
 ## 10. Governing Law
-This Agreement shall be governed by and construed in accordance with the laws of the jurisdiction in which Fortheweebs is registered, without regard to conflict of law principles.
+This Agreement shall be governed by and construed in accordance with the laws of the jurisdiction in which lunonex is registered, without regard to conflict of law principles.
 ---
 ## 11. Contact
-For questions or suggestions regarding this Agreement, contact: legal@fortheweebs.com
+For questions or suggestions regarding this Agreement, contact: legal@lunonex.com
 `;
 
 export const CreatorAgreementGate = ({ userId, ipAddress, version, onAccepted }) => {

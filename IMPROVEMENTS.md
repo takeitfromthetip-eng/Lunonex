@@ -179,7 +179,7 @@ SafeStorage.setItem('key', 'value'); // Auto-clears old data if quota exceeded
 ## 💾 Backups Created
 
 1. Encrypted `.env` → `D:/.env.encrypted`
-2. Full project backup → `D:/FORTHEWEEBS-backup-[timestamp].tar.gz`
+2. Full project backup → `D:/lunonex-backup-[timestamp].tar.gz`
 
 **To decrypt .env:**
 ```bash

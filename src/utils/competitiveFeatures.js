@@ -1,6 +1,6 @@
 /**
  * COMPETITIVE FEATURES MATRIX
- * Ensures ForTheWeebs matches or exceeds ALL competitor capabilities
+ * Ensures lunonex matches or exceeds ALL competitor capabilities
  * Tracks feature parity with major platforms
  */
 
@@ -53,98 +53,98 @@ export const FEATURE_MATRIX = {
     [COMPETITORS.CANVA.name]: true,
     [COMPETITORS.ADOBE_EXPRESS.name]: true,
     [COMPETITORS.FIGMA.name]: true,
-    ForTheWeebs: 'BETTER', // Anime-focused templates
+    lunonex: 'BETTER', // Anime-focused templates
   },
 
   TEMPLATES: {
     [COMPETITORS.CANVA.name]: '250,000+',
     [COMPETITORS.ADOBE_EXPRESS.name]: '100,000+',
-    ForTheWeebs: '50,000+ (anime-focused)', // Quality over quantity
+    lunonex: '50,000+ (anime-focused)', // Quality over quantity
   },
 
   PHOTO_EDITING: {
     [COMPETITORS.CANVA.name]: true,
     [COMPETITORS.ADOBE_EXPRESS.name]: true,
     [COMPETITORS.CAPCUT.name]: true,
-    ForTheWeebs: 'BETTER', // AI anime filters
+    lunonex: 'BETTER', // AI anime filters
   },
 
   // Video Tools
   VIDEO_EDITING: {
     [COMPETITORS.CAPCUT.name]: true,
     [COMPETITORS.ADOBE_EXPRESS.name]: true,
-    ForTheWeebs: 'BETTER', // Real-time CGI
+    lunonex: 'BETTER', // Real-time CGI
   },
 
   CGI_EFFECTS: {
     [COMPETITORS.CAPCUT.name]: 'Basic',
     [COMPETITORS.OBS_STUDIO.name]: 'Via plugins',
-    ForTheWeebs: 'ADVANCED', // Custom WebGL effects
+    lunonex: 'ADVANCED', // Custom WebGL effects
   },
 
   REAL_TIME_EFFECTS: {
     [COMPETITORS.OBS_STUDIO.name]: 'Via plugins',
     [COMPETITORS.VTUBER_STUDIO.name]: true,
-    ForTheWeebs: 'BETTER', // Browser-based, no install
+    lunonex: 'BETTER', // Browser-based, no install
   },
 
   // VTuber Features
   VTUBER_AVATARS: {
     [COMPETITORS.VTUBER_STUDIO.name]: true,
-    ForTheWeebs: 'BETTER', // AI-generated + custom
+    lunonex: 'BETTER', // AI-generated + custom
   },
 
   FACE_TRACKING: {
     [COMPETITORS.VTUBER_STUDIO.name]: true,
-    ForTheWeebs: 'BETTER', // WebGL-based, no external software
+    lunonex: 'BETTER', // WebGL-based, no external software
   },
 
   // AI Features
   AI_IMAGE_GENERATION: {
     [COMPETITORS.CANVA.name]: 'Basic (DALL-E)',
     [COMPETITORS.ADOBE_EXPRESS.name]: 'Basic (Firefly)',
-    ForTheWeebs: 'ADVANCED', // Multiple models + anime-specific
+    lunonex: 'ADVANCED', // Multiple models + anime-specific
   },
 
   AI_VIDEO_GENERATION: {
     [COMPETITORS.CAPCUT.name]: false,
-    ForTheWeebs: true, // Claude/OpenAI integration
+    lunonex: true, // Claude/OpenAI integration
   },
 
   AI_VOICE_CLONING: {
     [COMPETITORS.CAPCUT.name]: false,
-    ForTheWeebs: true, // ElevenLabs integration
+    lunonex: true, // ElevenLabs integration
   },
 
   AI_SCRIPT_WRITING: {
     [COMPETITORS.CAPCUT.name]: false,
-    ForTheWeebs: true, // GPT-4 powered
+    lunonex: true, // GPT-4 powered
   },
 
   // Collaboration
   REAL_TIME_COLLAB: {
     [COMPETITORS.FIGMA.name]: true,
     [COMPETITORS.CANVA.name]: true,
-    ForTheWeebs: true, // Supabase Realtime
+    lunonex: true, // Supabase Realtime
   },
 
   TEAM_WORKSPACES: {
     [COMPETITORS.FIGMA.name]: true,
     [COMPETITORS.CANVA.name]: true,
-    ForTheWeebs: true,
+    lunonex: true,
   },
 
   // Export & Quality
   EXPORT_4K: {
     [COMPETITORS.CAPCUT.name]: true,
     [COMPETITORS.ADOBE_EXPRESS.name]: true,
-    ForTheWeebs: 'BETTER', // Up to 8K for top tiers
+    lunonex: 'BETTER', // Up to 8K for top tiers
   },
 
   WATERMARK_FREE: {
     [COMPETITORS.CANVA.name]: 'Pro only',
     [COMPETITORS.CAPCUT.name]: 'Pro only',
-    ForTheWeebs: 'Standard+ tiers',
+    lunonex: 'Standard+ tiers',
   },
 
   // Platform Features
@@ -152,88 +152,88 @@ export const FEATURE_MATRIX = {
     [COMPETITORS.CANVA.name]: true,
     [COMPETITORS.CAPCUT.name]: true,
     [COMPETITORS.ADOBE_EXPRESS.name]: true,
-    ForTheWeebs: true, // Capacitor-based
+    lunonex: true, // Capacitor-based
   },
 
   WEB_APP: {
     [COMPETITORS.CANVA.name]: true,
     [COMPETITORS.FIGMA.name]: true,
-    ForTheWeebs: true,
+    lunonex: true,
   },
 
   DESKTOP_APP: {
     [COMPETITORS.OBS_STUDIO.name]: true,
     [COMPETITORS.FIGMA.name]: true,
-    ForTheWeebs: 'PLANNED', // Electron wrapper
+    lunonex: 'PLANNED', // Electron wrapper
   },
 
   // Storage & Assets
   CLOUD_STORAGE: {
     [COMPETITORS.CANVA.name]: '1TB Pro',
     [COMPETITORS.ADOBE_EXPRESS.name]: '100GB',
-    ForTheWeebs: '500GB top tier',
+    lunonex: '500GB top tier',
   },
 
   STOCK_ASSETS: {
     [COMPETITORS.CANVA.name]: 'Millions',
     [COMPETITORS.ADOBE_EXPRESS.name]: 'Millions',
-    ForTheWeebs: 'Anime-specific library',
+    lunonex: 'Anime-specific library',
   },
 
   // Monetization
   MARKETPLACE: {
     [COMPETITORS.CANVA.name]: false,
     [COMPETITORS.FIGMA.name]: 'Plugins only',
-    ForTheWeebs: true, // User-created assets
+    lunonex: true, // User-created assets
   },
 
   TIPS_DONATIONS: {
     [COMPETITORS.CANVA.name]: false,
-    ForTheWeebs: true, // Stripe integration
+    lunonex: true, // Stripe integration
   },
 
   COMMISSIONS: {
     [COMPETITORS.CANVA.name]: false,
-    ForTheWeebs: true, // Built-in commission system
+    lunonex: true, // Built-in commission system
   },
 
   // Advanced Features
   API_ACCESS: {
     [COMPETITORS.CANVA.name]: 'Enterprise only',
     [COMPETITORS.FIGMA.name]: true,
-    ForTheWeebs: '$500+ tiers',
+    lunonex: '$500+ tiers',
   },
 
   CUSTOM_BRANDING: {
     [COMPETITORS.CANVA.name]: 'Business only',
-    ForTheWeebs: 'All paid tiers',
+    lunonex: 'All paid tiers',
   },
 
   WHITE_LABEL: {
     [COMPETITORS.CANVA.name]: false,
-    ForTheWeebs: 'Enterprise tier',
+    lunonex: 'Enterprise tier',
   },
 
   // Anime-Specific (UNIQUE TO US)
   ANIME_FILTERS: {
     [COMPETITORS.CANVA.name]: false,
     [COMPETITORS.CAPCUT.name]: 'Basic',
-    ForTheWeebs: 'ADVANCED',
+    lunonex: 'ADVANCED',
   },
 
   MANGA_CREATOR: {
     [COMPETITORS.CANVA.name]: false,
-    ForTheWeebs: true,
+    lunonex: true,
   },
 
   ANIME_VOICE_PACKS: {
     [COMPETITORS.CAPCUT.name]: false,
-    ForTheWeebs: true,
+    lunonex: true,
   },
 
   JAPANESE_TEXT_SUPPORT: {
     [COMPETITORS.CANVA.name]: 'Basic',
-    ForTheWeebs: 'ADVANCED', // Vertical text, furigana, etc.
+    lunonex: 'ADVANCED', // Vertical text, furigana, etc.
   },
 };
 
@@ -354,7 +354,7 @@ export function comparePricing() {
       },
     ],
 
-    ForTheWeebs: [
+    lunonex: [
       {
         tier: 'Free',
         price: 0,
@@ -411,7 +411,7 @@ export function getMarketPosition() {
   return {
     tagline: 'The All-in-One Platform for Anime Content Creators',
 
-    elevator_pitch: `ForTheWeebs combines the design power of Canva, the video editing of CapCut,
+    elevator_pitch: `lunonex combines the design power of Canva, the video editing of CapCut,
 the VTuber capabilities of VTube Studio, and advanced CGI effects - all in one platform
 designed specifically for anime creators. No desktop software needed, works in your browser.`,
 

@@ -1,4 +1,4 @@
-# FORTHEWEEBS - LAUNCH READY VERIFICATION
+# lunonex - LAUNCH READY VERIFICATION
 **Date:** December 12, 2025
 **Version:** 2.1.0
 **Last Commit:** cd5c335
@@ -51,7 +51,7 @@
 7. ✅ All bugfixer modules committed
 
 ### 💾 Backups (SD Card - D:/)
-- **Full Project:** FORTHEWEEBS_COMPLETE_20251212_201922.tar.gz (473MB)
+- **Full Project:** lunonex_COMPLETE_20251212_201922.tar.gz (473MB)
 - **Encrypted .env:** env_encrypted_20251212.bin (4.8KB)
 - **Instructions:** BACKUP_README.txt
 - **Restore Command:**

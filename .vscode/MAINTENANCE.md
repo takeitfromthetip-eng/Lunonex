@@ -1,4 +1,4 @@
-# ForTheWeebs - Maintenance Guide for VSCode
+# lunonex - Maintenance Guide for VSCode
 ## How to Actually Fix and Maintain This Codebase
 
 ---
@@ -58,7 +58,7 @@ public/bug-dashboard.html  - Management dashboard
 <script src="bug-widget.js"></script>
 
 # 2. Open dashboard
-file:///C:/Users/polot/Desktop/FORTHEWEEBS/public/bug-dashboard.html
+file:///C:/Users/polot/Desktop/lunonex/public/bug-dashboard.html
 
 # 3. Toggle "Auto-Pilot Mode" ON
 
@@ -167,7 +167,7 @@ railway up
 
 ### Render (Easiest)
 1. Go to render.com
-2. Connect GitHub: `polotuspossumus-coder/Fortheweebs`
+2. Connect GitHub: `polotuspossumus-coder/lunonex`
 3. It auto-detects `render.yaml`
 4. Click "Create Web Service"
 
@@ -269,7 +269,7 @@ Employees needed: 0
 ## 📁 FILE STRUCTURE
 
 ```
-FORTHEWEEBS/
+lunonex/
 ├── server.js                 # Main backend (START HERE)
 ├── start-server.bat         # Clean server startup
 ├── .env                     # Config (API keys, ports)

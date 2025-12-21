@@ -2,7 +2,7 @@
 
 export const generateApprovalEmail = (application, customMessage = '') => {
   return {
-    subject: '🎉 Welcome to ForTheWeebs - Application Approved!',
+    subject: '🎉 Welcome to lunonex - Application Approved!',
     html: `
       <!DOCTYPE html>
       <html>
@@ -61,7 +61,7 @@ export const generateApprovalEmail = (application, customMessage = '') => {
         <div class="content">
           <p>Dear ${application.fullName},</p>
           
-          <p>We're thrilled to inform you that your application to join ForTheWeebs has been <strong>approved</strong>! Welcome to our creator community.</p>
+          <p>We're thrilled to inform you that your application to join lunonex has been <strong>approved</strong>! Welcome to our creator community.</p>
           
           ${customMessage ? `
             <div class="info-box">
@@ -79,7 +79,7 @@ export const generateApprovalEmail = (application, customMessage = '') => {
           </ol>
           
           <div style="text-align: center;">
-            <a href="https://fortheweebs.com/signup?approved=true&email=${encodeURIComponent(application.email)}" class="cta-button">
+            <a href="https://lunonex.com/signup?approved=true&email=${encodeURIComponent(application.email)}" class="cta-button">
               Get Started Now
             </a>
           </div>
@@ -101,11 +101,11 @@ export const generateApprovalEmail = (application, customMessage = '') => {
           <p>We can't wait to see what you create!</p>
           
           <p>Best regards,<br>
-          <strong>The ForTheWeebs Team</strong></p>
+          <strong>The lunonex Team</strong></p>
         </div>
         <div class="footer">
-          <p>&copy; 2025 ForTheWeebs. Built for creators, by creators.</p>
-          <p>If you have any questions, reply to this email or contact us at support@fortheweebs.com</p>
+          <p>&copy; 2025 lunonex. Built for creators, by creators.</p>
+          <p>If you have any questions, reply to this email or contact us at support@lunonex.com</p>
         </div>
       </body>
       </html>
@@ -115,12 +115,12 @@ export const generateApprovalEmail = (application, customMessage = '') => {
       
       Dear ${application.fullName},
       
-      We're thrilled to inform you that your application to join ForTheWeebs has been approved! Welcome to our creator community.
+      We're thrilled to inform you that your application to join lunonex has been approved! Welcome to our creator community.
       
       ${customMessage ? `Personal Message from the Team:\n${customMessage}\n\n` : ''}
       
       Next Steps:
-      1. Create Your Account: Visit https://fortheweebs.com/signup?approved=true&email=${encodeURIComponent(application.email)}
+      1. Create Your Account: Visit https://lunonex.com/signup?approved=true&email=${encodeURIComponent(application.email)}
       2. Complete Your Profile: Set up your creator page and customize it
       3. Upload Content: Start sharing with your community
       4. Set Up Monetization: Connect your payment details
@@ -138,16 +138,16 @@ export const generateApprovalEmail = (application, customMessage = '') => {
       We can't wait to see what you create!
       
       Best regards,
-      The ForTheWeebs Team
+      The lunonex Team
       
-      © 2025 ForTheWeebs. Built for creators, by creators.
+      © 2025 lunonex. Built for creators, by creators.
     `
   };
 };
 
 export const generateRejectionEmail = (application, customMessage = '') => {
   return {
-    subject: 'ForTheWeebs Creator Application Update',
+    subject: 'lunonex Creator Application Update',
     html: `
       <!DOCTYPE html>
       <html>
@@ -191,12 +191,12 @@ export const generateRejectionEmail = (application, customMessage = '') => {
       </head>
       <body>
         <div class="header">
-          <h1>ForTheWeebs Application Update</h1>
+          <h1>lunonex Application Update</h1>
         </div>
         <div class="content">
           <p>Dear ${application.fullName},</p>
           
-          <p>Thank you for your interest in joining ForTheWeebs as a creator. We appreciate the time you took to submit your application and share your creative vision with us.</p>
+          <p>Thank you for your interest in joining lunonex as a creator. We appreciate the time you took to submit your application and share your creative vision with us.</p>
           
           <p>After careful consideration, we regret to inform you that we are unable to approve your application at this time.</p>
           
@@ -223,21 +223,21 @@ export const generateRejectionEmail = (application, customMessage = '') => {
           <p>We wish you the best in your creative journey!</p>
           
           <p>Best regards,<br>
-          <strong>The ForTheWeebs Team</strong></p>
+          <strong>The lunonex Team</strong></p>
         </div>
         <div class="footer">
-          <p>&copy; 2025 ForTheWeebs. Built for creators, by creators.</p>
+          <p>&copy; 2025 lunonex. Built for creators, by creators.</p>
           <p>If you have questions about this decision, you can reply to this email.</p>
         </div>
       </body>
       </html>
     `,
     text: `
-      ForTheWeebs Application Update
+      lunonex Application Update
       
       Dear ${application.fullName},
       
-      Thank you for your interest in joining ForTheWeebs as a creator. We appreciate the time you took to submit your application.
+      Thank you for your interest in joining lunonex as a creator. We appreciate the time you took to submit your application.
       
       After careful consideration, we regret to inform you that we are unable to approve your application at this time.
       
@@ -255,16 +255,16 @@ export const generateRejectionEmail = (application, customMessage = '') => {
       We wish you the best in your creative journey!
       
       Best regards,
-      The ForTheWeebs Team
+      The lunonex Team
       
-      © 2025 ForTheWeebs. Built for creators, by creators.
+      © 2025 lunonex. Built for creators, by creators.
     `
   };
 };
 
 export const generateApplicationSubmittedEmail = (application) => {
   return {
-    subject: 'We Received Your ForTheWeebs Creator Application',
+    subject: 'We Received Your lunonex Creator Application',
     html: `
       <!DOCTYPE html>
       <html>
@@ -313,7 +313,7 @@ export const generateApplicationSubmittedEmail = (application) => {
         <div class="content">
           <p>Dear ${application.fullName},</p>
           
-          <p>Thank you for applying to become a creator on ForTheWeebs! We've successfully received your application.</p>
+          <p>Thank you for applying to become a creator on lunonex! We've successfully received your application.</p>
           
           <div class="info-box">
             <h3>Application Summary:</h3>
@@ -335,13 +335,13 @@ export const generateApplicationSubmittedEmail = (application) => {
           
           <p>If you need to update any information in your application, please reply to this email.</p>
           
-          <p>Thank you for your interest in ForTheWeebs!</p>
+          <p>Thank you for your interest in lunonex!</p>
           
           <p>Best regards,<br>
-          <strong>The ForTheWeebs Team</strong></p>
+          <strong>The lunonex Team</strong></p>
         </div>
         <div class="footer">
-          <p>&copy; 2025 ForTheWeebs. Built for creators, by creators.</p>
+          <p>&copy; 2025 lunonex. Built for creators, by creators.</p>
         </div>
       </body>
       </html>
@@ -351,7 +351,7 @@ export const generateApplicationSubmittedEmail = (application) => {
       
       Dear ${application.fullName},
       
-      Thank you for applying to become a creator on ForTheWeebs! We've successfully received your application.
+      Thank you for applying to become a creator on lunonex! We've successfully received your application.
       
       Application Summary:
       - Creator Name: ${application.stageName}
@@ -365,10 +365,10 @@ export const generateApplicationSubmittedEmail = (application) => {
       
       If you need to update any information, please reply to this email.
       
-      Thank you for your interest in ForTheWeebs!
+      Thank you for your interest in lunonex!
       
       Best regards,
-      The ForTheWeebs Team
+      The lunonex Team
     `
   };
 };

@@ -10,7 +10,7 @@
 
 ### What We Accomplished Together
 
-The owner and I spent months building ForTheWeebs from scratch. Here's what we built:
+The owner and I spent months building lunonex from scratch. Here's what we built:
 
 1. **Production-ready platform** with 27 active API routes
 2. **Advanced file processing** - handles 12,000+ files without crashing

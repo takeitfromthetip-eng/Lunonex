@@ -23,7 +23,7 @@ function createBackup() {
   console.log('\n💾 Creating automatic backup...');
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
-  const backupDir = 'D:/FORTHEWEEBS-BACKUPS';
+  const backupDir = 'D:/lunonex-BACKUPS';
 
   // Create backup directory if it doesn't exist
   if (!fs.existsSync(backupDir)) {

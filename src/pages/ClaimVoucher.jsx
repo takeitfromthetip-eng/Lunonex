@@ -83,7 +83,7 @@ const ClaimVoucher = () => {
             <div className="icon">🎉</div>
             <h2>All Vouchers Have Been Claimed!</h2>
             <p>The first 100 launch vouchers have been claimed by our early supporters.</p>
-            <p>Don't worry—join ForTheWeebs today and be part of the revolution!</p>
+            <p>Don't worry—join lunonex today and be part of the revolution!</p>
             <button className="btn-primary" onClick={() => navigate('/signup')}>
               Sign Up Now
             </button>
@@ -140,7 +140,7 @@ const ClaimVoucher = () => {
               <h3>Next Steps:</h3>
               <ol>
                 <li>Check your email (we've sent a confirmation with your code)</li>
-                <li>Create your ForTheWeebs account</li>
+                <li>Create your lunonex account</li>
                 <li>Choose your subscription tier</li>
                 <li>Enter your voucher code at checkout</li>
                 <li>Start creating or consuming content!</li>
@@ -172,7 +172,7 @@ const ClaimVoucher = () => {
       <div className="voucher-container">
         <div className="voucher-header">
           <h1>Claim Your Launch Voucher</h1>
-          <p>First 100 Visitors to fortheweebs.com Get Exclusive Discounts!</p>
+          <p>First 100 Visitors to lunonex.com Get Exclusive Discounts!</p>
           {remainingVouchers !== null && (
             <div className="remaining-count">
               <span className="count">{remainingVouchers}</span> vouchers remaining
@@ -182,7 +182,7 @@ const ClaimVoucher = () => {
 
         <div className="voucher-intro">
           <p>
-            Welcome to the launch of ForTheWeebs! As one of our first 100 visitors to the new .com domain,
+            Welcome to the launch of lunonex! As one of our first 100 visitors to the new .com domain,
             you're eligible for an exclusive discount voucher. Choose the option that works best for you:
           </p>
         </div>

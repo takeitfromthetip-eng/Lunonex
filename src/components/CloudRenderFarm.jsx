@@ -69,7 +69,7 @@ const CloudRenderFarm = () => {
             cost: 0.30,
             quality: 'high',
             format: 'wav',
-            downloadUrl: 'https://cdn.fortheweebs.com/renders/podcast_ep47.wav',
+            downloadUrl: 'https://cdn.lunonex.com/renders/podcast_ep47.wav',
             size: '124 MB'
         },
         {
@@ -84,7 +84,7 @@ const CloudRenderFarm = () => {
             cost: 0.80,
             quality: 'ultra',
             format: 'mp4',
-            downloadUrl: 'https://cdn.fortheweebs.com/renders/logo_anim_4k.mp4',
+            downloadUrl: 'https://cdn.lunonex.com/renders/logo_anim_4k.mp4',
             size: '89 MB'
         },
         {
@@ -99,7 +99,7 @@ const CloudRenderFarm = () => {
             cost: 1.50,
             quality: 'ultra',
             format: 'jpg',
-            downloadUrl: 'https://cdn.fortheweebs.com/renders/wedding_batch.zip',
+            downloadUrl: 'https://cdn.lunonex.com/renders/wedding_batch.zip',
             size: '2.3 GB'
         }
     ];

@@ -1,8 +1,8 @@
-package dev.fortheweebs.mico.agent
+package dev.lunonex.mico.agent
 
-import dev.fortheweebs.mico.agent.llm.LLMClient
-import dev.fortheweebs.mico.agent.llm.PromptBuilder
-import dev.fortheweebs.mico.agent.model.CodebaseContext
+import dev.lunonex.mico.agent.llm.LLMClient
+import dev.lunonex.mico.agent.llm.PromptBuilder
+import dev.lunonex.mico.agent.model.CodebaseContext
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 

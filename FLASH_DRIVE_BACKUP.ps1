@@ -1,4 +1,4 @@
-# Flash Drive Backup Script for ForTheWeebs
+# Flash Drive Backup Script for lunonex
 # Detects flash drive and creates clean backup
 
 Write-Host "🔍 Scanning for flash drives..." -ForegroundColor Cyan
@@ -17,7 +17,7 @@ $flashDrives | ForEach-Object { Write-Host "   $($_.DeviceID) - $($_.VolumeName)
 $flashDrive = $flashDrives[0].DeviceID
 
 # Backup destination
-$backupPath = "$flashDrive\FORTHEWEEBS_BACKUP_$(Get-Date -Format 'yyyy-MM-dd_HH-mm')"
+$backupPath = "$flashDrive\lunonex_BACKUP_$(Get-Date -Format 'yyyy-MM-dd_HH-mm')"
 
 Write-Host "`n📦 Creating backup at: $backupPath" -ForegroundColor Yellow
 
@@ -52,7 +52,7 @@ foreach ($item in $itemsToCopy) {
 
 # Create backup info file
 $backupInfo = @"
-FORTHEWEEBS BACKUP
+lunonex BACKUP
 ==================
 Date: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
 Status: ✅ LAUNCH READY

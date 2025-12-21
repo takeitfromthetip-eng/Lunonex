@@ -184,7 +184,7 @@ export const ADULT_PAYMENT_SETUP = {
       'Business name (LLC recommended but not required)',
       'Government-issued ID',
       'Bank account for payouts',
-      'Website URL (fortheweebs.com)',
+      'Website URL (lunonex.com)',
       'Business description: "Digital marketplace for anime/manga content"'
     ],
     timeline: '1-3 business days for approval'
@@ -212,7 +212,7 @@ CCBILL_SALT=your_salt_here
     title: 'Configure Webhooks',
     instructions: [
       'In CCBill portal: Account Info → Advanced → Webhooks',
-      'Set webhook URL: https://fortheweebs.com/api/webhooks/ccbill',
+      'Set webhook URL: https://lunonex.com/api/webhooks/ccbill',
       'Enable: Approval Post, Chargeback Post, Refund Post',
       'Save webhook secret to .env'
     ]

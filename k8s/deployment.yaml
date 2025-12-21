@@ -1,10 +1,10 @@
-# ForTheWeebs Kubernetes Deployment - Self-Healing Configuration
+# lunonex Kubernetes Deployment - Self-Healing Configuration
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fortheweebs-api
+  name: lunonex-api
   labels:
-    app: fortheweebs
+    app: lunonex
     component: api
 spec:
   replicas: 3
@@ -15,12 +15,12 @@ spec:
       maxUnavailable: 0  # Zero downtime
   selector:
     matchLabels:
-      app: fortheweebs
+      app: lunonex
       component: api
   template:
     metadata:
       labels:
-        app: fortheweebs
+        app: lunonex
         component: api
     spec:
       # Graceful termination
@@ -28,7 +28,7 @@ spec:
       
       containers:
       - name: api
-        image: fortheweebs/api:latest
+        image: lunonex/api:latest
         ports:
         - containerPort: 3001
           name: http
@@ -81,17 +81,17 @@ spec:
         - name: SUPABASE_URL
           valueFrom:
             secretKeyRef:
-              name: fortheweebs-secrets
+              name: lunonex-secrets
               key: supabase-url
         - name: SUPABASE_SERVICE_KEY
           valueFrom:
             secretKeyRef:
-              name: fortheweebs-secrets
+              name: lunonex-secrets
               key: supabase-service-key
         - name: OPENAI_API_KEY
           valueFrom:
             secretKeyRef:
-              name: fortheweebs-secrets
+              name: lunonex-secrets
               key: openai-api-key
         
         # Volume for heal artifacts
@@ -101,7 +101,7 @@ spec:
       
       # Watchdog sidecar
       - name: watchdog
-        image: fortheweebs/watchdog:latest
+        image: lunonex/watchdog:latest
         command: ["node", "watchdog.js"]
         volumeMounts:
         - name: artifacts
@@ -121,12 +121,12 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: fortheweebs-api-pdb
+  name: lunonex-api-pdb
 spec:
   minAvailable: 2  # Always keep 2 pods running
   selector:
     matchLabels:
-      app: fortheweebs
+      app: lunonex
       component: api
 
 ---
@@ -134,12 +134,12 @@ spec:
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: fortheweebs-api-hpa
+  name: lunonex-api-hpa
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: fortheweebs-api
+    name: lunonex-api
   minReplicas: 3
   maxReplicas: 10
   metrics:
@@ -174,10 +174,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: fortheweebs-api
+  name: lunonex-api
 spec:
   selector:
-    app: fortheweebs
+    app: lunonex
     component: api
   ports:
   - protocol: TCP

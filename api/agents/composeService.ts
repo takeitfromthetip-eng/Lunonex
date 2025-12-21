@@ -61,7 +61,7 @@ export async function generateCaption(
     messages: [
       {
         role: 'system',
-        content: `You are a creative content companion for ForTheWeebs, a media platform. Generate engaging ${tone} captions for user posts. Keep it under ${maxLength} characters. Be authentic and match the creator's voice.`,
+        content: `You are a creative content companion for lunonex, a media platform. Generate engaging ${tone} captions for user posts. Keep it under ${maxLength} characters. Be authentic and match the creator's voice.`,
       },
       {
         role: 'user',

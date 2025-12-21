@@ -216,7 +216,7 @@ export function PrintOnDemand() {
                         <span>Card Back Design</span>
                         <select>
                           <option>Use uploaded design</option>
-                          <option>ForTheWeebs default</option>
+                          <option>lunonex default</option>
                           <option>Custom template</option>
                         </select>
                       </label>
@@ -230,7 +230,7 @@ export function PrintOnDemand() {
                 <div className="publish-options">
                   <label className="checkbox-label">
                     <input type="checkbox" defaultChecked />
-                    <span>List on ForTheWeebs Marketplace</span>
+                    <span>List on lunonex Marketplace</span>
                   </label>
                   <label className="checkbox-label">
                     <input type="checkbox" />

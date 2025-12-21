@@ -130,7 +130,7 @@ export default function MicoAssistant() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     userId: 'anonymous', // Set via auth context when available
-                    email: 'anonymous@fortheweebs.com',
+                    email: 'anonymous@lunonex.com',
                     tier: 'free',
                     suggestion
                 })

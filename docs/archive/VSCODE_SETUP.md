@@ -1,4 +1,4 @@
-# 🚀 VS Code Setup for ForTheWeebs Development
+# 🚀 VS Code Setup for lunonex Development
 
 **Ultimate development environment for rapid iteration and national security-grade development**
 
@@ -200,7 +200,7 @@ F11             - Step into
 
 ---
 
-## 🔥 **ForTheWeebs-Specific Snippets**
+## 🔥 **lunonex-Specific Snippets**
 
 Create custom snippets: `Ctrl+Shift+P` → "Configure User Snippets" → "javascriptreact.json"
 
@@ -272,13 +272,13 @@ Create custom snippets: `Ctrl+Shift+P` → "Configure User Snippets" → "javasc
 
 ### **1. Open Project in VS Code:**
 ```bash
-cd C:\Users\polot\OneDrive\Desktop\fortheweebs
+cd C:\Users\polot\OneDrive\Desktop\lunonex
 code .
 ```
 
 ### **2. Recommended Folder Structure View:**
 ```
-📁 fortheweebs/
+📁 lunonex/
 ├── 📁 api/                    - Backend APIs
 │   ├── creator-applications.js
 │   └── trial.js
@@ -299,13 +299,13 @@ code .
 
 ### **3. Create Multi-Root Workspace:**
 
-Save this as `fortheweebs.code-workspace`:
+Save this as `lunonex.code-workspace`:
 ```json
 {
   "folders": [
     {
       "path": ".",
-      "name": "🏠 ForTheWeebs Root"
+      "name": "🏠 lunonex Root"
     },
     {
       "path": "src",
@@ -330,7 +330,7 @@ Save this as `fortheweebs.code-workspace`:
 }
 ```
 
-Then: `File → Open Workspace from File → fortheweebs.code-workspace`
+Then: `File → Open Workspace from File → lunonex.code-workspace`
 
 ---
 
@@ -383,7 +383,7 @@ Then: `File → Open Workspace from File → fortheweebs.code-workspace`
 ### **Setup API Tests:**
 
 1. Open Thunder Client (lightning icon in sidebar)
-2. Create Collection: "ForTheWeebs APIs"
+2. Create Collection: "lunonex APIs"
 3. Add these requests:
 
 **Health Check:**
@@ -526,7 +526,7 @@ code --install-extension gitlab.gitlab-workflow
 
 1. **Open VS Code:**
    ```bash
-   cd C:\Users\polot\OneDrive\Desktop\fortheweebs
+   cd C:\Users\polot\OneDrive\Desktop\lunonex
    code .
    ```
 

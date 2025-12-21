@@ -6,7 +6,7 @@ plugins {
     kotlin("plugin.jpa") version "1.9.21"
 }
 
-group = "dev.fortheweebs"
+group = "dev.lunonex"
 version = "1.0.0"
 
 java {

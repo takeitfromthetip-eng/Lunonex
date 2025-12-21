@@ -2,7 +2,7 @@
 
 ## What Was Built
 
-ForTheWeebs now supports **custom usernames** and **display names** with user choice between the two!
+lunonex now supports **custom usernames** and **display names** with user choice between the two!
 
 ### Features Added:
 1. ✅ **Username field** - Unique identifier (like @polotuspossumus)
@@ -91,7 +91,7 @@ WHERE email = 'polotuspossumus@gmail.com';
 - `public/_redirects` - Added /settings route
 
 ### Backed Up To Flash Drive:
-✅ All files copied to `D:\FORTHEWEEBS_BACKUP\`
+✅ All files copied to `D:\lunonex_BACKUP\`
 
 ---
 

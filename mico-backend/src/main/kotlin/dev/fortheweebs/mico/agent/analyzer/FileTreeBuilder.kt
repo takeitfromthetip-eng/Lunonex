@@ -1,7 +1,7 @@
-package dev.fortheweebs.mico.agent.analyzer
+package dev.lunonex.mico.agent.analyzer
 
-import dev.fortheweebs.mico.agent.model.FileNode
-import dev.fortheweebs.mico.agent.model.FileTree
+import dev.lunonex.mico.agent.model.FileNode
+import dev.lunonex.mico.agent.model.FileTree
 import org.springframework.stereotype.Component
 import java.io.File
 

@@ -1,6 +1,6 @@
-# ForTheWeebs - Adult Content System Setup Guide
+# lunonex - Adult Content System Setup Guide
 
-This guide walks you through setting up the adult content compliance system for ForTheWeebs.
+This guide walks you through setting up the adult content compliance system for lunonex.
 
 ---
 
@@ -12,7 +12,7 @@ This guide walks you through setting up the adult content compliance system for 
 
 ## Overview
 
-ForTheWeebs supports two types of creators:
+lunonex supports two types of creators:
 
 1. **General Content Creators**: Gaming, art, music, cosplay (non-explicit)
    - Uses **Stripe** for payment processing (2.9% + $0.30 fees)
@@ -34,7 +34,7 @@ Before starting, you need:
 3.  **Business Bank Account**: Separate from personal finances
 4.  **Physical Address**: P.O. Box NOT allowed (required for 2257 compliance)
 5.  **SSL Certificate**: HTTPS required for adult content
-6.  **Age Verification System**: Already built into ForTheWeebs
+6.  **Age Verification System**: Already built into lunonex
 
 ---
 
@@ -129,7 +129,7 @@ CUSTODIAN_CITY=Your City
 CUSTODIAN_STATE=CA
 CUSTODIAN_ZIP=12345
 CUSTODIAN_PHONE=+1-555-123-4567
-CUSTODIAN_EMAIL=custodian@fortheweebs.com
+CUSTODIAN_EMAIL=custodian@lunonex.com
 ```
 
 **Display Requirements:**
@@ -353,6 +353,6 @@ This system is designed to **comply with U.S. federal law**, but laws vary by st
 
 ---
 
-**ForTheWeebs LLC**
+**lunonex LLC**
 Built for creators, by creators.
 We're here to replace the old guard, not become it.

@@ -44,7 +44,7 @@ export async function POST(request) {
       info: {
         Title: title || 'Comic Book',
         Author: userId,
-        Creator: 'ForTheWeebs Comic Creator',
+        Creator: 'lunonex Comic Creator',
         CreationDate: new Date()
       }
     });

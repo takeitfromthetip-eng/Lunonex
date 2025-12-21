@@ -95,7 +95,7 @@ export function DonationSystem({ userId, currentTier = 'FREE', totalDonated = 0 
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '30px' }}>
         <h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '10px' }}>
-          ❤️ Support ForTheWeebs
+          ❤️ Support lunonex
         </h1>
         <p style={{ fontSize: '18px', opacity: 0.9 }}>
           Donate any amount • Unlock premium tiers • Or give as charity

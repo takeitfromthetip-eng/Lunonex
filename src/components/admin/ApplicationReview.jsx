@@ -193,7 +193,7 @@ const ApplicationReview = () => {
             </div>
 
             <div className="details-section">
-              <h3>Why Join ForTheWeebs?</h3>
+              <h3>Why Join lunonex?</h3>
               <p>{selectedApp.whyJoin}</p>
             </div>
 

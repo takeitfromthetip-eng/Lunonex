@@ -106,7 +106,7 @@ export const PRIVACY_COMPLIANCE = {
         description: 'Do Not Sell My Personal Information',
         response_time: 'Immediate',
         implementation: 'optOutOfDataSale(userId)',
-        note: 'ForTheWeebs does NOT sell personal data, so this is automatically complied with'
+        note: 'lunonex does NOT sell personal data, so this is automatically complied with'
       },
 
       right_to_non_discrimination: {
@@ -202,7 +202,7 @@ export async function downloadUserData(userId) {
 
     profile: {
       bio: 'Artist and creator',
-      avatar: 'https://cdn.fortheweebs.com/avatars/user123.jpg',
+      avatar: 'https://cdn.lunonex.com/avatars/user123.jpg',
       socialLinks: {
         twitter: '@example',
         instagram: '@example'
@@ -286,7 +286,7 @@ export async function deleteUserAccount(userId, reason) {
 
   // Anonymize immediately visible data
   // await database.users.update(userId, {
-  //   email: `deleted_${userId}@fortheweebs.com`,
+  //   email: `deleted_${userId}@lunonex.com`,
   //   username: `deleted_user_${userId}`,
   //   displayName: 'Deleted User',
   //   avatar: null,
@@ -307,12 +307,12 @@ export async function deleteUserAccount(userId, reason) {
  * Opt out of data sale (CCPA)
  */
 export async function optOutOfDataSale(userId) {
-  // ForTheWeebs doesn't sell data, so this is automatic compliance
+  // lunonex doesn't sell data, so this is automatic compliance
   // await database.users.update(userId, { optedOutOfDataSale: true });
 
   return {
     success: true,
-    message: 'ForTheWeebs does not sell your personal information to third parties. This setting has been recorded.'
+    message: 'lunonex does not sell your personal information to third parties. This setting has been recorded.'
   };
 }
 

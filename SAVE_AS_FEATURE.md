@@ -2,7 +2,7 @@
 
 ## What Changed
 
-Added **native "Save As" dialogs** to all major export tools across ForTheWeebs platform. Users can now:
+Added **native "Save As" dialogs** to all major export tools across lunonex platform. Users can now:
 
 1. **Choose where files are saved** - Native OS file picker dialogs
 2. **Type custom filenames** - Full control over naming

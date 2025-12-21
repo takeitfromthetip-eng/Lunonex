@@ -114,8 +114,8 @@ export async function deployRender({ scene, moderation = true, monetization = fa
   setTimeout(() => {
     renderJob.status = 'completed';
     renderJob.progress = 100;
-    renderJob.output.preview = `https://cdn.fortheweebs.com/renders/${renderJob.id}_preview.jpg`;
-    renderJob.output.fullRender = `https://cdn.fortheweebs.com/renders/${renderJob.id}.mp4`;
+    renderJob.output.preview = `https://cdn.lunonex.com/renders/${renderJob.id}_preview.jpg`;
+    renderJob.output.fullRender = `https://cdn.lunonex.com/renders/${renderJob.id}.mp4`;
   }, 5000);
 
   return {

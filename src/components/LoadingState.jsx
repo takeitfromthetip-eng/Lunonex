@@ -114,7 +114,7 @@ export const ProgressBar = ({ progress = 0, message = '', color = '#667eea' }) =
 /**
  * Full Page Loader
  */
-export const PageLoader = ({ message = 'Loading ForTheWeebs...' }) => {
+export const PageLoader = ({ message = 'Loading lunonex...' }) => {
   return (
     <div className="page-loader">
       <div className="page-loader-content">

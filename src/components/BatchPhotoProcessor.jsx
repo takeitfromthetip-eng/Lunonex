@@ -171,7 +171,7 @@ export function BatchPhotoProcessor({ userId }) {
           ctx.font = 'bold 30px Arial';
           ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
           ctx.textAlign = 'right';
-          ctx.fillText('ForTheWeebs', canvas.width - 20, canvas.height - 20);
+          ctx.fillText('lunonex', canvas.width - 20, canvas.height - 20);
           break;
       }
 

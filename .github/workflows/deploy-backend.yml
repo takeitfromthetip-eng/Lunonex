@@ -38,8 +38,8 @@ jobs:
       - name: Build Docker image
         working-directory: ./server
         run: |
-          docker build -t fortheweebs-api:${{ github.sha }} .
-          docker tag fortheweebs-api:${{ github.sha }} fortheweebs-api:latest
+          docker build -t lunonex-api:${{ github.sha }} .
+          docker tag lunonex-api:${{ github.sha }} lunonex-api:latest
 
       - name: Deploy to Railway
         env:

@@ -30,7 +30,7 @@ export interface OwnershipCertificate {
 
 class ProofOfCreationEngine {
   private proofs: Map<string, CreationProof> = new Map();
-  private readonly SECRET_KEY = process.env.POC_SECRET_KEY || 'fortheweebs-sovereign-proof';
+  private readonly SECRET_KEY = process.env.POC_SECRET_KEY || 'lunonex-sovereign-proof';
 
   /**
    * Generate cryptographic proof of creation
@@ -113,7 +113,7 @@ class ProofOfCreationEngine {
       `${proof.artifactId}-${proof.creatorId}-${proof.timestamp}`
     ).toString();
 
-    const verificationUrl = `https://fortheweebs.com/verify/${certificateId}`;
+    const verificationUrl = `https://lunonex.com/verify/${certificateId}`;
 
     const certificate: OwnershipCertificate = {
       proof,
@@ -273,14 +273,14 @@ INFRINGING MATERIAL:
 - URL: ${infringingUrl}
 
 PROOF OF OWNERSHIP:
-This work is protected by cryptographic proof of creation, generated at the time of upload to ForTheWeebs platform. The proof includes:
+This work is protected by cryptographic proof of creation, generated at the time of upload to lunonex platform. The proof includes:
 1. SHA-256 hash of original content
 2. Timestamp of creation
 3. Cryptographic signature verifying ownership
 
 VERIFICATION:
 This proof can be independently verified at:
-https://fortheweebs.com/verify/${proof.artifactId}
+https://lunonex.com/verify/${proof.artifactId}
 
 I have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law.
 
@@ -290,7 +290,7 @@ Please remove or disable access to the infringing material immediately.
 
 Signed,
 ${proof.creatorId}
-ForTheWeebs Platform
+lunonex Platform
     `.trim();
   }
 }

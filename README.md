@@ -1,4 +1,4 @@
-# 🎨 ForTheWeebs - Creator Economy Platform
+# 🎨 lunonex - Creator Economy Platform
 
 > **100% Creator Payout. Zero Platform Fees. Full AI Production Suite.**
 
@@ -19,7 +19,7 @@ npm run dev
 
 ## 🎯 What It Does
 
-ForTheWeebs is a complete creator economy platform with:
+lunonex is a complete creator economy platform with:
 
 ### 💰 Monetization (100% to Creators)
 - Subscriptions ($15-$1000/month tiers)
@@ -73,7 +73,7 @@ ForTheWeebs is a complete creator economy platform with:
 This project is protected by a 4-layer defense system:
 
 1. **Pre-push validation** - Blocks bad commits before GitHub
-2. **Auto-backup** - Every commit backed up to D:/FORTHEWEEBS-BACKUPS/
+2. **Auto-backup** - Every commit backed up to D:/lunonex-BACKUPS/
 3. **GitHub backup branches** - Created on every push
 4. **Emergency recovery** - One-command rollback
 

@@ -85,7 +85,7 @@ Frontend Logs:
 ### 6. **Environment Configuration** ✅
 ```env
 ✅ ID_ENCRYPTION_KEY=zVC1aQ/iCfGw7zRfou/NVKn3k/TPmE+sS584h3KFE20=
-✅ CUSTODIAN_NAME=ForTheWeebs LLC
+✅ CUSTODIAN_NAME=lunonex LLC
 ✅ CUSTODIAN_ADDRESS_LINE1=To Be Determined - Physical Address Required
 ✅ OPENAI_API_KEY=sk-proj-... (configured)
 ✅ ANTHROPIC_API_KEY=sk-ant-... (configured)

@@ -1,5 +1,5 @@
 -- ============================================================================
--- ForTheWeebs Complete Database Setup
+-- lunonex Complete Database Setup
 -- Executes all schema files in correct order
 -- Run this in Supabase SQL Editor
 -- ============================================================================

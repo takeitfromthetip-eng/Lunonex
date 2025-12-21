@@ -86,7 +86,7 @@ export const RealTimeActivityFeed = ({ userId }) => {
 
   const showNotification = (activity) => {
     if ('Notification' in window && Notification.permission === 'granted') {
-      new Notification('ForTheWeebs', {
+      new Notification('lunonex', {
         body: getActivityText(activity),
         icon: '/icon-192.png',
         badge: '/badge-72.png'

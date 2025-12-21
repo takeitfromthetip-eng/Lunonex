@@ -66,7 +66,7 @@
  * - Financial liability for statutory damages ($750-$150,000 per work)
  * 
  * USER ACKNOWLEDGMENT:
- * By using ForTheWeebs, you explicitly acknowledge and agree that:
+ * By using lunonex, you explicitly acknowledge and agree that:
  * - You are SOLELY RESPONSIBLE for ensuring you have legal rights to all uploaded content
  * - The platform is NOT LIABLE for any copyright violations you commit
  * - We cooperate FULLY with DMCA takedown requests and law enforcement
@@ -77,7 +77,7 @@
  * TIMING CONTEXT (November 2025):
  * This policy is enforced during a global crackdown on piracy and unauthorized content distribution. 
  * Governments worldwide are actively shutting down piracy websites, torrent sites, and unauthorized 
- * streaming platforms. ForTheWeebs takes a zero-tolerance approach to protect both creators and the 
+ * streaming platforms. lunonex takes a zero-tolerance approach to protect both creators and the 
  * platform from legal liability. Only upload content you created or have explicit written permission 
  * to distribute.
  */

@@ -114,7 +114,7 @@ POST /api/creator-copyright/submit
     "https://instagram.com/janeartist/post123",
     "https://twitter.com/janeartist/status456"
   ],
-  "infringing_content_url": "https://fortheweebs.com/posts/789",
+  "infringing_content_url": "https://lunonex.com/posts/789",
   "infringing_creator_username": "bobcreator",
   "explanation": "This creator used my artwork without permission or credit. I created this piece in January 2024 and can provide original PSD files.",
   "good_faith_statement": true
@@ -154,7 +154,7 @@ Authorization: Bearer <JWT>
       "complainant_name": "Jane Artist",
       "copyright_work_title": "My Original Artwork",
       "explanation": "...",
-      "infringing_content_url": "https://fortheweebs.com/posts/789",
+      "infringing_content_url": "https://lunonex.com/posts/789",
       "status": "APPROVED_PENDING_CREATOR",
       "created_at": "2025-11-25T10:00:00Z",
       "response_deadline": "2025-12-02T10:00:00Z"
@@ -279,7 +279,7 @@ console.log('✅ Creator Copyright Requests');
 Check `.env` has:
 ```env
 OPENAI_API_KEY=sk-proj-...
-JWT_SECRET=fortheweebs_jwt_secret_2025_ultra_secure_key
+JWT_SECRET=lunonex_jwt_secret_2025_ultra_secure_key
 ```
 
 ### **Step 4: Test the System**
@@ -292,7 +292,7 @@ curl -X POST http://localhost:3000/api/creator-copyright/submit \
     "complainant_name": "Test Artist",
     "complainant_email": "test@example.com",
     "copyright_work_title": "Test Artwork",
-    "infringing_content_url": "https://fortheweebs.com/posts/123",
+    "infringing_content_url": "https://lunonex.com/posts/123",
     "infringing_creator_username": "testcreator",
     "explanation": "This is a detailed explanation of why I believe my copyright was infringed.",
     "good_faith_statement": true
@@ -315,7 +315,7 @@ System currently logs notifications to console. To enable emails:
 2. Update `.env`:
    ```env
    SENDGRID_API_KEY=your_key
-   EMAIL_FROM=noreply@fortheweebs.com
+   EMAIL_FROM=noreply@lunonex.com
    ```
 3. Implement `sendEmail()` function in `creator-copyright-requests.js`
 

@@ -1,5 +1,5 @@
 /* eslint-disable */
-// Tier API Endpoint for Fortheweebs
+// Tier API Endpoint for lunonex
 const express = require('express');
 const router = express.Router();
 const { createClient } = require('@supabase/supabase-js');

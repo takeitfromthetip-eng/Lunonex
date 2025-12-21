@@ -263,7 +263,7 @@ export function ProPhotoFilters({ userId }) {
 
   const downloadImage = () => {
     const link = document.createElement('a');
-    link.download = `fortheweebs-photo-${Date.now()}.png`;
+    link.download = `lunonex-photo-${Date.now()}.png`;
     link.href = image;
     link.click();
   };

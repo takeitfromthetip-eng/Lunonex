@@ -115,7 +115,7 @@ SELECT
 FROM launch_vouchers;
 
 -- Comments for documentation
-COMMENT ON TABLE launch_vouchers IS 'Stores launch voucher claims for first 100 visitors to fortheweebs.com';
+COMMENT ON TABLE launch_vouchers IS 'Stores launch voucher claims for first 100 visitors to lunonex.com';
 COMMENT ON COLUMN launch_vouchers.voucher_type IS 'Type of voucher: 15percent (any tier) or 25percent ($1000 tier only)';
 COMMENT ON COLUMN launch_vouchers.fingerprint IS 'Device/browser fingerprint to prevent duplicate claims';
 COMMENT ON COLUMN launch_vouchers.discount_amount IS 'Percentage discount (15 or 25)';

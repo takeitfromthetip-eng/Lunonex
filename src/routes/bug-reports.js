@@ -157,7 +157,7 @@ async function triageBugReport(bugReport) {
       return;
     }
 
-    const prompt = `You are Mico, the autonomous AI system manager for ForTheWeebs platform.
+    const prompt = `You are Mico, the autonomous AI system manager for lunonex platform.
 Analyze this bug report and determine:
 
 1. Is it LEGITIMATE (real bug worth fixing)?

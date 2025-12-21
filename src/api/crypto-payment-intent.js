@@ -93,7 +93,7 @@ export default async function handler(req, res) {
         
         const Charge = Commerce.resources.Charge;
         const chargeData = {
-          name: `ForTheWeebs ${unlockType} Unlock`,
+          name: `lunonex ${unlockType} Unlock`,
           description: `Unlock ${unlockType} - ${rules.currency} payment (auto-converted to USD)`,
           local_price: {
             amount: amount.toFixed(2),
@@ -104,7 +104,7 @@ export default async function handler(req, res) {
             userId: userId,
             unlockType: unlockType,
             cryptoType: cryptoType,
-            platform: 'ForTheWeebs',
+            platform: 'lunonex',
             autoConvert: true,
             feeWarning: 'Upcharge is NON-NEGOTIABLE'
           }

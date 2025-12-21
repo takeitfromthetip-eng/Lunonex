@@ -4,7 +4,7 @@ import './OnboardingTour.css';
 const tourSteps = [
   {
     id: 'welcome',
-    title: '👋 Welcome to ForTheWeebs!',
+    title: '👋 Welcome to lunonex!',
     description: 'Let\'s take a quick tour of your new creator dashboard.',
     target: null,
     position: 'center'

@@ -378,7 +378,7 @@ export const UserProfileManager = () => {
               type="email"
               value={newProfile.email}
               onChange={(e) => setNewProfile({...newProfile, email: e.target.value})}
-              placeholder="e.g., creative@fortheweebs.com"
+              placeholder="e.g., creative@lunonex.com"
             />
           </div>
 

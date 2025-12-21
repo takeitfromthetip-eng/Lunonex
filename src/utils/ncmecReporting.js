@@ -18,9 +18,9 @@ export const NCMEC_CONFIG = {
 
   // Contact info (required)
   contactInfo: {
-    companyName: 'ForTheWeebs',
+    companyName: 'lunonex',
     contactName: process.env.LEGAL_CONTACT_NAME || 'Legal Department',
-    contactEmail: process.env.LEGAL_CONTACT_EMAIL || 'legal@fortheweebs.com',
+    contactEmail: process.env.LEGAL_CONTACT_EMAIL || 'legal@lunonex.com',
     contactPhone: process.env.LEGAL_CONTACT_PHONE || null,
   },
 
@@ -164,7 +164,7 @@ function buildNCMECReport(data) {
 
     // Additional information
     additionalInfo: {
-      platform: 'ForTheWeebs - User-Generated Content Platform',
+      platform: 'lunonex - User-Generated Content Platform',
       reportSource: 'Automated CSAM Detection System',
       notes: `Content detected via ${data.detectionProvider} scanning. Account immediately terminated per federal law.`,
     },

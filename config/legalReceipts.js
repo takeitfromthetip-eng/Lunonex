@@ -16,11 +16,11 @@ const crypto = require('crypto');
 // AWS S3 Configuration for Legal Receipts
 const LEGAL_RECEIPTS_CONFIG = {
   // Primary bucket (Object Lock enabled)
-  bucket: process.env.AWS_LEGAL_RECEIPTS_BUCKET || 'fortheweebs-legal-receipts',
+  bucket: process.env.AWS_LEGAL_RECEIPTS_BUCKET || 'lunonex-legal-receipts',
   region: process.env.AWS_REGION || 'us-east-1',
   
   // Backup bucket (cross-region replication)
-  backupBucket: process.env.AWS_LEGAL_RECEIPTS_BACKUP_BUCKET || 'fortheweebs-legal-receipts-backup',
+  backupBucket: process.env.AWS_LEGAL_RECEIPTS_BACKUP_BUCKET || 'lunonex-legal-receipts-backup',
   backupRegion: 'us-west-2',
   
   // KMS encryption keys
@@ -50,7 +50,7 @@ const LEGAL_RECEIPTS_CONFIG = {
   
   // Audit logging
   logging: {
-    accessLogsBucket: 'fortheweebs-legal-receipts-logs',
+    accessLogsBucket: 'lunonex-legal-receipts-logs',
     cloudTrailEnabled: true,
     alertOnDeleteAttempts: true
   }

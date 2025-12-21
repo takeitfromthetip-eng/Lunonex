@@ -1,7 +1,7 @@
- # .EXE Inspection Report - ForTheWeebs v2.1.0
+ # .EXE Inspection Report - lunonex v2.1.0
 
 **Date:** December 8, 2025
-**File:** `electron-dist/ForTheWeebs Setup 2.1.0.exe`
+**File:** `electron-dist/lunonex Setup 2.1.0.exe`
 **Build Date:** December 8, 2025 11:27:03 UTC
 **File Size:** 206.1 MB (206,113,886 bytes)
 
@@ -64,8 +64,8 @@ All major dependencies are bundled:
 
 Build configuration is valid:
 - ✅ Multi-language support (25 languages)
-- ✅ App ID: `com.fortheweebs.app`
-- ✅ Product Name: `ForTheWeebs`
+- ✅ App ID: `com.lunonex.app`
+- ✅ Product Name: `lunonex`
 - ✅ NSIS installer with custom install directory option
 - ✅ Auto-updater configuration
 
@@ -119,7 +119,7 @@ Build configuration is valid:
 1. **Test the Installer**
    ```powershell
    # Run the setup file
-   .\electron-dist\ForTheWeebs Setup 2.1.0.exe
+   .\electron-dist\lunonex Setup 2.1.0.exe
    ```
 
 2. **Test Installed App**
@@ -156,8 +156,8 @@ Build configuration is valid:
 ### Electron Builder Configuration:
 ```json
 {
-  "appId": "com.fortheweebs.app",
-  "productName": "ForTheWeebs",
+  "appId": "com.lunonex.app",
+  "productName": "lunonex",
   "directories": { "output": "electron-dist" },
   "target": "nsis",
   "architecture": "x64"

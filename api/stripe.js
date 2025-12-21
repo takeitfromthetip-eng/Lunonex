@@ -126,7 +126,7 @@ router.post('/create-checkout-session', async (req, res) => {
         // Ensure base URL has scheme
         const baseUrl = process.env.VITE_APP_URL?.startsWith('http')
             ? process.env.VITE_APP_URL
-            : `https://${process.env.VITE_APP_URL || 'fortheweebs.vercel.app'}`;
+            : `https://${process.env.VITE_APP_URL || 'lunonex.vercel.app'}`;
 
         // Build session config
         const sessionConfig = {
@@ -151,7 +151,7 @@ router.post('/create-checkout-session', async (req, res) => {
                 userId,
                 tier,
                 oneTime: oneTime.toString(),
-                platform: 'ForTheWeebs',
+                platform: 'lunonex',
                 accountId: accountId || 'main'
             }
         };
@@ -220,11 +220,11 @@ router.post('/create-checkout-session-legacy', async (req, res) => {
                     price_data: {
                         currency: displayCurrency.toLowerCase(),
                         product_data: {
-                            name: `ForTheWeebs ${tier} Tier`,
+                            name: `lunonex ${tier} Tier`,
                             description: tier === 'CREATOR'
                                 ? '100% profit + AR/VR tools + Cloud upload'
                                 : 'All features + AI superpowers + Super Admin access',
-                            images: ['https://fortheweebs.com/logo.png'],
+                            images: ['https://lunonex.com/logo.png'],
                         },
                         unit_amount: Math.round(displayPrice * 100),
                     },
@@ -239,7 +239,7 @@ router.post('/create-checkout-session-legacy', async (req, res) => {
                 userId,
                 priceUSD,
                 displayCurrency,
-                platform: 'ForTheWeebs'
+                platform: 'lunonex'
             },
             customer_email: req.body.email || undefined,
         });

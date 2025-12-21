@@ -39,7 +39,7 @@ export const LaunchCountdown = () => {
     if (isLaunched) {
         return (
             <div className="launch-complete-banner">
-                <h2>🎉 ForTheWeebs is LIVE!</h2>
+                <h2>🎉 lunonex is LIVE!</h2>
                 <p>Early bird pricing has ended. Standard pricing now in effect.</p>
             </div>
         );

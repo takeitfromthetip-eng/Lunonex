@@ -1,4 +1,4 @@
-// Payment API Endpoint for Fortheweebs
+// Payment API Endpoint for lunonex
 const express = require('express');
 const router = express.Router();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
         tier,
         purchaseType: 'subscription_tier'
       },
-      description: `ForTheWeebs ${tier} tier subscription`
+      description: `lunonex ${tier} tier subscription`
     });
 
     res.json({ 

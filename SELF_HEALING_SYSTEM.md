@@ -1,4 +1,4 @@
-# ForTheWeebs Self-Healing System
+# lunonex Self-Healing System
 
 ## 🩹 Complete Self-Healing Infrastructure
 
@@ -99,9 +99,9 @@ kubectl apply -f k8s/deployment.yaml
 
 ### Monitor
 ```bash
-kubectl get pods -l app=fortheweebs
-kubectl logs -f deployment/fortheweebs-api
-kubectl top pods -l app=fortheweebs
+kubectl get pods -l app=lunonex
+kubectl logs -f deployment/lunonex-api
+kubectl top pods -l app=lunonex
 ```
 
 ---
@@ -127,14 +127,14 @@ For bare metal or VMs:
 
 ```bash
 # Install service
-sudo cp systemd/fortheweebs.service /etc/systemd/system/
+sudo cp systemd/lunonex.service /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable fortheweebs
-sudo systemctl start fortheweebs
+sudo systemctl enable lunonex
+sudo systemctl start lunonex
 
 # Monitor
-sudo systemctl status fortheweebs
-sudo journalctl -u fortheweebs -f
+sudo systemctl status lunonex
+sudo journalctl -u lunonex -f
 ```
 
 **Auto-restart**: `Restart=always` with 5s delay, no backoff limits.

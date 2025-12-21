@@ -37,7 +37,7 @@
 
 ### 2️⃣ Configure Stripe Webhook (3 minutes)
 - Stripe Dashboard → Webhooks → Add endpoint
-- URL: `https://fortheweebs-production.up.railway.app/api/webhooks/stripe-api`
+- URL: `https://lunonex-production.up.railway.app/api/webhooks/stripe-api`
 - Events: invoice.*, customer.subscription.*
 - Copy webhook secret to `.env`
 

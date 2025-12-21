@@ -1,13 +1,13 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.fortheweebs.app',
-  appName: 'ForTheWeebs',
+  appId: 'com.lunonex.app',
+  appName: 'lunonex',
   webDir: 'dist',
   server: {
     androidScheme: 'https',
     cleartext: true,
-    hostname: 'fortheweebs.app',
+    hostname: 'lunonex.app',
     iosScheme: 'capacitor'
   },
   plugins: {

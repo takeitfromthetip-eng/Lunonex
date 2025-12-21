@@ -20,7 +20,7 @@ const sesClient = new SESClient({
   }
 });
 
-const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@fortheweebs.com';
+const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@lunonex.com';
 const TOTAL_VOUCHERS = 100;
 
 // Helper function to generate voucher code
@@ -44,13 +44,13 @@ async function sendVoucherEmail(email, voucherCode, voucherType) {
     : '25% off the $1,000 elite tier';
   
   const params = {
-    Source: `FORTHEWEEBS Launch Vouchers <${FROM_EMAIL}>`,
+    Source: `lunonex Launch Vouchers <${FROM_EMAIL}>`,
     Destination: {
       ToAddresses: [email]
     },
     Message: {
       Subject: {
-        Data: `🎉 Your ForTheWeebs Launch Voucher: ${voucherCode}`,
+        Data: `🎉 Your lunonex Launch Voucher: ${voucherCode}`,
         Charset: 'UTF-8'
       },
       Body: {
@@ -75,7 +75,7 @@ async function sendVoucherEmail(email, voucherCode, voucherType) {
                     <h1>🎊 Your Exclusive Launch Voucher!</h1>
                   </div>
                   <div class="content">
-                    <p>Congratulations! You're one of the first 100 visitors to <strong>ForTheWeebs.com</strong>.</p>
+                    <p>Congratulations! You're one of the first 100 visitors to <strong>lunonex.com</strong>.</p>
                     
                     <div class="voucher-code">${voucherCode}</div>
                     
@@ -86,11 +86,11 @@ async function sendVoucherEmail(email, voucherCode, voucherType) {
                     <p><strong>⏰ Expires in 30 days</strong></p>
                     
                     <div style="text-align: center; margin: 30px 0;">
-                      <a href="https://fortheweebs.com/signup" class="button">Sign Up Now</a>
+                      <a href="https://lunonex.com/signup" class="button">Sign Up Now</a>
                     </div>
                     
                     <div class="footer">
-                      <p>FORTHEWEEBS - Creator-First Platform</p>
+                      <p>lunonex - Creator-First Platform</p>
                       <p>You're receiving this because you visited our launch page.</p>
                     </div>
                   </div>

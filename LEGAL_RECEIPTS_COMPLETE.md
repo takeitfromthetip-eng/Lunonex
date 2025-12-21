@@ -28,8 +28,8 @@ node scripts/extend-receipt-retention.js
 3. Set trigger: Yearly, January 1st at 12:00 AM
 4. Action: Start a program
 5. Program: `node`
-6. Arguments: `C:\Users\polot\Desktop\FORTHEWEEBS\scripts\extend-receipt-retention.js`
-7. Start in: `C:\Users\polot\Desktop\FORTHEWEEBS`
+6. Arguments: `C:\Users\polot\Desktop\lunonex\scripts\extend-receipt-retention.js`
+7. Start in: `C:\Users\polot\Desktop\lunonex`
 
 #### Option C: Schedule with npm package (recommended)
 ```bash
@@ -154,14 +154,14 @@ Already configured:
 - Contains all essential information
 
 #### Email Content
-- **Subject**: "Your Legal Acceptance Receipt - ForTheWeebs"
-- **From**: Configurable via `FROM_EMAIL` env variable (default: noreply@fortheweebs.com)
+- **Subject**: "Your Legal Acceptance Receipt - lunonex"
+- **From**: Configurable via `FROM_EMAIL` env variable (default: noreply@lunonex.com)
 - **Includes**:
   - Receipt ID
   - Acceptance timestamp
   - Explanation of immutability
   - What the receipt contains
-  - ForTheWeebs branding
+  - lunonex branding
 
 ### AWS SES Setup Required
 
@@ -172,7 +172,7 @@ Already configured:
 2. Click "Verified identities"
 3. Click "Create identity"
 4. Choose "Email address"
-5. Enter: noreply@fortheweebs.com (or your domain)
+5. Enter: noreply@lunonex.com (or your domain)
 6. Click "Create identity"
 7. Check email and click verification link
 ```
@@ -190,7 +190,7 @@ To send to any email:
 #### 3. Add Environment Variable
 Already configured in `.env`:
 ```env
-FROM_EMAIL=noreply@fortheweebs.com
+FROM_EMAIL=noreply@lunonex.com
 ```
 
 ### How It Works
@@ -240,7 +240,7 @@ router.post('/test-email', async (req, res) => {
 ### For Production Deployment
 
 1. **AWS SES Email Verification** ⚠️ REQUIRED
-   - Verify noreply@fortheweebs.com in AWS SES Console
+   - Verify noreply@lunonex.com in AWS SES Console
    - Click verification link sent to that email
    - Request production access to send to any email
 

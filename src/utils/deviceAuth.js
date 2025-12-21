@@ -11,7 +11,7 @@ export const generateDeviceFingerprint = () => {
     const ctx = canvas.getContext('2d');
     ctx.textBaseline = 'top';
     ctx.font = '14px Arial';
-    ctx.fillText('ForTheWeebs', 2, 2);
+    ctx.fillText('lunonex', 2, 2);
 
     const fingerprint = {
         canvas: canvas.toDataURL(),

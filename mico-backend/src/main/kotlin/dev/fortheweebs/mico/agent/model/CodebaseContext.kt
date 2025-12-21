@@ -1,4 +1,4 @@
-package dev.fortheweebs.mico.agent.model
+package dev.lunonex.mico.agent.model
 
 /**
  * Represents the complete context of a codebase after analysis.

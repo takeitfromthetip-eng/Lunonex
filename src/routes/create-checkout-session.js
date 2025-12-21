@@ -41,7 +41,7 @@ export async function POST(request) {
                 ? 'Unlock AR/VR tools and keep 100% profits'
                 : 'All features + AI superpowers',
               images: tier === 'SUPER_ADMIN'
-                ? ['https://fortheweebs.com/images/super-admin-badge.png']
+                ? ['https://lunonex.com/images/super-admin-badge.png']
                 : []
             },
             unit_amount: price * 100, // Convert to cents

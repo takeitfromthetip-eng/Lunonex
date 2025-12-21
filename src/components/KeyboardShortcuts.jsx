@@ -141,7 +141,7 @@ const KeyboardShortcuts = () => {
                 </div>
 
                 <div className="shortcuts-subtitle">
-                    Master ForTheWeebs like a pro! Press <kbd>Esc</kbd> or click outside to close.
+                    Master lunonex like a pro! Press <kbd>Esc</kbd> or click outside to close.
                 </div>
 
                 <div className="shortcuts-grid">

@@ -1,4 +1,4 @@
-# ForTheWeebs v1.8.0 - PhotoDNA-Free Features Complete
+# lunonex v1.8.0 - PhotoDNA-Free Features Complete
 
 ## 🎉 Session Summary
 

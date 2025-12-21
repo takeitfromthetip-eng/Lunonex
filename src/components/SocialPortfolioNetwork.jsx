@@ -194,13 +194,13 @@ const SocialPortfolioNetwork = () => {
     };
 
     const handleShare = (project) => {
-        const shareUrl = `https://fortheweebs.com/p/${project.id}`;
+        const shareUrl = `https://lunonex.com/p/${project.id}`;
         navigator.clipboard.writeText(shareUrl);
         alert(`🔗 Share link copied!\n\n${shareUrl}\n\nShare this project with your audience!`);
     };
 
     const handleEmbed = (project) => {
-        const embedCode = `<iframe src="https://fortheweebs.com/embed/${project.id}" width="800" height="600" frameborder="0"></iframe>`;
+        const embedCode = `<iframe src="https://lunonex.com/embed/${project.id}" width="800" height="600" frameborder="0"></iframe>`;
         navigator.clipboard.writeText(embedCode);
         alert('✅ Embed code copied to clipboard!\n\nPaste this on your website.');
     };
@@ -491,7 +491,7 @@ const SocialPortfolioNetwork = () => {
                                 <span className="share-icon">🔗</span>
                                 <div className="share-info">
                                     <h4>Portfolio Link</h4>
-                                    <code>fortheweebs.com/@yourusername</code>
+                                    <code>lunonex.com/@yourusername</code>
                                     <button className="btn-copy-share">Copy Link</button>
                                 </div>
                             </div>
@@ -535,7 +535,7 @@ const SocialPortfolioNetwork = () => {
                             </label>
                             <label className="setting-option">
                                 <input type="checkbox" defaultChecked />
-                                <span>Show "Made with ForTheWeebs" watermark</span>
+                                <span>Show "Made with lunonex" watermark</span>
                             </label>
                             <label className="setting-option">
                                 <input type="checkbox" defaultChecked />
@@ -555,12 +555,12 @@ const SocialPortfolioNetwork = () => {
                             <div className="growth-feature">
                                 <span className="growth-icon">🏆</span>
                                 <h4>Featured Section</h4>
-                                <p>Best projects get featured on ForTheWeebs homepage (10M+ visitors/month)</p>
+                                <p>Best projects get featured on lunonex homepage (10M+ visitors/month)</p>
                             </div>
                             <div className="growth-feature">
                                 <span className="growth-icon">💎</span>
                                 <h4>Made with Badge</h4>
-                                <p>"Made with ForTheWeebs" badge drives traffic back to your portfolio</p>
+                                <p>"Made with lunonex" badge drives traffic back to your portfolio</p>
                             </div>
                             <div className="growth-feature">
                                 <span className="growth-icon">🎯</span>

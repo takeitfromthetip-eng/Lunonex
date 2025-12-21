@@ -6,7 +6,7 @@
 
 ## 🚨 WHAT YOU MISSED (TL;DR)
 
-While you were away, Claude Code implemented **5 MAJOR PHASES** of the Mico Governance System, transforming ForTheWeebs into a **production-ready, sovereign-controlled platform** with complete audit trails, real-time monitoring, and AI-powered governance.
+While you were away, Claude Code implemented **5 MAJOR PHASES** of the Mico Governance System, transforming lunonex into a **production-ready, sovereign-controlled platform** with complete audit trails, real-time monitoring, and AI-powered governance.
 
 **What Changed:**
 1. ✅ **Complete Governance System** - Mico now has autonomous authority with owner oversight
@@ -27,10 +27,10 @@ While you were away, Claude Code implemented **5 MAJOR PHASES** of the Mico Gove
 
 ## 📊 THE BIG PICTURE
 
-### **What ForTheWeebs Is Now:**
+### **What lunonex Is Now:**
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  FORTHEWEEBS - SOVEREIGN CREATOR PLATFORM                  │
+│  lunonex - SOVEREIGN CREATOR PLATFORM                  │
 │                                                             │
 │  ├── Social Media (31 API Routes)                          │
 │  │   ├── Posts, Comments, Likes, Shares                    │
@@ -440,7 +440,7 @@ SELECT * FROM get_user_feed(
 ## 📂 NEW FILE STRUCTURE
 
 ```
-fortheweebs/
+lunonex/
 ├── api/
 │   ├── governance.js                    ← Main governance API
 │   ├── auth.js                          ← JWT authentication

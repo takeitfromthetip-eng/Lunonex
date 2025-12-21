@@ -1,12 +1,12 @@
 # Systemd service for non-K8s deployments (bare metal, VMs)
 [Unit]
-Description=ForTheWeebs API Server
+Description=lunonex API Server
 After=network.target
 
 [Service]
 Type=simple
-User=fortheweebs
-WorkingDirectory=/opt/fortheweebs
+User=lunonex
+WorkingDirectory=/opt/lunonex
 ExecStart=/usr/bin/node server.js
 
 # Auto-restart on crash
@@ -20,12 +20,12 @@ StartLimitBurst=0
 # Environment
 Environment="NODE_ENV=production"
 Environment="PORT=3001"
-EnvironmentFile=/etc/fortheweebs/env
+EnvironmentFile=/etc/lunonex/env
 
 # Logging
 StandardOutput=journal
 StandardError=journal
-SyslogIdentifier=fortheweebs-api
+SyslogIdentifier=lunonex-api
 
 # Security
 NoNewPrivileges=true

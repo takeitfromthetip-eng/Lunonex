@@ -247,10 +247,10 @@ export const CreatorAnalytics = ({ userId, creatorId }) => {
 
       {/* Comparison */}
       <div className="comparison-section">
-        <h3>💪 You're earning more on ForTheWeebs!</h3>
+        <h3>💪 You're earning more on lunonex!</h3>
         <div className="comparison-card">
           <div className="comparison-row">
-            <span>ForTheWeebs (10-15% fee):</span>
+            <span>lunonex (10-15% fee):</span>
             <strong className="positive">{formatMoney(stats.monthlyEarnings)}</strong>
           </div>
           <div className="comparison-row">

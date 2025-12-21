@@ -1,8 +1,8 @@
-package dev.fortheweebs.mico.agent.llm
+package dev.lunonex.mico.agent.llm
 
 import com.google.gson.Gson
 import com.google.gson.JsonObject
-import dev.fortheweebs.mico.config.LLMConfig
+import dev.lunonex.mico.config.LLMConfig
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody

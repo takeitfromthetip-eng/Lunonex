@@ -1,5 +1,5 @@
 -- ========================================
--- FORTHEWEEBS COMPLETE DATABASE SETUP
+-- lunonex COMPLETE DATABASE SETUP
 -- Run this ONCE in Supabase SQL Editor
 -- Zero errors, zero conflicts
 -- ========================================
@@ -443,5 +443,5 @@ BEGIN
   RAISE NOTICE '✅ Legal receipts system created';
   RAISE NOTICE '✅ Bug reports system created';
   RAISE NOTICE '✅ All tables, indexes, triggers, RLS policies, and functions ready';
-  RAISE NOTICE '🚀 ForTheWeebs database setup complete - ZERO ERRORS';
+  RAISE NOTICE '🚀 lunonex database setup complete - ZERO ERRORS';
 END $$;

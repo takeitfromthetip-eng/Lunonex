@@ -1,7 +1,7 @@
-# ForTheWeebs .env Decryption Script
+# lunonex .env Decryption Script
 # ⚠️ You will be prompted for the encryption password
 
-Write-Host "🔐 ForTheWeebs Environment Decryption" -ForegroundColor Cyan
+Write-Host "🔐 lunonex Environment Decryption" -ForegroundColor Cyan
 Write-Host ""
 
 $password = Read-Host "Enter decryption password" -AsSecureString

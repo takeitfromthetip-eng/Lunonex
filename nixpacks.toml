@@ -1,4 +1,4 @@
-# Railway/Nixpacks Configuration for ForTheWeebs
+# Railway/Nixpacks Configuration for lunonex
 
 [phases.setup]
 nixPkgs = ["nodejs_20", "python3"]

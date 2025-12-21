@@ -165,7 +165,7 @@ export function generateLegalDisclaimer() {
         title: '⚖️ Your Responsibilities',
         points: [
           'You certify all content is 100% original or properly licensed',
-          'You agree to indemnify ForTheWeebs against copyright claims',
+          'You agree to indemnify lunonex against copyright claims',
           'You understand violating this policy may result in account termination',
           'You accept liability for any legal consequences of your content'
         ]

@@ -1,8 +1,8 @@
-# 📊 SQL Scripts for Supabase - ForTheWeebs
+# 📊 SQL Scripts for Supabase - lunonex
 
 ## Instructions
 1. Open Supabase Dashboard: https://supabase.com/dashboard
-2. Select your ForTheWeebs project
+2. Select your lunonex project
 3. Go to **SQL Editor** (left sidebar)
 4. Create a new query
 5. Copy and paste each section below

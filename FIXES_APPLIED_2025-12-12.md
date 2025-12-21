@@ -1,4 +1,4 @@
-# ForTheWeebs - Fixes Applied (December 12, 2025)
+# lunonex - Fixes Applied (December 12, 2025)
 
 ## Summary
 Applied critical bug fixes, security improvements, and performance optimizations using remaining API credits efficiently.
@@ -56,7 +56,7 @@ Applied critical bug fixes, security improvements, and performance optimizations
 **Changes:**
 - Added URL scheme validation
 - Ensures `VITE_APP_URL` always has `https://` prefix
-- Fallback to `fortheweebs.vercel.app` if missing
+- Fallback to `lunonex.vercel.app` if missing
 
 **Impact:** Prevents Stripe "Invalid URL" errors in checkout
 
@@ -123,7 +123,7 @@ app.get('/api/feed', cacheMiddleware(60000), feedHandler);
 - Recommendations for constraints and indexes
 
 ### 9. SD Card Deployment Package
-**File:** `C:\Users\polot\Desktop\FORTHEWEEBS-SD-CLEAN.tar.gz`
+**File:** `C:\Users\polot\Desktop\lunonex-SD-CLEAN.tar.gz`
 **Size:** 20MB
 
 **Excludes:**

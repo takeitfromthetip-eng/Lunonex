@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { supabase } from "../lib/supabase";
 import "./TermsOfService.css";
 
-const PRIVACY_POLICY_TEXT = `ForTheWeebs Privacy Policy - Effective Date: January 1, 2026
+const PRIVACY_POLICY_TEXT = `lunonex Privacy Policy - Effective Date: January 1, 2026
 
-This Privacy Policy explains how ForTheWeebs collects, uses, shares, and protects your personal information. By using ForTheWeebs, you consent to the practices described herein. This Policy complies with GDPR, CCPA, and other applicable privacy laws.
+This Privacy Policy explains how lunonex collects, uses, shares, and protects your personal information. By using lunonex, you consent to the practices described herein. This Policy complies with GDPR, CCPA, and other applicable privacy laws.
 
-ForTheWeebs is an adult content platform (18+) offering AI tools, social media, messaging, and subscription perks. Donations are voluntary, non-refundable, and not tax-deductible. Perks are courtesy gifts, not purchases. All sales are final.
+lunonex is an adult content platform (18+) offering AI tools, social media, messaging, and subscription perks. Donations are voluntary, non-refundable, and not tax-deductible. Perks are courtesy gifts, not purchases. All sales are final.
 
 INFORMATION WE COLLECT:
 - Account Information: Username, email, password, age verification
@@ -16,7 +16,7 @@ INFORMATION WE COLLECT:
 - Legal Compliance Data: 18 U.S.C. § 2257 record-keeping for creators
 
 HOW WE USE INFORMATION:
-- Operate and improve ForTheWeebs
+- Operate and improve lunonex
 - Process donations and provide perks
 - Enforce Terms of Service
 - Comply with legal obligations (DMCA, 2257)
@@ -27,7 +27,7 @@ YOUR RIGHTS (GDPR/CCPA):
 - Data portability and opt-out options
 - Non-discrimination for exercising rights
 - Breach notification within 72 hours
-Contact: privacy@fortheweebs.com
+Contact: privacy@lunonex.com
 
 DATA SECURITY: Encryption, access controls, monitoring. No system is 100% secure.
 AGE REQUIREMENT: 18+ only. Underage accounts terminated immediately.
@@ -35,15 +35,15 @@ INTERNATIONAL TRANSFERS: Data may be processed outside your jurisdiction.
 CHANGES: 30 days notice for policy updates.
 
 Owner: Jacob Morris, North Carolina
-Email: privacy@fortheweebs.com`;
+Email: privacy@lunonex.com`;
 
-const TERMS_TEXT = `# Fortheweebs Terms of Service
+const TERMS_TEXT = `# lunonex Terms of Service
 
 _Last updated: November 2025_
 
 ## ⚠️ OUR PROMISE TO YOU - WE NEVER SELL YOUR DATA
 
-**THIS IS NON-NEGOTIABLE:** ForTheWeebs does not sell, rent, trade, or monetize your personal information. Period. We will never traffic your data to third parties, advertisers, data brokers, or anyone else. Your information belongs to YOU, not to us, and certainly not to corporations looking to exploit it.
+**THIS IS NON-NEGOTIABLE:** lunonex does not sell, rent, trade, or monetize your personal information. Period. We will never traffic your data to third parties, advertisers, data brokers, or anyone else. Your information belongs to YOU, not to us, and certainly not to corporations looking to exploit it.
 
 We believe selling user data is a grimy, unethical way to make money. We built this platform for creators and fans to connect directly, not to harvest your information for profit. This guarantee is permanent and applies at every level of our operation.
 
@@ -59,17 +59,17 @@ If anyone ever tries to change this policy, we'll notify you 90 days in advance 
 ---
 
 ## 1. Introduction
-Welcome to Fortheweebs ("the Platform"). By accessing or using Fortheweebs, you agree to be bound by these Terms of Service ("Terms"). These Terms govern your relationship with Fortheweebs, including your use of the Platform as a creator, subscriber, or visitor.
+Welcome to lunonex ("the Platform"). By accessing or using lunonex, you agree to be bound by these Terms of Service ("Terms"). These Terms govern your relationship with lunonex, including your use of the Platform as a creator, subscriber, or visitor.
 ---
 ## 2. Platform Scope
-Fortheweebs provides infrastructure for creators to publish content, manage subscriptions, and engage with their audience. Fortheweebs does not produce, endorse, or monitor creator content. The Platform is a neutral automation and orchestration service.
+lunonex provides infrastructure for creators to publish content, manage subscriptions, and engage with their audience. lunonex does not produce, endorse, or monitor creator content. The Platform is a neutral automation and orchestration service.
 ---
 ## 3. Creator Independence
-Creators operate as independent entities. Fortheweebs does not employ, contract, or represent creators in any legal or editorial capacity. Creators are solely responsible for:
+Creators operate as independent entities. lunonex does not employ, contract, or represent creators in any legal or editorial capacity. Creators are solely responsible for:
 - The content they publish
 - Their interactions with users
 - Compliance with applicable laws and regulations
-Fortheweebs assumes no responsibility or liability for creator actions or content.
+lunonex assumes no responsibility or liability for creator actions or content.
 ---
 ## 4. Content Responsibility
 Creators are fully responsible for the legality, accuracy, and appropriateness of their content. This includes but is not limited to:
@@ -77,18 +77,18 @@ Creators are fully responsible for the legality, accuracy, and appropriateness o
 - Adult content
 - Defamatory or misleading statements
 - Violations of local, national, or international law
-Fortheweebs does not pre-screen or moderate content and holds no obligation to do so.
+lunonex does not pre-screen or moderate content and holds no obligation to do so.
 ---
 ## 5. Liability Disclaimer
-Fortheweebs shall not be liable for:
+lunonex shall not be liable for:
 - Any content posted by creators
 - Any damages, losses, or disputes arising from creator activity
 - Any consequences resulting from content takedowns, legal action, or third-party claims
 - Any data breaches, technical failures, or future incidents that may arise from use of the Platform
-Users and creators agree that Fortheweebs is not responsible for resolving any issues related to their content, conduct, or data exposure.
+Users and creators agree that lunonex is not responsible for resolving any issues related to their content, conduct, or data exposure.
 ---
 ## 6. Indemnification
-Creators agree to indemnify and hold harmless Fortheweebs, its founders, affiliates, and agents from any claims, liabilities, damages, or expenses (including legal fees) arising from:
+Creators agree to indemnify and hold harmless lunonex, its founders, affiliates, and agents from any claims, liabilities, damages, or expenses (including legal fees) arising from:
 - Their content
 - Their conduct on the Platform
 `;

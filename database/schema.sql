@@ -1,4 +1,4 @@
--- ForTheWeebs Database Schema (Supabase PostgreSQL)
+-- lunonex Database Schema (Supabase PostgreSQL)
 
 -- Enable UUID extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -307,7 +307,7 @@ CREATE TRIGGER update_family_access_codes_updated_at
 
 -- Insert default owner user (for testing)
 INSERT INTO users (id, email, username, payment_tier, payment_status, created_at)
-VALUES ('owner', 'owner@fortheweebs.com', 'polotus', 'SUPER_ADMIN', 'owner', NOW())
+VALUES ('owner', 'owner@lunonex.com', 'polotus', 'SUPER_ADMIN', 'owner', NOW())
 ON CONFLICT (id) DO NOTHING;
 
 -- Grant permissions

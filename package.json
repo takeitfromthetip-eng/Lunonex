@@ -1,5 +1,5 @@
 {
-  "name": "fortheweebs",
+  "name": "lunonex",
   "version": "2.1.0",
   "description": "Sovereign creator-first platform with full AI production suite, creator economy, and education",
   "main": "electron-main.js",
@@ -32,7 +32,7 @@
     "creator",
     "platform",
     "vanguard",
-    "fortheweebs"
+    "lunonex"
   ],
   "author": "Jacob Morris",
   "resolutions": {
@@ -133,8 +133,8 @@
     "ws": "^8.18.3"
   },
   "build": {
-    "appId": "com.fortheweebs.app",
-    "productName": "ForTheWeebs",
+    "appId": "com.lunonex.app",
+    "productName": "lunonex",
     "directories": {
       "output": "electron-dist"
     },

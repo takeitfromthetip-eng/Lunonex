@@ -1,6 +1,6 @@
-package dev.fortheweebs.mico.agent.analyzer
+package dev.lunonex.mico.agent.analyzer
 
-import dev.fortheweebs.mico.agent.model.CodebaseContext
+import dev.lunonex.mico.agent.model.CodebaseContext
 
 /**
  * Core interface for analyzing a codebase.

@@ -15,8 +15,8 @@
         "s3:DeleteBucket"
       ],
       "Resource": [
-        "arn:aws:s3:::fortheweebs-legal-receipts",
-        "arn:aws:s3:::fortheweebs-legal-receipts/*"
+        "arn:aws:s3:::lunonex-legal-receipts",
+        "arn:aws:s3:::lunonex-legal-receipts/*"
       ]
     },
     {
@@ -24,7 +24,7 @@
       "Effect": "Deny",
       "Principal": "*",
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::fortheweebs-legal-receipts/*",
+      "Resource": "arn:aws:s3:::lunonex-legal-receipts/*",
       "Condition": {
         "StringNotEquals": {
           "s3:x-amz-server-side-encryption": "aws:kms"
@@ -36,7 +36,7 @@
       "Effect": "Deny",
       "Principal": "*",
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::fortheweebs-legal-receipts/*",
+      "Resource": "arn:aws:s3:::lunonex-legal-receipts/*",
       "Condition": {
         "Null": {
           "s3:x-amz-server-side-encryption": "true"
@@ -49,8 +49,8 @@
       "Principal": "*",
       "Action": "s3:*",
       "Resource": [
-        "arn:aws:s3:::fortheweebs-legal-receipts",
-        "arn:aws:s3:::fortheweebs-legal-receipts/*"
+        "arn:aws:s3:::lunonex-legal-receipts",
+        "arn:aws:s3:::lunonex-legal-receipts/*"
       ],
       "Condition": {
         "Bool": {
@@ -69,7 +69,7 @@
         "s3:PutObjectLegalHold",
         "s3:PutObjectRetention"
       ],
-      "Resource": "arn:aws:s3:::fortheweebs-legal-receipts/*"
+      "Resource": "arn:aws:s3:::lunonex-legal-receipts/*"
     },
     {
       "Sid": "AllowReaderRoleGetObject",
@@ -83,14 +83,14 @@
         "s3:GetObjectLegalHold",
         "s3:GetObjectRetention"
       ],
-      "Resource": "arn:aws:s3:::fortheweebs-legal-receipts/*"
+      "Resource": "arn:aws:s3:::lunonex-legal-receipts/*"
     },
     {
       "Sid": "RequireObjectLockOnPut",
       "Effect": "Deny",
       "Principal": "*",
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::fortheweebs-legal-receipts/*",
+      "Resource": "arn:aws:s3:::lunonex-legal-receipts/*",
       "Condition": {
         "StringNotEquals": {
           "s3:x-amz-object-lock-mode": "COMPLIANCE"

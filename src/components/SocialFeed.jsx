@@ -619,7 +619,7 @@ export const SocialFeed = ({ userId, userTier }) => {
           <div className="posts-feed">
             {posts.length === 0 && (
               <div className="empty-feed">
-                <h3>Welcome to ForTheWeebs! 🎌</h3>
+                <h3>Welcome to lunonex! 🎌</h3>
                 <p>Be the first to post something awesome</p>
               </div>
             )}
@@ -927,7 +927,7 @@ export const SocialFeed = ({ userId, userTier }) => {
           {/* Real Creators (from database) */}
           <div className="featured-section">
             <h3>⭐ Active Creators</h3>
-            <p className="section-desc">Real people on ForTheWeebs - no fake profiles</p>
+            <p className="section-desc">Real people on lunonex - no fake profiles</p>
             <div className="creators-grid">
               {loading ? (
                 <p>⏳ Loading real creators from database...</p>

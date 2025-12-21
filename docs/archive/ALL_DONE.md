@@ -1,4 +1,4 @@
-# ✅ ALL DONE - ForTheWeebs Complete Setup
+# ✅ ALL DONE - lunonex Complete Setup
 
 **Date:** January 24, 2025
 **Time:** 10:56 PM

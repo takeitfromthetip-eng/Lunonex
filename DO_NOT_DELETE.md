@@ -1,4 +1,4 @@
-# 🌟 ForTheWeebs - The Complete Creative Platform
+# 🌟 lunonex - The Complete Creative Platform
 
 ## 🎯 MISSION: Crush Every Creative Software Competitor
 
@@ -22,7 +22,7 @@ We're not just competing - we're **obliterating** Figma, Photoshop, Logic Pro, A
 - Adobe After Effects: $23/mo × 120 months = **$2,760**
 - **TOTAL: $44,678**
 
-### ForTheWeebs: **$500 one-time. Forever.**
+### lunonex: **$500 one-time. Forever.**
 
 **Savings: $44,178 (98.9% cheaper)**
 
@@ -206,7 +206,7 @@ We're not just competing - we're **obliterating** Figma, Photoshop, Logic Pro, A
 
 ## 📊 Feature Comparison
 
-| Feature | ForTheWeebs | Figma | Photoshop | Logic Pro | Unity Pro |
+| Feature | lunonex | Figma | Photoshop | Logic Pro | Unity Pro |
 |---------|-------------|-------|-----------|-----------|-----------|
 | **Price** | $500 one-time | $540/year | $720/year | $200 | $2,400/year |
 | **Graphic Design** | ✅ | ✅ | ✅ | ❌ | ❌ |
@@ -268,7 +268,7 @@ We're not just competing - we're **obliterating** Figma, Photoshop, Logic Pro, A
 ## 📁 Project Structure
 
 ```
-Fortheweebs/
+lunonex/
 ├── api/                          # 70+ Backend API routes
 │   ├── audio-production.js       # 7 audio endpoints (NEW)
 │   ├── vr-ar-production.js       # 6 VR/AR endpoints (NEW)
@@ -491,8 +491,8 @@ We're not playing nice. We're offering 10 years of their tools for 1% of their p
 
 ## 🔗 Important Links
 
-- **Live Site:** https://fortheweebs.vercel.app
-- **GitHub:** https://github.com/polotuspossumus-coder/Fortheweebs
+- **Live Site:** https://lunonex.vercel.app
+- **GitHub:** https://github.com/polotuspossumus-coder/lunonex
 - **Supabase Dashboard:** https://supabase.com/dashboard
 - **Vercel Dashboard:** https://vercel.com/dashboard
 

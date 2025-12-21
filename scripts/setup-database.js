@@ -86,7 +86,7 @@ async function executeSQLFile(filename) {
 }
 
 async function main() {
-    console.log('🚀 ForTheWeebs Database Setup');
+    console.log('🚀 lunonex Database Setup');
     console.log('==============================\n');
     console.log(`📡 Supabase URL: ${supabaseUrl}`);
     

@@ -2,7 +2,7 @@
 /**
  * 🎨 PROMPT-TO-CONTENT STUDIO
  * Summon content from text prompts → images, video skeletons, audio stubs
- * Then refine with ForTheWeebs editing tools + watermark + log to sovereign ledger
+ * Then refine with lunonex editing tools + watermark + log to sovereign ledger
  * SOVEREIGNTY LAYER: Full lineage tracking + Style DNA integration
  */
 

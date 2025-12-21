@@ -72,7 +72,7 @@ export default function PricingPage() {
     <div className="pricing-page">
       <div className="pricing-header">
         <h1>Choose Your Tier</h1>
-        <p>Unlock the full power of ForTheWeebs</p>
+        <p>Unlock the full power of lunonex</p>
       </div>
 
       <div className="tiers-container">

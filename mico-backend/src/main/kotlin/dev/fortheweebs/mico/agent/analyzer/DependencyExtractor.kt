@@ -1,7 +1,7 @@
-package dev.fortheweebs.mico.agent.analyzer
+package dev.lunonex.mico.agent.analyzer
 
-import dev.fortheweebs.mico.agent.model.Dependencies
-import dev.fortheweebs.mico.agent.model.Dependency
+import dev.lunonex.mico.agent.model.Dependencies
+import dev.lunonex.mico.agent.model.Dependency
 import org.springframework.stereotype.Component
 import java.io.File
 

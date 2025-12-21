@@ -1,4 +1,4 @@
-package com.fortheweebs.app;
+package com.lunonex.app;
 
 import com.getcapacitor.BridgeActivity;
 

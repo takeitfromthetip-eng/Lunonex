@@ -23,7 +23,7 @@
    - It starts with: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`
 
 3. **Add to .env file:**
-   Open: `c:\Users\polot\fortheweebs\Fortheweebs\.env`
+   Open: `c:\Users\polot\lunonex\lunonex\.env`
    
    Add this line after line 6 (after VITE_SUPABASE_ANON_KEY):
    ```env

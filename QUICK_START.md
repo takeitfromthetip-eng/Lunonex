@@ -205,7 +205,7 @@ AI learns each creator's style and becomes their assistant:
 
 ### **2. Cross-Platform Commander (v4.0)**
 One dashboard to rule them all:
-- Publish to ForTheWeebs + YouTube + TikTok + Instagram
+- Publish to lunonex + YouTube + TikTok + Instagram
 - Auto-optimize content for each platform
 - Unified analytics across all platforms
 - Smart cross-promotion

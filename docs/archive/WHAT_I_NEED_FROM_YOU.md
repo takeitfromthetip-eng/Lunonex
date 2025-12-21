@@ -82,9 +82,9 @@
 1. Go to: https://www.cybertipline.org/
 2. Click "Electronic Service Provider (ESP)" registration
 3. Fill out form with:
-   - Business name: ForTheWeebs
+   - Business name: lunonex
    - Business type: User-Generated Content Platform
-   - Contact email: legal@fortheweebs.com
+   - Contact email: legal@lunonex.com
    - Your name and phone number
 4. You'll receive:
    - **NCMEC ESP ID** (your unique ID number)
@@ -93,7 +93,7 @@
    ```
    NCMEC_ESP_ID=your_esp_id_here
    NCMEC_API_KEY=your_api_key_here
-   LEGAL_CONTACT_EMAIL=legal@fortheweebs.com
+   LEGAL_CONTACT_EMAIL=legal@lunonex.com
    ```
 
 **⚠️ IMPORTANT:** Until you have these credentials, the system will store pending reports for you to manually file. You MUST file within 24 hours of detection.
@@ -103,7 +103,7 @@
 ### STEP 3: Get Google Cloud Vision API Key (Copyright Detection)
 
 1. Go to: https://console.cloud.google.com/
-2. Create new project: "ForTheWeebs-Moderation"
+2. Create new project: "lunonex-Moderation"
 3. Enable "Cloud Vision API"
 4. Go to: APIs & Services → Credentials
 5. Click "Create Credentials" → "API Key"

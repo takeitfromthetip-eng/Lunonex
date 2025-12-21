@@ -1,10 +1,10 @@
 # ============================================================================
-# ForTheWeebs - Complete Implementation Script
+# lunonex - Complete Implementation Script
 # Implements everything missing across backend, frontend, database, mobile
 # ============================================================================
 
 Write-Host "`n========================================" -ForegroundColor Cyan
-Write-Host "🚀 ForTheWeebs Complete Implementation" -ForegroundColor Cyan
+Write-Host "🚀 lunonex Complete Implementation" -ForegroundColor Cyan
 Write-Host "========================================`n" -ForegroundColor Cyan
 
 $ErrorActionPreference = "Continue"
@@ -181,5 +181,5 @@ Write-Host "   4. Test app: http://localhost:5173" -ForegroundColor White
 Write-Host "   5. Build Android: npx cap open android" -ForegroundColor White
 Write-Host "   6. Build iOS: npx cap open ios" -ForegroundColor White
 
-Write-Host "`n✨ ForTheWeebs is ready to launch!" -ForegroundColor Green
+Write-Host "`n✨ lunonex is ready to launch!" -ForegroundColor Green
 Write-Host "========================================`n" -ForegroundColor Cyan

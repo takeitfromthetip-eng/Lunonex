@@ -317,7 +317,7 @@ export function ProPhotoEditor({ userId }) {
 
         const blob = new Blob([JSON.stringify(projectData)], { type: 'application/json' });
         const link = document.createElement('a');
-        link.download = 'project.ftw'; // ForTheWeebs project file
+        link.download = 'project.ftw'; // lunonex project file
         link.href = URL.createObjectURL(blob);
         link.click();
     };

@@ -50,7 +50,7 @@ export const PRINT_ON_DEMAND_TERMS = {
       content: `
 **IF YOU BELIEVE YOUR COPYRIGHT WAS VIOLATED:**
 
-1. Send DMCA takedown notice to: legal@fortheweebs.com
+1. Send DMCA takedown notice to: legal@lunonex.com
 2. Include: Your contact info, description of copyrighted work, location of infringement
 3. We will investigate and respond within 48 hours
 4. Content may be removed pending investigation
@@ -111,7 +111,7 @@ Filing false DMCA notices is perjury under U.S. law (17 USC § 512(f)) and subje
       content: `
 **YOU AGREE TO:**
 
-1. Indemnify ForTheWeebs against any copyright claims arising from your content
+1. Indemnify lunonex against any copyright claims arising from your content
 2. Accept full legal responsibility for content you create and sell
 3. Pay any legal fees/damages if we're sued because of your content
 4. Release us from liability for any disputes with customers or copyright holders
@@ -147,7 +147,7 @@ export function generateLegalAgreement() {
       'This is a legally binding contract',
       'Violations may result in criminal prosecution',
       'You have 30 days to review before first print order',
-      'Questions? Contact: legal@fortheweebs.com'
+      'Questions? Contact: legal@lunonex.com'
     ]
   };
 }

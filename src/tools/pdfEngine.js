@@ -50,10 +50,10 @@ export async function attachMetadata(doc, metadata) {
     if (doc.doc && typeof doc.doc.info === 'function') {
       // Real PDFKit document
       doc.doc.info.Title = metadata.title || 'Untitled';
-      doc.doc.info.Author = metadata.author || 'ForTheWeebs';
+      doc.doc.info.Author = metadata.author || 'lunonex';
       doc.doc.info.Subject = metadata.subject || '';
       doc.doc.info.Keywords = metadata.keywords || '';
-      doc.doc.info.Creator = 'ForTheWeebs Platform';
+      doc.doc.info.Creator = 'lunonex Platform';
       doc.doc.info.CreationDate = new Date();
     }
 

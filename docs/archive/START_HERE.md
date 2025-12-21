@@ -1,6 +1,6 @@
 # 🚀 START HERE - Your Complete Implementation Guide
 
-**Everything you need to take ForTheWeebs from local dev to national security platform**
+**Everything you need to take lunonex from local dev to national security platform**
 
 ---
 
@@ -93,7 +93,7 @@ code VSCODE_SETUP.md
 ### **1. Set Up VS Code (30 min)**
 ```bash
 # Open VS Code
-cd C:\Users\polot\OneDrive\Desktop\fortheweebs
+cd C:\Users\polot\OneDrive\Desktop\lunonex
 code .
 
 # Follow VSCODE_SETUP.md

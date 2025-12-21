@@ -7,7 +7,7 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 const GITHUB_API = 'https://api.github.com';
 const REPO_OWNER = 'polotuspossumus-coder';
-const REPO_NAME = 'Fortheweebs';
+const REPO_NAME = 'lunonex';
 
 /**
  * Create GitHub Issue from bug report
@@ -59,7 +59,7 @@ ${bugData.actualBehavior || '_See description above_'}
 
 ---
 
-**Reported via:** ForTheWeebs Bug Reporter
+**Reported via:** lunonex Bug Reporter
 **Reporter IP:** ${bugData.context?.ipAddress || 'unknown'}
 `;
 

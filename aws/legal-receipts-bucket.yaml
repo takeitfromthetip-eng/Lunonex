@@ -3,22 +3,22 @@
 # Deploy: aws cloudformation deploy --template-file legal-receipts-bucket.yaml --stack-name legal-receipts-infrastructure
 
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'ForTheWeebs Legal Receipts - Immutable Object Lock Storage'
+Description: 'lunonex Legal Receipts - Immutable Object Lock Storage'
 
 Parameters:
   BucketName:
     Type: String
-    Default: 'fortheweebs-legal-receipts'
+    Default: 'lunonex-legal-receipts'
     Description: 'Primary legal receipts bucket name'
   
   BackupBucketName:
     Type: String
-    Default: 'fortheweebs-legal-receipts-backup'
+    Default: 'lunonex-legal-receipts-backup'
     Description: 'Backup legal receipts bucket name (cross-region)'
   
   LogsBucketName:
     Type: String
-    Default: 'fortheweebs-legal-receipts-logs'
+    Default: 'lunonex-legal-receipts-logs'
     Description: 'Access logs bucket name'
 
 Resources:

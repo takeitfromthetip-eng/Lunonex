@@ -9,7 +9,7 @@ import './InteractiveTutorial.css';
 const TUTORIAL_STEPS = [
     {
         id: 'welcome',
-        title: '👋 Welcome to ForTheWeebs!',
+        title: '👋 Welcome to lunonex!',
         description: 'Let\'s take a quick tour of your new creator platform. This will only take 2 minutes!',
         target: null,
         position: 'center',

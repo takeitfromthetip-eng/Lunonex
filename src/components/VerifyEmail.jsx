@@ -145,7 +145,7 @@ export default function VerifyEmail() {
               color: 'white'
             }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '10px' }}>🎉</div>
-              <h3 style={{ marginBottom: '8px', fontSize: '1.3rem' }}>Welcome to ForTheWeebs!</h3>
+              <h3 style={{ marginBottom: '8px', fontSize: '1.3rem' }}>Welcome to lunonex!</h3>
               <p style={{ opacity: 0.9, fontSize: '0.95rem' }}>
                 Your account is now active and ready to use
               </p>

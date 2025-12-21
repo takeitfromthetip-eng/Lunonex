@@ -37,7 +37,7 @@ CCBILL_FLEX_ID=your_flex_id_here  # Optional - for advanced API features
 3. Click **Advanced** → **Approval/Denial Post URL**
 4. Set webhook URL:
    ```
-   https://fortheweebs.vercel.app/api/ccbill/webhook
+   https://lunonex.vercel.app/api/ccbill/webhook
    ```
 5. Click **Save Changes**
 

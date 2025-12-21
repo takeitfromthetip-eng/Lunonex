@@ -1,6 +1,6 @@
-package dev.fortheweebs.mico.agent.analyzer
+package dev.lunonex.mico.agent.analyzer
 
-import dev.fortheweebs.mico.agent.model.CodebaseContext
+import dev.lunonex.mico.agent.model.CodebaseContext
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import java.io.File
@@ -80,7 +80,7 @@ class CodebaseAnalyzerImpl(
             projectName = projectDir.name,
             fileTree = fileTree,
             languages = languages,
-            dependencies = dev.fortheweebs.mico.agent.model.Dependencies(emptyList(), emptyList()),
+            dependencies = dev.lunonex.mico.agent.model.Dependencies(emptyList(), emptyList()),
             buildSystem = null,
             entryPoints = emptyList(),
             totalFiles = totalFiles,
@@ -101,10 +101,10 @@ class CodebaseAnalyzerImpl(
         }
     }
 
-    private fun findEntryPoints(fileTree: dev.fortheweebs.mico.agent.model.FileTree): List<String> {
+    private fun findEntryPoints(fileTree: dev.lunonex.mico.agent.model.FileTree): List<String> {
         val entryPoints = mutableListOf<String>()
 
-        fun traverse(node: dev.fortheweebs.mico.agent.model.FileNode) {
+        fun traverse(node: dev.lunonex.mico.agent.model.FileNode) {
             if (!node.isDirectory) {
                 val name = node.name.lowercase()
                 when {

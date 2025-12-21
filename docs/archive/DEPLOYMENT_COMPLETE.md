@@ -213,7 +213,7 @@ curl http://localhost:3000/health
 railway up
 
 # 3. Announce launch
-"🚀 ForTheWeebs Creator Tools - NOW LIVE!"
+"🚀 lunonex Creator Tools - NOW LIVE!"
 ```
 
 **Benefits:**
@@ -510,7 +510,7 @@ Everything is complete. All code works. All features tested. Documentation compr
 
 1. **Read:** `LAUNCH_TODAY_CHECKLIST.md`
 2. **Deploy:** `railway up`
-3. **Announce:** "🚀 ForTheWeebs Creator Tools - LIVE!"
+3. **Announce:** "🚀 lunonex Creator Tools - LIVE!"
 
 **That's it!** You're launching a full platform today.
 
@@ -518,7 +518,7 @@ Everything is complete. All code works. All features tested. Documentation compr
 
 ## 🙏 THANK YOU
 
-For trusting me with your vision. ForTheWeebs is going to change the creator economy.
+For trusting me with your vision. lunonex is going to change the creator economy.
 
 **You've got this!** 🚀
 

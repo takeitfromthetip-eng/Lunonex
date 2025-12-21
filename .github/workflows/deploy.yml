@@ -281,8 +281,8 @@ jobs:
             "npm_version": "latest",
             "commit_message": "${{ github.event.head_commit.message }}",
             "urls": {
-              "vercel": "https://fortheweebs.vercel.app",
-              "railway": "https://fortheweebs-production.up.railway.app"
+              "vercel": "https://lunonex.vercel.app",
+              "railway": "https://lunonex-production.up.railway.app"
             },
             "sovereignty_note": "Every deployment is a ritualized sovereign event"
           }
@@ -302,8 +302,8 @@ jobs:
           echo "| **Run** | #${{ github.run_number }} |" >> artifacts/deploy-log.md
           echo "" >> artifacts/deploy-log.md
           echo "### 🌐 Deployment URLs" >> artifacts/deploy-log.md
-          echo "- **Vercel**: https://fortheweebs.vercel.app" >> artifacts/deploy-log.md
-          echo "- **Railway API**: https://fortheweebs-production.up.railway.app" >> artifacts/deploy-log.md
+          echo "- **Vercel**: https://lunonex.vercel.app" >> artifacts/deploy-log.md
+          echo "- **Railway API**: https://lunonex-production.up.railway.app" >> artifacts/deploy-log.md
           echo "" >> artifacts/deploy-log.md
           echo "### 📝 Commit Message" >> artifacts/deploy-log.md
           echo "\`\`\`" >> artifacts/deploy-log.md
@@ -333,12 +333,12 @@ jobs:
       - name: 🔍 Check Vercel Deployment
         run: |
           echo "Checking Vercel deployment..."
-          curl -f https://fortheweebs.vercel.app || echo "⚠️ Vercel deployment not reachable"
+          curl -f https://lunonex.vercel.app || echo "⚠️ Vercel deployment not reachable"
           
       - name: 🔍 Check Railway Backend
         run: |
           echo "Checking Railway backend..."
-          curl -f https://fortheweebs-production.up.railway.app/api/status || echo "⚠️ Railway backend not reachable"
+          curl -f https://lunonex-production.up.railway.app/api/status || echo "⚠️ Railway backend not reachable"
           
   notify:
     name: 📢 Notify
@@ -352,4 +352,4 @@ jobs:
           echo "🚀 Deployment Complete"
           echo "Commit: ${{ github.sha }}"
           echo "Status: ${{ job.status }}"
-          echo "View at: https://fortheweebs.vercel.app"
+          echo "View at: https://lunonex.vercel.app"

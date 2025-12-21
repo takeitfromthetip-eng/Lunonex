@@ -29,7 +29,7 @@ export const LoadingScreen = () => (
       }
     `}</style>
     <p style={{color: 'white', fontSize: '1.5rem', marginTop: '30px', fontWeight: '600'}}>
-      Loading ForTheWeebs...
+      Loading lunonex...
     </p>
   </div>
 );

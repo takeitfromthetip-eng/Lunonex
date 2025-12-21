@@ -1,13 +1,13 @@
 @echo off
 REM ============================================================================
-REM ForTheWeebs - Production Server Startup Script
+REM lunonex - Production Server Startup Script
 REM ============================================================================
 REM This script kills all duplicate Node processes and starts a clean server
 REM ============================================================================
 
 echo.
 echo ========================================
-echo ForTheWeebs Server Startup
+echo lunonex Server Startup
 echo ========================================
 echo.
 

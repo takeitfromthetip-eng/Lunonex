@@ -1,5 +1,5 @@
 /* eslint-disable */
-console.log('🚀 Starting ForTheWeebs API Server...');
+console.log('🚀 Starting lunonex API Server...');
 console.log('Node version:', process.version);
 console.log('Environment:', process.env.NODE_ENV);
 
@@ -122,7 +122,7 @@ app.set('trust proxy', 1);
 app.use(metricsMiddleware);
 
 app.use(cors({
-    origin: ['https://fortheweebs.vercel.app', 'http://localhost:3003', 'http://localhost:3002'],
+    origin: ['https://lunonex.vercel.app', 'http://localhost:3003', 'http://localhost:3002'],
     credentials: true
 }));
 
@@ -175,7 +175,7 @@ const { featureFlags } = require('./config/featureFlags');
 // Root route - API info
 app.get('/', (req, res) => {
     res.json({
-        name: 'ForTheWeebs API',
+        name: 'lunonex API',
         version: '2.1.0',
         status: 'running',
         documentation: '/health',
@@ -183,7 +183,7 @@ app.get('/', (req, res) => {
             health: '/health',
             api: '/api/*'
         },
-        message: 'Welcome to ForTheWeebs Creator Platform API'
+        message: 'Welcome to lunonex Creator Platform API'
     });
 });
 
@@ -223,7 +223,7 @@ try {
 
     io = new Server(server, {
         cors: {
-            origin: ['https://fortheweebs.vercel.app', 'http://localhost:3003', 'http://localhost:3002'],
+            origin: ['https://lunonex.vercel.app', 'http://localhost:3003', 'http://localhost:3002'],
             methods: ['GET', 'POST'],
             credentials: true
         }
@@ -549,7 +549,7 @@ async function startServer() {
                 console.log(`
 ╔═══════════════════════════════════════════════════════════╗
 ║                                                           ║
-║   🚀 ForTheWeebs API Server                              ║
+║   🚀 lunonex API Server                              ║
 ║                                                           ║
 ║   Environment: ${process.env.NODE_ENV || 'development'}                                 ║
 ║   Port: ${PORT}                                              ║

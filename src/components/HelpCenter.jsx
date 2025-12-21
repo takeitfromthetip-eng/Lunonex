@@ -12,8 +12,8 @@ const HELP_SECTIONS = {
         articles: [
             {
                 id: 'welcome',
-                title: 'Welcome to ForTheWeebs',
-                content: `Welcome to your new creative home! ForTheWeebs is a professional creator platform designed for anime culture enthusiasts.
+                title: 'Welcome to lunonex',
+                content: `Welcome to your new creative home! lunonex is a professional creator platform designed for anime culture enthusiasts.
 
 **What You Can Do:**
 • Create stunning audio content with our Audio Editor
@@ -227,7 +227,7 @@ Press Ctrl+S to manually save, or Ctrl+E to export in PNG, JPG, or JSON format.
                 content: `⚡ **Command Palette** - Your productivity superpower
 
 **What It Does:**
-Instant access to EVERY feature in ForTheWeebs. No more hunting through menus!
+Instant access to EVERY feature in lunonex. No more hunting through menus!
 
 **How to Use:**
 1. Press Ctrl+K (Cmd+K on Mac)
@@ -516,9 +516,9 @@ Type any tool name, feature, or action to find it instantly!
 
 **Still Need Help?**
 • Press Ctrl+K → Type "support"
-• Email: support@fortheweebs.com
+• Email: support@lunonex.com
 • Discord: Join our community
-• Twitter: @ForTheWeebs`
+• Twitter: @lunonex`
             }
         ]
     }

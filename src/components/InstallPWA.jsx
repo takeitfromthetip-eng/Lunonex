@@ -67,7 +67,7 @@ const InstallPWA = () => {
             <div className="install-pwa-content">
                 <div className="install-pwa-icon">📱</div>
                 <div className="install-pwa-text">
-                    <h3>Install ForTheWeebs</h3>
+                    <h3>Install lunonex</h3>
                     <p>Get the full app experience with offline access!</p>
                 </div>
                 <div className="install-pwa-actions">

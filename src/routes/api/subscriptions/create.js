@@ -54,7 +54,7 @@ export async function POST(request) {
           email: email,
           metadata: {
             userId: userId,
-            platform: 'fortheweebs'
+            platform: 'lunonex'
           }
         });
       }

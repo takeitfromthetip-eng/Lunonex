@@ -66,7 +66,7 @@ You should see 4 rows: Free ($0), Hobby ($19), Pro ($99), Enterprise ($299)
 
 1. Go to [Stripe Dashboard → Developers → Webhooks](https://dashboard.stripe.com/webhooks)
 2. Click **Add endpoint**
-3. Enter endpoint URL: `https://fortheweebs-production.up.railway.app/api/webhooks/stripe-api`
+3. Enter endpoint URL: `https://lunonex-production.up.railway.app/api/webhooks/stripe-api`
 4. Select these events:
    - ✅ `invoice.paid`
    - ✅ `invoice.payment_failed`
@@ -107,7 +107,7 @@ node server.js
 
 #### 4.1 Generate Test API Key
 ```bash
-curl -X POST https://fortheweebs-production.up.railway.app/api/developer/keys/generate \
+curl -X POST https://lunonex-production.up.railway.app/api/developer/keys/generate \
   -H "Authorization: Bearer YOUR_USER_JWT" \
   -H "Content-Type: application/json" \
   -d '{"name": "Test Key", "planId": "free"}'
@@ -127,7 +127,7 @@ curl -X POST https://fortheweebs-production.up.railway.app/api/developer/keys/ge
 
 #### 4.2 Test API Request
 ```bash
-curl -X POST https://fortheweebs-production.up.railway.app/api/background-remove \
+curl -X POST https://lunonex-production.up.railway.app/api/background-remove \
   -H "Authorization: Bearer ftw_live_abc12345..." \
   -F "image=@test.jpg"
 ```
@@ -139,7 +139,7 @@ curl -X POST https://fortheweebs-production.up.railway.app/api/background-remove
 
 #### 4.3 Check Dashboard
 ```bash
-curl https://fortheweebs-production.up.railway.app/api/developer/dashboard/overview \
+curl https://lunonex-production.up.railway.app/api/developer/dashboard/overview \
   -H "Authorization: Bearer YOUR_USER_JWT"
 ```
 
@@ -159,7 +159,7 @@ curl https://fortheweebs-production.up.railway.app/api/developer/dashboard/overv
 
 #### 4.4 Test Subscription Upgrade
 ```bash
-curl -X POST https://fortheweebs-production.up.railway.app/api/api-billing/create-checkout \
+curl -X POST https://lunonex-production.up.railway.app/api/api-billing/create-checkout \
   -H "Authorization: Bearer YOUR_USER_JWT" \
   -H "Content-Type: application/json" \
   -d '{"priceId": "price_1SbZl24c1vlfw50BjJHUxrPo"}'

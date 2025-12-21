@@ -79,7 +79,7 @@ const FreeTrial = () => {
       <div className="trial-container">
         <div className="trial-header">
           <h1>Start Your Free Trial</h1>
-          <p>Experience all ForTheWeebs features - no credit card required</p>
+          <p>Experience all lunonex features - no credit card required</p>
         </div>
 
         {hasUsedTrial ? (

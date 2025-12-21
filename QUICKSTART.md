@@ -1,4 +1,4 @@
-# 🚀 QUICKSTART GUIDE - ForTheWeebs
+# 🚀 QUICKSTART GUIDE - lunonex
 
 ## Get Running in 60 Seconds
 
@@ -60,7 +60,7 @@ Output: `dist/` folder (ready to deploy)
 ## 🛡️ Safety Features Active
 
 ✅ **Pre-push validation** - Blocks bad commits
-✅ **Auto-backup** - Every commit backed up to D:/FORTHEWEEBS-BACKUPS/
+✅ **Auto-backup** - Every commit backed up to D:/lunonex-BACKUPS/
 ✅ **GitHub backup branches** - Created on every push
 ✅ **Emergency recovery** - `node scripts/emergency-rollback.js`
 

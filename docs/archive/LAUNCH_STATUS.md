@@ -1,4 +1,4 @@
-# 🚀 ForTheWeebs - Launch Status
+# 🚀 lunonex - Launch Status
 
 **Status**: ✅ **LAUNCH READY**
 **Date**: November 25, 2025

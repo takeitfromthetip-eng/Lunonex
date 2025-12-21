@@ -1,4 +1,4 @@
-# 🔑 API Keys Setup Guide - ForTheWeebs
+# 🔑 API Keys Setup Guide - lunonex
 
 ## Already Have These ✅
 - ✅ OpenAI (GPT-4, DALL-E 3, Shap-E)
@@ -51,7 +51,7 @@
 **Steps:**
 1. Log in with Spotify account
 2. Click "Create app"
-3. Name: "ForTheWeebs Audio Tools"
+3. Name: "lunonex Audio Tools"
 4. Description: "BPM detection for music production"
 5. Redirect URI: `http://localhost:3001/callback`
 6. Copy Client ID and Client Secret

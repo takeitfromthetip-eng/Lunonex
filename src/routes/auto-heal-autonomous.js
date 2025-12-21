@@ -158,7 +158,7 @@ async function analyzeBug(bugReport) {
     };
   }
 
-  const prompt = `You are Mico, autonomous self-healing AI for ForTheWeebs.
+  const prompt = `You are Mico, autonomous self-healing AI for lunonex.
 
 Bug Report:
 - Description: ${bugReport.description}

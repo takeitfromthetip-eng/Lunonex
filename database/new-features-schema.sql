@@ -1,4 +1,4 @@
--- ForTheWeebs New Features Database Schema
+-- lunonex New Features Database Schema
 -- Run this in Supabase SQL editor to add tables for new features
 
 -- ============================================

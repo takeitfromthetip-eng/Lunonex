@@ -237,7 +237,7 @@ CREATE TABLE legal_views (
 ### 3. Email Confirmation
 Send email after signup with links to legal docs:
 ```
-Subject: Welcome to ForTheWeebs - Legal Agreement Confirmation
+Subject: Welcome to lunonex - Legal Agreement Confirmation
 
 You agreed to our Terms of Service and Privacy Policy on [date].
 View your agreement: [link]
@@ -283,7 +283,7 @@ Before going live, verify:
 
 ## 🚨 CRITICAL: WHAT HAPPENS IF SUED
 
-### Scenario: User uploads pirated anime, copyright holder sues ForTheWeebs
+### Scenario: User uploads pirated anime, copyright holder sues lunonex
 
 **WITHOUT these protections:**
 - Cost: $50,000 - $500,000 in legal fees
@@ -343,6 +343,6 @@ You now have the same legal protection as:
 **Effective Date:** January 1, 2026  
 
 **Owner:** Jacob Morris, North Carolina  
-**Legal Contact:** legal@fortheweebs.com  
-**Privacy Contact:** privacy@fortheweebs.com  
-**DMCA Contact:** dmca@fortheweebs.com
+**Legal Contact:** legal@lunonex.com  
+**Privacy Contact:** privacy@lunonex.com  
+**DMCA Contact:** dmca@lunonex.com

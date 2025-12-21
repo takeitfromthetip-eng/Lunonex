@@ -342,7 +342,7 @@ class BatchProcessor {
    */
   async addWatermark(file, options) {
     const { 
-      text = '© ForTheWeebs', 
+      text = '© lunonex', 
       position = 'bottom-right',
       opacity = 0.5,
       fontSize = 20

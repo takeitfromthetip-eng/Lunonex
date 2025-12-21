@@ -1,4 +1,4 @@
-package dev.fortheweebs.mico.entity
+package dev.lunonex.mico.entity
 
 import jakarta.persistence.*
 import java.time.LocalDateTime

@@ -1,4 +1,4 @@
-package dev.fortheweebs.mico.agent.llm
+package dev.lunonex.mico.agent.llm
 
 /**
  * Interface for LLM communication.

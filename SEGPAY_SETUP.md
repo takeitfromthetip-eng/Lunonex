@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/api/segpay/create-checkout \
 ## Payment Flow
 
 ```
-User → ForTheWeebs → Segpay Checkout → Payment Success
+User → lunonex → Segpay Checkout → Payment Success
                 ↓
          Webhook to your server
                 ↓

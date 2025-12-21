@@ -1,6 +1,6 @@
 # 📋 VS CODE: YOUR MISSION BRIEF
 
-**Target:** Finish ForTheWeebs platform
+**Target:** Finish lunonex platform
 **Priority:** Database integration → API keys → Testing → Launch
 **Estimated Time:** 2-4 weeks to production-ready
 
@@ -23,7 +23,7 @@
 ### Method 3: Explorer Sidebar
 1. Press `Ctrl+Shift+E` (Windows/Linux) or `Cmd+Shift+E` (Mac)
 2. Look in the left sidebar
-3. Root folder is: `C:\Users\polot\OneDrive\Desktop\fortheweebs`
+3. Root folder is: `C:\Users\polot\OneDrive\Desktop\lunonex`
 
 ### Method 4: Go to Symbol
 1. Press `Ctrl+T` (Windows/Linux) or `Cmd+T` (Mac)
@@ -431,7 +431,7 @@
    ```
 
 4. Configure custom domain:
-   - Buy domain (e.g., fortheweebs.com)
+   - Buy domain (e.g., lunonex.com)
    - Point DNS to Railway + Vercel
    - Enable HTTPS (auto with Railway/Vercel)
 
@@ -633,7 +633,7 @@ What's left is **connecting the dots**. You've got this.
 
 ---
 
-**Your Mission:** Get ForTheWeebs from "works on my machine" to "live in production"
+**Your Mission:** Get lunonex from "works on my machine" to "live in production"
 
 **Your Tools:** This document + `VSCODE_CATCHUP.md` + `SUPABASE_DATABASE_SETUP.md`
 

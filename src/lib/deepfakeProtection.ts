@@ -71,7 +71,7 @@ export class DeepfakeProtectionEngine {
       supabaseUrl || process.env.VITE_SUPABASE_URL || '',
       supabaseKey || process.env.VITE_SUPABASE_ANON_KEY || ''
     );
-    this.secretKey = secretKey || process.env.VITE_DEEPFAKE_SECRET || 'fortheweebs-default-secret';
+    this.secretKey = secretKey || process.env.VITE_DEEPFAKE_SECRET || 'lunonex-default-secret';
   }
 
   /**

@@ -1,4 +1,4 @@
-# 🚀 ForTheWeebs.com Launch Setup Guide
+# 🚀 lunonex.com Launch Setup Guide
 
 ## ✅ STEP 1: Database Setup (5 minutes)
 
@@ -53,7 +53,7 @@ npm install @sendgrid/mail
 **Add to `.env` file:**
 ```
 SENDGRID_API_KEY=SG.your_key_here
-SENDGRID_FROM_EMAIL=noreply@fortheweebs.com
+SENDGRID_FROM_EMAIL=noreply@lunonex.com
 ```
 
 **Update email function in `api/creator-applications.js` (line 18):**
@@ -111,7 +111,7 @@ npm install @aws-sdk/client-ses
 AWS_REGION=us-east-1
 AWS_ACCESS_KEY_ID=your_key
 AWS_SECRET_ACCESS_KEY=your_secret
-AWS_SES_FROM_EMAIL=noreply@fortheweebs.com
+AWS_SES_FROM_EMAIL=noreply@lunonex.com
 ```
 
 ---
@@ -120,14 +120,14 @@ AWS_SES_FROM_EMAIL=noreply@fortheweebs.com
 
 **Go to:** https://vercel.com/dashboard
 
-1. Click your "fortheweebs" project
+1. Click your "lunonex" project
 2. Go to **Settings** tab
 3. Click **Domains** in sidebar
 4. Click **Add Domain**
 
 ### Add These Domains:
-- `fortheweebs.com`
-- `www.fortheweebs.com`
+- `lunonex.com`
+- `www.lunonex.com`
 
 ### Configure DNS at Your Domain Registrar:
 
@@ -151,7 +151,7 @@ Vercel will show you DNS records to add. They look like:
 **Wait 10-60 minutes for DNS propagation**
 
 ### Set Primary Domain:
-- In Vercel domains list, click the three dots next to `fortheweebs.com`
+- In Vercel domains list, click the three dots next to `lunonex.com`
 - Click "Set as Primary"
 
 ---
@@ -193,9 +193,9 @@ git push
 ## ✅ STEP 6: Verify Live Site (5 minutes)
 
 **Once DNS propagates, visit:**
-- https://fortheweebs.com
-- https://fortheweebs.com/claim-voucher
-- https://fortheweebs.com/apply
+- https://lunonex.com
+- https://lunonex.com/claim-voucher
+- https://lunonex.com/apply
 
 **Check:**
 - [ ] Landing page loads
@@ -284,4 +284,4 @@ ORDER BY claimed_at DESC;
 
 ## 🚀 YOU'RE READY TO LAUNCH!
 
-Once Steps 1-5 are done, your site is LIVE at fortheweebs.com!
+Once Steps 1-5 are done, your site is LIVE at lunonex.com!

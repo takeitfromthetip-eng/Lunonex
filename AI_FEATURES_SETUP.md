@@ -1,4 +1,4 @@
-# ForTheWeebs - API Keys Setup Guide
+# lunonex - API Keys Setup Guide
 
 ## Overview
 You now have **INDUSTRY-CRUSHING** AI features that make competitors obsolete:
@@ -39,7 +39,7 @@ You now have **INDUSTRY-CRUSHING** AI features that make competitors obsolete:
 - Unity Pro: $200/month = $2,400/year
 - Total: **$4,458 first year, then $4,008/year forever**
 
-**ForTheWeebs: $100-1000 one-time payment** (400x cheaper over 10 years)
+**lunonex: $100-1000 one-time payment** (400x cheaper over 10 years)
 
 ---
 
@@ -189,7 +189,7 @@ MESHY_API_KEY=your-meshy-key-here
 Create `.env` file in root directory:
 
 ```bash
-# Existing ForTheWeebs API keys
+# Existing lunonex API keys
 VITE_API_URL=http://localhost:3000
 VITE_SUPABASE_URL=your-supabase-url
 VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
@@ -368,7 +368,7 @@ npm run dev
 ## Next Steps
 
 1. **Marketing Copy:** Use competitive positioning in landing page
-   - "Why pay Logic Pro $200 + Auto-Tune $399 when ForTheWeebs does it FREE?"
+   - "Why pay Logic Pro $200 + Auto-Tune $399 when lunonex does it FREE?"
    - "Unity Pro costs $200/month. Our VR creator is FREE in your browser."
    - "Figma Team: $45/month. Our multiplayer is FREE forever."
 
@@ -381,7 +381,7 @@ npm run dev
 
 3. **Pricing Page:** Emphasize value
    - **Competitors:** $15,984/year in subscriptions
-   - **ForTheWeebs:** $500 one-time (3% of 10-year cost)
+   - **lunonex:** $500 one-time (3% of 10-year cost)
    - ROI: Save $159,840 over 10 years
 
 4. **User Onboarding:** Guided tutorial

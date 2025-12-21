@@ -1,8 +1,8 @@
-# ForTheWeebs Cleanup Ritual
+# lunonex Cleanup Ritual
 # Fixes EPERM errors + esbuild version mismatches
 # Usage: .\cleanup.ps1 or just "cleanup" if aliased
 
-Write-Host "🔥 Starting ForTheWeebs Cleanup Ritual..." -ForegroundColor Cyan
+Write-Host "🔥 Starting lunonex Cleanup Ritual..." -ForegroundColor Cyan
 
 # Step 1: Force remove node_modules
 Write-Host "🗑️  Removing node_modules..." -ForegroundColor Yellow

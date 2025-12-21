@@ -211,7 +211,7 @@ const TipJar = () => {
                             <ul>
                                 <li>Choose an amount and send a tip to any creator</li>
                                 <li>Creator receives 85% instantly</li>
-                                <li>ForTheWeebs takes 15% platform fee</li>
+                                <li>lunonex takes 15% platform fee</li>
                                 <li>Tips appear on creator's profile publicly</li>
                                 <li>Optional message to show your support</li>
                             </ul>

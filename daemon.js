@@ -3,11 +3,11 @@ const { execSync } = require('child_process');
 const path = require('path');
 
 /**
- * ForTheWeebs Server Daemon
+ * lunonex Server Daemon
  * Runs server permanently in background as Windows service
  */
 
-const SERVICE_NAME = 'ForTheWeebsServer';
+const SERVICE_NAME = 'lunonexServer';
 const SERVER_PATH = path.join(__dirname, 'server.js');
 const NODE_PATH = process.execPath;
 
@@ -30,7 +30,7 @@ function serviceExists() {
 }
 
 function installService() {
-  console.log('📦 Installing ForTheWeebs as Windows service...');
+  console.log('📦 Installing lunonex as Windows service...');
   
   // Install node-windows if not present
   try {
@@ -44,7 +44,7 @@ function installService() {
 
   const svc = new Service({
     name: SERVICE_NAME,
-    description: 'ForTheWeebs API Server - Runs permanently in background',
+    description: 'lunonex API Server - Runs permanently in background',
     script: SERVER_PATH,
     nodeOptions: [
       '--harmony',
@@ -176,7 +176,7 @@ switch (command) {
     break;
 
   default:
-    console.log('ForTheWeebs Server Daemon');
+    console.log('lunonex Server Daemon');
     console.log('========================\n');
     console.log('Usage:');
     console.log('  node daemon.js install   - Install as Windows service');

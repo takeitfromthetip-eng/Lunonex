@@ -1,6 +1,6 @@
-package dev.fortheweebs.mico.repository
+package dev.lunonex.mico.repository
 
-import dev.fortheweebs.mico.entity.Artifact
+import dev.lunonex.mico.entity.Artifact
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.stereotype.Repository

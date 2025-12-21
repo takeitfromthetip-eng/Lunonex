@@ -186,7 +186,7 @@ export async function logAdViolation(userId, contentId, violations) {
  */
 export function getAdPolicyText() {
   return `
-📢 ForTheWeebs Ad Policy
+📢 lunonex Ad Policy
 
 ✅ PROFILE ADS:
 - ALL creators can have ads on their profile

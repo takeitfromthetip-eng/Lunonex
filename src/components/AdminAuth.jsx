@@ -46,7 +46,7 @@ export function AdminLogin({ onLoginSuccess }) {
             Admin Access
           </h2>
           <p style={{ color: '#aaa', marginTop: '12px', fontSize: '0.95rem' }}>
-            ForTheWeebs Owner Portal
+            lunonex Owner Portal
           </p>
         </div>
 

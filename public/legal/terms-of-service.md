@@ -6,14 +6,14 @@
 
 ## 1. Acceptance of Terms
 
-Welcome to ForTheWeebs ("Platform", "we", "us", or "our"). By accessing or using ForTheWeebs, you ("User", "you", or "your") agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Platform.
+Welcome to lunonex ("Platform", "we", "us", or "our"). By accessing or using lunonex, you ("User", "you", or "your") agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Platform.
 
-**Important:** ForTheWeebs is a platform that hosts both general and adult content. By using this Platform, you acknowledge that you may encounter sexually explicit material if you choose to access adult content sections.
+**Important:** lunonex is a platform that hosts both general and adult content. By using this Platform, you acknowledge that you may encounter sexually explicit material if you choose to access adult content sections.
 
 ## 2. Eligibility
 
 ### 2.1 Age Requirements
-- You must be at least **18 years of age** to create an account on ForTheWeebs
+- You must be at least **18 years of age** to create an account on lunonex
 - You must be at least **18 years of age** to access, view, or upload adult content
 - Users under 18 are prohibited from using this Platform
 - We employ age verification systems, and you agree to provide truthful information
@@ -56,7 +56,7 @@ Welcome to ForTheWeebs ("Platform", "we", "us", or "our"). By accessing or using
 
 ### 4.1 Prohibited Content
 
-The following content is strictly prohibited on ForTheWeebs:
+The following content is strictly prohibited on lunonex:
 
 **Illegal Content:**
 - Child Sexual Abuse Material (CSAM) or any content depicting minors in sexual situations
@@ -149,12 +149,12 @@ If you access adult content, you agree to:
 ### 6.1 Revenue Share
 
 **General Content Creators (Stripe):**
-- ForTheWeebs retains 10% of gross revenue
+- lunonex retains 10% of gross revenue
 - Creators receive 90% of gross revenue
 - Payment processor fees (2.9% + $0.30) deducted separately
 
 **Adult Content Creators (CCBill/Segpay):**
-- ForTheWeebs retains 10% of net revenue (after payment processor fees)
+- lunonex retains 10% of net revenue (after payment processor fees)
 - Creators receive 90% of net revenue
 - Payment processor fees (10-15%) deducted first
 - Higher fees reflect adult content processing costs
@@ -206,20 +206,20 @@ If you access adult content, you agree to:
 ### 7.1 Creator Content Ownership
 
 - Creators retain full ownership of content they upload
-- Creators grant ForTheWeebs a non-exclusive, worldwide license to host, display, and distribute content
+- Creators grant lunonex a non-exclusive, worldwide license to host, display, and distribute content
 - License terminates when content is deleted (subject to backup retention)
 - Creators may not upload content they don't own or have rights to
 
 ### 7.2 Platform Intellectual Property
 
-- ForTheWeebs, logos, design, and features are owned by ForTheWeebs LLC
+- lunonex, logos, design, and features are owned by lunonex LLC
 - Users may not copy, modify, or create derivative works
 - API access and scraping are prohibited without written permission
 
 ### 7.3 Copyright Infringement (DMCA)
 
 - We respect intellectual property rights
-- Copyright holders may submit DMCA takedown notices to: dmca@fortheweebs.com
+- Copyright holders may submit DMCA takedown notices to: dmca@lunonex.com
 - We will remove infringing content upon valid notice
 - Repeat infringers will have accounts terminated
 - Counter-notices may be submitted per DMCA procedures
@@ -242,7 +242,7 @@ If you access adult content, you agree to:
 
 ### 8.3 User Rights
 
-- Access your data: Contact privacy@fortheweebs.com
+- Access your data: Contact privacy@lunonex.com
 - Delete your account: Settings → Delete Account
 - Export your data: Available in account settings
 - Opt-out of marketing: Unsubscribe links in emails
@@ -275,7 +275,7 @@ If you access adult content, you agree to:
 
 ### 9.2 Appeals
 
-- Appeals may be submitted to appeals@fortheweebs.com within 30 days
+- Appeals may be submitted to appeals@lunonex.com within 30 days
 - Include evidence and explanation
 - We will review within 14 business days
 - Our decision is final
@@ -284,7 +284,7 @@ If you access adult content, you agree to:
 
 **TO THE MAXIMUM EXTENT PERMITTED BY LAW:**
 
-- ForTheWeebs is provided "AS IS" without warranties of any kind
+- lunonex is provided "AS IS" without warranties of any kind
 - We are not liable for user-generated content
 - We are not liable for lost revenue, data, or profits
 - Our total liability to you shall not exceed the amount you paid us in the past 12 months
@@ -298,7 +298,7 @@ If you access adult content, you agree to:
 
 ## 11. Indemnification
 
-You agree to indemnify and hold harmless ForTheWeebs, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:
+You agree to indemnify and hold harmless lunonex, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:
 
 - Your use of the Platform
 - Your content
@@ -321,7 +321,7 @@ These Terms are governed by the laws of the State of [YOUR STATE], United States
 - Arbitration in [YOUR CITY], [YOUR STATE]
 - Small claims court available for claims under $10,000
 - Class action waiver: No class or representative actions
-- Right to opt-out: Email legal@fortheweebs.com within 30 days
+- Right to opt-out: Email legal@lunonex.com within 30 days
 
 ### 12.3 Exceptions to Arbitration
 
@@ -371,7 +371,7 @@ We may suspend or terminate the Platform or your account:
 
 ### 15.1 Entire Agreement
 
-These Terms, along with the Privacy Policy and any additional agreements, constitute the entire agreement between you and ForTheWeebs.
+These Terms, along with the Privacy Policy and any additional agreements, constitute the entire agreement between you and lunonex.
 
 ### 15.2 Severability
 
@@ -396,22 +396,22 @@ Provisions that by their nature should survive termination will survive (indemni
 ## 16. Contact Information
 
 **General Inquiries:**
-support@fortheweebs.com
+support@lunonex.com
 
 **Legal/Compliance:**
-legal@fortheweebs.com
+legal@lunonex.com
 
 **DMCA Notices:**
-dmca@fortheweebs.com
+dmca@lunonex.com
 
 **Privacy Concerns:**
-privacy@fortheweebs.com
+privacy@lunonex.com
 
 **2257 Custodian of Records:**
-custodian@fortheweebs.com
+custodian@lunonex.com
 
 **Mailing Address:**
-ForTheWeebs LLC
+lunonex LLC
 [YOUR PHYSICAL ADDRESS]
 [CITY, STATE, ZIP]
 United States
@@ -422,7 +422,7 @@ United States
 
 ### 17.1 Parental Controls Users
 
-Parents or guardians creating accounts for minors (under 18) are strictly prohibited. ForTheWeebs requires all users to be 18+.
+Parents or guardians creating accounts for minors (under 18) are strictly prohibited. lunonex requires all users to be 18+.
 
 ### 17.2 Family Access
 
@@ -440,7 +440,7 @@ Adult content creators are subject to an additional Creator Agreement which incl
 
 ## Acknowledgment
 
-By creating an account or using ForTheWeebs, you acknowledge that:
+By creating an account or using lunonex, you acknowledge that:
 
 - You have read and understood these Terms
 - You are at least 18 years of age
@@ -453,4 +453,4 @@ By creating an account or using ForTheWeebs, you acknowledge that:
 
 ---
 
-**ForTheWeebs - Built for creators, by creators. We're not here to compete. We're here to replace.**
+**lunonex - Built for creators, by creators. We're not here to compete. We're here to replace.**

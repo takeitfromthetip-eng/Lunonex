@@ -1,5 +1,5 @@
 /**
- * FORTHEWEEBS API MARKETPLACE - FEATURE ACCESS CONFIGURATION
+ * lunonex API MARKETPLACE - FEATURE ACCESS CONFIGURATION
  * 
  * Defines which features are available via API and which are LOCKED FOREVER.
  * Crown jewels protected. Your special sauce stays yours. 👑
@@ -243,11 +243,11 @@ module.exports = {
   // ============================================================================
   exampleRequests: {
     'background-removal': {
-      curl: `curl -X POST https://api.fortheweebs.com/v1/background-remove \\
+      curl: `curl -X POST https://api.lunonex.com/v1/background-remove \\
   -H "Authorization: Bearer ftw_live_your_key_here" \\
   -F "image=@photo.jpg"`,
       
-      javascript: `const response = await fetch('https://api.fortheweebs.com/v1/background-remove', {
+      javascript: `const response = await fetch('https://api.lunonex.com/v1/background-remove', {
   method: 'POST',
   headers: { 'Authorization': 'Bearer ftw_live_your_key_here' },
   body: formData
@@ -256,7 +256,7 @@ const data = await response.json();`,
       
       python: `import requests
 response = requests.post(
-    'https://api.fortheweebs.com/v1/background-remove',
+    'https://api.lunonex.com/v1/background-remove',
     headers={'Authorization': 'Bearer ftw_live_your_key_here'},
     files={'image': open('photo.jpg', 'rb')}
 )

@@ -115,8 +115,8 @@ async function main() {
       console.log(backups);
       console.log('\n📖 To restore from backup:');
       console.log('1. cd ..');
-      console.log('2. tar -xzf /d/FORTHEWEEBS-OPTIMIZED-[timestamp].tar.gz');
-      console.log('3. cd FORTHEWEEBS');
+      console.log('2. tar -xzf /d/lunonex-OPTIMIZED-[timestamp].tar.gz');
+      console.log('3. cd lunonex');
       console.log('4. npm install --legacy-peer-deps');
       console.log('5. npm run build');
       break;

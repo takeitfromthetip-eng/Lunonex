@@ -111,7 +111,7 @@
 
 ### **Step 1: Start Backend**
 ```bash
-cd C:\Users\polot\OneDrive\Desktop\fortheweebs
+cd C:\Users\polot\OneDrive\Desktop\lunonex
 npm run dev:server
 ```
 
@@ -171,7 +171,7 @@ railway login
 railway init
 railway variables set SUPABASE_URL=https://iqipomerawkvtojbtvom.supabase.co
 railway variables set SUPABASE_SERVICE_KEY=your_service_key
-railway variables set JWT_SECRET=fortheweebs_jwt_secret_2025_ultra_secure_key
+railway variables set JWT_SECRET=lunonex_jwt_secret_2025_ultra_secure_key
 railway variables set STRIPE_SECRET_KEY=sk_live_YOUR_STRIPE_KEY_HERE
 railway up
 ```
@@ -353,7 +353,7 @@ If anything breaks:
 
 ```bash
 # Terminal 1 - Backend
-cd C:\Users\polot\OneDrive\Desktop\fortheweebs
+cd C:\Users\polot\OneDrive\Desktop\lunonex
 npm run dev:server
 
 # Terminal 2 - Frontend

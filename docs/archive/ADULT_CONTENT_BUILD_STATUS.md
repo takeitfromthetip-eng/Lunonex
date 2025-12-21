@@ -119,14 +119,14 @@ User subscribes → Check creator type
 - [ ] Your phone number
 - [ ] Your city and state for arbitration
 - [ ] Create email addresses:
-  - custodian@fortheweebs.com
-  - legal@fortheweebs.com
-  - dmca@fortheweebs.com
-  - compliance@fortheweebs.com
-  - appeals@fortheweebs.com
+  - custodian@lunonex.com
+  - legal@lunonex.com
+  - dmca@lunonex.com
+  - compliance@lunonex.com
+  - appeals@lunonex.com
 
 **2. Form LLC:**
-- [ ] Register "ForTheWeebs LLC" with your state
+- [ ] Register "lunonex LLC" with your state
 - [ ] Get EIN (Employer ID Number) from IRS
 - [ ] Open business bank account
 - Estimated time: 1-2 weeks
@@ -142,13 +142,13 @@ User subscribes → Check creator type
 
 **4. Set Up Email Addresses:**
 Use your domain registrar or Google Workspace:
-- support@fortheweebs.com
-- custodian@fortheweebs.com
-- legal@fortheweebs.com
-- dmca@fortheweebs.com
-- compliance@fortheweebs.com
-- privacy@fortheweebs.com
-- appeals@fortheweebs.com
+- support@lunonex.com
+- custodian@lunonex.com
+- legal@lunonex.com
+- dmca@lunonex.com
+- compliance@lunonex.com
+- privacy@lunonex.com
+- appeals@lunonex.com
 
 ---
 

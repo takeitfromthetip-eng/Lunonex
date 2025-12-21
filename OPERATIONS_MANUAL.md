@@ -1,11 +1,11 @@
-# ForTheWeebs Sovereign Self-Healing Operations Manual
+# lunonex Sovereign Self-Healing Operations Manual
 
 ## 🚀 Quick Start
 
 ### Development
 ```powershell
 # Windows
-cd C:\Users\polot\Desktop\FORTHEWEEBS
+cd C:\Users\polot\Desktop\lunonex
 $env:PORT=3002
 node server.js
 ```
@@ -92,7 +92,7 @@ POST /userfix/feedback/report
 Body: {
   "report_type": "bug",
   "message": "Description of issue",
-  "page_url": "https://fortheweebs.vercel.app/page",
+  "page_url": "https://lunonex.vercel.app/page",
   "severity": "high"
 }
 ```

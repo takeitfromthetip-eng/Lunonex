@@ -1,4 +1,4 @@
-# 🎯 ForTheWeebs Sovereign Self-Healing System - Complete
+# 🎯 lunonex Sovereign Self-Healing System - Complete
 
 ## ✅ What's Been Built
 
@@ -74,7 +74,7 @@
 ### Start the System
 ```powershell
 # Development
-cd C:\Users\polot\Desktop\FORTHEWEEBS
+cd C:\Users\polot\Desktop\lunonex
 .\scripts\run-dev.ps1
 
 # Or manually
@@ -217,4 +217,4 @@ POST /webhooks/coinbase              # Coinbase webhook
 **System Version**: 2.1.0 Sovereign Self-Healing  
 **Last Updated**: December 11, 2025  
 **Built By**: GitHub Copilot + Mico AI  
-**Platform**: ForTheWeebs - Creator-First Platform
+**Platform**: lunonex - Creator-First Platform

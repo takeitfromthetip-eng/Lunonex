@@ -159,7 +159,7 @@ async function sendToClaudeForApproval(suggestionRecord, micoEval) {
     return;
   }
 
-  const prompt = `You are Claude, the FINAL decision maker for ForTheWeebs platform.
+  const prompt = `You are Claude, the FINAL decision maker for lunonex platform.
 
 Mico (first filter) approved this suggestion as worthwhile:
 

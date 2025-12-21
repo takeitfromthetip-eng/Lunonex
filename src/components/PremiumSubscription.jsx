@@ -280,7 +280,7 @@ export function PremiumSubscription({ userId, currentTier }) {
       <div className="premium-header">
         <h1>� Unlock Tools & Features</h1>
         <p className="premium-subtitle">
-          Earn money on ForTheWeebs, then unlock tools from your balance. No credit card needed!
+          Earn money on lunonex, then unlock tools from your balance. No credit card needed!
         </p>
         <div className="user-balance">
           💰 Your Balance: <strong>${userBalance.toFixed(2)}</strong>
@@ -523,7 +523,7 @@ export function PremiumSubscription({ userId, currentTier }) {
           <div className="benefit-card">
             <div className="benefit-icon">💳</div>
             <h3>No Credit Card Needed</h3>
-            <p>Pay from your ForTheWeebs earnings. Never come out of pocket.</p>
+            <p>Pay from your lunonex earnings. Never come out of pocket.</p>
           </div>
           <div className="benefit-card">
             <div className="benefit-icon">⚡</div>
@@ -660,7 +660,7 @@ export function PremiumSubscription({ userId, currentTier }) {
                 marginBottom: '10px'
               }}>💡 ROI Calculation:</p>
               <p style={{ fontSize: '0.95rem', lineHeight: '1.6', color: '#e0e0e0' }}>
-                If you earn just <strong>$2000</strong> on ForTheWeebs:<br />
+                If you earn just <strong>$2000</strong> on lunonex:<br />
                 • $500 tier: Pay <strong>$300-500 in fees</strong> (15-25%)<br />
                 • $1000 tier: Pay <strong>$0 in fees</strong> (0%)<br />
                 <span style={{ color: '#10b981', fontWeight: '700' }}>You break even immediately and save forever.</span>
@@ -851,11 +851,11 @@ export function PremiumSubscription({ userId, currentTier }) {
         <div className="faq-list">
           <div className="faq-item">
             <h4>How do I earn money to unlock tools?</h4>
-            <p>Earn from tips (0% fee), commissions (15% fee), and print-on-demand (25% fee). Your earnings go into your ForTheWeebs balance.</p>
+            <p>Earn from tips (0% fee), commissions (15% fee), and print-on-demand (25% fee). Your earnings go into your lunonex balance.</p>
           </div>
           <div className="faq-item">
             <h4>Can I pay with a credit card instead?</h4>
-            <p>Yes! Every unlock has TWO payment options: (1) Pay from your ForTheWeebs balance, OR (2) Pay with credit card. Your choice.</p>
+            <p>Yes! Every unlock has TWO payment options: (1) Pay from your lunonex balance, OR (2) Pay with credit card. Your choice.</p>
           </div>
           <div className="faq-item">
             <h4>Can I pay in increments?</h4>

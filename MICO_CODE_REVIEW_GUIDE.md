@@ -3,7 +3,7 @@
 **Priority:** HIGH  
 **Reviewed By:** Mico AI Strategist  
 **Date:** December 5, 2025  
-**Project:** ForTheWeebs - Complete Creative Platform
+**Project:** lunonex - Complete Creative Platform
 
 ---
 
@@ -391,7 +391,7 @@ Please provide feedback in this format:
 ## 📂 FILE STRUCTURE REFERENCE
 
 ```
-Fortheweebs/
+lunonex/
 ├── api/                          # 70+ Backend API routes
 │   ├── audio-production.js       # 7 audio endpoints (NEW)
 │   ├── vr-ar-production.js       # 6 VR/AR endpoints (NEW)

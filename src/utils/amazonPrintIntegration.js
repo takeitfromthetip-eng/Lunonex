@@ -1,7 +1,7 @@
 /* eslint-disable */
 /**
  * Amazon Print-on-Demand Integration
- * Connects ForTheWeebs print shop to Amazon KDP, Merch by Amazon, and Amazon Handmade
+ * Connects lunonex print shop to Amazon KDP, Merch by Amazon, and Amazon Handmade
  *
  * Services:
  * 1. Amazon KDP (Kindle Direct Publishing) - Books, Comics, Manga
@@ -30,7 +30,7 @@ export const AMAZON_SETUP_INSTRUCTIONS = {
       '2. Complete tax information (W-9 or W-8)',
       '3. Set up direct deposit for payments',
       '4. Get API credentials from Account Settings',
-      '5. Add credentials to ForTheWeebs settings',
+      '5. Add credentials to lunonex settings',
     ],
     products: ['Comic Books', 'Manga', 'Art Books', 'Graphic Novels', 'Novels', 'Coloring Books'],
     revenue: '60-70% royalty on sales',
@@ -45,7 +45,7 @@ export const AMAZON_SETUP_INSTRUCTIONS = {
       '2. Wait for approval (can take 1-6 months)',
       '3. Once approved, complete account setup',
       '4. Get API access from developer portal',
-      '5. Add credentials to ForTheWeebs settings',
+      '5. Add credentials to lunonex settings',
     ],
     products: ['T-Shirts', 'Hoodies', 'Tank Tops', 'Phone Cases', 'PopSockets'],
     revenue: '$2-$8 per item sold',
@@ -61,7 +61,7 @@ export const AMAZON_SETUP_INSTRUCTIONS = {
       '2. Submit portfolio/examples of work',
       '3. Wait for artisan verification',
       '4. Once approved, set up shop',
-      '5. Connect to ForTheWeebs via API',
+      '5. Connect to lunonex via API',
     ],
     products: ['Art Prints', 'Posters', 'Trading Cards', 'Stickers', 'Custom Items'],
     revenue: '85% after referral fee',
@@ -75,7 +75,7 @@ export const AMAZON_SETUP_INSTRUCTIONS = {
       '1. Sign up at https://www.printful.com',
       '2. Connect your Amazon seller account',
       '3. Get Printful API key from dashboard',
-      '4. Add API key to ForTheWeebs settings',
+      '4. Add API key to lunonex settings',
       '5. Printful auto-fulfills Amazon orders',
     ],
     products: ['Everything KDP/Merch cant handle'],
@@ -192,7 +192,7 @@ export async function publishToMerch(product, designFile) {
     // Create merch listing
     const listing = {
       title: product.title,
-      brand: product.brand || 'ForTheWeebs',
+      brand: product.brand || 'lunonex',
       description: product.description,
       bulletPoints: product.features || [],
       productType: product.type || 'StandardTee', // StandardTee, PremiumTee, Hoodie, etc.

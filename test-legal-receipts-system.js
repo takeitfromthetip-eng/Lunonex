@@ -169,7 +169,7 @@ function printSummary() {
   
   console.log('AWS Configuration:');
   console.log(`  Region: ${process.env.AWS_REGION}`);
-  console.log(`  S3 Bucket: fortheweebs-legal-receipts-2025`);
+  console.log(`  S3 Bucket: lunonex-legal-receipts-2025`);
   console.log(`  From Email: ${process.env.FROM_EMAIL}`);
   console.log(`  SES Status: ${process.env.FROM_EMAIL ? 'Verified ✅' : 'Needs Verification ⚠️'}`);
   

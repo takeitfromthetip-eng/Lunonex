@@ -106,7 +106,7 @@
 
 ### **Step 1: Start Backend**
 ```bash
-cd C:\Users\polot\OneDrive\Desktop\fortheweebs
+cd C:\Users\polot\OneDrive\Desktop\lunonex
 npm run dev:server
 ```
 
@@ -148,7 +148,7 @@ curl -X POST http://localhost:3000/api/creator-copyright/submit \
     "complainant_name": "Test Artist",
     "complainant_email": "test@example.com",
     "copyright_work_title": "Test Artwork",
-    "infringing_content_url": "https://fortheweebs.com/posts/123",
+    "infringing_content_url": "https://lunonex.com/posts/123",
     "infringing_creator_username": "testcreator",
     "explanation": "Detailed explanation of infringement",
     "good_faith_statement": true
@@ -189,7 +189,7 @@ curl -X POST http://localhost:3000/api/creator-copyright/submit \
 > "Subscribe for $50/month. You can request refunds if you don't like it."
 
 **NEW MODEL (Clear):**
-> "Make a $50/month donation to support ForTheWeebs. As a thank you, you'll receive access to all creator tools. Donations are non-refundable."
+> "Make a $50/month donation to support lunonex. As a thank you, you'll receive access to all creator tools. Donations are non-refundable."
 
 **Why This Works:**
 - ✅ **Legally clear:** Not a purchase, can't dispute as "product not as described"
@@ -341,7 +341,7 @@ curl -X POST http://localhost:3000/api/creator-copyright/submit \
 
 ```bash
 # Terminal 1 - Backend
-cd C:\Users\polot\OneDrive\Desktop\fortheweebs
+cd C:\Users\polot\OneDrive\Desktop\lunonex
 npm run dev:server
 
 # Terminal 2 - Frontend

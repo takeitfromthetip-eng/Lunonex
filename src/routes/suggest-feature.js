@@ -183,7 +183,7 @@ async function triggerFeatureBuild(suggestion, analysis, userId, suggestionId) {
   // Option 1: Create GitHub issue that triggers auto-build workflow
   if (process.env.GITHUB_TOKEN) {
     try {
-      await fetch('https://api.github.com/repos/YOUR_USERNAME/Fortheweebs/issues', {
+      await fetch('https://api.github.com/repos/YOUR_USERNAME/lunonex/issues', {
         method: 'POST',
         headers: {
           'Authorization': `token ${process.env.GITHUB_TOKEN}`,

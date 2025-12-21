@@ -107,12 +107,12 @@ National Center for Missing & Exploited Children - federal reporting system for 
 
 **2. Get Required Info:**
 ```
-Business name: ForTheWeebs
+Business name: lunonex
 Business type: User-Generated Content Platform
 Content types: Images, Videos, Text
 Monthly active users: [YOUR NUMBER]
 Contact person: [YOUR NAME]
-Contact email: legal@fortheweebs.com
+Contact email: legal@lunonex.com
 ```
 
 **3. API Integration:**
@@ -181,7 +181,7 @@ Scans images for:
 
 **1. Create Google Cloud Account:**
 - Go to: https://console.cloud.google.com/
-- Create new project: "ForTheWeebs-ContentModeration"
+- Create new project: "lunonex-ContentModeration"
 
 **2. Enable Cloud Vision API:**
 - Search for "Cloud Vision API"
@@ -237,7 +237,7 @@ console.log(result);
 
 **2. Create IAM User:**
 - Go to: IAM → Users → Add User
-- User name: `fortheweebs-rekognition`
+- User name: `lunonex-rekognition`
 - Access type: "Programmatic access"
 - Attach policy: `AmazonRekognitionFullAccess`
 

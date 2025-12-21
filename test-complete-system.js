@@ -13,7 +13,7 @@ const tests = {
   warnings: []
 };
 
-console.log('🚀 FORTHEWEEBS COMPLETE SYSTEM TEST\n');
+console.log('🚀 lunonex COMPLETE SYSTEM TEST\n');
 console.log('Testing all critical systems...\n');
 
 // ============================================
@@ -197,7 +197,7 @@ console.log('\n🗄️ Testing Supabase Connection...');
       }
     });
 
-    const bucketName = process.env.S3_BUCKET_NAME || 'fortheweebs-legal-receipts-2025';
+    const bucketName = process.env.S3_BUCKET_NAME || 'lunonex-legal-receipts-2025';
     
     await s3Client.send(new HeadBucketCommand({ Bucket: bucketName }));
     tests.passed.push(`✅ S3 bucket "${bucketName}" accessible`);

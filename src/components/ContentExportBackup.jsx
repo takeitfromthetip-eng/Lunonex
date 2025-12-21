@@ -40,7 +40,7 @@ export default function ContentExportBackup({ userId }) {
     }
     
     // OAuth flow for cloud providers can be added here
-    alert(`Connecting to ${cloudProvider}...\n\nYou'll be redirected to authorize ForTheWeebs to access your ${cloudProvider} account.`);
+    alert(`Connecting to ${cloudProvider}...\n\nYou'll be redirected to authorize lunonex to access your ${cloudProvider} account.`);
   };
 
   const toggleType = (typeId) => {

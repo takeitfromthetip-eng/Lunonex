@@ -56,7 +56,7 @@ export default function CollaborationSystem({ projectId, userId, userName, toolT
         // In production, this would connect to your WebSocket server
         // For now, simulating with mock data
 
-        // wsRef.current = new WebSocket(`wss://api.fortheweebs.com/collaborate/${projectId}`);
+        // wsRef.current = new WebSocket(`wss://api.lunonex.com/collaborate/${projectId}`);
 
         // Mock: Simulate other users joining
         setTimeout(() => {

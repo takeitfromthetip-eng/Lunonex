@@ -227,7 +227,7 @@ const CreatorApplication = () => {
       <div className="application-container">
         <div className="application-header">
           <h1>Creator Application</h1>
-          <p>Join ForTheWeebs and build your community with full creator control</p>
+          <p>Join lunonex and build your community with full creator control</p>
         </div>
 
         <form onSubmit={handleSubmit} className="application-form">
@@ -488,14 +488,14 @@ const CreatorApplication = () => {
             <h2>Tell Us More</h2>
 
             <div className="form-group">
-              <label htmlFor="whyJoin">Why do you want to join ForTheWeebs? *</label>
+              <label htmlFor="whyJoin">Why do you want to join lunonex? *</label>
               <textarea
                 id="whyJoin"
                 name="whyJoin"
                 value={formData.whyJoin}
                 onChange={handleChange}
                 rows="5"
-                placeholder="What makes ForTheWeebs the right platform for you?"
+                placeholder="What makes lunonex the right platform for you?"
                 required
               />
             </div>
@@ -558,7 +558,7 @@ const CreatorApplication = () => {
 
               <div className="warning-box">
                 <strong>⚠️ Important:</strong> Uploading content featuring minors or non-consenting individuals
-                is a federal crime. ForTheWeebs employs AI detection and reports violations to NCMEC and law enforcement.
+                is a federal crime. lunonex employs AI detection and reports violations to NCMEC and law enforcement.
               </div>
             </section>
           )}
@@ -574,7 +574,7 @@ const CreatorApplication = () => {
                   onChange={handleChange}
                   required
                 />
-                <span>I agree to the ForTheWeebs Terms of Service and Creator Guidelines *</span>
+                <span>I agree to the lunonex Terms of Service and Creator Guidelines *</span>
               </label>
             </div>
           </section>

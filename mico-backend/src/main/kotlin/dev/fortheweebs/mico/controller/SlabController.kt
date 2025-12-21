@@ -1,9 +1,9 @@
-package dev.fortheweebs.mico.controller
+package dev.lunonex.mico.controller
 
-import dev.fortheweebs.mico.model.SlabRequest
-import dev.fortheweebs.mico.model.SlabResponse
-import dev.fortheweebs.mico.service.ArtifactService
-import dev.fortheweebs.mico.service.SlabExecutionService
+import dev.lunonex.mico.model.SlabRequest
+import dev.lunonex.mico.model.SlabResponse
+import dev.lunonex.mico.service.ArtifactService
+import dev.lunonex.mico.service.SlabExecutionService
 import org.slf4j.LoggerFactory
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.*

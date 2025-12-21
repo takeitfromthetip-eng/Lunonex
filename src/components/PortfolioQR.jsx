@@ -9,7 +9,7 @@ const PortfolioQR = () => {
     // User portfolio data
     const portfolioData = {
         username: '@sarahcreates',
-        portfolioUrl: 'https://fortheweebs.netlify.app/portfolio/sarahcreates',
+        portfolioUrl: 'https://lunonex.netlify.app/portfolio/sarahcreates',
         qrCode: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==', // Placeholder
         totalScans: 847,
         scansThisWeek: 127,
@@ -390,7 +390,7 @@ const PortfolioQR = () => {
                                     <div className="story-author">— Jamie Lee, Digital Artist</div>
                                 </div>
                                 <div className="story-card">
-                                    <div className="story-quote">"Posted my QR code on Instagram story. 500+ followers scanned it, gained 127 new followers on ForTheWeebs in 24 hours!"</div>
+                                    <div className="story-quote">"Posted my QR code on Instagram story. 500+ followers scanned it, gained 127 new followers on lunonex in 24 hours!"</div>
                                     <div className="story-author">— Sarah Kim, Content Creator</div>
                                 </div>
                             </div>

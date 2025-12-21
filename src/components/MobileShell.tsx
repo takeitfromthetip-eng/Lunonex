@@ -8,7 +8,7 @@ export default function MobileShell({ children }: MobileShellProps) {
   return (
     <div className="min-h-screen bg-gray-50 text-sm md:text-base">
       <header className="bg-purple-700 text-white p-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">Fortheweebs</h1>
+        <h1 className="text-xl font-bold">lunonex</h1>
         <nav className="space-x-4">
           <a href="/feed">Feed</a>
           <a href="/profile">Profile</a>

@@ -2,11 +2,11 @@
   "folders": [
     {
       "path": ".",
-      "name": "ForTheWeebs - Main Project"
+      "name": "lunonex - Main Project"
     },
     {
-      "path": "Fortheweebs",
-      "name": "Fortheweebs - App Submodule"
+      "path": "lunonex",
+      "name": "lunonex - App Submodule"
     }
   ],
   "settings": {
@@ -43,10 +43,10 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "Launch ForTheWeebs Dev Server",
+        "name": "Launch lunonex Dev Server",
         "type": "node",
         "request": "launch",
-        "cwd": "${workspaceFolder}/Fortheweebs",
+        "cwd": "${workspaceFolder}/lunonex",
         "runtimeExecutable": "npm",
         "runtimeArgs": [
           "run",
@@ -66,7 +66,7 @@
         "type": "shell",
         "command": "npm run dev",
         "options": {
-          "cwd": "${workspaceFolder}/Fortheweebs"
+          "cwd": "${workspaceFolder}/lunonex"
         },
         "problemMatcher": [],
         "group": {
@@ -79,7 +79,7 @@
         "type": "shell",
         "command": "npm run build",
         "options": {
-          "cwd": "${workspaceFolder}/Fortheweebs"
+          "cwd": "${workspaceFolder}/lunonex"
         },
         "problemMatcher": []
       },
@@ -88,7 +88,7 @@
         "type": "shell",
         "command": "vercel --prod --yes",
         "options": {
-          "cwd": "${workspaceFolder}/Fortheweebs"
+          "cwd": "${workspaceFolder}/lunonex"
         },
         "problemMatcher": []
       },
@@ -97,7 +97,7 @@
         "type": "shell",
         "command": "git pull origin main",
         "options": {
-          "cwd": "${workspaceFolder}/Fortheweebs"
+          "cwd": "${workspaceFolder}/lunonex"
         },
         "problemMatcher": []
       },
@@ -106,7 +106,7 @@
         "type": "shell",
         "command": "git push origin main",
         "options": {
-          "cwd": "${workspaceFolder}/Fortheweebs"
+          "cwd": "${workspaceFolder}/lunonex"
         },
         "problemMatcher": []
       }

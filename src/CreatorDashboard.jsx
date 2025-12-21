@@ -139,7 +139,7 @@ export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free
 
       // Show success message
       setTimeout(() => {
-        alert(`🎉 Welcome to ForTheWeebs!\n\nYour family access has been activated!\n\n✅ You now have FULL FREE ACCESS to all features!\n\n🚀 Start exploring your dashboard!`);
+        alert(`🎉 Welcome to lunonex!\n\nYour family access has been activated!\n\n✅ You now have FULL FREE ACCESS to all features!\n\n🚀 Start exploring your dashboard!`);
       }, 500);
 
       console.log('✅ Family access granted!');

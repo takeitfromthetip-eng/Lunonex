@@ -52,7 +52,7 @@ export const AGE_RESTRICTIONS = {
   under_13: {
     allowed: [],
     blocked: ['Everything - COPPA violation without parental consent'],
-    message: 'You must be at least 13 years old to use ForTheWeebs, or have verifiable parental consent.'
+    message: 'You must be at least 13 years old to use lunonex, or have verifiable parental consent.'
   },
 
   age_13_to_17: {

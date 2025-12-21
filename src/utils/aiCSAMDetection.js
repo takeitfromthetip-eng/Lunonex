@@ -426,7 +426,7 @@ async function prepareNCMECReport(data) {
       'Evidence preserved',
     ],
 
-    reportingPlatform: 'ForTheWeebs',
+    reportingPlatform: 'lunonex',
     reportURL: 'https://report.cybertip.org/',
     deadline: calculateReportingDeadline(), // 24 hours from detection
   };

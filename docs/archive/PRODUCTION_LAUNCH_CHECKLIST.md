@@ -1,6 +1,6 @@
 # 🚀 PRODUCTION LAUNCH CHECKLIST
 
-**Platform:** ForTheWeebs v1.8.0
+**Platform:** lunonex v1.8.0
 **Last Updated:** November 25, 2025
 **Status:** 92% Complete - Ready for Production with Key Setup
 
@@ -152,7 +152,7 @@
 - [ ] DMCA agent designated
 
 ### Deployment
-- [ ] Domain purchased (e.g., fortheweebs.com)
+- [ ] Domain purchased (e.g., lunonex.com)
 - [ ] DNS configured
 - [ ] SSL certificate (auto with Railway/Vercel)
 - [ ] Backend deployed to Railway
@@ -222,7 +222,7 @@
 ## 🆘 EMERGENCY CONTACTS
 
 **Owner:** polotuspossumus@gmail.com
-**GitHub:** polotuspossumus-coder/Fortheweebs
+**GitHub:** polotuspossumus-coder/lunonex
 **Hosting:** Railway (backend), Vercel (frontend)
 **Database:** Supabase (PostgreSQL)
 

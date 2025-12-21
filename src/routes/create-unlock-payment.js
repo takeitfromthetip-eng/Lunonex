@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       metadata: {
         userId,
         toolId,
-        platform: 'ForTheWeebs',
+        platform: 'lunonex',
         type: 'tool_unlock'
       },
       description: `Tool unlock: ${toolId} for user ${userId}`,

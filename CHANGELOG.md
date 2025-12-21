@@ -175,8 +175,8 @@ npm run check:duplicates
 
 ```bash
 # Clone and install
-git clone https://github.com/polotuspossumus-coder/Fortheweebs.git
-cd Fortheweebs
+git clone https://github.com/polotuspossumus-coder/lunonex.git
+cd lunonex
 npm install
 
 # Initialize database
@@ -219,7 +219,7 @@ npm run check:duplicates
 
 ### 📄 License
 
-Proprietary - All rights reserved to ForTheWeebs creators
+Proprietary - All rights reserved to lunonex creators
 
 ### 🙏 Acknowledgments
 

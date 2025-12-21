@@ -8,7 +8,7 @@ const ReferralRewards = () => {
     // User referral data
     const userData = {
         referralCode: 'FTW-SARAH-2024',
-        personalLink: 'https://fortheweebs.netlify.app/signup?ref=FTW-SARAH-2024',
+        personalLink: 'https://lunonex.netlify.app/signup?ref=FTW-SARAH-2024',
         referralsCount: 7,
         successfulReferrals: 4,
         rewardsEarned: 4, // months of free Pro
@@ -17,11 +17,11 @@ const ReferralRewards = () => {
         totalEarnings: 196, // 4 months × $49/mo value
         rank: 'Gold Recruiter', // Bronze → Silver → Gold → Platinum
         shareLinks: {
-            twitter: `https://twitter.com/intent/tweet?text=Check out @ForTheWeebs - the best creative platform! Join with my link and we both get rewards: https://fortheweebs.netlify.app/signup?ref=FTW-SARAH-2024`,
-            facebook: `https://www.facebook.com/sharer/sharer.php?u=https://fortheweebs.netlify.app/signup?ref=FTW-SARAH-2024`,
-            linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=https://fortheweebs.netlify.app/signup?ref=FTW-SARAH-2024`,
-            reddit: `https://www.reddit.com/submit?url=https://fortheweebs.netlify.app/signup?ref=FTW-SARAH-2024&title=ForTheWeebs - Best Creative Platform`,
-            email: `mailto:?subject=Check out ForTheWeebs&body=I've been using ForTheWeebs and it's amazing! Join with my link: https://fortheweebs.netlify.app/signup?ref=FTW-SARAH-2024`
+            twitter: `https://twitter.com/intent/tweet?text=Check out @lunonex - the best creative platform! Join with my link and we both get rewards: https://lunonex.netlify.app/signup?ref=FTW-SARAH-2024`,
+            facebook: `https://www.facebook.com/sharer/sharer.php?u=https://lunonex.netlify.app/signup?ref=FTW-SARAH-2024`,
+            linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=https://lunonex.netlify.app/signup?ref=FTW-SARAH-2024`,
+            reddit: `https://www.reddit.com/submit?url=https://lunonex.netlify.app/signup?ref=FTW-SARAH-2024&title=lunonex - Best Creative Platform`,
+            email: `mailto:?subject=Check out lunonex&body=I've been using lunonex and it's amazing! Join with my link: https://lunonex.netlify.app/signup?ref=FTW-SARAH-2024`
         }
     };
 
@@ -337,7 +337,7 @@ const ReferralRewards = () => {
                             <h3>💡 Pro Tips for Maximum Referrals</h3>
                             <ul className="tips-list">
                                 <li>Share your best projects with your referral link in the description</li>
-                                <li>Post tutorials showing how you create on ForTheWeebs</li>
+                                <li>Post tutorials showing how you create on lunonex</li>
                                 <li>Join creator communities and share when relevant (no spam!)</li>
                                 <li>Add your link to your social media bios</li>
                                 <li>Tell friends about specific features they'd love</li>

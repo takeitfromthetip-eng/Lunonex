@@ -40,7 +40,7 @@ CUSTODIAN_CITY=Your City
 CUSTODIAN_STATE=CA
 CUSTODIAN_ZIP=12345
 CUSTODIAN_PHONE=+1-555-123-4567
-CUSTODIAN_EMAIL=custodian@fortheweebs.com
+CUSTODIAN_EMAIL=custodian@lunonex.com
 ```
 
 Replace with your real info when you have it.
@@ -157,7 +157,7 @@ CUSTODIAN_CITY=Your City
 CUSTODIAN_STATE=CA
 CUSTODIAN_ZIP=12345
 CUSTODIAN_PHONE=+1-555-123-4567
-CUSTODIAN_EMAIL=custodian@fortheweebs.com
+CUSTODIAN_EMAIL=custodian@lunonex.com
 
 # 3. CCBill (Sign up at https://www.ccbill.com/ - takes 3-5 days)
 # CCBILL_ACCOUNT_ID=your_account_id

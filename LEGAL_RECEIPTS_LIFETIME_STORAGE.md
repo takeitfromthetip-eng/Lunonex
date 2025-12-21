@@ -2,7 +2,7 @@
 
 ## 🎯 **Overview**
 
-ForTheWeebs legal acceptance receipts are **immutable for life** using AWS S3 Object Lock (COMPLIANCE mode) with far-future retention dates (2099-12-31) and annual extension jobs to maintain perpetual storage.
+lunonex legal acceptance receipts are **immutable for life** using AWS S3 Object Lock (COMPLIANCE mode) with far-future retention dates (2099-12-31) and annual extension jobs to maintain perpetual storage.
 
 **Key Features:**
 - ✅ **Write-once storage** (no updates/deletes)
@@ -77,8 +77,8 @@ AWS_SECRET_ACCESS_KEY=your_secret_key
 AWS_REGION=us-east-1
 
 # Legal Receipts Bucket
-AWS_LEGAL_RECEIPTS_BUCKET=fortheweebs-legal-receipts
-AWS_LEGAL_RECEIPTS_BACKUP_BUCKET=fortheweebs-legal-receipts-backup
+AWS_LEGAL_RECEIPTS_BUCKET=lunonex-legal-receipts
+AWS_LEGAL_RECEIPTS_BACKUP_BUCKET=lunonex-legal-receipts-backup
 
 # KMS Keys (from CloudFormation outputs)
 AWS_LEGAL_RECEIPTS_KMS_KEY=arn:aws:kms:us-east-1:ACCOUNT_ID:key/KEY_ID
@@ -100,7 +100,7 @@ AWS_LEGAL_RECEIPTS_BACKUP_KMS_KEY=arn:aws:kms:us-west-2:ACCOUNT_ID:key/KEY_ID
 ### **Step 4: Apply S3 Bucket Policy**
 
 1. Go to AWS S3 Console
-2. Open `fortheweebs-legal-receipts` bucket
+2. Open `lunonex-legal-receipts` bucket
 3. Navigate to **Permissions** → **Bucket Policy**
 4. Paste contents of `aws/s3-bucket-policy.json`
 5. Replace `ACCOUNT_ID` with your AWS account ID
@@ -204,7 +204,7 @@ const response = await fetch(`/api/legal-receipts/${receiptId}/legal-hold`, {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     reason: 'DISPUTE',
-    appliedBy: 'admin@fortheweebs.com'
+    appliedBy: 'admin@lunonex.com'
   })
 });
 
@@ -372,7 +372,7 @@ await extendSpecificReceipt('receipt-1234', 20); // Extend by 20 years
 ### **Verify Object Lock Status**
 ```bash
 aws s3api head-object \
-  --bucket fortheweebs-legal-receipts \
+  --bucket lunonex-legal-receipts \
   --key legal-receipts/2025/12/user-123/receipt-abc.pdf \
   --version-id VERSION_ID
 ```

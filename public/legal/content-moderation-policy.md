@@ -1,4 +1,4 @@
-# ForTheWeebs Content Moderation Policy
+# lunonex Content Moderation Policy
 
 **Version:** 1.0.0
 **Effective Date:** January 1, 2025
@@ -8,7 +8,7 @@
 
 ## Our Philosophy
 
-ForTheWeebs is committed to free expression within legal boundaries. We don't engage in arbitrary censorship, but we do enforce strict rules to comply with U.S. law, protect minors, and maintain a safe platform for creators and users.
+lunonex is committed to free expression within legal boundaries. We don't engage in arbitrary censorship, but we do enforce strict rules to comply with U.S. law, protect minors, and maintain a safe platform for creators and users.
 
 **We believe in:**
 - Creator sovereignty and artistic freedom
@@ -77,7 +77,7 @@ ForTheWeebs is committed to free expression within legal boundaries. We don't en
 - Creators must verify the age of ALL performers in their content
 - Maintain records per 18 U.S.C. § 2257 requirements
 - Records must be kept for 7 years after content removal
-- Spot audits may be conducted by ForTheWeebs compliance team
+- Spot audits may be conducted by lunonex compliance team
 
 ### For Users
 - Mandatory age verification to access adult content
@@ -138,7 +138,7 @@ All adult content creators MUST comply with **18 U.S.C. § 2257** record-keeping
 - Make records available for lawful inspection
 - Maintain records for 7 years after content removal
 
-### ForTheWeebs Compliance Support
+### lunonex Compliance Support
 - Guidance on 2257 compliance
 - Templates for model releases and statements
 - Random compliance audits to ensure adherence
@@ -148,7 +148,7 @@ All adult content creators MUST comply with **18 U.S.C. § 2257** record-keeping
 
 ## CSAM Detection & Reporting
 
-ForTheWeebs employs industry-leading technology to detect and prevent CSAM:
+lunonex employs industry-leading technology to detect and prevent CSAM:
 
 ### Detection Methods
 - **AI-Powered Pre-Upload Scanning**: Content analyzed before it reaches the platform
@@ -171,10 +171,10 @@ When CSAM is detected:
 
 ## Copyright & DMCA Compliance
 
-ForTheWeebs respects intellectual property and enforces DMCA takedown procedures.
+lunonex respects intellectual property and enforces DMCA takedown procedures.
 
 ### For Copyright Holders
-- Submit DMCA takedown notices to: dmca@fortheweebs.com
+- Submit DMCA takedown notices to: dmca@lunonex.com
 - Include: copyrighted work description, infringing URL, contact info, sworn statement
 - Content removed within 24 hours of valid notice
 
@@ -196,7 +196,7 @@ ForTheWeebs respects intellectual property and enforces DMCA takedown procedures
 
 Creators who believe their content was wrongly removed can appeal:
 
-1. **Submit Appeal**: Email appeals@fortheweebs.com within 14 days
+1. **Submit Appeal**: Email appeals@lunonex.com within 14 days
 2. **Include Details**: Content description, why it should be restored, supporting evidence
 3. **Review**: Appeals reviewed by senior moderation team within 7 days
 4. **Decision**: Final decision issued via email
@@ -208,7 +208,7 @@ Creators who believe their content was wrongly removed can appeal:
 
 ## Parental Controls & Family Safety
 
-ForTheWeebs provides comprehensive tools for parents:
+lunonex provides comprehensive tools for parents:
 - **Age Verification**: Mandatory for adult content access
 - **Content Filters**: Block specific categories, keywords, or creators
 - **Family Accounts**: Manage child accounts from parent dashboard
@@ -221,7 +221,7 @@ ForTheWeebs provides comprehensive tools for parents:
 ## Transparency & Accountability
 
 We believe in transparent moderation:
-- **Quarterly Transparency Reports**: Published on fortheweebs.com/transparency
+- **Quarterly Transparency Reports**: Published on lunonex.com/transparency
 - **Content Removal Statistics**: Total removals by category
 - **Strike Data**: Number of accounts warned, suspended, banned
 - **CSAM Reports**: Number of NCMEC reports filed (no identifying details)
@@ -232,7 +232,7 @@ We believe in transparent moderation:
 
 We may update this policy to reflect legal changes or platform improvements.
 
-- Updates posted to: fortheweebs.com/legal/content-moderation-policy
+- Updates posted to: lunonex.com/legal/content-moderation-policy
 - Creators notified via email of major changes
 - Continued use of platform constitutes acceptance of updated policy
 
@@ -241,12 +241,12 @@ We may update this policy to reflect legal changes or platform improvements.
 ## Contact Us
 
 **Questions about content moderation?**
-- Email: moderation@fortheweebs.com
-- DMCA Takedowns: dmca@fortheweebs.com
-- CSAM Reports: abuse@fortheweebs.com
-- Appeals: appeals@fortheweebs.com
+- Email: moderation@lunonex.com
+- DMCA Takedowns: dmca@lunonex.com
+- CSAM Reports: abuse@lunonex.com
+- Appeals: appeals@lunonex.com
 
-**Emergency illegal content:** Report immediately to abuse@fortheweebs.com
+**Emergency illegal content:** Report immediately to abuse@lunonex.com
 
 ---
 
@@ -259,10 +259,10 @@ This policy is enforced under:
 - **COPPA** (Children's Online Privacy Protection Act)
 - **FOSTA-SESTA** (Anti-trafficking laws)
 
-ForTheWeebs reserves the right to remove any content or terminate any account at our sole discretion, particularly when content violates U.S. law or poses a risk to users.
+lunonex reserves the right to remove any content or terminate any account at our sole discretion, particularly when content violates U.S. law or poses a risk to users.
 
 ---
 
-**ForTheWeebs LLC**
+**lunonex LLC**
 Built for creators, by creators.
 We're here to replace the old guard, not become it.

@@ -37,7 +37,7 @@ export function ContentPlanner({ userId }) {
 
   const loadFromIndexedDB = async (status) => {
     return new Promise((resolve) => {
-      const request = indexedDB.open('ForTheWeebsContent', 1);
+      const request = indexedDB.open('lunonexContent', 1);
 
       request.onupgradeneeded = (e) => {
         const db = e.target.result;
@@ -92,7 +92,7 @@ export function ContentPlanner({ userId }) {
 
   const saveToIndexedDB = async (item) => {
     return new Promise((resolve) => {
-      const request = indexedDB.open('ForTheWeebsContent', 1);
+      const request = indexedDB.open('lunonexContent', 1);
 
       request.onsuccess = (e) => {
         const db = e.target.result;
@@ -146,7 +146,7 @@ export function ContentPlanner({ userId }) {
 
   const deleteItem = async (itemId) => {
     if (storageMode === 'local') {
-      const request = indexedDB.open('ForTheWeebsContent', 1);
+      const request = indexedDB.open('lunonexContent', 1);
       request.onsuccess = (e) => {
         const db = e.target.result;
         const transaction = db.transaction(['content'], 'readwrite');

@@ -1,5 +1,5 @@
 /**
- * FORTHEWEEBS API MARKETPLACE - BILLING SYSTEM
+ * lunonex API MARKETPLACE - BILLING SYSTEM
  * 
  * Stripe integration for subscriptions and usage-based billing.
  * The money printer that goes BRRRRR 💰💰💰
@@ -80,7 +80,7 @@ router.post('/subscribe', async (req, res) => {
     // Ensure base URL has scheme
     const baseUrl = process.env.VITE_APP_URL?.startsWith('http')
       ? process.env.VITE_APP_URL
-      : `https://${process.env.VITE_APP_URL || 'fortheweebs.vercel.app'}`;
+      : `https://${process.env.VITE_APP_URL || 'lunonex.vercel.app'}`;
 
     // Create Stripe Checkout Session
     const session = await stripe.checkout.sessions.create({
@@ -90,7 +90,7 @@ router.post('/subscribe', async (req, res) => {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: `ForTheWeebs API - ${plan.display_name}`,
+            name: `lunonex API - ${plan.display_name}`,
             description: `${plan.requests_per_month === -1 ? 'Unlimited' : plan.requests_per_month.toLocaleString()} requests/month`
           },
           unit_amount: amount,

@@ -18,7 +18,7 @@ const router = express.Router();
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const REPO_OWNER = process.env.GITHUB_REPO_OWNER || 'your-username';
-const REPO_NAME = process.env.GITHUB_REPO_NAME || 'fortheweebs';
+const REPO_NAME = process.env.GITHUB_REPO_NAME || 'lunonex';
 
 router.post('/', async (req, res) => {
   try {
@@ -79,7 +79,7 @@ async function evaluateSuggestion(suggestion, tier) {
     };
   }
 
-  const prompt = `You are an AI product manager for ForTheWeebs, an anime creator platform.
+  const prompt = `You are an AI product manager for lunonex, an anime creator platform.
 
 A user (Tier: ${tier}) suggested:
 "${suggestion}"
@@ -138,7 +138,7 @@ Respond in JSON:
  * STEP 2: Implement the suggestion (replaces Claude's manual work)
  */
 async function implementSuggestion(suggestion, evaluation) {
-  const prompt = `You are an autonomous code implementation AI for ForTheWeebs platform.
+  const prompt = `You are an autonomous code implementation AI for lunonex platform.
 
 **Feature Request:**
 "${suggestion}"

@@ -1,8 +1,8 @@
-package dev.fortheweebs.mico.service
+package dev.lunonex.mico.service
 
-import dev.fortheweebs.mico.agent.CodeGenerationService
-import dev.fortheweebs.mico.agent.analyzer.CodebaseAnalyzer
-import dev.fortheweebs.mico.model.SlabRequest
+import dev.lunonex.mico.agent.CodeGenerationService
+import dev.lunonex.mico.agent.analyzer.CodebaseAnalyzer
+import dev.lunonex.mico.model.SlabRequest
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 import java.text.SimpleDateFormat

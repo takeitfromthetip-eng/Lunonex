@@ -131,7 +131,7 @@ export default function CGIControls({ cgiProcessor }) {
       icon: '💬',
       description: 'Animated text',
       category: 'text',
-      create: () => new TextOverlayEffect({ params: { text: 'ForTheWeebs', animation: 'fade' } })
+      create: () => new TextOverlayEffect({ params: { text: 'lunonex', animation: 'fade' } })
     },
     {
       id: 'lowerthird',

@@ -1,6 +1,6 @@
 /* eslint-disable */
 /**
- * ForTheWeebs - Social Database Integration Test
+ * lunonex - Social Database Integration Test
  * Tests that Supabase tables are working with the social API
  */
 
@@ -192,7 +192,7 @@ async function testLikePost(postId, userId) {
 
 async function runTests() {
   console.log('\n' + '='.repeat(60));
-  log('🚀', 'ForTheWeebs - Social Database Integration Test', colors.blue);
+  log('🚀', 'lunonex - Social Database Integration Test', colors.blue);
   console.log('='.repeat(60) + '\n');
 
   let passed = 0;

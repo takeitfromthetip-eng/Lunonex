@@ -1,7 +1,7 @@
-# GitHub Copilot Instructions for ForTheWeebs
+# GitHub Copilot Instructions for lunonex
 
 ## Project Context
-ForTheWeebs is a creator-first platform for anime and content creators with:
+lunonex is a creator-first platform for anime and content creators with:
 - React frontend with Vite
 - Express backend API
 - Capacitor for mobile (Android/iOS)

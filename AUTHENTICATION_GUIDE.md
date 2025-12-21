@@ -1,4 +1,4 @@
-# 🔐 Authentication Guide - ForTheWeebs
+# 🔐 Authentication Guide - lunonex
 
 ## How to Logout
 
@@ -22,8 +22,8 @@ window.location.href = '/';
 
 ### Option 1: Sign Up Through Web Interface
 
-1. **Go to ForTheWeebs website**
-   - URL: `https://fortheweebs-2cpc9wi0r-jacobs-projects-eac77986.vercel.app`
+1. **Go to lunonex website**
+   - URL: `https://lunonex-2cpc9wi0r-jacobs-projects-eac77986.vercel.app`
    
 2. **Click "Sign Up" or "Create Account"**
    - Found on the login page or homepage

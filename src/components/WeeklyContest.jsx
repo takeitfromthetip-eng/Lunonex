@@ -18,7 +18,7 @@ const WeeklyContest = () => {
         creatorWins: 425, // 85% of prize pool
         category: "Open Theme",
         rules: [
-            "Must be original content created on ForTheWeebs",
+            "Must be original content created on lunonex",
             "Can be video, audio, design, or VR project",
             "Entries close 48 hours before voting ends",
             "One vote per user - vote wisely!",
@@ -130,7 +130,7 @@ const WeeklyContest = () => {
 
     const shareEntry = (entry) => {
         // In real app: Generate share link with tracking
-        const shareUrl = `https://fortheweebs.netlify.app/contest/${entry.id}`;
+        const shareUrl = `https://lunonex.netlify.app/contest/${entry.id}`;
         navigator.clipboard.writeText(shareUrl);
         alert('Share link copied! Share to get more votes!');
     };

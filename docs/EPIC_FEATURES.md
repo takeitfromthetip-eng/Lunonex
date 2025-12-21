@@ -1,4 +1,4 @@
-# 🚀 Epic Features - ForTheWeebs Platform
+# 🚀 Epic Features - lunonex Platform
 
 **Status**: ✅ **PRODUCTION READY** (Excluding social features as requested)
 
@@ -78,7 +78,7 @@ Four revolutionary creator-empowerment systems:
 ## 📁 File Structure
 
 ```
-Fortheweebs/
+lunonex/
 ├── src/
 │   ├── lib/
 │   │   ├── styleDNA.ts                    # Style DNA engine
@@ -133,7 +133,7 @@ Fortheweebs/
 Run the migration:
 
 ```bash
-psql -U postgres -d fortheweebs < supabase/schema_epic_features.sql
+psql -U postgres -d lunonex < supabase/schema_epic_features.sql
 ```
 
 Or in Supabase dashboard:
@@ -349,7 +349,7 @@ Both features have **working infrastructure** - just need production AI/conversi
 
 ```bash
 # 1. Apply database migration
-psql -U postgres -d fortheweebs < supabase/schema_epic_features.sql
+psql -U postgres -d lunonex < supabase/schema_epic_features.sql
 
 # 2. Start server
 npm run dev

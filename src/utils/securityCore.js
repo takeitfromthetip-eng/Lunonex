@@ -154,7 +154,7 @@ export class SecureToken {
 
   static getEncryptionKey() {
     // In production, this should be from environment variable
-    return process.env.VITE_ENCRYPTION_KEY || 'ForTheWeebs_SuperSecure_DefaultKey_2025';
+    return process.env.VITE_ENCRYPTION_KEY || 'lunonex_SuperSecure_DefaultKey_2025';
   }
 
   static generateJTI() {
@@ -489,7 +489,7 @@ export function generateDeviceFingerprint() {
   const ctx = canvas.getContext('2d');
   ctx.textBaseline = 'top';
   ctx.font = '14px Arial';
-  ctx.fillText('ForTheWeebs', 2, 2);
+  ctx.fillText('lunonex', 2, 2);
 
   const fingerprint = {
     canvas: canvas.toDataURL(),

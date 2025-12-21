@@ -182,7 +182,7 @@ The infringing content is no longer accessible and cannot be re-uploaded.
 
 Thank you for helping us maintain a legal platform.
 
-ForTheWeebs Legal Team
+lunonex Legal Team
   `;
   
   // Email service integration: SendGrid, AWS SES, or Resend.com

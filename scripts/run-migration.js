@@ -141,7 +141,7 @@ async function runMigrationDirect() {
 
 // Run migration
 console.log('=' .repeat(80));
-console.log('FORTHEWEEBS - DATABASE MIGRATION');
+console.log('lunonex - DATABASE MIGRATION');
 console.log('=' .repeat(80) + '\n');
 
 runMigrationDirect().catch(err => {

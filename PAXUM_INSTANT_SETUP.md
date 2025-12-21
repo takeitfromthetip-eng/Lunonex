@@ -58,7 +58,7 @@ window.location.href = checkoutUrl; // Redirect to payment
 1. In Paxum dashboard: **Merchant Tools** → **IPN Settings**
 2. Set IPN URL to:
    ```
-   https://fortheweebs.vercel.app/api/paxum/webhook
+   https://lunonex.vercel.app/api/paxum/webhook
    ```
 3. Click **Save**
 

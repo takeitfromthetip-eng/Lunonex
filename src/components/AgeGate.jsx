@@ -34,7 +34,7 @@ export default function AgeGate({ onVerified }) {
   };
 
   const handleExit = () => {
-    alert('You must be 18 or older to use ForTheWeebs.');
+    alert('You must be 18 or older to use lunonex.');
     // Close app or redirect to safe page
     window.location.href = 'about:blank';
   };
@@ -47,7 +47,7 @@ export default function AgeGate({ onVerified }) {
         <div style={styles.icon}>🔞</div>
         <h1 style={styles.title}>Age Verification Required</h1>
         <p style={styles.description}>
-          ForTheWeebs contains user-generated content intended for adults only.
+          lunonex contains user-generated content intended for adults only.
           You must be 18 years or older to continue.
         </p>
         <div style={styles.warning}>

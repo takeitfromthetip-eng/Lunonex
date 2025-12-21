@@ -87,11 +87,11 @@ ${bugData.error_message || 'No error message'}
 \`\`\`
 
 ---
-*This issue was automatically created by the ForTheWeebs bug reporting system*
+*This issue was automatically created by the lunonex bug reporting system*
   `.trim();
 
     try {
-        const response = await fetch('https://api.github.com/repos/polotuspossumus-coder/Fortheweebs/issues', {
+        const response = await fetch('https://api.github.com/repos/polotuspossumus-coder/lunonex/issues', {
             method: 'POST',
             headers: {
                 'Authorization': `token ${import.meta.env.VITE_GITHUB_TOKEN}`,

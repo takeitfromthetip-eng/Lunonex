@@ -1,4 +1,4 @@
-# ForTheWeebs Privacy Policy
+# lunonex Privacy Policy
 
 **Last Updated: November 2025**
 
@@ -6,7 +6,7 @@
 
 ## 🛡️ OUR CORE PROMISE: WE NEVER SELL YOUR DATA
 
-**Let's be crystal clear from the jump:** ForTheWeebs does not sell, rent, lease, trade, or monetize your personal information. We don't traffic your data to advertisers, data brokers, marketers, or anyone else. Ever.
+**Let's be crystal clear from the jump:** lunonex does not sell, rent, lease, trade, or monetize your personal information. We don't traffic your data to advertisers, data brokers, marketers, or anyone else. Ever.
 
 We believe selling user data is exploitative and disgusting. We built this platform to connect creators and fans directly, not to harvest your information for corporate profit. **Your data is YOURS, not ours.**
 
@@ -118,7 +118,7 @@ Download your content, payment history, and account info
 ### **Opt Out of Emails**
 Unsubscribe from marketing emails (you'll still get critical account notifications)
 
-**To exercise these rights:** Email privacy@fortheweebs.com
+**To exercise these rights:** Email privacy@lunonex.com
 
 ---
 
@@ -167,7 +167,7 @@ You can disable non-essential cookies in your browser—the platform will still 
 
 ## Children's Privacy
 
-ForTheWeebs is **not for children under 13**. We don't knowingly collect data from kids. If we discover a child's account, we'll delete it immediately.
+lunonex is **not for children under 13**. We don't knowingly collect data from kids. If we discover a child's account, we'll delete it immediately.
 
 For users 13-17: We follow COPPA guidelines and don't sell your data (we don't sell ANYONE'S data).
 
@@ -217,11 +217,11 @@ We'll publish an annual transparency report showing:
 
 ## Contact Us
 
-**Privacy Questions:** privacy@fortheweebs.com
+**Privacy Questions:** privacy@lunonex.com
 
-**Data Requests:** requests@fortheweebs.com (include "GDPR Request" or "CCPA Request" in subject)
+**Data Requests:** requests@lunonex.com (include "GDPR Request" or "CCPA Request" in subject)
 
-**Security Issues:** security@fortheweebs.com
+**Security Issues:** security@lunonex.com
 
 ---
 
@@ -245,7 +245,7 @@ We'll publish an annual transparency report showing:
 
 **This privacy policy is a legal promise.** If we ever violate it, we're liable. Your trust means everything to us, and we won't betray it for a quick buck.
 
-— The ForTheWeebs Team
+— The lunonex Team
 
 ---
 

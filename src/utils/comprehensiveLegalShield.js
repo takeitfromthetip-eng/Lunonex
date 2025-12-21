@@ -1,6 +1,6 @@
 /* eslint-disable */
 // COMPREHENSIVE LEGAL SHIELD - Platform-wide protection system
-// Protects ForTheWeebs from ALL potential legal liabilities
+// Protects lunonex from ALL potential legal liabilities
 
 export const PLATFORM_LEGAL_SHIELD = {
   // SECTION 1: USER-GENERATED CONTENT LIABILITY SHIELD
@@ -120,7 +120,7 @@ export const PLATFORM_LEGAL_SHIELD = {
       right_to_erasure: true, // "Right to be forgotten"
       right_to_portability: true,
       data_breach_notification_72hrs: true, // Must notify within 72 hours
-      dpo_contact: 'privacy@fortheweebs.com', // Data Protection Officer
+      dpo_contact: 'privacy@lunonex.com', // Data Protection Officer
       cookie_consent_required: true,
       eu_representative_required: true // If >10M EU users
     },
@@ -446,11 +446,11 @@ export function generateLegalDocuments() {
 
 function generateTOS() {
   return `
-FORTHEWEEBS TERMS OF SERVICE
+lunonex TERMS OF SERVICE
 Last Updated: November 10, 2025
 
 1. ACCEPTANCE OF TERMS
-By accessing ForTheWeebs ("Platform"), you agree to these Terms of Service ("Terms"). If you disagree, do not use the Platform.
+By accessing lunonex ("Platform"), you agree to these Terms of Service ("Terms"). If you disagree, do not use the Platform.
 
 2. USER REPRESENTATIONS
 You represent that:
@@ -461,7 +461,7 @@ You represent that:
 - All content you create is 100% original or properly licensed
 
 3. INTELLECTUAL PROPERTY
-You retain ownership of your content. By uploading, you grant ForTheWeebs a worldwide, non-exclusive, royalty-free license to host, display, and distribute your content.
+You retain ownership of your content. By uploading, you grant lunonex a worldwide, non-exclusive, royalty-free license to host, display, and distribute your content.
 
 You agree NOT to upload:
 - Copyrighted characters (Pokémon, Marvel, Disney, etc.)
@@ -470,7 +470,7 @@ You agree NOT to upload:
 - Stolen intellectual property
 
 4. INDEMNIFICATION
-You agree to INDEMNIFY, DEFEND, and HOLD HARMLESS ForTheWeebs from any claims, damages, or expenses (including attorney fees) arising from:
+You agree to INDEMNIFY, DEFEND, and HOLD HARMLESS lunonex from any claims, damages, or expenses (including attorney fees) arising from:
 - Your content
 - Your violation of these Terms
 - Your violation of any law
@@ -478,12 +478,12 @@ You agree to INDEMNIFY, DEFEND, and HOLD HARMLESS ForTheWeebs from any claims, d
 
 5. LIMITATION OF LIABILITY
 TO THE MAXIMUM EXTENT PERMITTED BY LAW:
-- ForTheWeebs is NOT LIABLE for any indirect, incidental, or consequential damages
+- lunonex is NOT LIABLE for any indirect, incidental, or consequential damages
 - Total liability limited to $100 or amount paid to us in past 12 months, whichever is less
 - Platform provided "AS IS" without warranties
 
 6. DMCA COMPLIANCE
-We comply with the Digital Millennium Copyright Act. If you believe content infringes your copyright, email dmca@fortheweebs.com with:
+We comply with the Digital Millennium Copyright Act. If you believe content infringes your copyright, email dmca@lunonex.com with:
 - Your contact information
 - Description of copyrighted work
 - URL of infringing content
@@ -509,7 +509,7 @@ These Terms are governed by the laws of [YOUR STATE], excluding conflict of law 
 We may update these Terms at any time. Continued use constitutes acceptance of new Terms.
 
 11. CONTACT
-Email: legal@fortheweebs.com
+Email: legal@lunonex.com
 Address: [YOUR BUSINESS ADDRESS]
 
 BY CLICKING "I AGREE," YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS.
@@ -518,10 +518,10 @@ BY CLICKING "I AGREE," YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE
 
 function generatePrivacyPolicy() {
   return `
-FORTHEWEEBS PRIVACY POLICY
+lunonex PRIVACY POLICY
 Last Updated: November 10, 2025
 
-This Privacy Policy explains how ForTheWeebs ("we," "us," "our") collects, uses, and protects your personal information.
+This Privacy Policy explains how lunonex ("we," "us," "our") collects, uses, and protects your personal information.
 
 1. INFORMATION WE COLLECT
 - Account Information: Email, username, password (hashed)
@@ -561,7 +561,7 @@ You have the right to:
 - Object to processing
 - Withdraw consent
 
-To exercise these rights, email privacy@fortheweebs.com
+To exercise these rights, email privacy@lunonex.com
 
 5. CCPA RIGHTS (CALIFORNIA USERS)
 California residents have the right to:
@@ -571,7 +571,7 @@ California residents have the right to:
 - Delete personal information
 - Non-discrimination for exercising rights
 
-To exercise these rights, email privacy@fortheweebs.com
+To exercise these rights, email privacy@lunonex.com
 
 6. DATA SECURITY
 We use industry-standard security measures:
@@ -608,7 +608,7 @@ You can control cookies in your browser settings.
 We may update this policy. We will notify you via email for material changes.
 
 12. CONTACT
-Data Protection Officer: privacy@fortheweebs.com
+Data Protection Officer: privacy@lunonex.com
 Address: [YOUR BUSINESS ADDRESS]
   `;
 }
@@ -616,10 +616,10 @@ Address: [YOUR BUSINESS ADDRESS]
 function generateDMCAPolicy() {
   return `
 DMCA COPYRIGHT POLICY
-ForTheWeebs complies with the Digital Millennium Copyright Act (17 USC § 512).
+lunonex complies with the Digital Millennium Copyright Act (17 USC § 512).
 
 DESIGNATED DMCA AGENT:
-Email: dmca@fortheweebs.com
+Email: dmca@lunonex.com
 Address: [YOUR BUSINESS ADDRESS]
 
 To file a DMCA takedown notice, include:
@@ -649,7 +649,7 @@ Users with 3+ copyright strikes are permanently banned.
 function generateAUP() {
   return `
 ACCEPTABLE USE POLICY
-You may NOT use ForTheWeebs to:
+You may NOT use lunonex to:
 - Upload illegal content
 - Infringe copyrights or trademarks
 - Harass, threaten, or dox others
@@ -689,12 +689,12 @@ WEEKLY CONTEST OFFICIAL RULES
 NO PURCHASE NECESSARY. Void where prohibited.
 
 1. ELIGIBILITY: Open to legal residents of the 50 US states + DC, 18+ or with parental consent.
-2. HOW TO ENTER: Submit artwork through ForTheWeebs Platform during contest period.
+2. HOW TO ENTER: Submit artwork through lunonex Platform during contest period.
 3. PRIZE: $500 cash (or equivalent in platform credits). Odds depend on number of entries.
 4. WINNER SELECTION: Determined by community votes + curator panel.
 5. TAXES: Winner responsible for all taxes. 1099-MISC issued if prize >$600.
-6. PUBLICITY RELEASE: Winner grants ForTheWeebs right to use name/likeness for promotional purposes.
-7. SPONSOR: ForTheWeebs, [YOUR ADDRESS]
+6. PUBLICITY RELEASE: Winner grants lunonex right to use name/likeness for promotional purposes.
+7. SPONSOR: lunonex, [YOUR ADDRESS]
   `;
 }
 
@@ -705,11 +705,11 @@ You acknowledge that:
 - You are an independent contractor, NOT an employee
 - You are not entitled to employee benefits
 - You are responsible for your own taxes
-- ForTheWeebs will issue 1099-MISC if you earn $600+
+- lunonex will issue 1099-MISC if you earn $600+
 - This is not an exclusive relationship
 - Either party can terminate at any time
 - You retain copyright to your work (unless sold to buyers)
-- You indemnify ForTheWeebs for any claims arising from your work
+- You indemnify lunonex for any claims arising from your work
   `;
 }
 
@@ -718,7 +718,7 @@ function generateDPA() {
 DATA PROCESSING AGREEMENT (GDPR Compliance)
 This Data Processing Agreement ("DPA") applies to EU users.
 
-ForTheWeebs acts as a "Data Processor" on behalf of users (the "Data Controllers").
+lunonex acts as a "Data Processor" on behalf of users (the "Data Controllers").
 
 1. DATA PROCESSING TERMS
 - We process data only as instructed by users

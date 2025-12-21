@@ -23,7 +23,7 @@ The `.husky/pre-push` hook runs automatically whenever you do `git push`:
 
 ```bash
 # These checks run AUTOMATICALLY before push:
-✅ Create backup to D:/FORTHEWEEBS-BACKUPS/
+✅ Create backup to D:/lunonex-BACKUPS/
 ✅ Verify all critical files exist
 ✅ Validate package.json is valid JSON
 ✅ Warn if trying to commit .env
@@ -43,7 +43,7 @@ Every time you commit, a backup is automatically created on your D: drive.
 
 ### Location
 ```
-D:/FORTHEWEEBS-BACKUPS/
+D:/lunonex-BACKUPS/
 ├── backup-2025-12-09-090000-abc123.tar.gz
 ├── backup-2025-12-09-100000-def456.tar.gz
 ├── backup-2025-12-09-110000-ghi789.tar.gz
@@ -152,8 +152,8 @@ git push origin main --force
 #### Option 4: Restore from D: Drive Backup
 ```bash
 cd ..
-tar -xzf D:/FORTHEWEEBS-BACKUPS/backup-2025-12-09-*.tar.gz
-cd FORTHEWEEBS
+tar -xzf D:/lunonex-BACKUPS/backup-2025-12-09-*.tar.gz
+cd lunonex
 npm install --legacy-peer-deps
 npm run build
 ```
@@ -272,7 +272,7 @@ node scripts/emergency-rollback.js
 
 ## 💡 Pro Tips
 
-1. **Check backups weekly**: `ls -lh D:/FORTHEWEEBS-BACKUPS/`
+1. **Check backups weekly**: `ls -lh D:/lunonex-BACKUPS/`
 2. **Review GitHub Actions**: Check what workflows are running
 3. **Keep .env encrypted**: Never commit it to GitHub
 4. **Test recovery monthly**: Make sure you remember how
@@ -287,7 +287,7 @@ If everything fails and you need help:
 1. **Check BACKUP-MANIFEST.txt** on D: drive
 2. **List backup branches**: `git branch -a | grep backup`
 3. **Check git reflog**: `git reflog` (shows everything you've done)
-4. **Worst case**: Extract from D:/FORTHEWEEBS-BACKUPS/
+4. **Worst case**: Extract from D:/lunonex-BACKUPS/
 
 ---
 

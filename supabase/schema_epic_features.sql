@@ -1,5 +1,5 @@
 -- Epic Features Database Schema
--- ForTheWeebs Platform
+-- lunonex Platform
 -- Created: 2025-12-03
 
 -- ==================== STYLE DNA ENGINE ====================

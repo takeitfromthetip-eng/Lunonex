@@ -1,7 +1,7 @@
-# ForTheWeebs - One-Command Dev Setup
+# lunonex - One-Command Dev Setup
 # Windows PowerShell Script
 
-Write-Host "🚀 ForTheWeebs Development Setup" -ForegroundColor Cyan
+Write-Host "🚀 lunonex Development Setup" -ForegroundColor Cyan
 Write-Host ""
 
 # Check if we're in the right directory

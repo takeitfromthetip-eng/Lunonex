@@ -53,7 +53,7 @@ POST /api/legal-receipts/create
 #### Apply Legal Hold (Freeze Receipt)
 ```bash
 aws s3api put-object-legal-hold \
-  --bucket fortheweebs-legal-receipts \
+  --bucket lunonex-legal-receipts \
   --key receipts/LR-20250105-ABC123/receipt.pdf \
   --legal-hold Status=ON \
   --profile legal-hold-admin
@@ -64,7 +64,7 @@ aws s3api put-object-legal-hold \
 #### Remove Legal Hold (Unfreeze Receipt)
 ```bash
 aws s3api put-object-legal-hold \
-  --bucket fortheweebs-legal-receipts \
+  --bucket lunonex-legal-receipts \
   --key receipts/LR-20250105-ABC123/receipt.pdf \
   --legal-hold Status=OFF \
   --profile legal-hold-admin
@@ -75,7 +75,7 @@ aws s3api put-object-legal-hold \
 #### Check Legal Hold Status
 ```bash
 aws s3api get-object-legal-hold \
-  --bucket fortheweebs-legal-receipts \
+  --bucket lunonex-legal-receipts \
   --key receipts/LR-20250105-ABC123/receipt.pdf \
   --profile legal-hold-admin
 ```
@@ -245,13 +245,13 @@ aws iam delete-access-key --user-name legal-hold-admin --access-key-id <old-key-
 ```bash
 # Test cross-region replication
 aws s3api list-objects-v2 \
-  --bucket fortheweebs-legal-receipts-backup \
+  --bucket lunonex-legal-receipts-backup \
   --prefix receipts/ \
   --max-keys 100
 
 # Verify Object Lock on backup bucket
 aws s3api get-object-lock-configuration \
-  --bucket fortheweebs-legal-receipts-backup
+  --bucket lunonex-legal-receipts-backup
 ```
 
 ---
@@ -363,7 +363,7 @@ aws iam update-role \
 Push audit CSV snapshots to separate Object Lock bucket:
 ```bash
 aws s3 cp legal-hold-audit.csv \
-  s3://fortheweebs-audit-logs/legal-hold-audits/$(date +%Y-%m-%d).csv \
+  s3://lunonex-audit-logs/legal-hold-audits/$(date +%Y-%m-%d).csv \
   --server-side-encryption aws:kms \
   --object-lock-mode COMPLIANCE \
   --object-lock-retain-until-date $(date -d '+75 years' +%Y-%m-%dT%H:%M:%S)
@@ -406,7 +406,7 @@ aws s3 cp legal-hold-audit.csv \
 ```bash
 # 1. Re-apply legal hold immediately
 aws s3api put-object-legal-hold \
-  --bucket fortheweebs-legal-receipts \
+  --bucket lunonex-legal-receipts \
   --key receipts/LR-20250105-ABC123/receipt.pdf \
   --legal-hold Status=ON
 
@@ -467,9 +467,9 @@ node scripts/rebuild-receipts-from-s3.js  # TODO: Create this script
 
 - **AWS Support**: https://console.aws.amazon.com/support
 - **Supabase Support**: https://supabase.com/support
-- **Legal Team**: legal@fortheweebs.com
-- **Compliance Officer**: compliance@fortheweebs.com
-- **Security Incidents**: security@fortheweebs.com
+- **Legal Team**: legal@lunonex.com
+- **Compliance Officer**: compliance@lunonex.com
+- **Security Incidents**: security@lunonex.com
 
 ---
 

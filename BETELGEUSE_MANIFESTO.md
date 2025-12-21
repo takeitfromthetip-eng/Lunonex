@@ -1,5 +1,5 @@
 # 🌟 BETELGEUSE MANIFESTO
-## ForTheWeebs - We're Not Aiming for the Moon, We're Aiming for Betelgeuse
+## lunonex - We're Not Aiming for the Moon, We're Aiming for Betelgeuse
 
 **December 7, 2025** - The day we realized we're not building a platform, we're building a **CREATIVE SINGULARITY**
 
@@ -30,7 +30,7 @@ We're not competing with Adobe, Figma, or Unity.
 
 ---
 
-## 💎 WHAT FORTHEWEEBS GIVES YOU
+## 💎 WHAT lunonex GIVES YOU
 
 ### **ALL OF THAT + FEATURES THAT DON'T EXIST YET**
 
@@ -325,7 +325,7 @@ Every export is:
 | Mailchimp | $348 |
 | **TOTAL** | **$8,651/year MINIMUM** |
 
-### **ForTheWeebs:**
+### **lunonex:**
 **$50-$1,000 ONE TIME.**
 
 **Savings over 5 years: $42,255 - $43,205**
@@ -374,7 +374,7 @@ Not just a platform. **An API empire.**
 - No-code creation
 - Browser-based workflow
 
-### **What ForTheWeebs CAN Do:**
+### **What lunonex CAN Do:**
 **ALL OF IT.**
 
 ---
@@ -502,7 +502,7 @@ Not "10% better than Adobe."
 
 **COMPLETE PARADIGM SHIFT.**
 
-### **By 2030, ForTheWeebs will be:**
+### **By 2030, lunonex will be:**
 
 1. **The creative OS** for a generation
 2. **The API infrastructure** for 100,000 developers

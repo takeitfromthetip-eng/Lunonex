@@ -90,7 +90,7 @@ router.post('/upload', dynamicUploadLimiter, upload.single('file'), async (req, 
           message: v.message,
           reason: v.reason
         })),
-        message: 'This file appears to contain pirated or copyrighted content. ForTheWeebs does not allow distribution of pirated material.',
+        message: 'This file appears to contain pirated or copyrighted content. lunonex does not allow distribution of pirated material.',
         help: 'Only upload original content you have created or have rights to distribute.',
         riskScore: piracyCheck.riskScore
       });

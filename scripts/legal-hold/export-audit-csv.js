@@ -14,7 +14,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuration
-const BUCKET_NAME = process.env.AWS_LEGAL_RECEIPTS_BUCKET || 'fortheweebs-legal-receipts';
+const BUCKET_NAME = process.env.AWS_LEGAL_RECEIPTS_BUCKET || 'lunonex-legal-receipts';
 const AWS_REGION = process.env.AWS_REGION || 'us-east-1';
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;

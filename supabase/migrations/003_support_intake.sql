@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS support_triage_rules (
 INSERT INTO support_triage_rules (rule_name, conditions, actions) VALUES
   ('CSAM report urgent',
    '{"ticket_type": "abuse_report", "keywords": ["child", "minor", "underage"]}'::jsonb,
-   '{"priority": "urgent", "github_labels": ["security", "urgent"], "notify": ["security@fortheweebs.com"]}'::jsonb
+   '{"priority": "urgent", "github_labels": ["security", "urgent"], "notify": ["security@lunonex.com"]}'::jsonb
   ),
   ('Payment issues high priority',
    '{"ticket_type": "bug", "keywords": ["payment", "charge", "refund", "billing"]}'::jsonb,
