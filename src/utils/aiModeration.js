@@ -12,22 +12,12 @@ export const AI_MODERATION_CONFIG = {
   autoBlock: true, // Automatically block content flagged as illegal
   requireHumanReview: true, // Flag borderline content for human review
 
-  // AI Provider Configuration
+  // LOCAL AI - No external providers
   providers: {
-    openai: {
-      apiKey: process.env.VITE_OPENAI_API_KEY,
-      model: 'gpt-4-vision-preview',
-      endpoint: 'https://api.openai.com/v1/chat/completions',
-    },
-    anthropic: {
-      apiKey: process.env.VITE_ANTHROPIC_API_KEY,
-      model: 'claude-3-opus-20240229',
-      endpoint: 'https://api.anthropic.com/v1/messages',
-    },
-    google: {
-      apiKey: process.env.VITE_GOOGLE_AI_KEY,
-      model: 'gemini-pro-vision',
-      endpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-vision:generateContent',
+    local: {
+      enabled: true,
+      model: 'tensorflow-js',
+      patterns: true, // Use keyword/pattern matching
     },
   },
 

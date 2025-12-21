@@ -3,27 +3,27 @@
  * Multi-provider routing for different product types
  */
 
-// Revenue splits (fair for all parties)
+// Revenue splits - 15% platform fee on print shop sales
 const REVENUE_SPLITS = {
   // Apparel & Home Goods (Printful)
   apparel: {
-    platformFee: 0.10,      // 10% to lunonex (covers hosting, payment processing, support)
-    creatorProfit: 0.90,    // 90% to creator after print costs
-    // Example: $30 shirt - $10 print cost = $20 profit → Creator: $18, Platform: $2
+    platformFee: 0.15,      // 15% to lunonex (covers hosting, payment processing, support)
+    creatorProfit: 0.85,    // 85% to creator after print costs
+    // Example: $30 shirt - $10 print cost = $20 profit → Creator: $17, Platform: $3
   },
-  
+
   // Comic Books (Mixam)
   comics: {
-    platformFee: 0.15,      // 15% to lunonex (higher for complex fulfillment)
+    platformFee: 0.15,      // 15% to lunonex
     creatorProfit: 0.85,    // 85% to creator after print costs
     // Example: $10 comic - $4 print cost = $6 profit → Creator: $5.10, Platform: $0.90
   },
-  
+
   // Trading Cards (DriveThruCards)
   cards: {
-    platformFee: 0.12,      // 12% to lunonex
-    creatorProfit: 0.88,    // 88% to creator after print costs
-    // Example: $25 deck - $10 print cost = $15 profit → Creator: $13.20, Platform: $1.80
+    platformFee: 0.15,      // 15% to lunonex
+    creatorProfit: 0.85,    // 85% to creator after print costs
+    // Example: $25 deck - $10 print cost = $15 profit → Creator: $12.75, Platform: $2.25
   }
 };
 

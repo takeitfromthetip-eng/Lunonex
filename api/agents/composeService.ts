@@ -4,7 +4,6 @@
  */
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import OpenAI from 'openai';
 import { logArtifact } from './artifactLogger';
 import { canPerformAction, getAuthority } from './policy';
 
@@ -13,7 +12,8 @@ const supabase: SupabaseClient = createClient(
   process.env.SUPABASE_SERVICE_KEY!
 );
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// LOCAL AI COMPOSITION - No external APIs
+// Uses local templates and pattern matching for content assistance
 
 export interface ComposeRequest {
   userId: string;

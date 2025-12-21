@@ -12,8 +12,8 @@
  * This is the brain that makes your platform run itself.
  */
 
-import Anthropic from '@anthropic-ai/sdk';
-import OpenAI from 'openai';
+// LOCAL AI ORCHESTRATOR - No external APIs
+// Uses local models and rule-based automation
 
 // ============================================================================
 // AGENT DEFINITIONS
