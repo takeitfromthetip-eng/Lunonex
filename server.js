@@ -39,10 +39,10 @@ startMemoryMonitor();
 console.log('✅ Self-healing system initialized');
 
 // ============================================================================
-// ENVIRONMENT VARIABLE VALIDATION
+// ENVIRONMENT VARIABLE VALIDATION - SELF-RELIANT ARCHITECTURE
 // ============================================================================
-const REQUIRED_ENV = ['STRIPE_SECRET_KEY', 'OPENAI_API_KEY', 'JWT_SECRET'];
-const OPTIONAL_ENV = ['SUPABASE_URL', 'SUPABASE_SERVICE_KEY', 'PHOTODNA_API_KEY'];
+const REQUIRED_ENV = ['STRIPE_SECRET_KEY', 'JWT_SECRET', 'SUPABASE_URL', 'SUPABASE_SERVICE_KEY'];
+const OPTIONAL_ENV = [];
 
 const missing = REQUIRED_ENV.filter(key => !process.env[key]);
 const optional_missing = OPTIONAL_ENV.filter(key => !process.env[key]);

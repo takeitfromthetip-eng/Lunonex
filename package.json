@@ -65,10 +65,13 @@
     "jscpd": "^4.0.5",
     "pdfkit": "^0.17.2",
     "terser": "^5.44.1",
+    "terser-webpack-plugin": "^5.3.16",
     "tone": "^15.1.22",
     "typescript": "^5.9.3",
     "vite": "^7.2.7",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.8",
+    "webpack": "^5.104.1",
+    "webpack-obfuscator": "^3.6.0"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.4",

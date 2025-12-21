@@ -1,0 +1,21 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: node:20
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 hour
+
+deploy_render:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo "Deployed to Render automatically via webhook"
