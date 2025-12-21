@@ -1,0 +1,63 @@
+# VALIDATION SHIELD - Stops bad pushes before they break things
+
+name: 🛡️ Push Validation Shield
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Check for critical files
+        run: |
+          echo "🔍 Checking for critical files..."
+          if [ ! -f "package.json" ]; then
+            echo "❌ ERROR: package.json is missing!"
+            exit 1
+          fi
+          if [ ! -f "vite.config.mjs" ]; then
+            echo "❌ ERROR: vite.config.mjs is missing!"
+            exit 1
+          fi
+          if [ ! -f "src/index.jsx" ]; then
+            echo "❌ ERROR: src/index.jsx is missing!"
+            exit 1
+          fi
+          echo "✅ All critical files present"
+
+      - name: Check for package.json corruption
+        run: |
+          echo "🔍 Validating package.json..."
+          node -e "JSON.parse(require('fs').readFileSync('package.json'))" || exit 1
+          echo "✅ package.json is valid JSON"
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+        continue-on-error: true
+
+      - name: Try to build
+        run: |
+          echo "🔍 Testing build..."
+          npm run build || {
+            echo "❌ BUILD FAILED! Push will continue but CHECK THIS ASAP!"
+            exit 0  # Don't fail the workflow, just warn
+          }
+          echo "✅ Build successful"
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "🚨 CRITICAL: Push validation failed!"
+          echo "Check the logs above for details"

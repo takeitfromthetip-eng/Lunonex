@@ -1,0 +1,263 @@
+.help-center {
+    display: flex;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+}
+
+.help-sidebar {
+    width: 280px;
+    background: #1a1a1a;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.help-logo {
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.help-logo h1 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 800;
+}
+
+.help-search {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.help-search input {
+    width: 100%;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.help-search input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.help-search input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.help-nav {
+    flex: 1;
+    padding: 16px 0;
+}
+
+.help-nav-item {
+    width: 100%;
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.help-nav-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.help-nav-item.active {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    border-left-color: #667eea;
+}
+
+.help-quick-actions {
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.help-quick-actions button {
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.help-quick-actions button:hover {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+}
+
+.help-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px;
+}
+
+.help-articles h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 32px 0;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.article-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.article-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.2);
+}
+
+.article-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.article-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 16px 0;
+}
+
+.read-more {
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.help-article {
+    max-width: 800px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 24px;
+    padding: 8px 0;
+    transition: opacity 0.2s ease;
+}
+
+.back-button:hover {
+    opacity: 0.7;
+}
+
+.help-article h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0 0 32px 0;
+    line-height: 1.2;
+}
+
+.article-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.article-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 32px 0 16px 0;
+    color: white;
+}
+
+.article-content p {
+    margin: 16px 0;
+}
+
+.article-content ul {
+    margin: 16px 0;
+    padding-left: 24px;
+}
+
+.article-content li {
+    margin: 8px 0;
+}
+
+.article-content code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #667eea;
+}
+
+@media (max-width: 1024px) {
+    .help-sidebar {
+        width: 240px;
+    }
+
+    .help-content {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .help-center {
+        flex-direction: column;
+    }
+
+    .help-sidebar {
+        width: 100%;
+        max-height: 200px;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .help-article h1 {
+        font-size: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .article-card:hover {
+        transform: none;
+    }
+
+    .help-nav-item,
+    .help-quick-actions button {
+        transition: none;
+    }
+}

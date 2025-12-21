@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ForTheWeebs - API Connection Test</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            padding: 40px; 
+            background: #0a0a0a; 
+            color: #fff;
+        }
+        .test { 
+            margin: 20px 0; 
+            padding: 15px; 
+            background: #1a1a1a; 
+            border-left: 4px solid #666;
+            border-radius: 4px;
+        }
+        .pass { border-left-color: #0f0; }
+        .fail { border-left-color: #f00; }
+        .code { 
+            background: #000; 
+            padding: 10px; 
+            margin: 10px 0;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        h1 { color: #ff6b9d; }
+        h2 { color: #4a9eff; }
+    </style>
+</head>
+<body>
+    <h1>🧪 ForTheWeebs API Connection Test</h1>
+    <p>Testing if frontend connects to the correct backend...</p>
+    
+    <div id="results"></div>
+
+    <script type="module">
+        const results = document.getElementById('results');
+
+        function addTest(title, status, details) {
+            const div = document.createElement('div');
+            div.className = `test ${status}`;
+            div.innerHTML = `
+                <h2>${status === 'pass' ? '✅' : '❌'} ${title}</h2>
+                <div class="code">${details}</div>
+            `;
+            results.appendChild(div);
+        }
+
+        async function runTests() {
+            // Test 1: Check env var
+            const apiUrl = import.meta.env.VITE_API_URL;
+            addTest(
+                'Environment Variable', 
+                apiUrl === 'http://localhost:3001' ? 'pass' : 'fail',
+                `VITE_API_URL = "${apiUrl}"<br>Expected: "http://localhost:3001"`
+            );
+
+            // Test 2: Fetch from API
+            try {
+                const response = await fetch(`${apiUrl}/api/social/feed?limit=3&userId=c81cfb58-6006-495c-81b8-1adbe1366472`);
+                const data = await response.json();
+                
+                const hasUUIDs = data.posts?.every(p => 
+                    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(p.id)
+                );
+
+                addTest(
+                    'API Feed Endpoint',
+                    response.ok && hasUUIDs ? 'pass' : 'fail',
+                    `Status: ${response.status}<br>
+                     Posts returned: ${data.posts?.length || 0}<br>
+                     Post IDs are UUIDs: ${hasUUIDs}<br>
+                     Sample ID: ${data.posts?.[0]?.id || 'N/A'}<br>
+                     Content preview: "${data.posts?.[0]?.content?.substring(0, 50) || 'N/A'}..."`
+                );
+            } catch (error) {
+                addTest('API Feed Endpoint', 'fail', `Error: ${error.message}`);
+            }
+
+            // Test 3: Create post
+            try {
+                const response = await fetch(`${apiUrl}/api/social/post`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        userId: 'c81cfb58-6006-495c-81b8-1adbe1366472',
+                        content: `Frontend integration test - ${new Date().toLocaleTimeString()}`,
+                        visibility: 'PUBLIC',
+                        media: []
+                    })
+                });
+                const data = await response.json();
+                
+                const isUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(data.post?.id);
+
+                addTest(
+                    'Create Post',
+                    response.ok && isUUID ? 'pass' : 'fail',
+                    `Status: ${response.status}<br>
+                     Post ID: ${data.post?.id}<br>
+                     Is UUID: ${isUUID}<br>
+                     Content: "${data.post?.content}"`
+                );
+            } catch (error) {
+                addTest('Create Post', 'fail', `Error: ${error.message}`);
+            }
+
+            // Test 4: Check database
+            try {
+                const response = await fetch(`${apiUrl}/api/social/feed?limit=5&userId=c81cfb58-6006-495c-81b8-1adbe1366472`);
+                const data = await response.json();
+                
+                addTest(
+                    'Database Verification',
+                    data.count >= 5 ? 'pass' : 'fail',
+                    `Total posts in database: ${data.count}<br>
+                     Retrieved: ${data.posts?.length || 0} posts<br>
+                     All have UUIDs: ${data.posts?.every(p => /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(p.id))}`
+                );
+            } catch (error) {
+                addTest('Database Verification', 'fail', `Error: ${error.message}`);
+            }
+        }
+
+        runTests();
+    </script>
+</body>
+</html>

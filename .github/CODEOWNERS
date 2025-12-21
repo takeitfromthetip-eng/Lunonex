@@ -1,0 +1,14 @@
+# CODE OWNERS - Require your approval for critical changes
+# This prevents automated systems from modifying critical files
+
+# You are the owner of EVERYTHING
+* @polotuspossumus
+
+# Extra protection for critical files
+/.env @polotuspossumus
+/package.json @polotuspossumus
+/vite.config.mjs @polotuspossumus
+/server.js @polotuspossumus
+/.github/** @polotuspossumus
+/utils/vipAccess.js @polotuspossumus
+/src/lib/supabase.js @polotuspossumus

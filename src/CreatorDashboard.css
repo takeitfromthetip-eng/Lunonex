@@ -1,0 +1,216 @@
+/* Creator Dashboard Radix UI Tabs Styling */
+
+.dashboard-tabs {
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Tabs List (Tab Buttons Container) */
+[role="tablist"] {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 2px solid #334155;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    background: #1a1a2e;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding-top: 1rem;
+}
+
+/* Individual Tab Triggers (Buttons) */
+[role="tab"] {
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    bottom: -2px;
+    white-space: nowrap;
+}
+
+[role="tab"]:hover {
+    color: #e2e8f0;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 8px 8px 0 0;
+}
+
+[role="tab"][data-state="active"] {
+    color: #a78bfa;
+    border-bottom-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.15);
+    border-radius: 8px 8px 0 0;
+}
+
+[role="tab"]:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
+}
+
+/* Tab Content Panels */
+[role="tabpanel"] {
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 16px;
+    min-height: 400px;
+    animation: fadeInTab 0.3s ease;
+}
+
+/* Hide inactive tab panels */
+[role="tabpanel"][data-state="inactive"] {
+    display: none;
+}
+
+/* Show active tab panels */
+[role="tabpanel"][data-state="active"] {
+    display: block;
+}
+
+[role="tabpanel"]:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 4px;
+}
+
+/* Overlay Panel Specific */
+.overlay-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.overlay-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    font-weight: 600;
+}
+
+/* Switch Component Styling (Radix UI) */
+[role="switch"] {
+    width: 48px;
+    height: 28px;
+    background: #334155;
+    border-radius: 28px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border: none;
+    outline: none;
+}
+
+[role="switch"][data-state="checked"] {
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+}
+
+[role="switch"]:focus-visible {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
+}
+
+[role="switch"] span {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[role="switch"][data-state="checked"] span {
+    transform: translateX(20px);
+}
+
+/* Animation */
+@keyframes fadeInTab {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    [role="tablist"] {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #8b5cf6 #1a1a2e;
+    }
+
+    [role="tab"] {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    [role="tabpanel"] {
+        padding: 1rem;
+    }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    [role="tablist"] {
+        gap: 0.25rem;
+        padding: 0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    [role="tab"] {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+        white-space: nowrap;
+    }
+
+    [role="tabpanel"] {
+        padding: 1rem;
+        min-height: 200px;
+    }
+
+    .dashboard-tabs {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    [role="tablist"] {
+        gap: 0.125rem;
+        padding: 0.25rem;
+    }
+
+    [role="tab"] {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+
+    [role="tabpanel"] {
+        padding: 0.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

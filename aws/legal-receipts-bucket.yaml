@@ -1,0 +1,270 @@
+# AWS CloudFormation Template - Legal Receipts Bucket
+# Creates S3 bucket with Object Lock, KMS encryption, lifecycle rules
+# Deploy: aws cloudformation deploy --template-file legal-receipts-bucket.yaml --stack-name legal-receipts-infrastructure
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'ForTheWeebs Legal Receipts - Immutable Object Lock Storage'
+
+Parameters:
+  BucketName:
+    Type: String
+    Default: 'fortheweebs-legal-receipts'
+    Description: 'Primary legal receipts bucket name'
+  
+  BackupBucketName:
+    Type: String
+    Default: 'fortheweebs-legal-receipts-backup'
+    Description: 'Backup legal receipts bucket name (cross-region)'
+  
+  LogsBucketName:
+    Type: String
+    Default: 'fortheweebs-legal-receipts-logs'
+    Description: 'Access logs bucket name'
+
+Resources:
+  # KMS Key for encryption
+  LegalReceiptsKMSKey:
+    Type: AWS::KMS::Key
+    Properties:
+      Description: 'KMS key for legal receipts encryption'
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: 'Enable IAM User Permissions'
+            Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+            Action: 'kms:*'
+            Resource: '*'
+          - Sid: 'Allow S3 to use the key'
+            Effect: Allow
+            Principal:
+              Service: s3.amazonaws.com
+            Action:
+              - 'kms:Decrypt'
+              - 'kms:GenerateDataKey'
+            Resource: '*'
+
+  LegalReceiptsKMSKeyAlias:
+    Type: AWS::KMS::Alias
+    Properties:
+      AliasName: 'alias/legal-receipts'
+      TargetKeyId: !Ref LegalReceiptsKMSKey
+
+  # Access logs bucket
+  LegalReceiptsLogsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref LogsBucketName
+      AccessControl: LogDeliveryWrite
+      VersioningConfiguration:
+        Status: Enabled
+      LifecycleConfiguration:
+        Rules:
+          - Id: 'ArchiveOldLogs'
+            Status: Enabled
+            Transitions:
+              - TransitionInDays: 90
+                StorageClass: GLACIER
+              - TransitionInDays: 365
+                StorageClass: DEEP_ARCHIVE
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  # Primary legal receipts bucket with Object Lock
+  LegalReceiptsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      VersioningConfiguration:
+        Status: Enabled
+      ObjectLockEnabled: true
+      ObjectLockConfiguration:
+        ObjectLockEnabled: Enabled
+        Rule:
+          DefaultRetention:
+            Mode: COMPLIANCE
+            Years: 75  # Far-future retention (2099)
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: 'aws:kms'
+              KMSMasterKeyID: !GetAtt LegalReceiptsKMSKey.Arn
+            BucketKeyEnabled: true
+      LoggingConfiguration:
+        DestinationBucketName: !Ref LegalReceiptsLogsBucket
+        LogFilePrefix: 'legal-receipts-access/'
+      LifecycleConfiguration:
+        Rules:
+          - Id: 'TransitionToInfrequentAccess'
+            Status: Enabled
+            Transitions:
+              - TransitionInDays: 90
+                StorageClass: STANDARD_IA
+              - TransitionInDays: 365
+                StorageClass: INTELLIGENT_TIERING
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      NotificationConfiguration:
+        EventBridgeConfiguration:
+          EventBridgeEnabled: true
+      Tags:
+        - Key: 'Purpose'
+          Value: 'Legal Receipts - Immutable Storage'
+        - Key: 'Compliance'
+          Value: 'E-SIGN Act'
+        - Key: 'Retention'
+          Value: 'Lifetime'
+
+  # Backup bucket (cross-region replication target)
+  LegalReceiptsBackupBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BackupBucketName
+      VersioningConfiguration:
+        Status: Enabled
+      ObjectLockEnabled: true
+      ObjectLockConfiguration:
+        ObjectLockEnabled: Enabled
+        Rule:
+          DefaultRetention:
+            Mode: COMPLIANCE
+            Years: 75
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: 'aws:kms'
+              KMSMasterKeyID: !GetAtt LegalReceiptsKMSKey.Arn
+            BucketKeyEnabled: true
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: 'Purpose'
+          Value: 'Legal Receipts Backup - Cross-Region'
+        - Key: 'ReplicaOf'
+          Value: !Ref BucketName
+
+  # IAM Role for Writer (PutObject only)
+  LegalReceiptsWriterRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: 'LegalReceiptsWriter'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: 'sts:AssumeRole'
+      Policies:
+        - PolicyName: 'LegalReceiptsWritePolicy'
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 's3:PutObject'
+                  - 's3:PutObjectLegalHold'
+                  - 's3:PutObjectRetention'
+                  - 's3:PutObjectTagging'
+                Resource: !Sub '${LegalReceiptsBucket.Arn}/*'
+              - Effect: Allow
+                Action:
+                  - 'kms:Decrypt'
+                  - 'kms:GenerateDataKey'
+                Resource: !GetAtt LegalReceiptsKMSKey.Arn
+
+  # IAM Role for Reader (GetObject only)
+  LegalReceiptsReaderRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: 'LegalReceiptsReader'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: 'sts:AssumeRole'
+      Policies:
+        - PolicyName: 'LegalReceiptsReadPolicy'
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 's3:GetObject'
+                  - 's3:GetObjectVersion'
+                  - 's3:GetObjectLegalHold'
+                  - 's3:GetObjectRetention'
+                  - 's3:ListBucket'
+                Resource:
+                  - !GetAtt LegalReceiptsBucket.Arn
+                  - !Sub '${LegalReceiptsBucket.Arn}/*'
+              - Effect: Allow
+                Action:
+                  - 'kms:Decrypt'
+                Resource: !GetAtt LegalReceiptsKMSKey.Arn
+
+  # EventBridge rule to alert on delete attempts
+  DeleteAttemptAlertRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: 'LegalReceiptsDeleteAttemptAlert'
+      Description: 'Alert on any delete attempts to legal receipts bucket'
+      EventPattern:
+        source:
+          - 'aws.s3'
+        detail-type:
+          - 'AWS API Call via CloudTrail'
+        detail:
+          eventName:
+            - 'DeleteObject'
+            - 'DeleteObjectVersion'
+          requestParameters:
+            bucketName:
+              - !Ref BucketName
+      State: ENABLED
+      Targets:
+        - Arn: !Sub 'arn:aws:sns:${AWS::Region}:${AWS::AccountId}:security-alerts'
+          Id: 'DeleteAttemptSNSTopic'
+
+Outputs:
+  LegalReceiptsBucketName:
+    Description: 'Legal receipts bucket name'
+    Value: !Ref LegalReceiptsBucket
+    Export:
+      Name: 'LegalReceiptsBucketName'
+  
+  LegalReceiptsBucketArn:
+    Description: 'Legal receipts bucket ARN'
+    Value: !GetAtt LegalReceiptsBucket.Arn
+    Export:
+      Name: 'LegalReceiptsBucketArn'
+  
+  KMSKeyId:
+    Description: 'KMS key ID for encryption'
+    Value: !Ref LegalReceiptsKMSKey
+    Export:
+      Name: 'LegalReceiptsKMSKeyId'
+  
+  WriterRoleArn:
+    Description: 'IAM role ARN for writers'
+    Value: !GetAtt LegalReceiptsWriterRole.Arn
+    Export:
+      Name: 'LegalReceiptsWriterRoleArn'
+  
+  ReaderRoleArn:
+    Description: 'IAM role ARN for readers'
+    Value: !GetAtt LegalReceiptsReaderRole.Arn
+    Export:
+      Name: 'LegalReceiptsReaderRoleArn'

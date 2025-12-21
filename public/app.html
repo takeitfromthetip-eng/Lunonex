@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForTheWeebs - Social Feed</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            color: #1c1e21;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 16px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #1877f2;
+        }
+
+        .create-post {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .create-post textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            resize: none;
+            font-family: inherit;
+            margin-bottom: 12px;
+        }
+
+        .create-post textarea:focus {
+            outline: none;
+            border-color: #1877f2;
+        }
+
+        .create-post button {
+            width: 100%;
+            background: #1877f2;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .create-post button:hover {
+            background: #166fe5;
+        }
+
+        .create-post button:disabled {
+            background: #e4e6eb;
+            color: #bcc0c4;
+            cursor: not-allowed;
+        }
+
+        .post {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            margin-bottom: 12px;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1877f2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+
+        .post-info {
+            flex: 1;
+        }
+
+        .post-author {
+            font-weight: 600;
+            font-size: 15px;
+            color: #050505;
+        }
+
+        .post-time {
+            font-size: 13px;
+            color: #65676b;
+        }
+
+        .post-content {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #050505;
+            margin-bottom: 12px;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #e4e6eb;
+        }
+
+        .post-action {
+            flex: 1;
+            padding: 8px;
+            background: none;
+            border: none;
+            color: #65676b;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .post-action:hover {
+            background: #f0f2f5;
+        }
+
+        .status {
+            text-align: center;
+            padding: 20px;
+            color: #65676b;
+        }
+
+        .error {
+            background: #fee;
+            color: #c00;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .success {
+            background: #efe;
+            color: #060;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #65676b;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 40px;
+            color: #65676b;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .empty h3 {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 ForTheWeebs</h1>
+        </div>
+
+        <div class="create-post">
+            <textarea
+                id="postContent"
+                placeholder="What's on your mind?"
+                rows="3"
+            ></textarea>
+            <button id="postButton" onclick="createPost()">Post</button>
+        </div>
+
+        <div id="message"></div>
+        <div id="posts"></div>
+    </div>
+
+    <script src="bug-widget.js"></script>
+    <script>
+        const API_URL = 'http://localhost:3000';
+        let posts = [];
+        let userId = localStorage.getItem('userId') || 'user_' + Date.now();
+        localStorage.setItem('userId', userId);
+
+        // Load posts on page load
+        window.addEventListener('DOMContentLoaded', loadPosts);
+
+        async function loadPosts() {
+            const postsDiv = document.getElementById('posts');
+            postsDiv.innerHTML = '<div class="loading">Loading posts...</div>';
+
+            try {
+                const response = await fetch(`${API_URL}/api/social/feed`);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                posts = data.posts || [];
+
+                if (posts.length === 0) {
+                    postsDiv.innerHTML = `
+                        <div class="empty">
+                            <h3>No posts yet</h3>
+                            <p>Be the first to share something!</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                renderPosts();
+            } catch (error) {
+                console.error('Load error:', error);
+                postsDiv.innerHTML = `
+                    <div class="error">
+                        Failed to load posts. Make sure the server is running on ${API_URL}
+                    </div>
+                `;
+            }
+        }
+
+        async function createPost() {
+            const content = document.getElementById('postContent').value.trim();
+            const button = document.getElementById('postButton');
+            const messageDiv = document.getElementById('message');
+
+            if (!content) {
+                messageDiv.innerHTML = '<div class="error">Please write something!</div>';
+                setTimeout(() => messageDiv.innerHTML = '', 3000);
+                return;
+            }
+
+            button.disabled = true;
+            button.textContent = 'Posting...';
+
+            try {
+                const response = await fetch(`${API_URL}/api/social/post`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        userId: userId,
+                        content: content,
+                        visibility: 'public'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Add new post to the top
+                posts.unshift({
+                    id: data.post.id,
+                    userId: userId,
+                    userName: 'You',
+                    avatar: '👤',
+                    content: content,
+                    timestamp: new Date().toISOString(),
+                    likes: 0,
+                    commentsCount: 0
+                });
+
+                // Clear input and show success
+                document.getElementById('postContent').value = '';
+                messageDiv.innerHTML = '<div class="success">✓ Posted successfully!</div>';
+                setTimeout(() => messageDiv.innerHTML = '', 3000);
+
+                // Re-render posts
+                renderPosts();
+
+            } catch (error) {
+                console.error('Post error:', error);
+                messageDiv.innerHTML = `
+                    <div class="error">
+                        Failed to post. Make sure the server is running on ${API_URL}
+                    </div>
+                `;
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Post';
+            }
+        }
+
+        function renderPosts() {
+            const postsDiv = document.getElementById('posts');
+
+            postsDiv.innerHTML = posts.map(post => {
+                const timeAgo = getTimeAgo(new Date(post.timestamp));
+
+                return `
+                    <div class="post">
+                        <div class="post-header">
+                            <div class="post-avatar">${post.avatar || '👤'}</div>
+                            <div class="post-info">
+                                <div class="post-author">${post.userName || 'User'}</div>
+                                <div class="post-time">${timeAgo}</div>
+                            </div>
+                        </div>
+                        <div class="post-content">${escapeHtml(post.content)}</div>
+                        <div class="post-actions">
+                            <button class="post-action">👍 Like (${post.likes || 0})</button>
+                            <button class="post-action">💬 Comment (${post.commentsCount || 0})</button>
+                            <button class="post-action">🔗 Share</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function getTimeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+
+            if (seconds < 60) return 'Just now';
+            if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+            if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+            return `${Math.floor(seconds / 86400)}d ago`;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Allow Enter to post (Shift+Enter for new line)
+        document.getElementById('postContent').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                createPost();
+            }
+        });
+    </script>
+</body>
+</html>

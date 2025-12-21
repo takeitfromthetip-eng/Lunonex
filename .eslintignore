@@ -1,0 +1,14 @@
+# Ignore files that are also gitignored
+node_modules/
+dist/
+build/
+.vite/
+*.min.js
+coverage/
+
+# API files (generated/TypeScript compiled)
+api/**/*.js
+
+# Test artifacts
+artifacts/
+logs/

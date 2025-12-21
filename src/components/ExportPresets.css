@@ -1,0 +1,203 @@
+.export-presets {
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    border-radius: 16px;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.export-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.export-header h3 {
+    margin: 0 0 0.5rem;
+    font-size: 2rem;
+    color: #00d2ff;
+}
+
+.export-header p {
+    margin: 0;
+    color: #999;
+    font-size: 1rem;
+}
+
+.presets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.preset-card {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    border: 3px solid #533483;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.preset-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.3);
+}
+
+.preset-card.selected {
+    border-color: #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.preset-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.preset-info {
+    flex: 1;
+}
+
+.preset-info h4 {
+    margin: 0 0 0.3rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.preset-platform {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+    color: #00d2ff;
+    font-weight: 600;
+}
+
+.preset-description {
+    margin: 0 0 0.8rem;
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 1.4;
+}
+
+.preset-settings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.setting-tag {
+    padding: 0.3rem 0.6rem;
+    background: rgba(0, 210, 255, 0.1);
+    border: 1px solid #00d2ff;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: #00d2ff;
+    font-weight: 600;
+}
+
+.btn-custom-export {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #533483 0%, #e94560 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-export:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+}
+
+.export-progress-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.progress-content {
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    border: 3px solid #00d2ff;
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+    min-width: 400px;
+    animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.progress-content h3 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    color: #00d2ff;
+}
+
+.progress-content p {
+    margin: 0 0 1.5rem;
+    color: #999;
+    font-size: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background: #16213e;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 2px solid #533483;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    transition: width 0.3s ease;
+    border-radius: 15px;
+}
+
+.progress-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #00d2ff;
+}

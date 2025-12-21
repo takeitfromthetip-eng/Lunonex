@@ -1,0 +1,16 @@
+# Railway/Nixpacks Configuration for ForTheWeebs
+
+[phases.setup]
+nixPkgs = ["nodejs_20", "python3"]
+
+[phases.install]
+cmds = ["npm ci --legacy-peer-deps --production=false"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "npm run server"
+
+[variables]
+NODE_ENV = "production"

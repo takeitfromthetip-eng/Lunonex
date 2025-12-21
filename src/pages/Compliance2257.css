@@ -1,0 +1,166 @@
+.compliance-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  padding: 2rem;
+}
+
+.compliance-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  border-radius: 16px;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+}
+
+.compliance-container h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ff6b9d;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.compliance-section {
+  margin-bottom: 3rem;
+}
+
+.compliance-section h2 {
+  font-size: 1.5rem;
+  color: #ff6b9d;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(233, 69, 96, 0.3);
+}
+
+.compliance-section h3 {
+  font-size: 1.2rem;
+  color: #ffc107;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.compliance-section h4 {
+  font-size: 1.1rem;
+  color: #ff6b9d;
+  margin-bottom: 0.5rem;
+}
+
+.compliance-section p {
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.compliance-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.compliance-section li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.compliance-section li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #e94560;
+  font-weight: bold;
+}
+
+.custodian-info {
+  background: rgba(233, 69, 96, 0.1);
+  border: 2px solid rgba(233, 69, 96, 0.4);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.custodian-info h2 {
+  color: #ff6b9d;
+  margin-bottom: 1.5rem;
+}
+
+.info-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.info-box p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.info-box strong {
+  color: #ff6b9d;
+  margin-right: 0.5rem;
+}
+
+.note {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid #ffc107;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.note strong {
+  color: #ffc107;
+}
+
+.requirements-list {
+  margin-top: 1.5rem;
+}
+
+.requirement-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(233, 69, 96, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.requirement-item h4 {
+  margin-top: 0;
+}
+
+.requirement-item ul {
+  margin-top: 0.5rem;
+}
+
+.last-updated {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 2px solid rgba(233, 69, 96, 0.3);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .compliance-page {
+    padding: 1rem;
+  }
+
+  .compliance-container {
+    padding: 1.5rem;
+  }
+
+  .compliance-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .compliance-section h2 {
+    font-size: 1.3rem;
+  }
+}

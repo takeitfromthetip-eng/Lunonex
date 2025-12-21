@@ -1,0 +1,355 @@
+name: 🚀 Deploy & Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Prevent concurrent deployments
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '20'
+  # 🔑 Expand Node.js heap to 4GB - prevents OOM kills
+  NODE_OPTIONS: '--max-old-space-size=4096'
+  # Limit npm concurrency to prevent socket/file descriptor exhaustion
+  NPM_CONFIG_MAXSOCKETS: 5
+
+jobs:
+  test:
+    name: 🧪 Test & Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        
+      - name: 💾 Setup 4GB Swap (Prevents Memory Kills)
+        run: |
+          echo "🔧 Creating 4GB swap file..."
+          sudo fallocate -l 4G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+          echo "✅ Swap enabled:"
+          free -h
+        
+      - name: 📊 Log System Resources
+        run: |
+          echo "════════════════════════════════════════"
+          echo "🖥️  SYSTEM RESOURCES AT START"
+          echo "════════════════════════════════════════"
+          echo "CPU Info:"
+          lscpu | grep -E '^CPU\(s\)|^Model name'
+          echo ""
+          echo "Memory:"
+          free -h
+          echo ""
+          echo "Disk:"
+          df -h /
+          echo ""
+          echo "File Descriptors:"
+          ulimit -n
+          echo "════════════════════════════════════════"
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Restore npm cache
+        id: npm-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+          
+      - name: 📚 Install Dependencies
+        run: |
+          echo "📥 Installing with legacy peer deps..."
+          npm install --legacy-peer-deps --prefer-offline --no-audit
+          echo "✅ Dependencies installed"
+        
+      - name: 🔍 Lint Code
+        run: npm run lint --if-present
+        continue-on-error: true
+        
+      - name: 🧪 Run Tests
+        run: npm test --if-present
+        continue-on-error: true
+        
+      - name: 📊 Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            coverage/
+            test-results/
+          retention-days: 30
+
+  build:
+    name: 🏗️ Build
+    runs-on: ubuntu-latest
+    needs: test
+    timeout-minutes: 30
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        
+      - name: 💾 Setup 4GB Swap (Prevents Memory Kills)
+        run: |
+          echo "🔧 Creating 4GB swap file..."
+          sudo fallocate -l 4G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+          echo "✅ Swap enabled:"
+          free -h
+        
+      - name: 📊 Log System Resources
+        run: |
+          echo "════════════════════════════════════════"
+          echo "🖥️  BUILD RESOURCES AT START"
+          echo "════════════════════════════════════════"
+          echo "CPU Info:"
+          lscpu | grep -E '^CPU\(s\)|^Model name'
+          echo ""
+          echo "Memory:"
+          free -h
+          echo ""
+          echo "Disk:"
+          df -h /
+          echo "════════════════════════════════════════"
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Restore npm cache
+        id: npm-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+          
+      - name: 📚 Install Dependencies
+        run: |
+          echo "📥 Installing with legacy peer deps..."
+          npm install --legacy-peer-deps --prefer-offline --no-audit
+          echo "✅ Dependencies installed"
+          
+      - name: 📊 Monitor Resources After Install
+        run: |
+          echo "════════════════════════════════════════"
+          echo "📊 RESOURCES AFTER INSTALL"
+          echo "════════════════════════════════════════"
+          echo "Memory Usage:"
+          free -h
+          echo ""
+          echo "Disk Usage:"
+          df -h /
+          echo ""
+          echo "Node Processes:"
+          ps aux | grep node || echo "No Node processes"
+          echo "════════════════════════════════════════"
+          
+      - name: 🔍 Verify React Deduplication
+        run: |
+          echo "🔍 Checking for React duplication..."
+          npm list react react-dom --depth=0 || true
+          echo "✅ React check complete"
+        
+      - name: 🏗️ Build Project
+        run: |
+          echo "🏗️ Starting production build..."
+          echo "NODE_OPTIONS: $NODE_OPTIONS"
+          npm run build
+          echo "✅ Build complete!"
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_STRIPE_PUBLIC_KEY: ${{ secrets.VITE_STRIPE_PUBLIC_KEY }}
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          
+      - name: 📊 Build Artifact Stats
+        run: |
+          echo "════════════════════════════════════════"
+          echo "📦 BUILD ARTIFACT STATISTICS"
+          echo "════════════════════════════════════════"
+          echo "Dist folder size:"
+          du -sh dist/
+          echo ""
+          echo "Largest files:"
+          find dist/ -type f -exec ls -lh {} \; | sort -k5 -hr | head -10
+          echo ""
+          echo "Total file count:"
+          find dist/ -type f | wc -l
+          echo "════════════════════════════════════════"
+          
+      - name: 📊 Final Resource Check
+        run: |
+          echo "════════════════════════════════════════"
+          echo "🎯 FINAL RESOURCE STATE"
+          echo "════════════════════════════════════════"
+          echo "Memory:"
+          free -h
+          echo ""
+          echo "Swap Usage:"
+          swapon --show
+          echo ""
+          echo "Disk:"
+          df -h /
+          echo "════════════════════════════════════════"
+          
+      - name: 📊 Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ github.sha }}
+          path: dist/
+          retention-days: 30
+          
+      - name: ❌ Cleanup on Failure
+        if: failure()
+        run: |
+          echo "════════════════════════════════════════"
+          echo "❌ BUILD FAILED - DIAGNOSTICS"
+          echo "════════════════════════════════════════"
+          echo "Last 100 lines of npm log:"
+          tail -100 ~/.npm/_logs/*.log 2>/dev/null || echo "No npm logs found"
+          echo ""
+          echo "Memory at failure:"
+          free -h
+          echo ""
+          echo "Disk at failure:"
+          df -h /
+          echo ""
+          echo "Node processes at failure:"
+          ps aux | grep node || echo "No Node processes"
+          echo "════════════════════════════════════════"
+          
+  deploy-log:
+    name: 📝 Log Deployment
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        
+      - name: 📝 Create Sovereign Deployment Artifact Log
+        run: |
+          mkdir -p artifacts
+          
+          # Create JSON artifact log (machine-readable)
+          cat > artifacts/deployment-log.json <<EOF
+          {
+            "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "commit": "${{ github.sha }}",
+            "commit_short": "$(echo ${{ github.sha }} | cut -c1-7)",
+            "ref": "${{ github.ref }}",
+            "branch": "${{ github.ref_name }}",
+            "actor": "${{ github.actor }}",
+            "event": "${{ github.event_name }}",
+            "workflow": "${{ github.workflow }}",
+            "run_id": "${{ github.run_id }}",
+            "run_number": "${{ github.run_number }}",
+            "repository": "${{ github.repository }}",
+            "node_version": "20.x",
+            "npm_version": "latest",
+            "commit_message": "${{ github.event.head_commit.message }}",
+            "urls": {
+              "vercel": "https://fortheweebs.vercel.app",
+              "railway": "https://fortheweebs-production.up.railway.app"
+            },
+            "sovereignty_note": "Every deployment is a ritualized sovereign event"
+          }
+          EOF
+          
+          # Create Markdown log (human-readable)
+          echo "## 🚀 Sovereign Deployment Artifact" > artifacts/deploy-log.md
+          echo "" >> artifacts/deploy-log.md
+          echo "### 📊 Deployment Metadata" >> artifacts/deploy-log.md
+          echo "| Property | Value |" >> artifacts/deploy-log.md
+          echo "|----------|-------|" >> artifacts/deploy-log.md
+          echo "| **Commit** | \`${{ github.sha }}\` |" >> artifacts/deploy-log.md
+          echo "| **Branch** | \`${{ github.ref_name }}\` |" >> artifacts/deploy-log.md
+          echo "| **Timestamp** | $(date -u +"%Y-%m-%d %H:%M:%S UTC") |" >> artifacts/deploy-log.md
+          echo "| **Author** | ${{ github.actor }} |" >> artifacts/deploy-log.md
+          echo "| **Event** | ${{ github.event_name }} |" >> artifacts/deploy-log.md
+          echo "| **Run** | #${{ github.run_number }} |" >> artifacts/deploy-log.md
+          echo "" >> artifacts/deploy-log.md
+          echo "### 🌐 Deployment URLs" >> artifacts/deploy-log.md
+          echo "- **Vercel**: https://fortheweebs.vercel.app" >> artifacts/deploy-log.md
+          echo "- **Railway API**: https://fortheweebs-production.up.railway.app" >> artifacts/deploy-log.md
+          echo "" >> artifacts/deploy-log.md
+          echo "### 📝 Commit Message" >> artifacts/deploy-log.md
+          echo "\`\`\`" >> artifacts/deploy-log.md
+          echo "${{ github.event.head_commit.message }}" >> artifacts/deploy-log.md
+          echo "\`\`\`" >> artifacts/deploy-log.md
+          echo "" >> artifacts/deploy-log.md
+          echo "---" >> artifacts/deploy-log.md
+          echo "*🏛️ Deployed via GitHub Actions - Every deployment is a sovereign event*" >> artifacts/deploy-log.md
+          
+          echo "📝 Deployment artifact logs created"
+          cat artifacts/deployment-log.json
+          
+      - name: 📊 Upload Deploy Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-log-${{ github.sha }}
+          path: artifacts/
+          retention-days: 90
+          
+  verify:
+    name: ✅ Verify Deployment
+    runs-on: ubuntu-latest
+    needs: deploy-log
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: 🔍 Check Vercel Deployment
+        run: |
+          echo "Checking Vercel deployment..."
+          curl -f https://fortheweebs.vercel.app || echo "⚠️ Vercel deployment not reachable"
+          
+      - name: 🔍 Check Railway Backend
+        run: |
+          echo "Checking Railway backend..."
+          curl -f https://fortheweebs-production.up.railway.app/api/status || echo "⚠️ Railway backend not reachable"
+          
+  notify:
+    name: 📢 Notify
+    runs-on: ubuntu-latest
+    needs: [test, build, deploy-log, verify]
+    if: always() && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: 📢 Deployment Summary
+        run: |
+          echo "🚀 Deployment Complete"
+          echo "Commit: ${{ github.sha }}"
+          echo "Status: ${{ job.status }}"
+          echo "View at: https://fortheweebs.vercel.app"

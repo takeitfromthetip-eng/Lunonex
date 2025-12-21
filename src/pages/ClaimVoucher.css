@@ -1,0 +1,469 @@
+.claim-voucher {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  padding: 2rem;
+}
+
+.voucher-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.voucher-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.voucher-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #e94560 0%, #ff6b9d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.voucher-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.remaining-count {
+  display: inline-block;
+  background: rgba(255, 193, 7, 0.2);
+  border: 2px solid #ffc107;
+  border-radius: 24px;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.remaining-count .count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffc107;
+}
+
+.voucher-intro {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.voucher-form {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.voucher-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.voucher-option {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(233, 69, 96, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.voucher-option:hover {
+  transform: translateY(-5px);
+  border-color: #e94560;
+  box-shadow: 0 10px 40px rgba(233, 69, 96, 0.3);
+}
+
+.voucher-option.selected {
+  border-color: #e94560;
+  background: rgba(233, 69, 96, 0.1);
+  box-shadow: 0 0 30px rgba(233, 69, 96, 0.4);
+}
+
+.voucher-option input[type="radio"] {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  accent-color: #e94560;
+}
+
+.option-content {
+  text-align: center;
+}
+
+.option-badge {
+  display: inline-block;
+  background: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  border: 1px solid #28a745;
+  padding: 0.25rem 1rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.option-badge.premium {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  border-color: #ffc107;
+}
+
+.option-content h3 {
+  font-size: 1.8rem;
+  color: #ff6b9d;
+  margin-bottom: 1rem;
+}
+
+.discount-display {
+  font-size: 4rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #e94560 0%, #ff6b9d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 1rem 0;
+}
+
+.discount-display.premium {
+  background: linear-gradient(135deg, #ffc107 0%, #ff6b9d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.option-content > p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.option-content ul {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.option-content li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  opacity: 0.9;
+}
+
+.option-content li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.savings-examples,
+.savings-highlight {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.savings-examples p,
+.savings-highlight p {
+  margin: 0.25rem 0;
+  opacity: 0.9;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #ff6b9d;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #e94560;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.input-hint {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.error-message {
+  background: rgba(220, 53, 69, 0.2);
+  border: 1px solid #dc3545;
+  color: #f8a5af;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  background: linear-gradient(135deg, #e94560 0%, #ff6b9d 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-submit {
+  margin-bottom: 1rem;
+}
+
+.terms-notice {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+/* Success State */
+.success-content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.voucher-code-display {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.voucher-code-display h2 {
+  color: #ff6b9d;
+  margin-bottom: 1rem;
+}
+
+.code-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e94560;
+  margin-bottom: 1rem;
+}
+
+.code-box code {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffc107;
+  letter-spacing: 2px;
+}
+
+.copy-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(233, 69, 96, 0.3);
+  border: 1px solid #e94560;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(233, 69, 96, 0.5);
+}
+
+.voucher-details,
+.next-steps {
+  margin-bottom: 2rem;
+}
+
+.voucher-details h3,
+.next-steps h3 {
+  color: #ff6b9d;
+  margin-bottom: 1rem;
+}
+
+.voucher-option-display {
+  background: rgba(233, 69, 96, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(233, 69, 96, 0.3);
+}
+
+.voucher-option-display p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.next-steps ol {
+  padding-left: 1.5rem;
+}
+
+.next-steps li {
+  padding: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-secondary {
+  flex: 1;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background: transparent;
+  color: white;
+  border: 2px solid #e94560;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background: rgba(233, 69, 96, 0.1);
+  transform: translateY(-2px);
+}
+
+.remaining-notice {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 193, 7, 0.1);
+  border-radius: 8px;
+  border: 1px solid #ffc107;
+}
+
+.remaining-notice strong {
+  color: #ffc107;
+}
+
+/* Vouchers Gone State */
+.vouchers-gone {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.vouchers-gone .icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.vouchers-gone h2 {
+  color: #ff6b9d;
+  margin-bottom: 1rem;
+}
+
+.vouchers-gone p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.vouchers-gone .btn-primary {
+  width: auto;
+  margin-top: 1.5rem;
+}
+
+.voucher-footer {
+  text-align: center;
+}
+
+.link-button {
+  background: transparent;
+  border: none;
+  color: #ff6b9d;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.link-button:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .claim-voucher {
+    padding: 1rem;
+  }
+
+  .voucher-header h1 {
+    font-size: 2rem;
+  }
+
+  .voucher-options {
+    grid-template-columns: 1fr;
+  }
+
+  .voucher-form {
+    padding: 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .code-box {
+    flex-direction: column;
+  }
+
+  .code-box code {
+    font-size: 1.5rem;
+  }
+}

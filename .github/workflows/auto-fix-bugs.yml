@@ -1,0 +1,103 @@
+name: Auto-Fix Bugs
+
+on:
+  issues:
+    types: [opened, labeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to fix'
+        required: true
+        type: number
+
+jobs:
+  auto-fix:
+    if: contains(github.event.issue.labels.*.name, 'bug') || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Analyze bug and attempt fix
+        id: fix
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          ISSUE_NUM=${{ github.event.issue.number || github.event.inputs.issue_number }}
+          node .github/scripts/auto-fix-bug.js $ISSUE_NUM
+        continue-on-error: true
+
+      - name: Create Pull Request with fix
+        if: steps.fix.outcome == 'success'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "🤖 Auto-fix: ${{ github.event.issue.title }}"
+          branch: auto-fix-${{ github.event.issue.number || github.event.inputs.issue_number }}
+          title: "🤖 Auto-fix: ${{ github.event.issue.title || format('Issue #{0}', github.event.inputs.issue_number) }}"
+          body: |
+            ## 🤖 Automated Bug Fix
+            
+            Fixes issue #${{ github.event.issue.number || github.event.inputs.issue_number }}
+            
+            ### Analysis
+            This fix was generated automatically by Claude AI after analyzing the bug report and project code.
+            
+            ### Review Required
+            ⚠️ **Please review carefully before merging:**
+            - Verify the fix addresses the root cause
+            - Test the changes locally
+            - Check for any side effects
+            
+            ### Testing
+            ```bash
+            git checkout auto-fix-${{ github.event.issue.number || github.event.inputs.issue_number }}
+            npm install
+            npm run build
+            npm run dev
+            ```
+            
+            Closes #${{ github.event.issue.number || github.event.inputs.issue_number }}
+          labels: auto-fix, needs-review
+          assignees: ${{ github.event.issue.user.login }}
+
+      - name: Comment on issue (success)
+        if: steps.fix.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNum = context.issue?.number || ${{ github.event.inputs.issue_number }};
+            await github.rest.issues.createComment({
+              issue_number: issueNum,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '🤖 I\'ve analyzed this bug and created a potential fix! Check the pull request for details. Please review before merging.'
+            });
+      
+      - name: Comment on issue (failure)
+        if: steps.fix.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNum = context.issue?.number || ${{ github.event.inputs.issue_number }};
+            await github.rest.issues.createComment({
+              issue_number: issueNum,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '❌ I tried to auto-fix this bug but encountered an error. Manual review required.'
+            });

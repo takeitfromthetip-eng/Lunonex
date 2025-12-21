@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForTheWeebs - All-in-One Creator Platform with 30+ AI Tools</title>
+    <meta name="description" content="Stop paying $200+/month for multiple tools. Get everything creators need in one platform: AI music, video editing, monetization, and 111 APIs.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 48px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .value-prop {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .value-prop h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .value-prop .subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .feature {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: left;
+            transition: transform 0.2s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .feature h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .pricing {
+            background: #f8f9fa;
+            padding: 80px 20px;
+            margin-top: 80px;
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #667eea;
+            transform: scale(1.05);
+        }
+
+        .pricing-card h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .pricing-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .comparison {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .comparison h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 40px;
+        }
+
+        .comparison table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .comparison th, .comparison td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison th {
+            background: #667eea;
+            color: white;
+            font-size: 18px;
+        }
+
+        .comparison tr:last-child td {
+            border-bottom: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .social-proof {
+            text-align: center;
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .social-proof h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat .number {
+            font-size: 56px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat .label {
+            font-size: 18px;
+            color: #666;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            .value-prop h2 { font-size: 32px; }
+            .pricing h2 { font-size: 32px; }
+            .comparison h2 { font-size: 32px; }
+            .pricing-card.featured { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>🎨 ForTheWeebs</h1>
+        <p>Stop Paying $200+/Month for Tools. Get Everything in One Platform.</p>
+        <a href="#pricing" class="cta">Start Free Trial</a>
+    </div>
+
+    <div class="value-prop">
+        <h2>One Platform. 30+ AI Tools. Infinite Possibilities.</h2>
+        <p class="subtitle">Replace Adobe, Canva, ElevenLabs, and 10+ other subscriptions with one simple platform.</p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h3>🎵 AI Music Studio</h3>
+            <p><strong>World's First:</strong> Create music from humming. Auto-tune, stem separation, mastering. Replace $500/month worth of plugins.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🎨 AI Art & Design</h3>
+            <p>Background removal, AI upscaling, style transfer, object removal. Replace Photoshop + Canva + Remove.bg.</p>
+        </div>
+
+        <div class="feature">
+            <h3>📹 AI Video Editor</h3>
+            <p>4K upscaling, smart clipping, subtitles with emojis, screen recording. Replace Premiere + Descript + Loom.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🤖 Voice Cloning</h3>
+            <p>Clone any voice with 30 seconds of audio. Text-to-speech in any style. Replace ElevenLabs ($330/year).</p>
+        </div>
+
+        <div class="feature">
+            <h3>💰 Creator Monetization</h3>
+            <p>Subscriptions, tips, paid content, API access. Keep 90% of earnings (Patreon keeps 88-95%).</p>
+        </div>
+
+        <div class="feature">
+            <h3>📊 Analytics & Growth</h3>
+            <p>Track performance, understand your audience, optimize content. Built-in A/B testing and insights.</p>
+        </div>
+    </div>
+
+    <div class="comparison">
+        <h2>💸 vs Buying Tools Separately</h2>
+        <table>
+            <tr>
+                <th>Tool</th>
+                <th>Competitor Price</th>
+                <th>ForTheWeebs</th>
+            </tr>
+            <tr>
+                <td>Adobe Creative Cloud</td>
+                <td>$60/month</td>
+                <td>✓ Included</td>
+            </tr>
+            <tr>
+                <td>ElevenLabs (Voice)</td>
+                <td>$28/month</td>
+                <td>✓ Included</td>
+            </tr>
+            <tr>
+                <td>Descript (Video)</td>
+                <td>$24/month</td>
+                <td>✓ Included</td>
+            </tr>
+            <tr>
+                <td>Canva Pro</td>
+                <td>$13/month</td>
+                <td>✓ Included</td>
+            </tr>
+            <tr>
+                <td>Remove.bg</td>
+                <td>$29/month</td>
+                <td>✓ Included</td>
+            </tr>
+            <tr>
+                <td>Mailchimp</td>
+                <td>$29/month</td>
+                <td>✓ Included</td>
+            </tr>
+            <tr>
+                <td>Calendly</td>
+                <td>$12/month</td>
+                <td>✓ Included</td>
+            </tr>
+            <tr>
+                <td>Buffer</td>
+                <td>$12/month</td>
+                <td>✓ Included</td>
+            </tr>
+            <tr>
+                <td><strong>TOTAL</strong></td>
+                <td><strong>$207/month = $2,484/year</strong></td>
+                <td><strong>$50/month = $600/year</strong></td>
+            </tr>
+        </table>
+        <p style="text-align: center; margin-top: 30px; font-size: 24px; color: #667eea;">
+            <strong>Save $1,884/year 💰</strong>
+        </p>
+    </div>
+
+    <div class="pricing" id="pricing">
+        <h2>Simple Pricing. Massive Value.</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <div class="price">$0</div>
+                <ul>
+                    <li>View social feed</li>
+                    <li>Limited posts (10/month)</li>
+                    <li>Basic features</li>
+                    <li>Community access</li>
+                </ul>
+                <a href="#" class="cta" style="background: #667eea; color: white; font-size: 16px; padding: 12px 30px;">Get Started</a>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Creator</h3>
+                <div class="price">$50</div>
+                <p style="margin-bottom: 20px;">per month</p>
+                <ul>
+                    <li>Unlimited posts</li>
+                    <li>All 30+ AI tools</li>
+                    <li>Creator monetization</li>
+                    <li>Advanced analytics</li>
+                    <li>API access (10k calls)</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="#" class="cta" style="background: #667eea; color: white; font-size: 16px; padding: 12px 30px;">Start Free Trial</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Pro</h3>
+                <div class="price">$150</div>
+                <p style="margin-bottom: 20px;">per month</p>
+                <ul>
+                    <li>Everything in Creator</li>
+                    <li>White label options</li>
+                    <li>API access (100k calls)</li>
+                    <li>Custom integrations</li>
+                    <li>Dedicated support</li>
+                    <li>Team collaboration</li>
+                </ul>
+                <a href="#" class="cta" style="background: #667eea; color: white; font-size: 16px; padding: 12px 30px;">Contact Sales</a>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 40px; font-size: 18px; color: #666;">
+            🎁 <strong>First 100 users get 50% off for life!</strong>
+        </p>
+    </div>
+
+    <div class="social-proof">
+        <h2>Built for Scale</h2>
+        <div class="stats">
+            <div class="stat">
+                <div class="number">111</div>
+                <div class="label">API Endpoints</div>
+            </div>
+            <div class="stat">
+                <div class="number">30+</div>
+                <div class="label">AI Tools</div>
+            </div>
+            <div class="stat">
+                <div class="number">$21k</div>
+                <div class="label">Value Delivered</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero" style="padding: 60px 20px;">
+        <h2 style="font-size: 42px; margin-bottom: 30px;">Ready to Save $1,884/year?</h2>
+        <a href="#pricing" class="cta">Start Your Free Trial</a>
+        <p style="margin-top: 30px; font-size: 16px; opacity: 0.8;">No credit card required. Cancel anytime.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ForTheWeebs. All rights reserved.</p>
+        <p style="margin-top: 10px; opacity: 0.7;">Built with ❤️ for creators worldwide</p>
+    </footer>
+</body>
+</html>

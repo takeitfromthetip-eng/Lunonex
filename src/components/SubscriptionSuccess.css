@@ -1,0 +1,146 @@
+.subscription-success {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.success-card {
+  background: white;
+  border-radius: 20px;
+  padding: 60px 40px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.success-card.canceled {
+  background: #fff;
+  border: 3px solid #f44336;
+}
+
+.success-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.success-card h1 {
+  font-size: 36px;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+.success-message {
+  font-size: 20px;
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.benefits-list {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.benefits-list h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.benefits-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  padding: 12px 0;
+  font-size: 16px;
+  color: #555;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.benefits-list li:last-child {
+  border-bottom: none;
+}
+
+.countdown {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.dashboard-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dashboard-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.retry-btn {
+  background: #f59e0b;
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-btn:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .success-card {
+    padding: 40px 24px;
+  }
+
+  .success-card h1 {
+    font-size: 28px;
+  }
+
+  .benefits-list li {
+    font-size: 14px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .dashboard-btn,
+  .retry-btn {
+    width: 100%;
+  }
+}

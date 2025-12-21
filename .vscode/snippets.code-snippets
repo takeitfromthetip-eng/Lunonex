@@ -1,0 +1,166 @@
+{
+  "Supabase Query": {
+    "prefix": "sbquery",
+    "body": [
+      "const { data, error } = await supabase",
+      "  .from('${1:table_name}')",
+      "  .select('${2:*}')",
+      "  .eq('${3:column}', ${4:value});",
+      "",
+      "if (error) {",
+      "  console.error('Error:', error);",
+      "  return res.status(500).json({ error: error.message });",
+      "}",
+      "",
+      "res.json({ ${5:data} });"
+    ],
+    "description": "Supabase select query with error handling"
+  },
+  "Supabase Insert": {
+    "prefix": "sbinsert",
+    "body": [
+      "const { data, error } = await supabase",
+      "  .from('${1:table_name}')",
+      "  .insert([{",
+      "    ${2:column}: ${3:value}",
+      "  }])",
+      "  .select();",
+      "",
+      "if (error) {",
+      "  console.error('Error:', error);",
+      "  return res.status(500).json({ error: error.message });",
+      "}",
+      "",
+      "res.json({ ${4:data}: data[0] });"
+    ],
+    "description": "Supabase insert with error handling"
+  },
+  "Supabase Update": {
+    "prefix": "sbupdate",
+    "body": [
+      "const { data, error } = await supabase",
+      "  .from('${1:table_name}')",
+      "  .update({ ${2:column}: ${3:value} })",
+      "  .eq('${4:id_column}', ${5:id_value})",
+      "  .select();",
+      "",
+      "if (error) {",
+      "  console.error('Error:', error);",
+      "  return res.status(500).json({ error: error.message });",
+      "}",
+      "",
+      "res.json({ ${6:data}: data[0] });"
+    ],
+    "description": "Supabase update with error handling"
+  },
+  "Supabase Delete": {
+    "prefix": "sbdelete",
+    "body": [
+      "const { error } = await supabase",
+      "  .from('${1:table_name}')",
+      "  .delete()",
+      "  .eq('${2:id_column}', ${3:id_value});",
+      "",
+      "if (error) {",
+      "  console.error('Error:', error);",
+      "  return res.status(500).json({ error: error.message });",
+      "}",
+      "",
+      "res.json({ success: true });"
+    ],
+    "description": "Supabase delete with error handling"
+  },
+  "Express Route with Auth": {
+    "prefix": "exroute",
+    "body": [
+      "router.${1|get,post,put,delete|}('${2:/path}', authenticateToken, async (req, res) => {",
+      "  try {",
+      "    const userId = req.user.userId;",
+      "    ${3:// Your code here}",
+      "    ",
+      "    res.json({ success: true });",
+      "  } catch (err) {",
+      "    console.error('Error in ${2}:', err);",
+      "    res.status(500).json({ error: 'Internal server error' });",
+      "  }",
+      "});"
+    ],
+    "description": "Express route with authentication"
+  },
+  "React Component": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const ${1:ComponentName} = () => {",
+      "  return (",
+      "    <div className=\"${2:container}\">",
+      "      ${3:// Content}",
+      "    </div>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React functional component"
+  },
+  "useState Hook": {
+    "prefix": "ush",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialValue});"
+    ],
+    "description": "React useState hook"
+  },
+  "useEffect Hook": {
+    "prefix": "ueh",
+    "body": [
+      "useEffect(() => {",
+      "  ${1:// Effect code}",
+      "  ",
+      "  return () => {",
+      "    ${2:// Cleanup}",
+      "  };",
+      "}, [${3:dependencies}]);"
+    ],
+    "description": "React useEffect hook with cleanup"
+  },
+  "API Fetch": {
+    "prefix": "apifetch",
+    "body": [
+      "const response = await fetch('${1:/api/endpoint}', {",
+      "  method: '${2|GET,POST,PUT,DELETE|}',",
+      "  headers: {",
+      "    'Content-Type': 'application/json',",
+      "    'Authorization': `Bearer \\${localStorage.getItem('token')}`",
+      "  },",
+      "  body: JSON.stringify(${3:data})",
+      "});",
+      "",
+      "if (!response.ok) {",
+      "  throw new Error('API request failed');",
+      "}",
+      "",
+      "const data = await response.json();"
+    ],
+    "description": "Fetch API call with auth"
+  },
+  "Console Log": {
+    "prefix": "cl",
+    "body": [
+      "console.log('${1:label}:', ${2:variable});"
+    ],
+    "description": "Console log with label"
+  },
+  "Try Catch": {
+    "prefix": "tryc",
+    "body": [
+      "try {",
+      "  ${1:// Code}",
+      "} catch (error) {",
+      "  console.error('${2:Error}:', error);",
+      "  ${3:// Error handling}",
+      "}"
+    ],
+    "description": "Try-catch block"
+  }
+}

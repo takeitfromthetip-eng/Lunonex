@@ -1,0 +1,303 @@
+.quick-access-widget {
+  position: fixed;
+  bottom: 100px;
+  left: 24px;
+  z-index: 8000;
+  width: 60px;
+  height: 60px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.quick-access-widget.dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.quick-access-widget.open {
+  width: 300px;
+  height: 300px;
+}
+
+/* Center button */
+.quick-access-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.quick-access-center:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+}
+
+.quick-access-center:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.quick-access-center .icon {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.quick-access-widget.open .quick-access-center .icon {
+  transform: rotate(180deg);
+}
+
+/* Items container */
+.quick-access-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Individual items */
+.quick-access-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin: -25px 0 0 -25px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  pointer-events: all;
+  animation: fadeInScale 0.3s ease forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(0, 0) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+}
+
+.quick-access-item:hover {
+  transform: translate(var(--x), var(--y)) scale(1.15);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+}
+
+.quick-access-item:active {
+  transform: translate(var(--x), var(--y)) scale(0.9);
+}
+
+.item-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.item-label {
+  font-size: 8px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  max-width: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Edit controls */
+.quick-access-controls {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  pointer-events: all;
+}
+
+.control-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
+  background: rgba(102, 126, 234, 1);
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+/* Item edit actions */
+.item-actions {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  border-radius: 20px;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.item-actions button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.item-actions button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.edit-btn {
+  background: rgba(59, 130, 246, 0.8) !important;
+}
+
+.delete-btn {
+  background: rgba(239, 68, 68, 0.8) !important;
+}
+
+/* Drag indicator */
+.drag-indicator {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .quick-access-center {
+    width: 50px;
+    height: 50px;
+  }
+
+  .quick-access-center .icon {
+    font-size: 20px;
+  }
+
+  .quick-access-item {
+    width: 45px;
+    height: 45px;
+    margin: -22.5px 0 0 -22.5px;
+  }
+
+  .item-icon {
+    font-size: 18px;
+  }
+
+  .item-label {
+    font-size: 7px;
+  }
+
+  .quick-access-widget.open {
+    width: 250px;
+    height: 250px;
+  }
+
+  .control-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .quick-access-center,
+  .quick-access-item,
+  .control-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .quick-access-item:active {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .quick-access-center,
+  .quick-access-item {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .control-btn {
+    background: rgba(102, 126, 234, 0.8);
+  }
+}

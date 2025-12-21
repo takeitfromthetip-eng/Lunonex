@@ -1,0 +1,34 @@
+# AUTOMATIC BACKUP ON EVERY PUSH
+# This creates a backup branch before any changes are applied
+
+name: 🛡️ Auto-Backup Shield
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history
+
+      - name: Create timestamped backup branch
+        run: |
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          BACKUP_BRANCH="backup/auto-${TIMESTAMP}"
+          git checkout -b $BACKUP_BRANCH
+          git push origin $BACKUP_BRANCH
+          echo "✅ Backup created: $BACKUP_BRANCH"
+
+      - name: Keep only last 10 backups
+        run: |
+          git branch -r | grep 'origin/backup/auto-' | sort -r | tail -n +11 | while read branch; do
+            branch_name=$(echo $branch | sed 's/origin\///')
+            git push origin --delete $branch_name || true
+          done

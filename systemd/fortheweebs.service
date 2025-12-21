@@ -1,0 +1,39 @@
+# Systemd service for non-K8s deployments (bare metal, VMs)
+[Unit]
+Description=ForTheWeebs API Server
+After=network.target
+
+[Service]
+Type=simple
+User=fortheweebs
+WorkingDirectory=/opt/fortheweebs
+ExecStart=/usr/bin/node server.js
+
+# Auto-restart on crash
+Restart=always
+RestartSec=5
+
+# Disable start limits (avoid permanent backoff)
+StartLimitIntervalSec=0
+StartLimitBurst=0
+
+# Environment
+Environment="NODE_ENV=production"
+Environment="PORT=3001"
+EnvironmentFile=/etc/fortheweebs/env
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=fortheweebs-api
+
+# Security
+NoNewPrivileges=true
+PrivateTmp=true
+
+# Resource limits
+LimitNOFILE=65536
+MemoryLimit=2G
+
+[Install]
+WantedBy=multi-user.target

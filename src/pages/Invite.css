@@ -1,0 +1,188 @@
+.invite-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.invite-card {
+    background: white;
+    border-radius: 20px;
+    padding: 48px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.invite-card h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 24px 0;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.code-input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+}
+
+.code-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.invite-card button {
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.invite-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.loading-spinner {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 16px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.invite-card.error h1 {
+    color: #ef4444;
+}
+
+.success-badge {
+    font-size: 80px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.access-details {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+}
+
+.access-details h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: #1a1a1a;
+}
+
+.access-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.access-details li {
+    padding: 8px 0;
+    font-size: 15px;
+    color: #4b5563;
+}
+
+.pricing-info,
+.vip-info {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.pricing-info h3,
+.vip-info h3 {
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+.pricing-info p,
+.vip-info p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.availability {
+    background: rgba(16, 185, 129, 0.1);
+    border: 2px solid rgba(16, 185, 129, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.availability p {
+    margin: 0;
+    font-weight: 600;
+    color: #059669;
+}
+
+.cta-button {
+    margin-top: 24px;
+    font-size: 18px !important;
+}
+
+.terms {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 16px 0 0 0;
+}
+
+@media (max-width: 768px) {
+    .invite-card {
+        padding: 32px 24px;
+    }
+
+    .invite-card h1 {
+        font-size: 24px;
+    }
+
+    .success-badge {
+        font-size: 64px;
+    }
+}

@@ -1,0 +1,96 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+release-build/
+electron-dist/
+
+# Google Cloud Vision API Key (NEVER COMMIT THIS!)
+config/google-vision-key.json
+
+# Compiled TypeScript in API routes (causes Vercel conflicts)
+api/**/*.js
+api/**/*.js.map
+api/**/*.d.ts
+# But keep these specific files
+!api/routes/queue.js
+!api/auth.js
+!api/user-tier.js
+!api/vouchers.js
+!api/upload-protected.js
+!api/tier-upgrades.js
+!api/trial.js
+!api/stripe-webhooks.js
+!api/stripe.js
+!api/tier-access.js
+!api/governance.js
+!api/middleware/sentinelWatchdog.js
+!api/developer-dashboard.js
+!api/api-billing.js
+!api/bugfixer/**/*.js
+
+# Vite cache (SAFE TO DELETE - auto-regenerates)
+.vite/
+node_modules/.vite/
+.cache/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+# .vscode/ - Now tracked for team consistency
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Duplication detection reports
+jscpd-report/
+.jscpd/
+
+# Electron specific
+app/dist/
+
+# Temporary files
+*.tmp
+*.temp
+.tmp.driveupload/
+
+# Large binary files (your code.txt seems to be a large PDF)
+code.txt
+# Project archives
+*.zip
+.vercel
+.env*.local
+artifacts/*.json

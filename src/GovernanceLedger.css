@@ -1,0 +1,19 @@
+.ledger {
+  font-family: "Courier New", monospace;
+  background: #0f0f0f;
+  color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 12px;
+}
+.ledger h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.ledger li {
+  margin-bottom: 2rem;
+  border-left: 4px solid #ff0055;
+  padding-left: 1rem;
+}
+.ledger h2 {
+  color: #ffcc00;
+}

@@ -1,0 +1,32 @@
+/* RemixLineageTimeline component styles */
+.lineage-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.lineage-item {
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.lineage-icon {
+  font-size: 1.2rem;
+}
+.lineage-label {
+  font-weight: bold;
+  margin-top: 4px;
+}
+.lineage-desc {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.lineage-id {
+  font-size: 0.7rem;
+  word-break: break-all;
+  margin-top: 4px;
+}

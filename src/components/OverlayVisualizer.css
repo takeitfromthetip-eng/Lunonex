@@ -1,0 +1,36 @@
+/* OverlayVisualizer component styles */
+.overlay-visualizer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: #222;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.visualizer-section {
+  background: #181818;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.visualizer-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.visualizer-button {
+  margin-top: 24px;
+  padding: 10px 24px;
+  background: #FFD700;
+  color: #222;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.visualizer-button.disabled {
+  background: #888;
+  cursor: not-allowed;
+}

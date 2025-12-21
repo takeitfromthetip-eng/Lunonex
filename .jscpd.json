@@ -1,0 +1,31 @@
+{
+  "threshold": 0,
+  "reporters": ["console"],
+  "ignore": [
+    "**/.git/**",
+    "**/*.min.js",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.next/**",
+    "**/android/**",
+    "**/ios/**",
+    "**/public/models/**",
+    "**/*.test.js",
+    "**/*.spec.js",
+    "**/jscpd-report/**"
+  ],
+  "format": ["javascript", "typescript"],
+  "minLines": 5,
+  "minTokens": 50,
+  "maxLines": 500,
+  "maxSize": "100kb",
+  "formatsExts": {
+    "javascript": [".js", ".jsx"],
+    "typescript": [".ts", ".tsx"]
+  },
+  "output": "./jscpd-report",
+  "exitCode": 1,
+  "absolute": false,
+  "silent": false
+}

@@ -1,0 +1,5 @@
+Placeholder for OG image - Create a 1200x630px image with:
+- ForTheWeebs logo/branding
+- Tagline: "The Ultimate Creator Platform for Anime Culture"
+- Professional dark gradient background (#667eea to #d946ef)
+- Save as og-image.png in this directory

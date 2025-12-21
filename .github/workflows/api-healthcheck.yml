@@ -1,0 +1,12 @@
+name: API Healthcheck
+
+on:
+  schedule:
+    - cron: '0 * * * *' # hourly
+
+jobs:
+  healthcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping API
+        run: curl -f https://your-api-domain.com/health || exit 1

@@ -1,0 +1,156 @@
+/* Mobile Responsive Styles for Entire App */
+
+/* Base responsive typography */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Form inputs */
+    input,
+    textarea,
+    select,
+    button {
+        font-size: 16px !important;
+        /* Prevents iOS zoom on focus */
+    }
+
+    /* Buttons */
+    button,
+    .btn {
+        min-height: 44px;
+        /* iOS touch target size */
+        padding: 0.75rem 1rem !important;
+    }
+
+    /* Modals and dialogs */
+    [role="dialog"],
+    .modal {
+        max-width: 95vw !important;
+        margin: 0.5rem !important;
+    }
+
+    /* Tables */
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Prevent text overflow */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 1.75rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    h3 {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Touch-friendly spacing */
+@media (hover: none) and (pointer: coarse) {
+
+    button,
+    a,
+    [role="button"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Landscape mobile orientation */
+@media (max-height: 480px) and (orientation: landscape) {
+
+    .hero,
+    header {
+        padding: 1rem !important;
+    }
+}
+
+/* Hide desktop-only elements on mobile */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+}
+
+/* Show desktop-only elements on desktop */
+@media (min-width: 769px) {
+    .desktop-only {
+        display: block !important;
+    }
+
+    .mobile-only {
+        display: none !important;
+    }
+}
+/* Dashboard Mobile Optimization */
+@media (max-width: 768px) {
+    [role="tablist"] {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+    }
+
+    [role="tab"] {
+        flex-shrink: 0;
+        padding: 0.75rem 1.25rem !important;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .vr-controls {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    canvas {
+        touch-action: none;
+    }
+}
+

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Dashboard - Auto-Pilot Mode</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Consolas', 'Monaco', monospace;
+            background: #0d1117;
+            color: #c9d1d9;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 {
+            color: #58a6ff;
+            margin-bottom: 30px;
+            font-size: 32px;
+            border-bottom: 2px solid #21262d;
+            padding-bottom: 10px;
+        }
+        .controls {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #30363d;
+        }
+        .btn {
+            background: #238636;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+        .btn:hover { background: #2ea043; }
+        .btn-analyze { background: #1f6feb; }
+        .btn-analyze:hover { background: #388bfd; }
+        .btn-resolve { background: #8b949e; }
+        .btn-resolve:hover { background: #b1bac4; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: #161b22;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+        }
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #58a6ff;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: #8b949e;
+            font-size: 14px;
+        }
+        .bugs-list {
+            background: #161b22;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+        }
+        .bug-item {
+            padding: 20px;
+            border-bottom: 1px solid #21262d;
+        }
+        .bug-item:last-child { border-bottom: none; }
+        .bug-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+        }
+        .bug-id {
+            color: #58a6ff;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .bug-error {
+            color: #f85149;
+            font-size: 16px;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+        .bug-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+            color: #8b949e;
+            margin: 10px 0;
+        }
+        .bug-analysis {
+            background: #0d1117;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+            border-left: 3px solid #58a6ff;
+            white-space: pre-wrap;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-critical { background: #f85149; color: #fff; }
+        .badge-high { background: #fb8500; color: #fff; }
+        .badge-medium { background: #fbbf24; color: #000; }
+        .badge-low { background: #3fb950; color: #fff; }
+        .badge-open { background: #1f6feb; color: #fff; }
+        .badge-analyzing { background: #a371f7; color: #fff; }
+        .badge-fixed { background: #3fb950; color: #fff; }
+        .loading { text-align: center; padding: 40px; color: #8b949e; }
+        .empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: #8b949e;
+        }
+        .empty h3 { color: #58a6ff; margin-bottom: 10px; }
+        .bug-actions {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        .bug-actions button {
+            padding: 8px 16px;
+            font-size: 12px;
+        }
+        .autopilot-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            background: #21262d;
+            border-radius: 13px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .toggle.active { background: #238636; }
+        .toggle-slider {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: left 0.3s;
+        }
+        .toggle.active .toggle-slider { left: 27px; }
+        .autopilot-status {
+            color: #3fb950;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Bug Fixer - Auto-Pilot Mode</h1>
+
+        <div class="controls">
+            <button class="btn" onclick="loadBugs()">↻ Refresh</button>
+            <button class="btn btn-analyze" onclick="analyzeAll()">🔍 Analyze All</button>
+            <button class="btn btn-resolve" onclick="resolveAll()">✓ Resolve All Fixed</button>
+
+            <div class="autopilot-toggle">
+                <div class="toggle" id="autopilotToggle" onclick="toggleAutopilot()">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span>Auto-Pilot Mode (Auto-analyze new bugs)</span>
+                <span class="autopilot-status" id="autopilotStatus">OFF</span>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="totalBugs">0</div>
+                <div class="stat-label">Total Bugs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="openBugs">0</div>
+                <div class="stat-label">Open</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="analyzedBugs">0</div>
+                <div class="stat-label">Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="fixedBugs">0</div>
+                <div class="stat-label">Fixed</div>
+            </div>
+        </div>
+
+        <div id="bugsList" class="bugs-list"></div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3000';
+        let bugs = [];
+        let autopilotMode = false;
+        let autopilotInterval = null;
+
+        // Load bugs on startup
+        window.addEventListener('DOMContentLoaded', loadBugs);
+
+        async function loadBugs() {
+            const listDiv = document.getElementById('bugsList');
+            listDiv.innerHTML = '<div class="loading">Loading bugs...</div>';
+
+            try {
+                const response = await fetch(`${API_URL}/api/bug-fixer/list?limit=100`);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                bugs = data.bugs || [];
+
+                updateStats();
+                renderBugs();
+
+                // Auto-analyze unanalyzed bugs if autopilot is on
+                if (autopilotMode) {
+                    const unanalyzed = bugs.filter(b => b.status === 'open' && !b.ai_analysis);
+                    for (const bug of unanalyzed) {
+                        console.log('Auto-analyzing:', bug.report_id);
+                        await analyzeBug(bug.report_id, false);
+                    }
+                    if (unanalyzed.length > 0) {
+                        setTimeout(loadBugs, 2000); // Reload after analysis
+                    }
+                }
+            } catch (error) {
+                console.error('Load error:', error);
+                listDiv.innerHTML = `
+                    <div class="empty">
+                        <h3>Failed to load bugs</h3>
+                        <p>Make sure the server is running on ${API_URL}</p>
+                        <p>Error: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function updateStats() {
+            document.getElementById('totalBugs').textContent = bugs.length;
+            document.getElementById('openBugs').textContent = bugs.filter(b => b.status === 'open').length;
+            document.getElementById('analyzedBugs').textContent = bugs.filter(b => b.ai_analysis).length;
+            document.getElementById('fixedBugs').textContent = bugs.filter(b => b.status === 'fixed').length;
+        }
+
+        function renderBugs() {
+            const listDiv = document.getElementById('bugsList');
+
+            if (bugs.length === 0) {
+                listDiv.innerHTML = `
+                    <div class="empty">
+                        <h3>✓ No bugs found</h3>
+                        <p>Your platform is running clean!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            listDiv.innerHTML = bugs.map(bug => {
+                const severityClass = `badge-${bug.severity || 'medium'}`;
+                const statusClass = `badge-${bug.status || 'open'}`;
+                const timeAgo = getTimeAgo(new Date(bug.created_at));
+
+                return `
+                    <div class="bug-item">
+                        <div class="bug-header">
+                            <div>
+                                <span class="bug-id">${bug.report_id}</span>
+                                <span class="badge ${severityClass}">${bug.severity?.toUpperCase() || 'MEDIUM'}</span>
+                                <span class="badge ${statusClass}">${bug.status?.toUpperCase() || 'OPEN'}</span>
+                            </div>
+                            <div style="font-size: 12px; color: #8b949e;">${timeAgo}</div>
+                        </div>
+
+                        <div class="bug-error">${escapeHtml(bug.error_message)}</div>
+
+                        <div class="bug-meta">
+                            <span>📍 ${bug.page_url || 'Unknown page'}</span>
+                            <span>🔧 ${bug.component || 'Unknown component'}</span>
+                            ${bug.user_email ? `<span>👤 ${bug.user_email}</span>` : ''}
+                        </div>
+
+                        ${bug.error_stack ? `
+                            <details style="margin-top: 10px;">
+                                <summary style="cursor: pointer; color: #58a6ff; font-size: 13px;">Stack Trace</summary>
+                                <pre style="margin-top: 10px; padding: 10px; background: #0d1117; border-radius: 4px; overflow-x: auto; font-size: 11px;">${escapeHtml(bug.error_stack)}</pre>
+                            </details>
+                        ` : ''}
+
+                        ${bug.ai_analysis ? `
+                            <div class="bug-analysis">
+<strong style="color: #58a6ff;">🤖 AI Analysis:</strong>
+${escapeHtml(bug.ai_analysis)}
+                            </div>
+                        ` : ''}
+
+                        <div class="bug-actions">
+                            ${!bug.ai_analysis ? `
+                                <button class="btn btn-analyze" onclick="analyzeBug('${bug.report_id}', true)">
+                                    🔍 Analyze with AI
+                                </button>
+                            ` : ''}
+                            ${bug.status !== 'fixed' ? `
+                                <button class="btn btn-resolve" onclick="resolveBug('${bug.report_id}')">
+                                    ✓ Mark as Fixed
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        async function analyzeBug(reportId, showAlert = false) {
+            try {
+                const response = await fetch(`${API_URL}/api/bug-fixer/analyze`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ reportId })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (showAlert) {
+                    alert(`Analysis complete for ${reportId}`);
+                    loadBugs(); // Reload to show analysis
+                }
+
+                return data;
+            } catch (error) {
+                console.error('Analyze error:', error);
+                if (showAlert) {
+                    alert(`Failed to analyze: ${error.message}`);
+                }
+            }
+        }
+
+        async function analyzAll() {
+            const unanalyzed = bugs.filter(b => !b.ai_analysis);
+
+            if (unanalyzed.length === 0) {
+                alert('All bugs have been analyzed!');
+                return;
+            }
+
+            if (!confirm(`Analyze ${unanalyzed.length} bugs? This uses OpenAI API credits.`)) {
+                return;
+            }
+
+            for (const bug of unanalyzed) {
+                console.log('Analyzing:', bug.report_id);
+                await analyzeBug(bug.report_id, false);
+                await new Promise(r => setTimeout(r, 1000)); // Rate limit
+            }
+
+            alert(`Analyzed ${unanalyzed.length} bugs!`);
+            loadBugs();
+        }
+
+        async function resolveBug(reportId) {
+            try {
+                const response = await fetch(`${API_URL}/api/bug-fixer/resolve`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        reportId,
+                        resolutionNotes: 'Marked as fixed via dashboard',
+                        resolvedBy: 'admin'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                loadBugs();
+            } catch (error) {
+                console.error('Resolve error:', error);
+                alert(`Failed to resolve: ${error.message}`);
+            }
+        }
+
+        async function resolveAll() {
+            const analyzed = bugs.filter(b => b.ai_analysis && b.status !== 'fixed');
+
+            if (analyzed.length === 0) {
+                alert('No analyzed bugs to resolve!');
+                return;
+            }
+
+            if (!confirm(`Mark ${analyzed.length} analyzed bugs as fixed?`)) {
+                return;
+            }
+
+            for (const bug of analyzed) {
+                await resolveBug(bug.report_id);
+                await new Promise(r => setTimeout(r, 200));
+            }
+
+            alert(`Resolved ${analyzed.length} bugs!`);
+            loadBugs();
+        }
+
+        function toggleAutopilot() {
+            autopilotMode = !autopilotMode;
+            const toggle = document.getElementById('autopilotToggle');
+            const status = document.getElementById('autopilotStatus');
+
+            if (autopilotMode) {
+                toggle.classList.add('active');
+                status.textContent = 'ON';
+                status.style.color = '#3fb950';
+
+                // Check for new bugs every 30 seconds
+                autopilotInterval = setInterval(loadBugs, 30000);
+
+                // Analyze immediately
+                loadBugs();
+            } else {
+                toggle.classList.remove('active');
+                status.textContent = 'OFF';
+                status.style.color = '#8b949e';
+
+                if (autopilotInterval) {
+                    clearInterval(autopilotInterval);
+                    autopilotInterval = null;
+                }
+            }
+        }
+
+        function getTimeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+            if (seconds < 60) return 'Just now';
+            if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+            if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+            return `${Math.floor(seconds / 86400)}d ago`;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>

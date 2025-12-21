@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Recovery - ForTheWeebs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            border: 3px solid #FFD700;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            color: #FFD700;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #FFD700;
+            font-weight: 600;
+        }
+        input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 2px solid #444;
+            background: #222;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+        input:focus { border-color: #FFD700; }
+        button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            border: none;
+            border-radius: 12px;
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: 900;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        button:hover { transform: scale(1.05); }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .success { background: rgba(74, 222, 128, 0.2); border: 2px solid #4ade80; }
+        .error { background: rgba(239, 68, 68, 0.2); border: 2px solid #ef4444; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔑 Admin Recovery</h1>
+        <form id="recoveryForm">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" value="polotuspossumus@gmail.com" readonly>
+            </div>
+            <div class="form-group">
+                <label>Recovery Secret (from .env)</label>
+                <input type="password" id="secret" placeholder="Enter ADMIN_RECOVERY_SECRET" required>
+            </div>
+            <button type="submit" id="submitBtn">🔓 Recover Admin Access</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('recoveryForm');
+        const messageEl = document.getElementById('message');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const secret = document.getElementById('secret').value;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = '⏳ Recovering...';
+            messageEl.textContent = '';
+            messageEl.className = 'message';
+
+            try {
+                const response = await fetch('/api/admin-recovery', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, secret })
+                });
+
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    // Set all admin keys
+                    Object.entries(data.token).forEach(([key, value]) => {
+                        localStorage.setItem(key, value.toString());
+                    });
+
+                    messageEl.className = 'message success';
+                    messageEl.textContent = '✅ Admin access recovered! Redirecting...';
+
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 2000);
+                } else {
+                    throw new Error(data.error || 'Recovery failed');
+                }
+            } catch (error) {
+                messageEl.className = 'message error';
+                messageEl.textContent = `❌ ${error.message}`;
+                submitBtn.disabled = false;
+                submitBtn.textContent = '🔓 Recover Admin Access';
+            }
+        });
+    </script>
+</body>
+</html>

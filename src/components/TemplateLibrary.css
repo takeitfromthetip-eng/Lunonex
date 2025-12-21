@@ -1,0 +1,219 @@
+.template-library {
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    min-height: 100vh;
+}
+
+.library-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.library-header h2 {
+    margin: 0 0 0.5rem;
+    font-size: 2.5rem;
+    color: #FFD700;
+}
+
+.library-header p {
+    margin: 0;
+    color: #999;
+    font-size: 1.1rem;
+}
+
+.library-controls {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+}
+
+.search-templates {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    color: #fff;
+    border: 2px solid #533483;
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.search-templates:focus {
+    outline: none;
+    border-color: #FFD700;
+}
+
+.category-pills {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.category-pill {
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    color: #999;
+    border: 2px solid #533483;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.category-pill:hover {
+    border-color: #FFD700;
+    color: #fff;
+}
+
+.category-pill.active {
+    background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
+    color: #000;
+    border-color: #FFD700;
+}
+
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.no-templates {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #999;
+    padding: 4rem 2rem;
+}
+
+.no-templates p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.template-card {
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    border: 2px solid #533483;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.template-card:hover {
+    transform: translateY(-8px);
+    border-color: #FFD700;
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.3);
+}
+
+.template-preview {
+    height: 200px;
+    background: linear-gradient(135deg, #533483 0%, #e94560 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.preview-icon {
+    font-size: 5rem;
+    transition: all 0.3s ease;
+}
+
+.template-card:hover .preview-icon {
+    transform: scale(1.1);
+}
+
+.template-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.template-card:hover .template-overlay {
+    opacity: 1;
+}
+
+.btn-use-template {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
+    color: #000;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-use-template:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+}
+
+.template-details {
+    padding: 1.2rem;
+}
+
+.template-details h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.template-description {
+    margin: 0 0 0.8rem;
+    font-size: 0.85rem;
+    color: #999;
+    line-height: 1.4;
+}
+
+.template-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.tag {
+    padding: 0.3rem 0.6rem;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid #FFD700;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    color: #FFD700;
+    font-weight: 600;
+}
+
+.template-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.8rem;
+    border-top: 1px solid #533483;
+    font-size: 0.85rem;
+    color: #999;
+}

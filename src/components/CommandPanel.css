@@ -1,0 +1,274 @@
+/**
+ * Command Panel Styling: Simplified neon interface for Mico's governance
+ */
+
+.command-panel {
+  background: linear-gradient(135deg, #0a0a1f 0%, #1a0a2e 100%);
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  padding: 24px;
+  color: #0ff;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.1);
+  animation: panelGlow 2s ease-in-out infinite;
+}
+
+@keyframes panelGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.2);
+  }
+}
+
+.command-panel-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #0ff;
+}
+
+.command-panel-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.command-panel-header .subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(0, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Command Input Group */
+.command-input-group {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #0ff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.input-row {
+  margin-bottom: 12px;
+}
+
+.input-row:last-of-type {
+  margin-bottom: 16px;
+}
+
+.input-row label {
+  display: block;
+  margin-bottom: 6px;
+  color: #0ff;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.input-row input {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #0ff;
+  border-radius: 4px;
+  color: #0ff;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.input-row input::placeholder {
+  color: rgba(0, 255, 255, 0.4);
+}
+
+.input-row input:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+.input-row input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.execute-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #0ff 0%, #00ffff 100%);
+  border: 2px solid #00ffff;
+  border-radius: 6px;
+  color: #000;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.execute-btn:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.execute-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.execute-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Status Bar */
+.status-bar {
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  text-align: center;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.status-bar.success {
+  background: rgba(0, 255, 0, 0.2);
+  border: 1px solid #0f0;
+  color: #0f0;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.status-bar.error {
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid #f44;
+  color: #f44;
+  box-shadow: 0 0 10px rgba(255, 68, 68, 0.3);
+}
+
+.status-bar.warning {
+  background: rgba(255, 255, 0, 0.2);
+  border: 1px solid #ff0;
+  color: #ff0;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+}
+
+/* Quick Commands */
+.quick-commands {
+  margin-bottom: 24px;
+}
+
+.quick-commands h3 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #ff0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.command-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.quick-cmd-btn {
+  padding: 10px 12px;
+  background: rgba(255, 0, 255, 0.1);
+  border: 1px solid #f0f;
+  border-radius: 6px;
+  color: #f0f;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.quick-cmd-btn:hover:not(:disabled) {
+  background: rgba(255, 0, 255, 0.2);
+  border-color: #ff00ff;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.quick-cmd-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.quick-cmd-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Command Help */
+.command-help {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.command-help h3 {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #0ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.command-help ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.command-help ul li {
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: rgba(0, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.command-help ul li::before {
+  content: "▶ ";
+  color: #0ff;
+  margin-right: 6px;
+}
+
+.command-help code {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #ff0;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .command-panel {
+    padding: 16px;
+  }
+
+  .command-panel-header h2 {
+    font-size: 18px;
+  }
+
+  .command-grid {
+    grid-template-columns: 1fr;
+  }
+}

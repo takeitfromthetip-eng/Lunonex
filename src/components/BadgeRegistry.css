@@ -1,0 +1,33 @@
+/* BadgeRegistry component styles */
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.badge-item {
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.badge-icon {
+  font-size: 1.5rem;
+}
+.badge-label {
+  font-weight: bold;
+  margin-top: 4px;
+}
+.badge-desc {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+.badge-id {
+  font-size: 0.6rem;
+  word-break: break-word;
+  margin-top: 6px;
+}

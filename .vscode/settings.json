@@ -1,0 +1,187 @@
+{
+  // ===== COPILOT CONFIGURATION =====
+  "github.copilot.chat.welcomeMessage": "first",
+  "github.copilot.referencesVscodeAPI": "enabled",
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableCodeActions": true,
+  "github.copilot.advanced": {
+    "debug.overrideEngine": "gpt-4",
+    "authProvider": "github"
+  },
+  "github.copilot.chat.localeOverride": "en",
+  "github.copilot.chat.useProjectTemplates": true,
+
+  // ===== EDITOR CONFIGURATION =====
+  "editor.inlineSuggest.enabled": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.suggest.preview": true,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.tabCompletion": "on",
+  "editor.suggestSelection": "first",
+  "editor.suggest.showKeywords": true,
+  "editor.suggest.showSnippets": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.minimap.enabled": true,
+  "editor.rulers": [80, 120],
+  "editor.wordWrap": "on",
+
+  // ===== FILE CONFIGURATION =====
+  "files.associations": {
+    "COPILOT_HANDOFF.md": "markdown",
+    "VSCODE_INSTRUCTIONS.md": "markdown",
+    "*.jsx": "javascriptreact",
+    "*.js": "javascript",
+    ".env*": "dotenv"
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.git": false,
+    "**/dist": true,
+    "**/build": true,
+    "**/.next": true,
+    "**/server_OLD_NESTJS_BACKUP": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/server_OLD_NESTJS_BACKUP/**": true
+  },
+  "files.autoSave": "onFocusChange",
+
+  // ===== SEARCH CONFIGURATION =====
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.next": true,
+    "**/coverage": true,
+    "**/server_OLD_NESTJS_BACKUP": true,
+    "**/.git": false
+  },
+
+  // ===== JAVASCRIPT/REACT CONFIGURATION =====
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.format.semicolons": "insert",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // ===== ESLINT CONFIGURATION =====
+  "eslint.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.workingDirectories": [
+    { "mode": "auto" }
+  ],
+
+  // ===== FORMATTER CONFIGURATION =====
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on"
+  },
+
+  // ===== GIT CONFIGURATION =====
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.postCommitCommand": "none",
+
+  // ===== TERMINAL CONFIGURATION =====
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorBlinking": true,
+
+  // ===== EXPLORER CONFIGURATION =====
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.sortOrder": "type",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+    ".env": ".env.*, .envrc",
+    "README.md": "LICENSE, CHANGELOG.md, CONTRIBUTING.md",
+    "VSCODE_INSTRUCTIONS.md": "VSCODE_CATCHUP.md, DATABASE_STATUS.md, DATABASE_WIRING_COMPLETE.md",
+    "server.js": "api/**, lib/**"
+  },
+
+  // ===== EMMET CONFIGURATION =====
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+
+  // ===== PATH INTELLISENSE =====
+  "path-intellisense.mappings": {
+    "/": "${workspaceRoot}",
+    "src": "${workspaceRoot}/src",
+    "api": "${workspaceRoot}/api",
+    "lib": "${workspaceRoot}/lib"
+  },
+
+  // ===== WORKBENCH CONFIGURATION =====
+  "workbench.editorAssociations": {
+    "*.md": "default"
+  },
+  "workbench.startupEditor": "readme",
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#1e293b",
+    "titleBar.activeForeground": "#e2e8f0",
+    "titleBar.inactiveBackground": "#0f172a",
+    "titleBar.inactiveForeground": "#94a3b8"
+  },
+
+  // ===== MARKDOWN CONFIGURATION =====
+  "markdown.preview.breaks": true,
+  "markdown.preview.fontSize": 16,
+  "markdownlint.config": {
+    "MD022": false,
+    "MD032": false,
+    "MD036": false,
+    "MD040": false,
+    "MD031": false,
+    "MD026": false,
+    "MD029": false,
+    "MD024": false,
+    "MD009": false
+  },
+
+  // ===== DEBUG CONFIGURATION =====
+  "debug.console.fontSize": 14,
+  "debug.internalConsoleOptions": "openOnSessionStart"
+}

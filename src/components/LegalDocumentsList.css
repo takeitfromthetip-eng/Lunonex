@@ -1,0 +1,8 @@
+/* LegalDocumentsList component styles */
+.legal-docs-container {
+  padding: 24px;
+}
+.legal-docs-loading {
+  color: #FFD700;
+  margin-bottom: 16px;
+}

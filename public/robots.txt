@@ -1,0 +1,7 @@
+# ForTheWeebs - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+Sitemap: https://fortheweebs.vercel.app/sitemap.xml

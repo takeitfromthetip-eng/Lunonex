@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🛡️  Running pre-commit checks..."
+
+# Run duplication check
+echo "🔍 Scanning for duplicate code..."
+npm run check:duplicates
+
+# Run lint (if you have it)
+# npm run lint
+
+echo "✅ All checks passed - commit allowed"

@@ -1,0 +1,94 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "📖 Read Instructions (VSCODE_INSTRUCTIONS.md)",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "👋 VS Code: Please read VSCODE_INSTRUCTIONS.md for your mission brief!"
+      ],
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "🚀 Start Development Server",
+      "type": "shell",
+      "command": "npm",
+      "args": ["start"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "🔧 Start Backend Server",
+      "type": "shell",
+      "command": "node",
+      "args": ["server.js"],
+      "group": "build",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "🧪 Test Supabase Connection",
+      "type": "shell",
+      "command": "node",
+      "args": ["test-supabase.js"],
+      "group": "test",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🏥 Test API Health",
+      "type": "shell",
+      "command": "node",
+      "args": ["test-api-health.js"],
+      "group": "test",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "📦 Install Dependencies",
+      "type": "shell",
+      "command": "npm",
+      "args": ["install"],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "🔄 Update Dependencies",
+      "type": "shell",
+      "command": "npm",
+      "args": ["update"],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "🧹 Clean & Reinstall",
+      "type": "shell",
+      "command": "rm -rf node_modules package-lock.json && npm install",
+      "windows": {
+        "command": "rmdir /s /q node_modules & del package-lock.json & npm install"
+      },
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

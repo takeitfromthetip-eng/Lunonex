@@ -1,0 +1,233 @@
+### ForTheWeebs API Testing
+### Use the REST Client extension (humao.rest-client) to run these tests
+### Instructions: Click "Send Request" above each request to execute
+
+@baseUrl = http://localhost:5001/api
+@token = YOUR_JWT_TOKEN_HERE
+
+### ============================================
+### AUTHENTICATION
+### ============================================
+
+### Register New User
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "SecurePass123!",
+  "displayName": "Test User"
+}
+
+### Login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "SecurePass123!"
+}
+
+### ============================================
+### POSTS
+### ============================================
+
+### Get Feed
+GET {{baseUrl}}/posts/feed?page=1&limit=10
+Authorization: Bearer {{token}}
+
+### Create Post
+POST {{baseUrl}}/posts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "content": "This is a test post from VS Code!",
+  "mediaUrls": ["https://example.com/image.jpg"],
+  "visibility": "public"
+}
+
+### Get Single Post
+GET {{baseUrl}}/posts/POST_ID_HERE
+Authorization: Bearer {{token}}
+
+### Like Post
+POST {{baseUrl}}/posts/POST_ID_HERE/like
+Authorization: Bearer {{token}}
+
+### Share Post
+POST {{baseUrl}}/posts/POST_ID_HERE/share
+Authorization: Bearer {{token}}
+
+### Delete Post
+DELETE {{baseUrl}}/posts/POST_ID_HERE
+Authorization: Bearer {{token}}
+
+### ============================================
+### COMMENTS
+### ============================================
+
+### Get Comments for Post
+GET {{baseUrl}}/comments/post/POST_ID_HERE?page=1&limit=10
+Authorization: Bearer {{token}}
+
+### Create Comment
+POST {{baseUrl}}/comments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "postId": "POST_ID_HERE",
+  "content": "Great post!",
+  "parentCommentId": null
+}
+
+### Like Comment
+POST {{baseUrl}}/comments/COMMENT_ID_HERE/like
+Authorization: Bearer {{token}}
+
+### Delete Comment
+DELETE {{baseUrl}}/comments/COMMENT_ID_HERE
+Authorization: Bearer {{token}}
+
+### ============================================
+### RELATIONSHIPS
+### ============================================
+
+### Follow User
+POST {{baseUrl}}/relationships/follow
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "targetUserId": "USER_ID_HERE"
+}
+
+### Unfollow User
+POST {{baseUrl}}/relationships/unfollow
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "targetUserId": "USER_ID_HERE"
+}
+
+### Get Followers
+GET {{baseUrl}}/relationships/followers/USER_ID_HERE
+Authorization: Bearer {{token}}
+
+### Get Following
+GET {{baseUrl}}/relationships/following/USER_ID_HERE
+Authorization: Bearer {{token}}
+
+### Send Friend Request
+POST {{baseUrl}}/relationships/friend-request
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "targetUserId": "USER_ID_HERE"
+}
+
+### Accept Friend Request
+POST {{baseUrl}}/relationships/friend-accept
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "targetUserId": "USER_ID_HERE"
+}
+
+### Block User
+POST {{baseUrl}}/relationships/block
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "targetUserId": "USER_ID_HERE"
+}
+
+### ============================================
+### MESSAGES
+### ============================================
+
+### Get Conversations
+GET {{baseUrl}}/messages/conversations
+Authorization: Bearer {{token}}
+
+### Get Messages in Conversation
+GET {{baseUrl}}/messages/conversation/CONVERSATION_ID_HERE?page=1&limit=20
+Authorization: Bearer {{token}}
+
+### Send Message
+POST {{baseUrl}}/messages/send
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "recipientId": "USER_ID_HERE",
+  "body": "Hey! How are you?",
+  "mediaUrls": []
+}
+
+### Mark Message as Read
+POST {{baseUrl}}/messages/MESSAGE_ID_HERE/read
+Authorization: Bearer {{token}}
+
+### Get Unread Count
+GET {{baseUrl}}/messages/unread-count
+Authorization: Bearer {{token}}
+
+### ============================================
+### NOTIFICATIONS
+### ============================================
+
+### Get Notifications
+GET {{baseUrl}}/notifications?page=1&limit=20
+Authorization: Bearer {{token}}
+
+### Get Unread Notification Count
+GET {{baseUrl}}/notifications/unread-count
+Authorization: Bearer {{token}}
+
+### Mark Notification as Read
+POST {{baseUrl}}/notifications/NOTIFICATION_ID_HERE/read
+Authorization: Bearer {{token}}
+
+### Mark All Notifications as Read
+POST {{baseUrl}}/notifications/mark-all-read
+Authorization: Bearer {{token}}
+
+### Delete Notification
+DELETE {{baseUrl}}/notifications/NOTIFICATION_ID_HERE
+Authorization: Bearer {{token}}
+
+### ============================================
+### SUBSCRIPTIONS
+### ============================================
+
+### Get My Subscriptions
+GET {{baseUrl}}/subscriptions/my-subscriptions
+Authorization: Bearer {{token}}
+
+### Get My Subscribers
+GET {{baseUrl}}/subscriptions/my-subscribers
+Authorization: Bearer {{token}}
+
+### Create Checkout Session
+POST {{baseUrl}}/subscriptions/checkout
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "creatorId": "CREATOR_ID_HERE",
+  "tier": "basic"
+}
+
+### Check Subscription Status
+GET {{baseUrl}}/subscriptions/status/CREATOR_ID_HERE
+Authorization: Bearer {{token}}
+
+### Cancel Subscription
+POST {{baseUrl}}/subscriptions/SUBSCRIPTION_ID_HERE/cancel
+Authorization: Bearer {{token}}

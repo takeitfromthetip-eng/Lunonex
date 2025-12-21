@@ -1,0 +1,115 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "ForTheWeebs - Main Project"
+    },
+    {
+      "path": "Fortheweebs",
+      "name": "Fortheweebs - App Submodule"
+    }
+  ],
+  "settings": {
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    },
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "github.copilot.enable": {
+      "*": true,
+      "yaml": true,
+      "plaintext": true,
+      "markdown": true,
+      "javascript": true,
+      "javascriptreact": true
+    },
+    "github.copilot.advanced": {
+      "inlineSuggestEnable": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "GitHub.copilot",
+      "GitHub.copilot-chat",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "ms-vscode.vscode-typescript-next"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch ForTheWeebs Dev Server",
+        "type": "node",
+        "request": "launch",
+        "cwd": "${workspaceFolder}/Fortheweebs",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": [
+          "run",
+          "dev"
+        ],
+        "skipFiles": [
+          "<node_internals>/**"
+        ]
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Start Dev Server",
+        "type": "shell",
+        "command": "npm run dev",
+        "options": {
+          "cwd": "${workspaceFolder}/Fortheweebs"
+        },
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "Build Production",
+        "type": "shell",
+        "command": "npm run build",
+        "options": {
+          "cwd": "${workspaceFolder}/Fortheweebs"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Deploy to Vercel",
+        "type": "shell",
+        "command": "vercel --prod --yes",
+        "options": {
+          "cwd": "${workspaceFolder}/Fortheweebs"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Pull Latest from GitHub",
+        "type": "shell",
+        "command": "git pull origin main",
+        "options": {
+          "cwd": "${workspaceFolder}/Fortheweebs"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Push to GitHub",
+        "type": "shell",
+        "command": "git push origin main",
+        "options": {
+          "cwd": "${workspaceFolder}/Fortheweebs"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+}

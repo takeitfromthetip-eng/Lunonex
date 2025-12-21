@@ -1,0 +1,40 @@
+{
+  "recommendations": [
+    // AI Assistance
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+
+    // Code Quality
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+
+    // Styling
+    "bradlc.vscode-tailwindcss",
+
+    // Database
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-pg",
+
+    // Git & Collaboration
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+
+    // File Navigation
+    "christian-kohler.path-intellisense",
+    "christian-kohler.npm-intellisense",
+
+    // Development Tools
+    "formulahendry.auto-rename-tag",
+    "dsznajder.es7-react-js-snippets",
+    "wix.vscode-import-cost",
+    "ms-vscode.vscode-json-editor",
+
+    // API Testing
+    "humao.rest-client",
+
+    // Markdown
+    "yzhang.markdown-all-in-one"
+  ],
+  "unwantedRecommendations": []
+}

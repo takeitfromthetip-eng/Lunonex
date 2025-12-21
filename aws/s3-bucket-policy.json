@@ -1,0 +1,101 @@
+# AWS S3 Bucket Policy - Legal Receipts (Immutable Storage)
+# Enforces: No deletes, No overwrites, Object Lock compliance
+# Copy this JSON to your S3 bucket policy settings
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyDeleteObject",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "s3:DeleteObject",
+        "s3:DeleteObjectVersion",
+        "s3:DeleteBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::fortheweebs-legal-receipts",
+        "arn:aws:s3:::fortheweebs-legal-receipts/*"
+      ]
+    },
+    {
+      "Sid": "DenyObjectOverwrite",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::fortheweebs-legal-receipts/*",
+      "Condition": {
+        "StringNotEquals": {
+          "s3:x-amz-server-side-encryption": "aws:kms"
+        }
+      }
+    },
+    {
+      "Sid": "DenyUnencryptedUploads",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::fortheweebs-legal-receipts/*",
+      "Condition": {
+        "Null": {
+          "s3:x-amz-server-side-encryption": "true"
+        }
+      }
+    },
+    {
+      "Sid": "DenyInsecureTransport",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::fortheweebs-legal-receipts",
+        "arn:aws:s3:::fortheweebs-legal-receipts/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false"
+        }
+      }
+    },
+    {
+      "Sid": "AllowWriterRolePutObject",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::ACCOUNT_ID:role/LegalReceiptsWriter"
+      },
+      "Action": [
+        "s3:PutObject",
+        "s3:PutObjectLegalHold",
+        "s3:PutObjectRetention"
+      ],
+      "Resource": "arn:aws:s3:::fortheweebs-legal-receipts/*"
+    },
+    {
+      "Sid": "AllowReaderRoleGetObject",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::ACCOUNT_ID:role/LegalReceiptsReader"
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:GetObjectLegalHold",
+        "s3:GetObjectRetention"
+      ],
+      "Resource": "arn:aws:s3:::fortheweebs-legal-receipts/*"
+    },
+    {
+      "Sid": "RequireObjectLockOnPut",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::fortheweebs-legal-receipts/*",
+      "Condition": {
+        "StringNotEquals": {
+          "s3:x-amz-object-lock-mode": "COMPLIANCE"
+        }
+      }
+    }
+  ]
+}

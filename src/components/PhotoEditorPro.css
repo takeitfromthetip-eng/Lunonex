@@ -1,0 +1,476 @@
+.photo-editor-pro {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    border-bottom: 2px solid #533483;
+    box-shadow: 0 4px 20px rgba(83, 52, 131, 0.3);
+}
+
+.editor-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #e94560 0%, #533483 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mode-switches {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.mode-btn {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    color: #fff;
+    border: 2px solid #533483;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.mode-btn:hover {
+    background: linear-gradient(135deg, #533483 0%, #e94560 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, #e94560 0%, #533483 100%);
+    border-color: #e94560;
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+}
+
+.export-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.btn-ai {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a47d5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-ai:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+}
+
+.export-format {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    color: #fff;
+    border: 2px solid #533483;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.editor-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Toolbox */
+.toolbox {
+    width: 250px;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    border-right: 2px solid #533483;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.toolbox h3 {
+    font-size: 1rem;
+    margin: 1rem 0 0.5rem;
+    color: #e94560;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tool-btn {
+    padding: 0.8rem;
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    color: #fff;
+    border: 2px solid #533483;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.tool-btn:hover {
+    background: linear-gradient(135deg, #533483 0%, #e94560 100%);
+    transform: scale(1.05);
+}
+
+.tool-btn.active {
+    background: linear-gradient(135deg, #e94560 0%, #533483 100%);
+    border-color: #e94560;
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+}
+
+.filters-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.filter-btn {
+    padding: 0.5rem;
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    color: #fff;
+    border: 2px solid #533483;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+}
+
+.filter-btn:hover {
+    background: linear-gradient(135deg, #533483 0%, #e94560 100%);
+    transform: translateX(5px);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #e94560 0%, #533483 100%);
+    border-color: #e94560;
+    font-weight: 600;
+}
+
+.meme-templates {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.meme-template-btn {
+    padding: 0.5rem;
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    color: #fff;
+    border: 2px solid #e94560;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+}
+
+.meme-template-btn:hover {
+    background: linear-gradient(135deg, #e94560 0%, #533483 100%);
+    transform: translateX(5px);
+}
+
+.btn-add-text,
+.btn-add-frame,
+.btn-export-gif,
+.btn-batch-process {
+    width: 100%;
+    padding: 0.7rem;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a47d5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-add-text:hover,
+.btn-add-frame:hover,
+.btn-export-gif:hover,
+.btn-batch-process:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+}
+
+.batch-input {
+    width: 100%;
+    padding: 0.5rem;
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    color: #fff;
+    border: 2px solid #533483;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+}
+
+.batch-count {
+    text-align: center;
+    margin: 0.5rem 0;
+    color: #00d2ff;
+    font-weight: 600;
+}
+
+/* Canvas Area */
+.canvas-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+    padding: 2rem;
+    position: relative;
+}
+
+.canvas-container {
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.canvas-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    border: 3px dashed #533483;
+    border-radius: 12px;
+}
+
+.btn-load-image {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #e94560 0%, #533483 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-load-image:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5);
+}
+
+.canvas-placeholder p {
+    margin-top: 1rem;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.main-canvas {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 250px);
+    border-radius: 8px;
+}
+
+.text-overlay {
+    position: absolute;
+    pointer-events: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: move;
+    user-select: none;
+}
+
+/* Layers Panel */
+.layers-panel {
+    width: 280px;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    border-left: 2px solid #533483;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.layers-panel h3 {
+    font-size: 1rem;
+    margin: 0 0 1rem;
+    color: #e94560;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.layers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.layer-item {
+    padding: 0.8rem;
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    border: 2px solid #533483;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.layer-item:hover {
+    border-color: #e94560;
+    transform: translateX(-3px);
+}
+
+.layer-item.selected {
+    background: linear-gradient(135deg, #533483 0%, #e94560 100%);
+    border-color: #e94560;
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.4);
+}
+
+.layer-item input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.layer-name {
+    font-weight: 600;
+    margin-right: auto;
+}
+
+.layer-type {
+    font-size: 0.75rem;
+    color: #999;
+    margin: 0 0.5rem;
+}
+
+.btn-delete-layer {
+    background: none;
+    border: none;
+    color: #e94560;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 0.3rem;
+    transition: all 0.2s ease;
+}
+
+.btn-delete-layer:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.layer-opacity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.layer-opacity input[type="range"] {
+    flex: 1;
+    height: 4px;
+    background: #533483;
+    border-radius: 2px;
+    outline: none;
+}
+
+.layer-opacity input[type="range"]::-webkit-slider-thumb {
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(135deg, #e94560 0%, #533483 100%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.layer-opacity span {
+    font-size: 0.8rem;
+    color: #00d2ff;
+    font-weight: 600;
+    min-width: 35px;
+}
+
+.layer-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-add-layer {
+    flex: 1;
+    padding: 0.6rem;
+    background: linear-gradient(135deg, #00d2ff 0%, #3a47d5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn-add-layer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+}
+
+/* Features */
+.editor-features {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    border-top: 2px solid #533483;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+.feature-badge {
+    padding: 0.4rem 0.8rem;
+    background: linear-gradient(135deg, #533483 0%, #e94560 100%);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(233, 69, 96, 0.3);
+}
+
+/* Scrollbar Styling */
+.toolbox::-webkit-scrollbar,
+.layers-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.toolbox::-webkit-scrollbar-track,
+.layers-panel::-webkit-scrollbar-track {
+    background: #0f3460;
+}
+
+.toolbox::-webkit-scrollbar-thumb,
+.layers-panel::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #533483 0%, #e94560 100%);
+    border-radius: 4px;
+}
+
+.toolbox::-webkit-scrollbar-thumb:hover,
+.layers-panel::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #e94560 0%, #533483 100%);
+}

@@ -1,0 +1,21 @@
+name: Publish Desktop Builds
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Electron App
+        run: npm run electron:package
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            release/Vanguard Setup.exe
+            release/Vanguard.dmg
+            release/Vanguard.AppImage

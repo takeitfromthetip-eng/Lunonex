@@ -1,0 +1,109 @@
+name: Bug Fix Auto-Deploy
+
+# Triggers on issue closure with bug label
+on:
+  issues:
+    types: [closed]
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'server/**'
+
+jobs:
+  # Deploy to Vercel on bug fix
+  deploy-frontend:
+    if: contains(github.event.issue.labels.*.name, 'bug') || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Pull Vercel Environment
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to Vercel
+        id: deploy
+        run: |
+          url=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$url" >> $GITHUB_OUTPUT
+
+      - name: Alias to fortheweebs.vercel.app
+        run: vercel alias ${{ steps.deploy.outputs.url }} fortheweebs.vercel.app --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Comment on Issue
+        if: github.event_name == 'issues'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ **Bug fix deployed!**\n\n🚀 Live at: https://fortheweebs.vercel.app\n🔍 Deployment: ${{ steps.deploy.outputs.url }}\n\nPlease verify the fix and reopen if needed.`
+            })
+
+  # Deploy backend to Railway on bug fix
+  deploy-backend:
+    if: contains(github.event.issue.labels.*.name, 'bug-backend') || (github.event_name == 'push' && contains(github.event.head_commit.message, 'server'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to Railway
+        uses: bervProject/railway-deploy@main
+        with:
+          railway_token: ${{ secrets.RAILWAY_TOKEN }}
+          service: fortheweebs-production
+
+      - name: Comment on Issue
+        if: github.event_name == 'issues'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ **Backend bug fix deployed to Railway!**\n\n🚀 API: https://fortheweebs-production.up.railway.app\n\nBackend changes are live.`
+            })
+
+  # Verify deployment health
+  verify-deployment:
+    needs: [deploy-frontend]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Health Check
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://fortheweebs.vercel.app)
+          if [ $response -eq 200 ]; then
+            echo "✅ Deployment healthy (HTTP $response)"
+          else
+            echo "❌ Deployment failed health check (HTTP $response)"
+            exit 1
+          fi
+
+      - name: Update Issue with Verification
+        if: github.event_name == 'issues'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ **Deployment verified!**\n\nHealth check passed. Site is live and responding.`
+            })

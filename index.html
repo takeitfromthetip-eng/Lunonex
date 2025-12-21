@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ForTheWeebs - Creator Platform for Anime Culture</title>
+  <meta name="description"
+    content="The ultimate creator platform for anime culture. Professional tools, media management, and monetization for content creators." />
+  <meta name="keywords" content="anime, creator platform, content creation, media tools, anime community" />
+  <meta property="og:title" content="ForTheWeebs - Creator Platform" />
+  <meta property="og:description" content="Professional creator tools for anime content creators" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fortheweebs.vercel.app/" />
+  <meta property="og:image" content="https://fortheweebs.vercel.app/og-image.png" />
+  <meta property="og:site_name" content="ForTheWeebs" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ForTheWeebs" />
+  <meta name="twitter:creator" content="@ForTheWeebs" />
+  <meta name="twitter:title" content="ForTheWeebs - Creator Platform" />
+  <meta name="twitter:description" content="Professional creator tools for anime content creators" />
+  <meta name="twitter:image" content="https://fortheweebs.vercel.app/og-image.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+  <!-- Theme color for supported browsers (Chrome, Edge, Safari) -->
+  <meta name="theme-color" content="#667eea" />
+  <meta name="msapplication-TileColor" content="#667eea" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#667eea" />
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <!-- Cache Control for development (change for production) -->
+  <meta http-equiv="Cache-Control" content="public, max-age=3600" />
+  <!-- Preconnect to critical origins for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+  <!-- Font loading optimized with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ForTheWeebs",
+    "description": "Professional creator platform for anime culture with AI tools, media management, and monetization",
+    "url": "https://fortheweebs.vercel.app",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "127"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics (Add your GA4 ID when ready) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script> -->
+
+  <!-- JSZip - Deferred loading (not critical for initial render) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" integrity="sha512-XMVd28F1oH/O71fzwBnV7HucLxVwtxf26XV8P4wPk26EDxuGZ91N8bsOttmnomcCD3CS5ZMRL50H0GgOHvegtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Main app entry -->
+  <script type="module" src="/src/index.jsx?v=1763318505"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Smooth page transitions */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      transition: background-color 0.3s ease;
+    }
+
+    #root {
+      position: relative;
+      z-index: 1000;
+      display: none;
+    }
+
+    /* App Loading Spinner */
+    #app-loader {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      display: none;
+    }
+
+    #app-loader.active {
+      display: block;
+    }
+
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      border-top-color: #667eea;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    #landing-page {
+      position: relative;
+      z-index: 1;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.2) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    #root {
+      z-index: 1000 !important;
+    }
+
+    #landing-page.hidden {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      position: absolute !important;
+      z-index: -1 !important;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px 100px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      right: -50%;
+      bottom: -50%;
+      background: repeating-linear-gradient(0deg,
+          transparent,
+          transparent 2px,
+          rgba(255, 255, 255, 0.03) 2px,
+          rgba(255, 255, 255, 0.03) 4px);
+      animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(40px);
+      }
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      font-weight: 900;
+      margin-bottom: 24px;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+      animation: fadeInUp 0.8s ease;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .hero .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 48px;
+      opacity: 0.95;
+      animation: fadeInUp 1s ease;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 1.2s ease;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn {
+      padding: 18px 48px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: -0.01em;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f43f5e, #ec4899);
+      color: #fff;
+      box-shadow: 0 10px 40px rgba(244, 63, 94, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(244, 63, 94, 0.6);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .features {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .features-subtitle {
+      text-align: center;
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 64px;
+      font-weight: 500;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      padding: 48px 36px;
+      border-radius: 24px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #f43f5e, #ec4899, #8b5cf6);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-card::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.6s ease;
+    }
+
+    .feature-card:hover::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-12px);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .feature-icon {
+      font-size: 3.5rem;
+      margin-bottom: 24px;
+      display: block;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+      transition: transform 0.4s ease;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card p {
+      opacity: 0.9;
+      line-height: 1.7;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.3);
+      margin-top: auto;
+      backdrop-filter: blur(10px);
+    }
+
+    .floating-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .shape:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .shape:nth-child(2) {
+      width: 200px;
+      height: 200px;
+      top: 60%;
+      right: 15%;
+      animation-delay: 5s;
+    }
+
+    .shape:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      bottom: 20%;
+      left: 50%;
+      animation-delay: 10s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) translateX(0) scale(1);
+      }
+
+      25% {
+        transform: translateY(-30px) translateX(20px) scale(1.1);
+      }
+
+      50% {
+        transform: translateY(-60px) translateX(-20px) scale(0.9);
+      }
+
+      75% {
+        transform: translateY(-30px) translateX(20px) scale(1.05);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pricing-section h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 64px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      padding: 48px 36px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+      transition: all 0.4s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+    }
+
+    .pricing-featured {
+      border: 2px solid #8b5cf6;
+      box-shadow: 0 10px 40px rgba(139, 92, 246, 0.2);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #8b5cf6, #d946ef);
+      padding: 6px 20px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pricing-tier {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #8b5cf6;
+    }
+
+    .pricing-price {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 32px;
+    }
+
+    .pricing-price span {
+      font-size: 1.2rem;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px 0;
+    }
+
+    .pricing-features li {
+      padding: 12px 0;
+      font-size: 1rem;
+      opacity: 0.9;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 16px 32px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials-section h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 64px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      padding: 36px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonial-stars {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+      opacity: 0.95;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8b5cf6, #d946ef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .author-role {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 100px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 64px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item details {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .faq-item details:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateX(8px);
+    }
+
+    .faq-item details[open] {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .faq-item summary {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.5rem;
+      font-weight: 300;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item details[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-item p {
+      margin-top: 16px;
+      line-height: 1.7;
+      opacity: 0.9;
+      font-size: 1rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .tagline {
+        font-size: 1.2rem;
+      }
+
+      .faq-section h2 {
+        font-size: 2rem;
+      }
+
+      .faq-item summary {
+        font-size: 1rem;
+      }
+
+      .pricing-section h2,
+      .testimonials-section h2 {
+        font-size: 2rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      .cta-buttons {
+        flex-direction: column !important;
+        gap: 1rem !important;
+      }
+
+      .btn {
+        width: 100% !important;
+        padding: 1rem !important;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero .tagline {
+        font-size: 1rem;
+      }
+
+      .hero {
+        padding: 2rem 1rem !important;
+      }
+
+      .features,
+      .pricing-section,
+      .testimonials-section,
+      .faq-section {
+        padding: 2rem 1rem !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="landing-page">
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <div class="hero">
+      <h1>🎌 ForTheWeebs</h1>
+      <p class="tagline">The Ultimate Creator Platform for Anime Culture</p>
+      <div class="cta-buttons">
+        <a href="/?app=true" class="btn btn-primary" onclick="window.location.href='/?app=true'; return false;">Launch Dashboard</a>
+        <a href="#features" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+
+    <section class="features" id="features">
+      <h2>✨ Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Creator Tools</h3>
+          <p>Professional media editing, auto-crop, image splitting, and CGI tools built for creators.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📚</div>
+          <h3>Media Library</h3>
+          <p>Smart organization with duplicate detection, tagging, and advanced search capabilities.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Analytics Dashboard</h3>
+          <p>Track performance, engagement, and growth with real-time insights and metrics.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💎</div>
+          <h3>Premium Tiers</h3>
+          <p>Flexible subscription options with exclusive features and priority support.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure & Private</h3>
+          <p>Enterprise-grade security with encrypted data and SOC 2 compliance.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Fast & Reliable</h3>
+          <p>Built on modern infrastructure for lightning-fast performance worldwide.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section">
+      <h2>💎 Simple Pricing</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-tier">Free</div>
+          <div class="pricing-price">$0<span>/month</span></div>
+          <ul class="pricing-features">
+            <li>✓ Basic Creator Tools</li>
+            <li>✓ 5 Projects</li>
+            <li>✓ 100MB Storage</li>
+            <li>✓ Community Support</li>
+            <li>✗ AI Tools</li>
+            <li>✗ Priority Support</li>
+          </ul>
+          <a href="?app=true" class="pricing-btn btn-secondary">Get Started</a>
+        </div>
+
+        <div class="pricing-card pricing-featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">VIP</div>
+          <div class="pricing-price">$9.99<span>/month</span></div>
+          <ul class="pricing-features">
+            <li>✓ All Creator Tools</li>
+            <li>✓ Unlimited Projects</li>
+            <li>✓ 10GB Storage</li>
+            <li>✓ Priority Support</li>
+            <li>✓ AI-Powered Tools</li>
+            <li>✓ Early Access Features</li>
+          </ul>
+          <a href="?app=true" class="pricing-btn btn-primary">Start Free Trial</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section">
+      <h2>💬 What Creators Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"ForTheWeebs transformed how I create content. The AI tools save me hours every
+            week!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">🎨</div>
+            <div>
+              <div class="author-name">Sarah Chen</div>
+              <div class="author-role">Digital Artist</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Best platform for anime creators. The comic tools are incredibly intuitive and
+            powerful."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">📚</div>
+            <div>
+              <div class="author-name">Marcus Kim</div>
+              <div class="author-role">Manga Artist</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Finally, a platform built specifically for the anime community. Absolutely love
+            it!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">🎬</div>
+            <div>
+              <div class="author-name">Yuki Tanaka</div>
+              <div class="author-role">Content Creator</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>❓ Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <details>
+            <summary>What is ForTheWeebs?</summary>
+            <p>ForTheWeebs is a comprehensive creator platform designed specifically for the anime community. We provide
+              professional tools for audio editing, comic creation, graphic design, photo manipulation, and VR/AR
+              content.</p>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Is there a free plan?</summary>
+            <p>Yes! Our free plan includes basic creator tools, 5 projects, and 100MB storage. Upgrade to VIP for
+              unlimited projects, 10GB storage, and AI-powered tools.</p>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Can I cancel my subscription anytime?</summary>
+            <p>Absolutely! You can cancel your VIP subscription at any time. You'll continue to have access until the
+              end of your billing period.</p>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Do you offer a free trial?</summary>
+            <p>Yes! New VIP members get a 7-day free trial with full access to all premium features. Cancel anytime
+              during the trial at no charge.</p>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>What payment methods do you accept?</summary>
+            <p>We accept all major credit cards (Visa, Mastercard, American Express), debit cards, and digital wallets
+              through our secure Stripe payment system.</p>
+          </details>
+        </div>
+
+        <div class="faq-item">
+          <details>
+            <summary>Is my data secure?</summary>
+            <p>Yes! We use enterprise-grade encryption, SOC 2 compliance, and secure cloud storage. Your projects and
+              personal data are always protected.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 ForTheWeebs — Empowering Creators Worldwide</p>
+      <p style="margin-top: 10px; opacity: 0.7;">Made with 💜 for the community</p>
+    </footer>
+  </div> <!-- End landing-page -->
+
+  <!-- App Loading Indicator -->
+  <div id="app-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- React App Mount Point -->
+  <div id="root"></div>
+  <script>
+    // Hide landing page and show React app if URL has params OR admin.html OR /app
+    const params = new URLSearchParams(window.location.search);
+    const showApp = window.location.search ||
+      window.location.pathname.includes('admin') ||
+      window.location.pathname === '/app' ||
+      window.location.hash ||
+      params.get('app') === 'true';
+
+    console.log('showApp:', showApp, 'search:', window.location.search, 'params:', params.get('app'));
+
+    if (showApp) {
+      // Show loader briefly for smooth transition
+      const loader = document.getElementById('app-loader');
+      if (loader) loader.classList.add('active');
+
+      const landingPage = document.getElementById('landing-page');
+      if (landingPage) {
+        landingPage.classList.add('hidden');
+      }
+      const rootEl = document.getElementById('root');
+      if (rootEl) {
+        rootEl.style.display = 'block';
+        rootEl.style.minHeight = '100vh';
+      }
+      document.body.style.background = '#1a1a2e';
+
+      // Hide loader after React mounts
+      setTimeout(() => {
+        if (loader) loader.classList.remove('active');
+      }, 500);
+    } else {
+      const rootEl = document.getElementById('root');
+      if (rootEl) rootEl.style.display = 'none';
+    }
+
+    // Backup: Re-check after a short delay in case React hasn't mounted yet
+    setTimeout(() => {
+      const params2 = new URLSearchParams(window.location.search);
+      if (params2.get('app') === 'true' || window.location.search) {
+        const landingPage = document.getElementById('landing-page');
+        if (landingPage) {
+          landingPage.classList.add('hidden');
+        }
+        const rootEl = document.getElementById('root');
+        if (rootEl) {
+          rootEl.style.display = 'block';
+          rootEl.style.minHeight = '100vh';
+        }
+        document.body.style.background = '#1a1a2e';
+      }
+    }, 100);
+  </script>
+</body>
+
+</html>
