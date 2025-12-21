@@ -28,11 +28,5 @@ services:
         sync: false
       - key: JWT_SECRET
         sync: false
-      - key: OPENAI_API_KEY
-        sync: false
-      - key: ANTHROPIC_API_KEY
-        sync: false
-      - key: GOOGLE_APPLICATION_CREDENTIALS
-        value: ./config/google-vision-key.json
     healthCheckPath: /health
     autoDeploy: true
