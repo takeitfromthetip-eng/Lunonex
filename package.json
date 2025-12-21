@@ -125,7 +125,9 @@
   },
   "build": {
     "appId": "com.lunonex.app",
-    "productName": "lunonex",
+    "productName": "Lunonex",
+    "asar": true,
+    "compression": "maximum",
     "directories": {
       "output": "electron-dist"
     },
@@ -143,8 +145,10 @@
     ],
     "win": {
       "target": "nsis",
-      "icon": "public/icon-512.png",
-      "signAndEditExecutable": false
+      "icon": "assets/icon.ico",
+      "signAndEditExecutable": false,
+      "verifyUpdateCodeSignature": false,
+      "requestedExecutionLevel": "asInvoker"
     },
     "nsis": {
       "oneClick": false,
