@@ -27,6 +27,7 @@ export const OWNER_EMAIL = 'polotuspossumus@gmail.com';
 // TIER 1: Owner's Freebies - Never pay anything
 export const LIFETIME_VIP_EMAILS = [
   'shellymontoya82@gmail.com',
+  'polotuspossumus@gmail.com', // OWNER - NEVER CHARGE
   'chesed04@aol.com',
   'Colbyg123f@gmail.com',
   'PerryMorr94@gmail.com',
