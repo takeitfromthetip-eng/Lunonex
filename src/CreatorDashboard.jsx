@@ -78,6 +78,7 @@ import ExperimentalLab from "./components/ExperimentalLab";
 import MythicLayer from "./components/MythicLayer";
 import CreatorOverview from "./components/CreatorOverview";
 import QuickCreateFAB from "./components/QuickCreateFAB";
+import AICompanionStore from "./components/AICompanionStore";
 import { CreatorAnalytics } from "./components/CreatorAnalytics";
 
 export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free" }) => {
@@ -186,6 +187,7 @@ export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free
           color: 'white',
           border: '2px solid #FFC107'
         }}>⚠️ EXPERIMENTAL</TabsTrigger>}
+        <TabsTrigger value="aicompanion">🤖 AI Companion Store</TabsTrigger>
       </TabsList>
       <TabsContent value="accounts">
         <AccountManagement />
@@ -450,6 +452,10 @@ export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free
       <TabsContent value="marketplace">
         <div style={{ padding: '20px' }}>
           <h2 style={{ fontSize: '32px', fontWeight: 'bold', marginBottom: '10px' }}>
+      <TabsContent value="aicompanion">
+        <AICompanionStore />
+      </TabsContent>
+
             🏪 Creator Marketplace
           </h2>
           <p style={{ fontSize: '16px', color: '#888', marginBottom: '30px' }}>
