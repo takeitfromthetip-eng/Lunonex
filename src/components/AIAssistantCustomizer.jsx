@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AIAssistant3D from './AIAssistant3D';
 
 const AIAssistantCustomizer = () => {
   const [gender, setGender] = useState('female');
@@ -54,10 +55,53 @@ const AIAssistantCustomizer = () => {
     setBodyType(preset.bodyType);
   };
 
+  // Prepare customization object for 3D model
+  const customization = {
+    gender,
+    height,
+    weight,
+    skinColor: skinTone,
+    breastSize,
+    breastFirmness,
+    nippleSize,
+    nippleColor: '#e8a598',
+    vaginaDepth,
+    labiaSizeInner: labiaSizeinner,
+    labiaSizeOuter,
+    clitorisSize,
+    penisLength: 5,
+    penisGirth: 5,
+    anusColor,
+    anusTightness,
+    eyeShape,
+    eyeColor,
+    lipSize,
+    lipColor: '#d4757d',
+    noseSize,
+    hairStyle,
+    hairColor,
+    hairLength: hairStyle === 'long' ? 10 : 5,
+    muscleTone: 5,
+    bodyFat: weight / 20,
+    shoulderWidth: 5,
+    hipWidth: 5,
+    legLength: 5,
+    toenailColor: '#ffb3c6',
+    fingernailColor: '#ffb3c6',
+    pubicHairStyle: pubesStyle,
+    pubicHairColor: hairColor,
+  };
+
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>🎨 AI Assistant Customizer</h1>
       <p style={styles.subtitle}>Create your perfect companion - fully customizable</p>
+
+      {/* 3D Preview */}
+      <div style={styles.section}>
+        <h2>Live Preview</h2>
+        <AIAssistant3D customization={customization} />
+      </div>
 
       {/* Gender Selection */}
       <div style={styles.section}>

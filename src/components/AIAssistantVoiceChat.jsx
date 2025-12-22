@@ -63,15 +63,77 @@ const AIAssistantVoiceChat = () => {
     // Pattern-based offline AI processing
     const lowerText = text.toLowerCase();
     let aiResponse = '';
+    let action = null;
 
+    // Strip/undress commands
+    if (lowerText.includes('strip') || lowerText.includes('undress') || lowerText.includes('take off')) {
+      action = { type: 'animate', animation: 'strip' };
+      const responses = {
+        friendly: "Okay! Starting the animation...",
+        flirty: "Mmm, as you wish~ Watch me strip for you...",
+        professional: "Initiating disrobing animation sequence.",
+        playful: "Hehe, here we go! Let me show you~",
+      };
+      aiResponse = responses[personality];
+      if (window.aiAssistantAnimator) {
+        window.aiAssistantAnimator.playAnimation('strip');
+      }
+    }
+    // Pose commands
+    else if (lowerText.includes('pose') || lowerText.includes('position')) {
+      action = { type: 'pose', pose: 'custom' };
+      aiResponse = "Striking a pose for you! Would you like me to capture this?";
+      if (window.aiAssistantAnimator) {
+        window.aiAssistantAnimator.playAnimation('pose');
+      }
+    }
+    // Video generation with AI assistant
+    else if (lowerText.includes('generate video') || lowerText.includes('create video of you')) {
+      action = { type: 'generateVideo', subject: 'self' };
+      const music = lowerText.match(/with (.*?) (?:song|music|soundtrack|album)/);
+      const soundtrack = music ? music[1] : null;
+      aiResponse = soundtrack
+        ? `Creating a video of me with "${soundtrack}"! This will take a moment...`
+        : "Creating a video of me for you! This will take a moment...";
+      if (window.videoGenerator) {
+        window.videoGenerator.generate({
+          subject: 'ai_assistant',
+          poses: 'strip_sequence',
+          soundtrack: soundtrack,
+          captureFrames: true
+        });
+      }
+    }
+    // Still frame capture
+    else if (lowerText.includes('still frame') || lowerText.includes('capture') || lowerText.includes('screenshot')) {
+      action = { type: 'captureFrame' };
+      aiResponse = "Capturing still frames from each pose!";
+      if (window.aiAssistantAnimator) {
+        window.aiAssistantAnimator.captureFrames();
+      }
+    }
+    // Music/soundtrack request
+    else if (lowerText.includes('soundtrack') || lowerText.includes('music') || lowerText.includes('play')) {
+      const album = lowerText.match(/(?:with|use|play)\s+(.+?)(?:\s+album|\s+by|\s+soundtrack|$)/);
+      if (album) {
+        action = { type: 'audio', track: album[1].trim() };
+        aiResponse = `Playing "${album[1].trim()}" for you!`;
+        if (window.audioPlayer) {
+          window.audioPlayer.play(album[1].trim());
+        }
+      }
+    }
     // Content creation commands
-    if (lowerText.includes('create') || lowerText.includes('make') || lowerText.includes('generate')) {
+    else if (lowerText.includes('create') || lowerText.includes('make') || lowerText.includes('generate')) {
       if (lowerText.includes('video')) {
-        aiResponse = "I'll help you create a video! What style would you like - cinematic, vlog, or tutorial?";
+        aiResponse = "Opening video editor! What would you like to create?";
+        action = { type: 'navigate', tab: 'video' };
       } else if (lowerText.includes('image') || lowerText.includes('picture') || lowerText.includes('photo')) {
-        aiResponse = "Let's create an image together! Describe what you want to see.";
+        aiResponse = "Opening photo editor! Let's create something beautiful!";
+        action = { type: 'navigate', tab: 'photo' };
       } else if (lowerText.includes('music') || lowerText.includes('song')) {
-        aiResponse = "I can help you compose music! What genre are you thinking - electronic, rock, classical?";
+        aiResponse = "Opening audio studio! Let's make some music!";
+        action = { type: 'navigate', tab: 'audio' };
       } else {
         aiResponse = "I'm ready to help you create something amazing! What would you like to make?";
       }
@@ -87,7 +149,7 @@ const AIAssistantVoiceChat = () => {
       aiResponse = greetings[personality] || greetings.friendly;
     }
     // Action commands
-    else if (lowerText.includes('show me') || lowerText.includes('display')) {
+    else if (lowerText.includes('show me') || lowerText.includes('display') || lowerText.includes('open')) {
       aiResponse = "Opening the requested view for you!";
     }
     else {
@@ -97,6 +159,14 @@ const AIAssistantVoiceChat = () => {
 
     setResponse(aiResponse);
     speak(aiResponse);
+
+    // Execute tab navigation if needed
+    if (action && action.type === 'navigate') {
+      setTimeout(() => {
+        const event = new CustomEvent('ai-navigate', { detail: { tab: action.tab } });
+        window.dispatchEvent(event);
+      }, 1000);
+    }
   };
 
   const speak = (text) => {
