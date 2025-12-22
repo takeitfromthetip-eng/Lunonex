@@ -194,9 +194,7 @@ export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free
         }}>⚠️ EXPERIMENTAL</TabsTrigger>}
         <TabsTrigger value="aicompanion">🤖 AI Companion Store</TabsTrigger>
         <TabsTrigger value="inventory">🎒 My Inventory</TabsTrigger>
-        <TabsTrigger value="gifmeme">🎞️ GIF & Memes</TabsTrigger>
-        <TabsTrigger value="nft">🎨 NFT Minter</TabsTrigger>
-        <TabsTrigger value="aivoice">🎙️ AI Voice Chat</TabsTrigger>
+        <TabsTrigger value="aivoice">🎙️ AI Assistant</TabsTrigger>
       </TabsList>
       <TabsContent value="accounts">
         <AccountManagement />
@@ -316,13 +314,11 @@ export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free
               <AIContentGenerator userId={userId} />
             </div>
 
-            {/* GIF Generator Section */}
+            {/* GIF & Meme Generator Section */}
             <div id="gif-generator-section" style={{ marginTop: '40px', paddingTop: '20px', borderTop: '2px solid rgba(102, 126, 234, 0.3)' }}>
-              <h2 style={{ marginBottom: '20px', color: '#667eea' }}>🎞️ GIF Generator</h2>
-              <div style={{ padding: '40px', background: 'rgba(255, 255, 255, 0.05)', borderRadius: '12px', textAlign: 'center' }}>
-                <h3 style={{ color: '#888', marginBottom: '15px' }}>GIF Maker Coming Soon</h3>
-                <p style={{ color: '#666', fontSize: '14px' }}>Convert videos to GIFs, add text overlays, optimize file size</p>
-              </div>
+              <h2 style={{ marginBottom: '20px', color: '#667eea' }}>🎞️ GIF & Meme Generator</h2>
+              <p style={{ color: '#888', marginBottom: '20px' }}>Create GIFs and memes with popular templates - perfect for social media</p>
+              <GIFMemeGenerator userId={userId} />
             </div>
           </div>
         </ToolLockGate>
@@ -461,32 +457,24 @@ export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free
       <TabsContent value="marketplace">
         <div style={{ padding: '20px' }}>
           <h2 style={{ fontSize: '32px', fontWeight: 'bold', marginBottom: '10px' }}>
-      <TabsContent value="aicompanion">
-        <AICompanionStore />
-      </TabsContent>
-      <TabsContent value="inventory">
-        <UserInventory userId={userId} />
-      </TabsContent>
-      <TabsContent value="gifmeme">
-        <GIFMemeGenerator userId={userId} />
-      </TabsContent>
-      <TabsContent value="nft">
-        <NFTMinter userId={userId} />
-      </TabsContent>
-      <TabsContent value="aivoice">
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          <AIAssistantVoiceChat userId={userId} />
-          <AIAssistantCustomizer userId={userId} />
-        </div>
-      </TabsContent>
-
-
             🏪 Creator Marketplace
           </h2>
           <p style={{ fontSize: '16px', color: '#888', marginBottom: '30px' }}>
             Buy and sell assets, templates, presets, and more
           </p>
           <Marketplace />
+        </div>
+      </TabsContent>
+      <TabsContent value="aicompanion">
+        <AICompanionStore />
+      </TabsContent>
+      <TabsContent value="inventory">
+        <UserInventory userId={userId} />
+      </TabsContent>
+      <TabsContent value="aivoice">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <AIAssistantVoiceChat userId={userId} />
+          <AIAssistantCustomizer userId={userId} />
         </div>
       </TabsContent>
       <TabsContent value="rewards">
