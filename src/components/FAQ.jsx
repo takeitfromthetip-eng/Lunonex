@@ -117,6 +117,126 @@ export default function FAQ() {
       ]
     },
     {
+      id: 'game-engine',
+      title: '🎮 Game Engine',
+      questions: [
+        {
+          q: 'How do I use the Game Engine?',
+          a: 'Go to Dashboard → Game Engine tab. Drag nodes from the toolbar (Events, Actions, Conditions, etc.), connect them by clicking outputs and inputs, then press Play to test your game logic. No coding required!'
+        },
+        {
+          q: 'What are the different node types?',
+          a: 'Event nodes (On Start, On Click, On Collision), Action nodes (Move, Rotate, Play Sound), Condition nodes (If, Compare), Math nodes (Add, Multiply), Variable nodes (Get/Set), and GameObject nodes (Create/Destroy).'
+        },
+        {
+          q: 'Can I save my game scripts?',
+          a: 'Yes! Click "Export" to save your script as JSON. You can share it or load it later. Scripts contain all nodes, connections, and settings.'
+        },
+        {
+          q: 'How do I make objects move?',
+          a: 'Create an "On Start" or "On Click" event node, connect it to a "Move" action node, set X/Y values in the node properties, then connect the output to continue your logic.'
+        }
+      ]
+    },
+    {
+      id: 'workflows',
+      title: '🔗 Cross-Tool Workflows',
+      questions: [
+        {
+          q: 'What are workflows?',
+          a: 'Workflows let you chain multiple tools together for seamless production. For example: Design → Game Engine → Audio → Video. Track progress and never lose your place!'
+        },
+        {
+          q: 'How do I create a workflow?',
+          a: 'Go to Dashboard → Workflows tab. Choose a template (Design to Game, Photo to Video, etc.) or build custom by adding tool steps. Save workflows to reuse them.'
+        },
+        {
+          q: 'Can workflows open tools automatically?',
+          a: 'Yes! Click "Open Tool" on any workflow step to jump directly to that tool tab. When you complete a step, mark it done to track progress.'
+        },
+        {
+          q: 'Can I export workflows?',
+          a: 'Absolutely! Click "Export JSON" to save workflows and share them with collaborators or reuse on different projects.'
+        }
+      ]
+    },
+    {
+      id: 'ai-assistant',
+      title: '🤖 AI Assistant',
+      questions: [
+        {
+          q: 'How do I customize my AI Assistant?',
+          a: 'Dashboard → AI Assistant tab. Use sliders to customize body (height, weight, breasts, genitals, face, skin, hair, nails). Choose gender (Female/Male/Both). Apply presets (petite, athletic, curvy, etc.) or customize everything yourself!'
+        },
+        {
+          q: 'Can I see my AI Assistant in 3D?',
+          a: 'Yes! The Live Preview shows your AI Assistant in full 3D. Click and drag to rotate 360°, scroll to zoom, right-click to pan. All customizations update in real-time.'
+        },
+        {
+          q: 'How does voice chat work?',
+          a: 'Click "Start Listening" to talk to your AI Assistant. She responds with different personalities (Friendly, Flirty, Professional, Playful). Say commands like "strip", "pose", "generate video", or "play music".'
+        },
+        {
+          q: 'What voice commands are available?',
+          a: 'Try: "Strip for me", "Strike a pose", "Generate video of you with [song name]", "Capture still frames", "Create a video", "Open photo editor", "Play [music]".'
+        }
+      ]
+    },
+    {
+      id: 'effects',
+      title: '🎨 Post & Profile Effects',
+      questions: [
+        {
+          q: 'How do I add effects to my social posts?',
+          a: 'In Social Feed, look for the Effects panel when creating a post. Choose visual filters (glow, neon, cyberpunk), animations (bounce, pulse, rotate), or audio effects (whoosh, chime, pop).'
+        },
+        {
+          q: 'Can I animate my profile avatar?',
+          a: 'Yes! Choose from Spinning Avatar, Glowing Avatar, Pulsing Avatar, or Rainbow Border. Effects apply to your profile picture on all posts and comments.'
+        },
+        {
+          q: 'What visual filters are available?',
+          a: '8 filters: Glow, Blur Background, Grayscale, Sepia, Neon, Vintage, Cyberpunk, Rainbow. All include CSS animations for maximum impact.'
+        }
+      ]
+    },
+    {
+      id: 'drawing-tablet',
+      title: '🖊️ Drawing Tablet Support',
+      questions: [
+        {
+          q: 'Does Lunonex support drawing tablets?',
+          a: 'YES! Full support for Wacom, Huion, XP-Pen, and all tablets with stylus. Pressure sensitivity controls brush size and opacity. Tilt detection included.'
+        },
+        {
+          q: 'How do I enable pressure sensitivity?',
+          a: 'Go to Photo Editor → Brush Settings. "Pressure Sensitivity" is enabled by default. Your brush size and opacity will respond to how hard you press your stylus.'
+        },
+        {
+          q: 'What tablet features are supported?',
+          a: 'Pressure sensitivity (0-100%), stylus tilt detection (X/Y angles), pen vs mouse detection, and real-time pressure feedback. Works seamlessly with all major tablets.'
+        }
+      ]
+    },
+    {
+      id: 'offline',
+      title: '💾 Offline & Desktop App',
+      questions: [
+        {
+          q: 'Can I use Lunonex offline?',
+          a: 'Yes! Download the .exe desktop app. TensorFlow.js AI models are bundled, so you can use AI features (face detection, body segmentation, content generation) completely offline.'
+        },
+        {
+          q: 'Where do I download the desktop app?',
+          a: 'Dashboard → Settings → Download Desktop App. The .exe is 200MB+ and includes all offline AI capabilities. Install once, use forever.'
+        },
+        {
+          q: 'What works offline?',
+          a: 'Photo editing, video editing, audio production, game engine, AI assistant (voice chat, 3D model), workflows, and all AI models (face detection, pose estimation, body segmentation).'
+        }
+      ]
+    },
+    {
       id: 'legal',
       title: '📜 Legal Documents',
       questions: [
