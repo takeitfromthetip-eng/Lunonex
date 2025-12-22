@@ -1,0 +1,235 @@
+.game-engine {
+  width: 100%;
+  min-height: 100vh;
+  background: #0a0a0f;
+  color: white;
+  padding: 20px;
+}
+
+.engine-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.engine-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.engine-header p {
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.engine-toolbar {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-node {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-node:hover {
+  transform: scale(1.05);
+}
+
+.btn-play, .btn-stop, .btn-export, .btn-clear {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-play {
+  background: #10b981;
+  color: white;
+}
+
+.btn-stop {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-export {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-clear {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-play:hover, .btn-stop:hover, .btn-export:hover, .btn-clear:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.engine-workspace {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.script-canvas {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.script-canvas h3 {
+  margin-bottom: 20px;
+  color: #667eea;
+}
+
+.nodes-container {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  background: #16162a;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.script-node {
+  position: absolute;
+  width: 200px;
+  background: #1e1e2e;
+  border: 3px solid;
+  border-radius: 12px;
+  cursor: move;
+  transition: box-shadow 0.2s;
+}
+
+.script-node:hover {
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.5);
+}
+
+.script-node.selected {
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.8);
+}
+
+.node-header {
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+}
+
+.node-body {
+  padding: 10px;
+}
+
+.node-input, .node-output {
+  padding: 5px;
+  margin: 5px 0;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.node-input {
+  text-align: left;
+}
+
+.node-output {
+  text-align: right;
+}
+
+.connections-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.game-canvas {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-canvas h3 {
+  margin-bottom: 20px;
+  color: #667eea;
+}
+
+.canvas-info {
+  margin-top: 20px;
+  text-align: center;
+  color: #888;
+}
+
+.canvas-info p {
+  margin: 5px 0;
+}
+
+.properties-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.properties-panel h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.property {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.property label {
+  font-weight: 600;
+}
+
+.btn-delete {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background: #ef4444;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+@media (max-width: 1024px) {
+  .engine-workspace {
+    grid-template-columns: 1fr;
+  }
+}

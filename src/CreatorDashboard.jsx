@@ -85,6 +85,8 @@ import GIFMemeGenerator from "./components/GIFMemeGenerator";
 import NFTMinter from "./components/NFTMinter";
 import AIAssistantVoiceChat from "./components/AIAssistantVoiceChat";
 import AIAssistantCustomizer from "./components/AIAssistantCustomizer";
+import GameEngine from "./components/GameEngine";
+import WorkflowManager from "./components/WorkflowManager";
 
 export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free" }) => {
   // STRICT ADMIN CHECK - Only polotuspossumus@gmail.com
@@ -179,6 +181,8 @@ export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free
         <TabsTrigger value="arvr">🎭 AR/VR Studio</TabsTrigger>
         <TabsTrigger value="photo">📸 Photo Tools</TabsTrigger>
         <TabsTrigger value="design">🎨 Graphic Design</TabsTrigger>
+        <TabsTrigger value="game">🎮 Game Engine</TabsTrigger>
+        <TabsTrigger value="workflow">🔗 Workflows</TabsTrigger>
         <TabsTrigger value="merch">🛍️ Merch Store</TabsTrigger>
         <TabsTrigger value="marketplace">🏪 Marketplace</TabsTrigger>
         {isVipUser && <TabsTrigger value="mythic" style={{ 
@@ -342,6 +346,12 @@ export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free
         <ToolLockGate userId={userId} toolId="design">
           <GraphicDesignSuitePro />
         </ToolLockGate>
+      </TabsContent>
+      <TabsContent value="game">
+        <GameEngine userId={userId} />
+      </TabsContent>
+      <TabsContent value="workflow">
+        <WorkflowManager userId={userId} />
       </TabsContent>
       <TabsContent value="mythic">
         <MythicLayer 

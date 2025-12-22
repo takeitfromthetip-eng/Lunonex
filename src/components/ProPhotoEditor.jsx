@@ -17,7 +17,7 @@ export function ProPhotoEditor({ userId }) {
     const [selection, setSelection] = useState(null); // { x, y, width, height, type: 'rectangle'|'ellipse'|'lasso' }
     const [isSelecting, setIsSelecting] = useState(false);
 
-    // Brush settings
+    // Brush settings with tablet support
     const [brushSettings, setBrushSettings] = useState({
         size: 20,
         hardness: 100,
@@ -25,7 +25,13 @@ export function ProPhotoEditor({ userId }) {
         flow: 100,
         color: '#000000',
         blendMode: 'normal',
+        pressureSensitivity: true, // Drawing tablet pressure
+        tiltSensitivity: false, // Stylus tilt
     });
+
+    // Tablet/stylus state
+    const [tabletPressure, setTabletPressure] = useState(1.0);
+    const [tabletTilt, setTabletTilt] = useState({ x: 0, y: 0 });
 
     // Adjustment layers with multiple parameters
     const [adjustments, setAdjustments] = useState({
@@ -368,6 +374,63 @@ export function ProPhotoEditor({ userId }) {
         };
         reader.readAsText(file);
     };
+
+    // Drawing tablet / stylus support
+    const handlePointerDown = (e) => {
+        if (e.pointerType === 'pen') {
+            setTabletPressure(e.pressure);
+            setTabletTilt({ x: e.tiltX, y: e.tiltY });
+        }
+        setIsDragging(true);
+    };
+
+    const handlePointerMove = (e) => {
+        if (e.pointerType === 'pen') {
+            setTabletPressure(e.pressure);
+            setTabletTilt({ x: e.tiltX, y: e.tiltY });
+
+            // Apply pressure to brush size and opacity if enabled
+            if (brushSettings.pressureSensitivity && isDragging) {
+                const pressureSize = brushSettings.size * e.pressure;
+                const pressureOpacity = brushSettings.opacity * e.pressure;
+
+                // Draw with pressure-sensitive brush
+                const canvas = canvasRef.current;
+                if (canvas && tool === 'brush') {
+                    const ctx = canvas.getContext('2d');
+                    const rect = canvas.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    ctx.globalAlpha = pressureOpacity / 100;
+                    ctx.fillStyle = brushSettings.color;
+                    ctx.beginPath();
+                    ctx.arc(x, y, pressureSize / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+        }
+    };
+
+    const handlePointerUp = (e) => {
+        setIsDragging(false);
+    };
+
+    // Add pointer event listeners to canvas
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+
+        canvas.addEventListener('pointerdown', handlePointerDown);
+        canvas.addEventListener('pointermove', handlePointerMove);
+        canvas.addEventListener('pointerup', handlePointerUp);
+
+        return () => {
+            canvas.removeEventListener('pointerdown', handlePointerDown);
+            canvas.removeEventListener('pointermove', handlePointerMove);
+            canvas.removeEventListener('pointerup', handlePointerUp);
+        };
+    }, [brushSettings, isDragging, tool]);
 
     return (
         <div style={{
