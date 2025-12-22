@@ -6,12 +6,29 @@ const AICompanionStore = () => {
   const [activeTab, setActiveTab] = useState('companions');
   const [userId, setUserId] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [ownedItems, setOwnedItems] = useState([]);
 
   useEffect(() => {
+    if (userId) {
+      fetchOwnedItems();
+    }
     supabase.auth.getUser().then(({ data }) => {
       if (data?.user) setUserId(data.user.id);
     });
   }, []);
+  const fetchOwnedItems = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('user_purchases')
+        .select('item_id')
+        .eq('user_id', userId);
+
+      if (error) throw error;
+      setOwnedItems(data.map(item => item.item_id));
+    } catch (error) {
+      console.error('Error fetching owned items:', error);
+    }
+  };
 
   const STORE_ITEMS = {
     companions: [
@@ -177,8 +194,8 @@ const AICompanionStore = () => {
         <p className="item-desc">{item.desc}</p>
         <div className="item-footer">
           <span className="price">${item.price.toFixed(2)}</span>
-          <button onClick={() => addToCart(item)} className="add-btn">
-            Add to Cart
+          <button onClick={() => addToCart(item)} disabled={ownedItems.includes(item.id)} className="add-btn">
+            {ownedItems.includes(item.id) ? "✅ Owned" : "Add to Cart"}
           </button>
         </div>
       </div>
@@ -361,7 +378,12 @@ const AICompanionStore = () => {
           font-weight: bold;
           transition: background 0.3s;
         }
-        .add-btn:hover {
+        .add-btn:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+          background: #10b981;
+        }
+        .add-btn:hover:not(:disabled) {
           background: #5568d3;
         }
         .cart-panel {

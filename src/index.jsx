@@ -6,6 +6,8 @@ import { LegalDocumentsList } from "./components/LegalDocumentsList.jsx";
 import CreatorSignup from "./CreatorSignup.jsx";
 import PaymentModule from "./PaymentModule.jsx";
 import { CreatorDashboard } from "./CreatorDashboard.jsx";
+import CryptoPayment from "./pages/CryptoPayment.jsx";
+import PaymentSuccess from "./pages/PaymentSuccess.jsx";
 import BugReporter from "./components/BugReporter.jsx";
 import { ErrorBoundary } from "./components/ErrorBoundary.jsx";
 import { ToastContainer } from "./components/Toast.jsx";
@@ -232,6 +234,15 @@ function AppFlow() {
   }
 
   // Check if this is admin panel (owner only)
+  // Crypto payment pages
+  if (window.location.pathname.startsWith('/payment/crypto/')) {
+    const paymentId = window.location.pathname.split('/payment/crypto/')[1];
+    return <CryptoPayment />;
+  }
+  if (window.location.pathname === '/payment/success') {
+    return <PaymentSuccess />;
+  }
+
   if (window.location.pathname === '/admin') {
     // SECURITY: Only actual owner can access admin panel
     if (isAdmin && isActualOwner(localStorage.getItem('ownerEmail'))) {
