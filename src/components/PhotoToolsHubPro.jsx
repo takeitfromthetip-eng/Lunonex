@@ -7,7 +7,7 @@ import { AdvancedPhotoEditor } from './AdvancedPhotoEditor';
 import { MassPhotoProcessor } from './MassPhotoProcessor';
 import { ProPhotoEditor } from './ProPhotoEditor';
 import { MemeGenerator } from './MemeGenerator';
-import { NFTMinter } from './NFTMinter';
+import NFTMinter from './NFTMinter';
 import UniversalFilterSystem from './filters/UniversalFilterSystem';
 
 /**

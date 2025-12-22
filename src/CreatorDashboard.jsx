@@ -81,6 +81,10 @@ import QuickCreateFAB from "./components/QuickCreateFAB";
 import AICompanionStore from "./components/AICompanionStore";
 import UserInventory from "./components/UserInventory";
 import { CreatorAnalytics } from "./components/CreatorAnalytics";
+import GIFMemeGenerator from "./components/GIFMemeGenerator";
+import NFTMinter from "./components/NFTMinter";
+import AIAssistantVoiceChat from "./components/AIAssistantVoiceChat";
+import AIAssistantCustomizer from "./components/AIAssistantCustomizer";
 
 export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free" }) => {
   // STRICT ADMIN CHECK - Only polotuspossumus@gmail.com
@@ -190,6 +194,9 @@ export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free
         }}>⚠️ EXPERIMENTAL</TabsTrigger>}
         <TabsTrigger value="aicompanion">🤖 AI Companion Store</TabsTrigger>
         <TabsTrigger value="inventory">🎒 My Inventory</TabsTrigger>
+        <TabsTrigger value="gifmeme">🎞️ GIF & Memes</TabsTrigger>
+        <TabsTrigger value="nft">🎨 NFT Minter</TabsTrigger>
+        <TabsTrigger value="aivoice">🎙️ AI Voice Chat</TabsTrigger>
       </TabsList>
       <TabsContent value="accounts">
         <AccountManagement />
@@ -459,6 +466,18 @@ export const CreatorDashboard = ({ userId, ipAddress = "127.0.0.1", tier = "free
       </TabsContent>
       <TabsContent value="inventory">
         <UserInventory userId={userId} />
+      </TabsContent>
+      <TabsContent value="gifmeme">
+        <GIFMemeGenerator userId={userId} />
+      </TabsContent>
+      <TabsContent value="nft">
+        <NFTMinter userId={userId} />
+      </TabsContent>
+      <TabsContent value="aivoice">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <AIAssistantVoiceChat userId={userId} />
+          <AIAssistantCustomizer userId={userId} />
+        </div>
       </TabsContent>
 
 
