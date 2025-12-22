@@ -44,7 +44,20 @@ if (fs.existsSync(packageLock)) {
   console.log('✅ package-lock.json already clean\n');
 }
 
-// Step 3: Force install with legacy peer deps
+// Step 3: Fix esbuild version issue first
+console.log('🔧 Fixing esbuild binary...');
+try {
+  const esbuildPath = path.join(nodeModules, 'esbuild');
+  if (fs.existsSync(esbuildPath)) {
+    fs.rmSync(esbuildPath, { recursive: true, force: true });
+  }
+  execSync('npm cache clean --force', { cwd: rootDir, stdio: 'inherit' });
+  console.log('✅ esbuild cache cleared\n');
+} catch (err) {
+  console.log('⚠️  esbuild cleanup warning:', err.message, '\n');
+}
+
+// Step 4: Force install with legacy peer deps
 console.log('📦 Installing dependencies with --legacy-peer-deps...');
 console.log('This may take a few minutes...\n');
 
@@ -59,7 +72,7 @@ try {
   process.exit(1);
 }
 
-// Step 4: Force React to exact version
+// Step 5: Force React to exact version
 console.log('🔒 Forcing React 18.3.1...');
 
 try {
@@ -74,7 +87,7 @@ try {
   console.log('Continuing anyway...\n');
 }
 
-// Step 5: Run npm dedupe
+// Step 6: Run npm dedupe
 console.log('🧹 Deduplicating dependencies...');
 
 try {
@@ -89,7 +102,7 @@ try {
   console.log('Continuing anyway...\n');
 }
 
-// Step 6: Verify the fix
+// Step 7: Verify the fix
 console.log('🔍 Verifying React installation...');
 
 try {

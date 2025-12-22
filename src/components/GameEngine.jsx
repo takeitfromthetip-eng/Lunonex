@@ -106,11 +106,11 @@ const GameEngine = ({ userId }) => {
       case 'Move':
         const x = inputData.x || node.values.x || 0;
         const y = inputData.y || node.values.y || 0;
-        console.log(`Moving object by (${x}, ${y})`);
+        // Execute move action in game engine
         outputData = { done: true };
         break;
       case 'Play Sound':
-        console.log('Playing sound:', node.values.audio);
+        // Execute play sound action
         outputData = { done: true };
         break;
       case 'Add':
