@@ -3,13 +3,16 @@ services:
     name: lunonex-api
     env: node
     plan: free
-    buildCommand: npm install
+    region: oregon
+    buildCommand: npm install && npm run build
     startCommand: node server.js
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 3000
+      - key: ADMIN_RECOVERY_SECRET
+        sync: false
       - key: VITE_API_URL
         sync: false
       - key: VITE_SUPABASE_URL
