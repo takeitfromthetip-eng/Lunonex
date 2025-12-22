@@ -70,6 +70,7 @@
     "vitest": "^4.0.8"
   },
   "dependencies": {
+    "@babel/runtime": "^7.28.4",
     "@capacitor/cli": "^7.4.4",
     "@capacitor/core": "^7.4.4",
     "@ffmpeg/ffmpeg": "^0.12.15",
