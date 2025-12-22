@@ -558,7 +558,7 @@ export default function CollaborationRoom({ user }) {
             <div className="participants-list">
               {participants.map(participant => (
                 <div key={participant.id} className="participant">
-                  <img src={participant.avatar || '/default-avatar.png'} alt="" />
+                  <img src={participant.avatar || '/default-avatar.png'} alt={`${participant.username}'s avatar`} />
                   <span>{participant.username}</span>
                   {participant.id === user.id && <span className="you-badge">You</span>}
                 </div>
@@ -575,7 +575,7 @@ export default function CollaborationRoom({ user }) {
                     <span className="system-message">{msg.text}</span>
                   ) : (
                     <>
-                      <img src={msg.user.avatar || '/default-avatar.png'} alt="" />
+                      <img src={msg.user.avatar || '/default-avatar.png'} alt={`${msg.user.username}'s avatar`} />
                       <div className="message-content">
                         <strong>{msg.user.username}</strong>
                         <p>{msg.message}</p>

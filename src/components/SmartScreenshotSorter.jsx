@@ -650,7 +650,7 @@ export function SmartScreenshotSorter({ userId, onProcessComplete }) {
                                                 opacity: img.isMarkedForDeletion ? 0.5 : 1,
                                             }}
                                         >
-                                            <img src={img.src} alt="" style={{ width: '100%', height: '100px', objectFit: 'cover' }} />
+                                            <img src={img.src} alt="Screenshot thumbnail" style={{ width: '100%', height: '100px', objectFit: 'cover' }} />
                                             {img.isMarkedForDeletion && (
                                                 <div style={{
                                                     position: 'absolute',
@@ -1014,7 +1014,7 @@ export function SmartScreenshotSorter({ userId, onProcessComplete }) {
                                 overflow: 'hidden',
                                 border: img.isSplit ? '2px solid rgba(255, 0, 255, 0.5)' : '2px solid rgba(0, 255, 255, 0.3)',
                             }}>
-                                <img src={img.processedSrc} alt="" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+                                <img src={img.processedSrc} alt="Processed screenshot preview" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
                                 <div style={{ padding: '10px', fontSize: '12px', color: '#888' }}>
                                     {img.newWidth}×{img.newHeight} • Enhanced
                                     {img.isSplit && (
