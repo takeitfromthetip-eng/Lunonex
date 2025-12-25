@@ -1,5 +1,5 @@
 CREATE TABLE user_purchases (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id text NOT NULL,
   item_id text NOT NULL,
   item_type text NOT NULL CHECK (item_type IN ('companion', 'pet', 'voice', 'hairstyle', 'environment', 'prop', 'kit', 'outfit')),
