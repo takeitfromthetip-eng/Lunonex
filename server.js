@@ -78,6 +78,14 @@ console.log('📡 Port:', PORT);
 const { securityHeaders, wafFilter } = require('./utils/networkProtection');
 app.use(securityHeaders);
 
+// Compression - reduce bandwidth by 60-80%
+const compressionMiddleware = require('./api/middleware/compression');
+app.use(compressionMiddleware);
+
+// Structured logging
+const { logger, requestLogger } = require('./api/middleware/logger');
+app.use(requestLogger);
+
 // WAF protection on public routes (before rate limiting)
 app.use('/userfix', wafFilter);
 app.use('/api', wafFilter);
