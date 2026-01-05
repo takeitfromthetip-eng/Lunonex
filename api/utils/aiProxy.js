@@ -1,9 +1,10 @@
 /**
- * AI Proxy - Routes all AI requests through Mico AI agent
- * Handles job queuing, status tracking, and result persistence
+ * AI Proxy - 100% Self-Reliant AI with ZERO external costs
+ * Uses local AI processing - NO OpenAI, NO Anthropic, NO paid APIs
+ * Works completely offline with built-in intelligence
  */
 
-const axios = require('axios');
+const localAI = require('./localAI');
 const { createClient } = require('@supabase/supabase-js');
 
 const supabase = createClient(
@@ -11,37 +12,30 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_KEY
 );
 
-const MICO_BASE_URL = process.env.MICO_BASE_URL || 'http://localhost:3001/api/mico';
-
 class AIProxy {
   constructor() {
     this.jobs = new Map();
+    console.log('✅ AI Proxy initialized - 100% self-reliant, ZERO API costs');
   }
 
   /**
-   * Generate content using Mico AI
+   * Generate content using LOCAL AI (no external APIs, no costs)
    */
   async generate(type, prompt, options = {}) {
     try {
-      // Route to Mico AI chat endpoint
-      const response = await axios.post(`${MICO_BASE_URL}/chat`, {
-        message: prompt,
-        systemPrompt: this.getSystemPrompt(type),
-        context: options.context || []
-      });
+      // Use LOCAL AI - completely free, works offline
+      const result = await localAI.generate(type, prompt, options);
 
-      return {
-        result: response.data.response,
-        id: Date.now(),
-        type,
-        timestamp: new Date().toISOString()
-      };
+      console.log(`✅ Generated ${type} locally - $0.00 cost`);
+
+      return result;
     } catch (error) {
-      console.error('AI generation failed:', error.message);
+      console.error('Local AI generation failed:', error.message);
       return {
         result: `Generated ${type}: ${prompt}`,
         id: Date.now(),
-        fallback: true
+        fallback: true,
+        cost: 0
       };
     }
   }
@@ -158,73 +152,53 @@ class AIProxy {
   }
 
   /**
-   * Process video content
+   * Process video content (LOCAL AI - no external costs)
    */
   async processVideo(data) {
-    // Use Mico AI for video analysis
-    const response = await axios.post(`${MICO_BASE_URL}/analyze-image`, {
-      imageUrl: data.videoUrl || data.url,
-      question: 'Analyze this video frame and suggest improvements'
-    });
+    const analysis = await localAI.analyzeImage(
+      data.videoUrl || data.url,
+      'Analyze this video frame and suggest improvements'
+    );
 
     return {
       processed: true,
-      analysis: response.data.analysis,
-      url: data.videoUrl || data.url
+      analysis,
+      url: data.videoUrl || data.url,
+      cost: 0
     };
   }
 
   /**
-   * Process audio content
+   * Process audio content (LOCAL AI - no external costs)
    */
   async processAudio(data) {
-    // Use Mico AI for audio processing
-    const response = await axios.post(`${MICO_BASE_URL}/generate-content`, {
-      prompt: `Process audio: ${data.audioUrl || data.url}`,
-      type: 'script'
-    });
+    const result = await localAI.generate('script', `Process audio: ${data.audioUrl || data.url}`);
 
     return {
       processed: true,
-      result: response.data.content,
-      url: data.audioUrl || data.url
+      result: result.result,
+      url: data.audioUrl || data.url,
+      cost: 0
     };
   }
 
   /**
-   * Process image content
+   * Process image content (LOCAL AI - no external costs)
    */
   async processImage(data) {
-    // Use Mico AI for image analysis
-    const response = await axios.post(`${MICO_BASE_URL}/analyze-image`, {
-      imageUrl: data.imageUrl || data.url,
-      question: data.instruction || 'Process and enhance this image'
-    });
+    const analysis = await localAI.analyzeImage(
+      data.imageUrl || data.url,
+      data.instruction || 'Process and enhance this image'
+    );
 
     return {
       processed: true,
-      analysis: response.data.analysis,
-      url: data.imageUrl || data.url
+      analysis,
+      url: data.imageUrl || data.url,
+      cost: 0
     };
   }
 
-  /**
-   * Get system prompt for content type
-   */
-  getSystemPrompt(type) {
-    const prompts = {
-      'ad': 'You are an advertising expert. Create compelling ad copy that drives conversions.',
-      'avatar': 'You are an avatar designer. Describe unique avatar designs with detailed visual elements.',
-      'meeting': 'You are a meeting summarizer. Extract key points, action items, and decisions.',
-      'meme': 'You are a meme creator. Generate funny, relatable meme text.',
-      'script': 'You are a scriptwriter. Write engaging scripts with clear structure and dialogue.',
-      'subtitle': 'You are a subtitle editor. Create accurate subtitles with appropriate emoji placement.',
-      'content': 'You are a content creator. Generate engaging, platform-appropriate content.',
-      'seo': 'You are an SEO expert. Optimize content for search engines and user engagement.'
-    };
-
-    return prompts[type] || 'You are a helpful AI assistant for creative content generation.';
-  }
 }
 
 module.exports = new AIProxy();
