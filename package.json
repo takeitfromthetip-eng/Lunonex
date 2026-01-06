@@ -7,7 +7,7 @@
     "dev": "vite",
     "dev:server": "nodemon server.js",
     "dev:all": "concurrently \"npm run dev\" \"npm run dev:server\"",
-    "build": "npm run fix:react && node scripts/inject-env.js && vite build && npm run check:react",
+    "build": "npm run fix:react && node scripts/inject-env.js && npx vite build && npm run check:react",
     "check:react": "node scripts/check-react.js",
     "fix:react": "node scripts/fix-react.js",
     "build:agents": "tsc --project tsconfig.agents.json",
