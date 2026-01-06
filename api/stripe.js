@@ -126,7 +126,7 @@ router.post('/create-checkout-session', async (req, res) => {
         // Ensure base URL has scheme
         const baseUrl = process.env.VITE_APP_URL?.startsWith('http')
             ? process.env.VITE_APP_URL
-            : `https://${process.env.VITE_APP_URL || 'lunonex.vercel.app'}`;
+            : `https://${process.env.VITE_APP_URL || 'lunonex.com'}`;
 
         // Build session config
         const sessionConfig = {
