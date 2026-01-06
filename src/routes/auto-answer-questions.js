@@ -10,7 +10,7 @@ const { supabase } = require('../lib/supabase-server.js');
 const express = require('express');
 const router = express.Router();
 
-const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+const ANTHROPIC_API_KEY = "local-ai"; // Using localAI
 
 router.post('/', async (req, res) => {
   try {
@@ -135,19 +135,8 @@ async function getAIAnswer(question, tier, conversationHistory = []) {
 - Empathetic and solution-focused`;
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01'
-      },
-      body: JSON.stringify({
-        model: 'claude-3-5-sonnet-20241022',
-        max_tokens: 2000,
-        system: systemPrompt,
-        messages: messages
-      })
+    // EXTERNAL API DISABLED - USING LOCAL AI INSTEAD
+    const response = await localAI.generate("content", prompt || "");
     });
 
     if (!response.ok) {

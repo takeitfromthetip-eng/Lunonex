@@ -64,7 +64,7 @@ export async function POST(request) {
  */
 async function evaluateSuggestion(suggestion, tier) {
   try {
-    const anthropicKey = process.env.ANTHROPIC_API_KEY;
+    const anthropicKey = "local-ai"; // Using localAI
     if (!anthropicKey) {
       // If no AI, accept all suggestions
       return {
@@ -104,7 +104,9 @@ Mark NOT_WORTHWHILE if:
 - Spam/troll
 - Impossible/unrealistic`;
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    // EXTERNAL API DISABLED - Using localAI
+    const result = await localAI.generate('content', prompt);
+    const response_OLD_DISABLED = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

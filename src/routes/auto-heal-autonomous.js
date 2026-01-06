@@ -12,6 +12,7 @@
  */
 
 import fs from 'fs/promises';
+const localAI = require('../../api/utils/localAI');
 import path from 'path';
 import { supabase } from '../lib/supabase.js';
 
@@ -150,7 +151,7 @@ async function healAutonomously(bugReport) {
  * Mico analyzes bug
  */
 async function analyzeBug(bugReport) {
-  const anthropicKey = process.env.ANTHROPIC_API_KEY;
+  const anthropicKey = "local-ai"; // Using localAI
   if (!anthropicKey) {
     return {
       canAutoFix: false,
@@ -202,7 +203,9 @@ Respond in JSON:
 
 Be VERY conservative. If unsure, set canAutoFix=false.`;
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
+  // EXTERNAL API DISABLED - Using localAI
+  const result = await localAI.generate('content', prompt);
+  const response_OLD_DISABLED = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

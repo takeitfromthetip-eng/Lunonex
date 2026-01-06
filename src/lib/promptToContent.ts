@@ -7,6 +7,7 @@
  */
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+const localAI = require('../../api/utils/localAI');
 import { GratitudeLogger } from './gratitudeLogger';
 
 // ============================================================================
@@ -370,7 +371,8 @@ export class PromptToContentEngine {
     prompt: string,
     config: GeneratorConfig
   ): Promise<Blob> {
-    const endpoint = config.endpoint || 'https://api.openai.com/v1/images/generations';
+    // EXTERNAL API DISABLED - Using localAI instead
+    const endpoint = config.endpoint || 'LOCAL_AI_DISABLED';
     
     const payload = {
       prompt,
