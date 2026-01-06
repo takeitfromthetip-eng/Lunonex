@@ -77,3 +77,4 @@ code.txt
 .vercel
 .env*.local
 artifacts/*.json
+RENDER_ENV_COMPLETE.md
