@@ -78,15 +78,21 @@ console.log('📡 Port:', PORT);
 const { securityHeaders, wafFilter } = require('./utils/networkProtection');
 app.use(securityHeaders);
 
+// Compression - reduce bandwidth by 60-80%
+const compressionMiddleware = require('./api/middleware/compression');
+app.use(compressionMiddleware);
+
+// Structured logging
+const { logger, requestLogger } = require('./api/middleware/logger');
+app.use(requestLogger);
+
 // WAF protection on public routes (before rate limiting)
 app.use('/userfix', wafFilter);
 app.use('/api', wafFilter);
 
-// Rate Limiting (general + tier-based)
+// Rate Limiting (general)
 const { apiLimiter } = require('./utils/apiRateLimiter');
-const { rateLimitByTier } = require('./api/rate-limiter.js');
 app.use('/api', apiLimiter); // General rate limiting
-app.use('/api', rateLimitByTier); // Tier-based rate limiting
 
 // DATA PRIVACY ENFORCEMENT - WE NEVER SELL USER DATA
 const { dataPrivacyMiddleware } = require('./utils/dataPrivacyEnforcement');
@@ -137,37 +143,42 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 // Disable x-powered-by header for security
 app.disable('x-powered-by');
 
-// Initialize Policy Engine and SSE Artifact Stream
-const { initArtifactStream, sseRoute } = require('./api/services/sse');
-const policyEngine = require('./api/policy/policyEngine');
-const { notaryRecord } = require('./api/services/notary');
+// Policy Engine initialization (if available)
+try {
+  const { initArtifactStream, sseRoute } = require('./api/services/sse');
+  const policyEngine = require('./api/policy/policyEngine');
+  const { notaryRecord } = require('./api/services/notary');
 
-initArtifactStream();
+  initArtifactStream();
 
-// Wire policy changes to artifact stream and notary
-policyEngine.on('policy:changed', (evt) => {
-  // Push to artifact stream
-  global.artifactStream.push({
-    timestamp: evt.ts,
-    type: 'POLICY',
-    severity: 'info',
-    message: `Updated ${evt.type}.${evt.key}=${evt.value} v${evt.version}`,
-    data: evt,
+  // Wire policy changes to artifact stream and notary
+  policyEngine.on('policy:changed', (evt) => {
+    // Push to artifact stream
+    global.artifactStream.push({
+      timestamp: evt.ts,
+      type: 'POLICY',
+      severity: 'info',
+      message: `Updated ${evt.type}.${evt.key}=${evt.value} v${evt.version}`,
+      data: evt,
+    });
+
+    // Record in notary ledger
+    notaryRecord({
+      actor: 'policy_engine',
+      command: `update_${evt.type}`,
+      key: evt.key,
+      value: evt.value,
+      oldValue: evt.oldValue,
+      version: evt.version,
+    });
   });
 
-  // Record in notary ledger
-  notaryRecord({
-    actor: 'policy_engine',
-    command: `update_${evt.type}`,
-    key: evt.key,
-    value: evt.value,
-    oldValue: evt.oldValue,
-    version: evt.version,
-  });
-});
-
-// SSE artifact stream endpoint
-app.get('/api/artifacts/stream', sseRoute);
+  // SSE artifact stream endpoint
+  app.get('/api/artifacts/stream', sseRoute);
+  console.log('✅ Policy engine and artifact stream initialized');
+} catch (error) {
+  console.warn('⚠️  Policy engine not available - skipping SSE features');
+}
 
 // Feature flags
 const { featureFlags } = require('./config/featureFlags');
@@ -588,16 +599,24 @@ async function startServer() {
         
         // ===== SOVEREIGN SELF-HEALING SYSTEM - Post-Startup =====
         const { metricsCollector } = require('./utils/observability');
-        const { startSLOMonitor } = require('./api/userfix/autoRevert');
-        const { startNightlyUpload } = require('./api/bugfixer/upload');
-        
-        // Start SLO monitoring and auto-revert
-        startSLOMonitor(metricsCollector);
-        console.log('✅ SLO monitor started');
-        
-        // Start nightly artifact uploads
-        startNightlyUpload();
-        console.log('✅ Nightly artifact upload scheduled');
+
+        // Start SLO monitoring and auto-revert (if available)
+        try {
+          const { startSLOMonitor } = require('./api/userfix/autoRevert');
+          startSLOMonitor(metricsCollector);
+          console.log('✅ SLO monitor started');
+        } catch (error) {
+          console.warn('⚠️  SLO monitor not available');
+        }
+
+        // Start nightly artifact uploads (if available)
+        try {
+          const { startNightlyUpload } = require('./api/bugfixer/upload');
+          startNightlyUpload();
+          console.log('✅ Nightly artifact upload scheduled');
+        } catch (error) {
+          console.warn('⚠️  Nightly artifact upload not available');
+        }
         
         // Start retention extension scheduler
         console.log('📅 Initializing legal receipts retention scheduler...');

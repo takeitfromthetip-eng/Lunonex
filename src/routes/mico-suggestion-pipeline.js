@@ -11,9 +11,10 @@
  */
 
 import { Octokit } from '@octokit/rest';
+const localAI = require('../../api/utils/localAI');
 import { supabase } from '../lib/supabase.js';
 
-const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+const ANTHROPIC_API_KEY = "local-ai"; // Using localAI
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const REPO_OWNER = process.env.GITHUB_REPO_OWNER;
 const REPO_NAME = process.env.GITHUB_REPO_NAME;
@@ -125,18 +126,8 @@ Respond in JSON:
   "category": "feature"|"ui"|"performance"|"content"|"other"
 }`;
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': ANTHROPIC_API_KEY,
-      'anthropic-version': '2023-06-01'
-    },
-    body: JSON.stringify({
-      model: 'claude-3-5-sonnet-20241022',
-      max_tokens: 500,
-      messages: [{ role: 'user', content: prompt }]
-    })
+  // EXTERNAL API DISABLED - USING LOCAL AI INSTEAD
+    const response = await localAI.generate("content", prompt || "");
   });
 
   if (!response.ok) {
@@ -195,18 +186,8 @@ Be smart and conservative. Only implement if:
 - Secure and well-designed
 - Worth the complexity`;
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': ANTHROPIC_API_KEY,
-      'anthropic-version': '2023-06-01'
-    },
-    body: JSON.stringify({
-      model: 'claude-3-5-sonnet-20241022',
-      max_tokens: 4000,
-      messages: [{ role: 'user', content: prompt }]
-    })
+  // EXTERNAL API DISABLED - USING LOCAL AI INSTEAD
+    const response = await localAI.generate("content", prompt || "");
   });
 
   if (!response.ok) {

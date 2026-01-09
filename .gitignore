@@ -13,25 +13,8 @@ electron-dist/
 config/google-vision-key.json
 
 # Compiled TypeScript in API routes (causes Vercel conflicts)
-api/**/*.js
 api/**/*.js.map
 api/**/*.d.ts
-# But keep these specific files
-!api/routes/queue.js
-!api/auth.js
-!api/user-tier.js
-!api/vouchers.js
-!api/upload-protected.js
-!api/tier-upgrades.js
-!api/trial.js
-!api/stripe-webhooks.js
-!api/stripe.js
-!api/tier-access.js
-!api/governance.js
-!api/middleware/sentinelWatchdog.js
-!api/developer-dashboard.js
-!api/api-billing.js
-!api/bugfixer/**/*.js
 
 # Vite cache (SAFE TO DELETE - auto-regenerates)
 .vite/
@@ -94,3 +77,4 @@ code.txt
 .vercel
 .env*.local
 artifacts/*.json
+RENDER_ENV_COMPLETE.md

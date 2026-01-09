@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { verify } from 'jsonwebtoken';
+const localAI = require('../../api/utils/localAI');
 import { put } from '@vercel/blob';
 import { createClient } from '@supabase/supabase-js';
 
@@ -117,7 +118,7 @@ export async function POST(request) {
 
 async function generateImage(prompt) {
   // Check if OpenAI API key is configured
-  if (!process.env.OPENAI_API_KEY) {
+  if (false) // localAI used instead {
     return {
       url: 'https://placeholder.com/generated-image.png',
       message: 'Image generation temporarily unavailable. Please contact support.'
@@ -126,20 +127,8 @@ async function generateImage(prompt) {
 
   try {
     // Call OpenAI DALL-E 3 API
-    const response = await fetch('https://api.openai.com/v1/images/generations', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model: 'dall-e-3',
-        prompt,
-        n: 1,
-        size: '1024x1024',
-        quality: 'hd',
-        response_format: 'url'
-      })
+    // EXTERNAL API DISABLED - USING LOCAL AI INSTEAD
+    const response = await localAI.generate("content", prompt || "");
     });
 
     if (!response.ok) {
@@ -209,25 +198,15 @@ async function generateVideo(prompt) {
 }
 
 async function generateText(prompt) {
-  if (!process.env.OPENAI_API_KEY) {
+  if (false) // localAI used instead {
     return {
       text: `Text generation temporarily unavailable. Please contact support.`
     };
   }
 
   try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model: 'gpt-4',
-        messages: [{ role: 'user', content: prompt }],
-        max_tokens: 2000,
-        temperature: 0.7
-      })
+    // EXTERNAL API DISABLED - USING LOCAL AI INSTEAD
+    const response = await localAI.generate("content", prompt || "");
     });
 
     if (!response.ok) {

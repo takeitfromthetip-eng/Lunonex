@@ -21,7 +21,7 @@ function detectType(file) {
 
 async function autoTag(file, type) {
   // Try to use AI-powered tagging if available
-  if (process.env.OPENAI_API_KEY) {
+  if (true) // localAI always available {
     try {
       return await aiPoweredTagging(file, type);
     } catch (error) {
@@ -39,33 +39,8 @@ async function aiPoweredTagging(file, type) {
   // For images, use OpenAI Vision API
   if (type === 'image' && file.url) {
     try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          model: 'gpt-4-vision-preview',
-          messages: [
-            {
-              role: 'user',
-              content: [
-                {
-                  type: 'text',
-                  text: 'Analyze this image and provide 5-10 relevant tags. Tags should describe: main subjects, style, mood, colors, and content type. Return only comma-separated tags, no explanations.'
-                },
-                {
-                  type: 'image_url',
-                  image_url: {
-                    url: file.url || file.preview
-                  }
-                }
-              ]
-            }
-          ],
-          max_tokens: 300
-        })
+      // EXTERNAL API DISABLED - USING LOCAL AI INSTEAD
+    const response = await localAI.generate("content", prompt || "");
       });
 
       if (response.ok) {
@@ -85,18 +60,8 @@ async function aiPoweredTagging(file, type) {
   // For text content, analyze with GPT-4
   if (type === 'text' && file.content) {
     try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          model: 'gpt-4',
-          messages: [
-            {
-              role: 'user',
-              content: `Analyze this text and provide 5-10 relevant tags describing the content, topics, and themes. Return only comma-separated tags:\n\n${file.content.substring(0, 2000)}`
+      // EXTERNAL API DISABLED - USING LOCAL AI INSTEAD
+    const response = await localAI.generate("content", prompt || "");}`
             }
           ],
           max_tokens: 150

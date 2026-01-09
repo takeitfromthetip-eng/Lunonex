@@ -8,7 +8,6 @@ function validateConfig() {
     'SUPABASE_SERVICE_KEY',
     'BUGFIXER_TOKEN',
     'STRIPE_SECRET_KEY',
-    'COINBASE_API_KEY',
   ];
   
   const missing = [];
@@ -21,7 +20,7 @@ function validateConfig() {
   }
   
   // Optional but recommended
-  const optional = ['GOOGLE_VISION_KEY', 'ARTIFACT_BUCKET', 'APP_VERSION'];
+  const optional = ['GOOGLE_VISION_KEY', 'ARTIFACT_BUCKET', 'APP_VERSION', 'COINBASE_COMMERCE_API_KEY'];
   for (const key of optional) {
     if (!process.env[key]) {
       warnings.push(`Optional env var missing: ${key}`);

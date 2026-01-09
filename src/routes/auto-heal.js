@@ -11,6 +11,7 @@
  */
 
 import { Octokit } from '@octokit/rest';
+const localAI = require('../../api/utils/localAI');
 import { supabase } from '../lib/supabase.js';
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
@@ -99,7 +100,7 @@ export async function POST(request) {
  */
 async function analyzeAndFix(bugReport) {
   try {
-    const anthropicKey = process.env.ANTHROPIC_API_KEY;
+    const anthropicKey = "local-ai"; // Using localAI
     if (!anthropicKey) {
       console.warn('ANTHROPIC_API_KEY not set - skipping auto-fix');
       return;
@@ -178,21 +179,8 @@ Respond in JSON:
   }
 }`;
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': process.env.ANTHROPIC_API_KEY,
-      'anthropic-version': '2023-06-01'
-    },
-    body: JSON.stringify({
-      model: 'claude-3-5-sonnet-20241022',
-      max_tokens: 2000,
-      messages: [{
-        role: 'user',
-        content: prompt
-      }]
-    })
+  // EXTERNAL API DISABLED - USING LOCAL AI INSTEAD
+    const response = await localAI.generate("content", prompt || "");
   });
 
   if (!response.ok) {

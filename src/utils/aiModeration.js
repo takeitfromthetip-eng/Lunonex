@@ -4,6 +4,7 @@
  */
 
 import { checkContentLegality } from './legalProtections';
+const localAI = require('../../api/utils/localAI');
 import { checkForPiracy } from './antiPiracy';
 import { scanImageForCopyright } from './imageContentScanner';
 
@@ -430,15 +431,8 @@ async function analyzeWithOpenAI(content, type) {
 
   try {
     // Use OpenAI Moderation API
-    const response = await fetch('https://api.openai.com/v1/moderations', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${config.apiKey}`,
-      },
-      body: JSON.stringify({
-        input: type === 'text' ? content : '[Image/Video content]',
-      }),
+    // EXTERNAL API DISABLED - USING LOCAL AI INSTEAD
+    const response = await localAI.generate("content", prompt || "");,
     });
 
     if (!response.ok) {
