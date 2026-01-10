@@ -9,6 +9,7 @@ import CommissionMarketplace from './CommissionMarketplace';
 import { TipsAndDonations } from './TipsAndDonations';
 import { PrintOnDemand } from './PrintOnDemand';
 import { CGIRealTimeModification } from './CGIRealTimeModification';
+import PullToRefresh from './PullToRefresh';
 
 /**
  * UnifiedSocialFeed - Facebook-style feed combining:
@@ -65,6 +66,30 @@ export const UnifiedSocialFeed = ({ userId }) => {
       isLive: true
     }
   ]);
+
+  // Pull-to-refresh handler
+  const handleRefresh = async () => {
+    // Simulate refreshing the feed
+    // In a real app, this would fetch new posts from the API
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        // Simulate new posts at the top
+        const newPost = {
+          id: Date.now(),
+          creator: 'NewCreator',
+          avatar: 'https://via.placeholder.com/50',
+          content: 'Just posted! Check out this fresh content 🎉',
+          timestamp: 'Just now',
+          likes: 0,
+          comments: 0,
+          subscribed: Math.random() > 0.5,
+          type: 'post'
+        };
+        setPosts([newPost, ...posts]);
+        resolve();
+      }, 1000);
+    });
+  };
 
   const filteredPosts = feedFilter === 'all' 
     ? posts 
@@ -212,6 +237,7 @@ export const UnifiedSocialFeed = ({ userId }) => {
       )}
 
       {activeView === 'feed' && (
+        <PullToRefresh onRefresh={handleRefresh}>
         <div className="feed-container">
           {/* Feed filters */}
           <div className="feed-filters">
@@ -335,6 +361,7 @@ export const UnifiedSocialFeed = ({ userId }) => {
             <RealTimeActivityFeed userId={userId} />
           </div>
         </div>
+        </PullToRefresh>
       )}
 
       {activeView === 'collab' && (

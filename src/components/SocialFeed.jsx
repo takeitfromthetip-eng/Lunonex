@@ -6,6 +6,7 @@ import { checkTierAccess } from '../utils/tierAccess';
 import api from '../utils/backendApi';
 import featureDetector from '../utils/featureDetection';
 import { FeatureBlocker } from './FeatureDisabledBanner';
+import PullToRefresh from './PullToRefresh';
 
 /**
  * Social Feed - Main content feed for all users
@@ -88,6 +89,22 @@ export const SocialFeed = ({ userId, userTier }) => {
 
     loadFeed();
   }, []);
+
+  // Pull-to-refresh handler
+  const handleRefresh = async () => {
+    try {
+      // Reset pagination and load fresh feed
+      setOffset(0);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/social/feed?limit=20&offset=0`);
+      if (response.ok) {
+        const feedData = await response.json();
+        setPosts(feedData.posts || []);
+        setHasMore(feedData.posts?.length >= 20);
+      }
+    } catch (err) {
+      console.error('Refresh error:', err);
+    }
+  };
 
   // Infinite scroll handler
   const loadMorePosts = async () => {
@@ -417,6 +434,7 @@ export const SocialFeed = ({ userId, userTier }) => {
       {/* Feed Tab */}
       {activeTab === 'feed' && (
         <FeatureBlocker feature="socialMedia" features={features}>
+        <PullToRefresh onRefresh={handleRefresh}>
         <div className="feed-content">
           {/* Post Creator */}
           <div className="post-creator">
@@ -734,6 +752,7 @@ export const SocialFeed = ({ userId, userTier }) => {
             })}
           </div>
         </div>
+        </PullToRefresh>
         </FeatureBlocker>
       )}
 
