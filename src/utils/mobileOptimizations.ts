@@ -19,9 +19,11 @@ export function initMobileTouchOptimizations() {
 
   ['touchstart', 'touchmove', 'wheel', 'mousewheel'].forEach(addPassiveEventListener);
 
-  // Prevent pull-to-refresh on mobile
+  // Prevent pull-to-refresh on mobile (except in feed components)
   document.body.addEventListener('touchmove', (e) => {
-    if ((e.target as HTMLElement).closest('.scrollable')) {
+    // Allow pull-to-refresh in PullToRefresh components and scrollable areas
+    if ((e.target as HTMLElement).closest('.scrollable') || 
+        (e.target as HTMLElement).closest('.pull-to-refresh-wrapper')) {
       return;
     }
     // Only prevent default if at the top of the page
