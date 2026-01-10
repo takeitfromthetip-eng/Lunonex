@@ -85,7 +85,7 @@ export const UnifiedSocialFeed = ({ userId }) => {
           subscribed: Math.random() > 0.5,
           type: 'post'
         };
-        setPosts([newPost, ...posts]);
+        setPosts(prevPosts => [newPost, ...prevPosts]);
         resolve();
       }, 1000);
     });

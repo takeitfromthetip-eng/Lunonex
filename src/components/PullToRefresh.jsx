@@ -51,8 +51,8 @@ export const PullToRefresh = ({ children, onRefresh, disabled = false }) => {
     const touchY = e.touches[0].clientY;
     const diff = touchY - touchStartY.current;
     
-    // Only pull down when at the top
-    if (diff > 0 && containerRef.current?.scrollTop === 0) {
+    // Only pull down when at the top and pulling downward
+    if (diff > 0) {
       // Apply resistance for smooth feel
       const resistance = 2.5;
       const distance = Math.min(diff / resistance, MAX_PULL);
