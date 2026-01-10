@@ -1,5 +1,7 @@
 # GitHub Copilot Instructions for lunonex
 
+> **Note:** These instructions document the **actual patterns and conventions used in this codebase**. Follow these patterns to maintain consistency with existing code, even if they differ from general best practices.
+
 ## Project Context
 lunonex is a creator-first platform for anime and content creators with:
 - React frontend with Vite
