@@ -1,4 +1,4 @@
-const { createClient } = require('@supabase/supabase-js');
+const supabase = require('./utils/supabaseClient');
 
 // Dynamic import for ES modules (vipAccess)
 let isOwner, isLifetimeVIP;
@@ -7,11 +7,6 @@ let isOwner, isLifetimeVIP;
   isOwner = vipModule.isOwner;
   isLifetimeVIP = vipModule.isLifetimeVIP;
 })();
-
-const supabase = createClient(
-  process.env.VITE_SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY
-);
 
 const TIER_LEVELS = {
   ADULT_ACCESS: { amount: 1500, level: 1, productId: process.env.STRIPE_PRODUCT_ADULT_ACCESS, priceId: process.env.STRIPE_PRICE_ADULT_ACCESS },          // $15/month subscription

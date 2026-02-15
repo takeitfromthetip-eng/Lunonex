@@ -1,13 +1,7 @@
 const express = require('express');
-const { createClient } = require('@supabase/supabase-js');
+const supabase = require('./utils/supabaseClient');
 
 const router = express.Router();
-
-// Initialize Supabase
-const supabase = createClient(
-    process.env.VITE_SUPABASE_URL,
-    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY
-);
 
 // Tier prices in cents
 const TIER_PRICES = {

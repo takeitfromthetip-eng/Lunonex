@@ -1,14 +1,8 @@
 // API routes for free trial system
 const express = require('express');
 const router = express.Router();
-const { createClient } = require('@supabase/supabase-js');
+const supabase = require('./utils/supabaseClient');
 const crypto = require('crypto');
-
-// Initialize Supabase client
-const supabase = createClient(
-  process.env.VITE_SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_KEY || process.env.VITE_SUPABASE_ANON_KEY
-);
 
 // Generate a fingerprint from request (IP + User-Agent)
 function generateFingerprint(req) {
