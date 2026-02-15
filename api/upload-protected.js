@@ -11,7 +11,7 @@ const router = express.Router();
 // Import anti-piracy utilities
 const { checkForPiracy, logPiracyAttempt } = require('../utils/antiPiracyServer');
 const { trackUserDevice, checkBannedDevice, detectAccountEvasion } = require('../utils/deviceTracking');
-const { dynamicUploadLimiter } = require('../utils/rateLimiting');
+const { dynamicUploadLimiter } = require('../utils/rateLimiter');
 
 // Configure multer for file uploads
 const storage = multer.memoryStorage(); // Use memory storage for scanning

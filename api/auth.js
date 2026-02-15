@@ -6,7 +6,7 @@
 const express = require('express');
 const router = express.Router();
 const { authenticateOwner, ROLES } = require('../middleware/authMiddleware');
-const { authRateLimiter } = require('./middleware/rateLimiter');
+const { authRateLimiter } = require('../utils/rateLimiter');
 
 const OWNER_EMAIL = 'polotuspossumus@gmail.com';
 

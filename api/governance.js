@@ -24,7 +24,7 @@ try {
   requireRole = authMiddleware.requireRole;
   ROLES = authMiddleware.ROLES;
 
-  const rateLimiter = require('./middleware/rateLimiter');
+  const rateLimiter = require('../utils/rateLimiter');
   governanceRateLimiter = rateLimiter.governanceRateLimiter;
   readRateLimiter = rateLimiter.readRateLimiter;
 

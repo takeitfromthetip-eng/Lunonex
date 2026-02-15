@@ -91,7 +91,7 @@ app.use('/userfix', wafFilter);
 app.use('/api', wafFilter);
 
 // Rate Limiting (general)
-const { apiLimiter } = require('./utils/apiRateLimiter');
+const { apiLimiter } = require('./utils/rateLimiter');
 app.use('/api', apiLimiter); // General rate limiting
 
 // DATA PRIVACY ENFORCEMENT - WE NEVER SELL USER DATA
