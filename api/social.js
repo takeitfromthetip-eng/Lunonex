@@ -1,35 +1,31 @@
 const express = require('express');
 const router = express.Router();
 const supabase = require('./utils/supabaseClient');
+const { asyncHandler } = require('./middleware/errorHandler');
 
 // Get feed
-router.get('/feed', async (req, res) => {
-  try {
-    const { userId, limit = 20, offset = 0 } = req.query;
+router.get('/feed', asyncHandler(async (req, res) => {
+  const { userId, limit = 20, offset = 0 } = req.query;
 
-    const { data, error } = await supabase
-      .from('posts')
-      .select(`
-        *,
-        profiles:author_id (
-          id,
-          username,
-          display_name,
-          avatar_url
-        )
-      `)
-      .eq('visibility', 'PUBLIC')
-      .order('created_at', { ascending: false })
-      .range(offset, offset + limit - 1);
+  const { data, error } = await supabase
+    .from('posts')
+    .select(`
+      *,
+      profiles:author_id (
+        id,
+        username,
+        display_name,
+        avatar_url
+      )
+    `)
+    .eq('visibility', 'PUBLIC')
+    .order('created_at', { ascending: false })
+    .range(offset, offset + limit - 1);
 
-    if (error) throw error;
+  if (error) throw error;
 
-    res.json({ posts: data, count: data.length });
-  } catch (error) {
-    console.error('Error fetching feed:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
+  res.json({ posts: data, count: data.length });
+}));
 
 // Discover creators
 router.get('/discover', async (req, res) => {
